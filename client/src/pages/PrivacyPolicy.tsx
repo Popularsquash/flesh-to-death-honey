@@ -111,13 +111,62 @@ export default function PrivacyPolicy() {
             </Card>
           </section>
 
-          {/* Section 4: Security */}
+          {/* Section 4: BuzzKill App Data Safety */}
+          <section className="space-y-4">
+            <div className="flex items-center gap-4">
+              <div className="bg-secondary p-3 rounded-none -rotate-3">
+                <ShieldAlert className="h-8 w-8 text-black" />
+              </div>
+              <h2 className="text-3xl font-heading text-black uppercase">4. BuzzKill App Data Safety</h2>
+            </div>
+            <Card className="bg-white border-4 border-black rounded-none">
+              <CardContent className="pt-6 space-y-6">
+                <p className="font-bold">
+                  For the Google Play Console nerds and the paranoid beekeepers, here is exactly what the BuzzKill app touches:
+                </p>
+                
+                <div className="space-y-4">
+                  <div className="border-l-4 border-primary pl-4">
+                    <h3 className="font-heading text-xl mb-2">Location Permissions (Apiary Mapping)</h3>
+                    <p className="text-gray-600">
+                      <strong>Why we need it:</strong> To map your hives. We can't tell you where your bees are if we don't know where you are.
+                    </p>
+                    <p className="text-gray-600">
+                      <strong>Justification:</strong> Used strictly for placing hive markers on the map. We don't track your movements, and we definitely don't care where you go for coffee.
+                    </p>
+                  </div>
+
+                  <div className="border-l-4 border-primary pl-4">
+                    <h3 className="font-heading text-xl mb-2">Camera Permissions (Hive Photos)</h3>
+                    <p className="text-gray-600">
+                      <strong>Why we need it:</strong> So you can take pictures of your frames, queens, and weird comb patterns.
+                    </p>
+                    <p className="text-gray-600">
+                      <strong>Justification:</strong> Photos are stored locally or synced to your account solely for your inspection records. We don't look at them unless you send them to support asking "Is this foulbrood?"
+                    </p>
+                  </div>
+
+                  <div className="border-l-4 border-primary pl-4">
+                    <h3 className="font-heading text-xl mb-2">Data Export & Backup</h3>
+                    <p className="text-gray-600">
+                      <strong>Your Data is Yours:</strong> Beekeeping records are critical. You can export your entire hive history at any time.
+                    </p>
+                    <p className="text-gray-600">
+                      <strong>Backup:</strong> We perform daily backups of cloud data. If you delete your account, we wipe your data after a 30-day "oops" grace period.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+
+          {/* Section 5: Security */}
           <section className="space-y-4">
             <div className="flex items-center gap-4">
               <div className="bg-black p-3 rounded-none rotate-6">
                 <Lock className="h-8 w-8 text-primary" />
               </div>
-              <h2 className="text-3xl font-heading text-black uppercase">4. Security (Fort Knox-ish)</h2>
+              <h2 className="text-3xl font-heading text-black uppercase">5. Security (Fort Knox-ish)</h2>
             </div>
             <Card className="bg-white border-4 border-black rounded-none">
               <CardContent className="pt-6">

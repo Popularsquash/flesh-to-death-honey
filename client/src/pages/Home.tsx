@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/Footer";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Skull, Zap, Droplet, Flame, Menu, X } from "lucide-react";
@@ -451,56 +452,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black border-t-4 border-primary py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div className="col-span-2 space-y-6">
-              <div className="flex items-center gap-2">
-                <img src="/images/hero-bee.png" alt="Logo" className="h-10 w-10 object-contain grayscale" />
-                <span className="font-heading text-2xl text-white tracking-widest">
-                  FLESH TO DEATH
-                </span>
-              </div>
-              <p className="text-gray-500 font-body max-w-sm">
-                Small scale motorcycle lifestyle brand focusing on apparel and beeswax products for the younger generation alpha and Z.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="font-heading text-white text-xl mb-6 uppercase">Shop</h4>
-              <ul className="space-y-3 font-body text-gray-400">
-                <li><a href="#" className="hover:text-primary transition-colors">Apparel</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Beeswax Products</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Accessories</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Gift Cards</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-heading text-white text-xl mb-6 uppercase">Legal</h4>
-              <ul className="space-y-3 font-body text-gray-400">
-                <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">No Snitches Policy</Link></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Shipping & Returns</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Contact Us</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 font-body text-sm">
-              © 2026 Flesh to Death Honey Co. All rights reserved.
-            </p>
-            <div className="flex gap-4">
-              {/* Social Icons would go here */}
-              <div className="w-8 h-8 bg-gray-800 hover:bg-primary transition-colors"></div>
-              <div className="w-8 h-8 bg-gray-800 hover:bg-primary transition-colors"></div>
-              <div className="w-8 h-8 bg-gray-800 hover:bg-primary transition-colors"></div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
