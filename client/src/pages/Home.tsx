@@ -480,7 +480,7 @@ export default function Home() {
             <div>
               <h4 className="font-heading text-white text-xl mb-6 uppercase">Legal</h4>
               <ul className="space-y-3 font-body text-gray-400">
-                <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+                <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">No Snitches Policy</Link></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Shipping & Returns</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Contact Us</a></li>
