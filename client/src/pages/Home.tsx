@@ -14,7 +14,7 @@ export default function Home() {
       name: "Brap Balm",
       price: "$18.00",
       description: "Leather salve for your road-rash gear. Smells like victory and beeswax.",
-      image: "/images/hellfire-honey.jpg", // Using placeholder for now, ideally specific product shot
+      image: "/images/hellfire-honey.jpg",
       tag: "Best Seller"
     },
     {
@@ -22,7 +22,7 @@ export default function Home() {
       name: "Sin Eraser Soap",
       price: "$12.00",
       description: "Washes away grease, grime, and yesterday's bad decisions.",
-      image: "/images/skeleton-bees.png", // Placeholder
+      image: "/images/skeleton-bees.png",
       tag: "New"
     },
     {
@@ -30,8 +30,43 @@ export default function Home() {
       name: "Road Rash Remedy",
       price: "$8.00",
       description: "Chapstick that hits harder than a bug at 80mph.",
-      image: "/images/hero-bee.png", // Placeholder
+      image: "/images/hero-bee.png",
       tag: "Essential"
+    }
+  ];
+
+  const apparel = [
+    {
+      id: 4,
+      name: "Death Rider Tee",
+      price: "$35.00",
+      description: "Heavyweight cotton for heavy situations. Features the classic Flesh to Death back print.",
+      image: "/images/apparel/FLESHTODEATHTSHIRTDESIGN.png",
+      tag: "Limited"
+    },
+    {
+      id: 5,
+      name: "Hive Mind Tee",
+      price: "$35.00",
+      description: "Join the swarm. Front and back print with our signature skull bee.",
+      image: "/images/apparel/FLESHTODEATHTSHIRTDESIGN2.png",
+      tag: "New Drop"
+    },
+    {
+      id: 6,
+      name: "Reaper Patch",
+      price: "$10.00",
+      description: "Embroidered patch for your cut. Guaranteed to scare grandmas.",
+      image: "/images/apparel/FLESHTODEATHCIRCLEDESIGN.png",
+      tag: "Accessory"
+    },
+    {
+      id: 7,
+      name: "Swarm Sticker Pack",
+      price: "$15.00",
+      description: "Slap 'em on your helmet, your tank, or your local stop sign.",
+      image: "/images/apparel/FLESHTODEATHELEMENTDESIGNS.png",
+      tag: "Sticky"
     }
   ];
 
@@ -129,7 +164,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-24">
             {products.map((product) => (
               <Card key={product.id} className="bg-background border-4 border-black rounded-none overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 group">
                 <div className="relative h-64 overflow-hidden bg-gray-800 flex items-center justify-center p-4">
@@ -157,6 +192,51 @@ export default function Home() {
                 </CardContent>
                 <CardFooter>
                   <Button className="w-full bg-white text-black hover:bg-secondary hover:text-white font-heading uppercase text-lg rounded-none border-2 border-black transition-colors">
+                    Add to Cart
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+
+          {/* Apparel Section */}
+          <div className="text-center mb-16 pt-12 border-t-4 border-black border-dashed">
+            <h2 className="text-5xl md:text-7xl font-heading text-black mb-4 mt-12">
+              Wear Your <span className="text-white grunge-text">Allegiance</span>
+            </h2>
+            <p className="text-xl font-body text-black/80 max-w-2xl mx-auto font-bold">
+              Threads for the hive. Wear it loud, wear it proud.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {apparel.map((item) => (
+              <Card key={item.id} className="bg-background border-4 border-black rounded-none overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 group">
+                <div className="relative h-64 overflow-hidden bg-white flex items-center justify-center p-4">
+                  <div className="absolute top-4 right-4 z-10">
+                    <Badge className="bg-primary text-black rounded-none font-heading uppercase text-sm border-2 border-black">
+                      {item.tag}
+                    </Badge>
+                  </div>
+                  <img 
+                    src={item.image} 
+                    alt={item.name} 
+                    className="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <CardHeader className="border-b-2 border-dashed border-gray-700">
+                  <div className="flex justify-between items-start">
+                    <CardTitle className="font-heading text-xl text-primary">{item.name}</CardTitle>
+                    <span className="font-body font-bold text-lg text-white">{item.price}</span>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-4">
+                  <p className="text-gray-400 font-body text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full bg-white text-black hover:bg-secondary hover:text-white font-heading uppercase text-sm rounded-none border-2 border-black transition-colors">
                     Add to Cart
                   </Button>
                 </CardFooter>
