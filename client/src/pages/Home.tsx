@@ -35,6 +35,59 @@ export default function Home() {
     }
   ];
 
+  const revengeCollection = [
+    {
+      id: 101,
+      name: "Road Rash Roulette™",
+      price: "$22.00",
+      description: "Honey-punk salve for road burn. Infused with asphalt resin and junkyard rust. Guaranteed to offend dermatologists.",
+      tagline: "Scabs Are Just Nature’s Temporary Tattoos.",
+      warning: "May cause healed wounds to whisper biker poetry.",
+      image: "/images/hellfire-honey.jpg",
+      tag: "Experimental"
+    },
+    {
+      id: 102,
+      name: "Midnight Comb Glow™",
+      price: "$28.00",
+      description: "Beeswax serum laced with bioluminescent spores. Makes scars glow like radioactive mile markers.",
+      tagline: "Your Face is a Highway. Light it Up.",
+      warning: "Permanently confuses moths.",
+      image: "/images/hero-bee.png",
+      tag: "Radioactive"
+    },
+    {
+      id: 103,
+      name: "Queen's Command™",
+      price: "$15.00",
+      description: "Throat spray for voices ruined by screaming into headwinds. Raw honey + ghost pepper + crushed wasp ego.",
+      tagline: "Soothe Your Rebel Yell.",
+      warning: "Spray may summon a council of bees to critique your karaoke.",
+      image: "/images/skeleton-bees.png",
+      tag: "Spicy"
+    },
+    {
+      id: 104,
+      name: "Buzz Wax™",
+      price: "$20.00",
+      description: "Pomade infused with motorcycle battery acid. Styles beards, mohawks, and bad decisions.",
+      tagline: "Hold So Stiff, It Judges Your Life Choices.",
+      warning: "Hair gains sentience after 3 uses.",
+      image: "/images/hellfire-honey.jpg",
+      tag: "Sentient"
+    },
+    {
+      id: 105,
+      name: "Hive Alchemy Elixir™",
+      price: "$45.00",
+      description: "Drinkable honey-mead brewed in a salvaged gas tank. Notes of burnt rubber and existential clarity.",
+      tagline: "For When Your Soul Needs an Oil Change.",
+      warning: "Causes prophetic dreams about highway pylons.",
+      image: "/images/hero-bee.png",
+      tag: "Volatile"
+    }
+  ];
+
   const apparel = [
     {
       id: 4,
@@ -193,6 +246,62 @@ export default function Home() {
                 <CardFooter>
                   <Button className="w-full bg-white text-black hover:bg-secondary hover:text-white font-heading uppercase text-lg rounded-none border-2 border-black transition-colors">
                     Add to Cart
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+
+          {/* The Hive's Revenge Collection */}
+          <div className="text-center mb-16 pt-12 border-t-4 border-black border-dashed">
+            <h2 className="text-5xl md:text-7xl font-heading text-black mb-4 mt-12">
+              The Hive's <span className="text-white grunge-text">Revenge</span>
+            </h2>
+            <p className="text-xl font-body text-black/80 max-w-2xl mx-auto font-bold mb-2">
+              We Put the ‘Mental’ in Experimental. (And the ‘Hurt’ in Dessert.)
+            </p>
+            <p className="text-sm font-body text-black/60 italic max-w-xl mx-auto">
+              Warning: All jars double as ash trays / emotional support objects. Labels dissolve in rain to reveal hidden insults.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+            {revengeCollection.map((item) => (
+              <Card key={item.id} className="bg-black border-4 border-white rounded-none overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] transition-all duration-300 group relative">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent opacity-50"></div>
+                <div className="relative h-64 overflow-hidden bg-gray-900 flex items-center justify-center p-4">
+                  <div className="absolute top-4 right-4 z-10">
+                    <Badge className="bg-red-600 text-white rounded-none font-heading uppercase text-sm border-2 border-white animate-pulse">
+                      {item.tag}
+                    </Badge>
+                  </div>
+                  <img 
+                    src={item.image} 
+                    alt={item.name} 
+                    className="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                  />
+                </div>
+                <CardHeader className="border-b-2 border-dashed border-gray-700 bg-black">
+                  <div className="flex flex-col gap-1">
+                    <div className="flex justify-between items-start">
+                      <CardTitle className="font-heading text-2xl text-white">{item.name}</CardTitle>
+                      <span className="font-body font-bold text-xl text-primary">{item.price}</span>
+                    </div>
+                    <p className="text-xs font-heading text-secondary uppercase tracking-wider">{item.tagline}</p>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-6 bg-black">
+                  <p className="text-gray-300 font-body text-lg leading-relaxed mb-4">
+                    {item.description}
+                  </p>
+                  <div className="bg-gray-900 p-3 border-l-4 border-red-600">
+                    <p className="text-red-500 text-xs font-bold uppercase mb-1">⚠️ Warning</p>
+                    <p className="text-gray-400 text-xs italic">{item.warning}</p>
+                  </div>
+                </CardContent>
+                <CardFooter className="bg-black">
+                  <Button className="w-full bg-white text-black hover:bg-red-600 hover:text-white font-heading uppercase text-lg rounded-none border-2 border-white transition-colors">
+                    Risk It
                   </Button>
                 </CardFooter>
               </Card>
