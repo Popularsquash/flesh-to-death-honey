@@ -14,7 +14,7 @@ export default function Home() {
       name: "Brap Balm",
       price: "$18.00",
       description: "Leather salve for your road-rash gear. Smells like victory and beeswax.",
-      image: "/images/hellfire-honey.jpg",
+      image: "/images/brap-balm-label.png",
       tag: "Best Seller"
     },
     {
@@ -22,16 +22,32 @@ export default function Home() {
       name: "Sin Eraser Soap",
       price: "$12.00",
       description: "Washes away grease, grime, and yesterday's bad decisions.",
-      image: "/images/skeleton-bees.png",
+      image: "/images/charcoal-soap-label.png",
       tag: "New"
     },
     {
       id: 3,
-      name: "Road Rash Remedy",
-      price: "$8.00",
-      description: "Chapstick that hits harder than a bug at 80mph.",
-      image: "/images/hero-bee.png",
+      name: "Sting Salve",
+      price: "$14.00",
+      description: "Pain is temporary, swelling is hilarious. For bites, burns, and bad ideas.",
+      image: "/images/sting-salve-label.png",
       tag: "Essential"
+    },
+    {
+      id: 8,
+      name: "Hive Mind Fuel",
+      price: "$6.00",
+      description: "Liquid adrenaline for the chronically lost. Honey energy gel.",
+      image: "/images/hive-mind-fuel-label.png",
+      tag: "Fuel"
+    },
+    {
+      id: 9,
+      name: "New Prospect Kit",
+      price: "$50.00",
+      description: "Everything you need to join the swarm. Includes balm, soap, and stickers.",
+      image: "/images/starter-kit-label.png",
+      tag: "Bundle"
     }
   ];
 
@@ -217,7 +233,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-24">
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8 mb-24">
             {products.map((product) => (
               <Card key={product.id} className="bg-background border-4 border-black rounded-none overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 group">
                 <div className="relative h-64 overflow-hidden bg-gray-800 flex items-center justify-center p-4">
