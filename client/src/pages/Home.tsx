@@ -142,6 +142,16 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
+      {/* Maintenance Banner */}
+      <div className="bg-yellow-400 text-black font-heading text-center py-2 px-4 border-b-4 border-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, #000 0, #000 10px, transparent 10px, transparent 20px)" }}></div>
+        <div className="relative z-10 flex items-center justify-center gap-2 uppercase tracking-widest text-sm md:text-base font-bold">
+          <Skull className="h-4 w-4" />
+          <span>Website Under Maintenance - We're Fixing Stuff We Broke</span>
+          <Skull className="h-4 w-4" />
+        </div>
+      </div>
+
       {/* Navigation */}
       <nav className="border-b-4 border-primary sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
