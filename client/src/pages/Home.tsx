@@ -4,6 +4,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Skull, Zap, Droplet, Flame, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { JoinSwarmModal } from "@/components/JoinSwarmModal";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -212,9 +213,13 @@ export default function Home() {
               <Button size="lg" className="bg-primary text-background hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none border-2 border-transparent hover:border-black transition-all transform hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(199,0,57,1)]">
                 Shop the Stash
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none transition-all">
-                Join the Swarm
-              </Button>
+              <JoinSwarmModal 
+                trigger={
+                  <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none transition-all">
+                    Join the Swarm
+                  </Button>
+                }
+              />
             </div>
           </div>
           
