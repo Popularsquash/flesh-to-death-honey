@@ -444,9 +444,11 @@ export default function Home() {
                 </li>
               </ul>
               
-              <Button size="lg" className="bg-secondary text-white hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none border-none shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
-                Join the Beta Waitlist
-              </Button>
+              <a href="https://buzzkillbee-gno4vhs3.manus.space/" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-secondary text-white hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none border-none shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+                  Launch App
+                </Button>
+              </a>
             </div>
           </div>
         </div>

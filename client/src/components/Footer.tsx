@@ -22,7 +22,7 @@ export default function Footer() {
             <ul className="space-y-3 font-body text-gray-400">
               <li><a href="/#apparel" className="hover:text-primary transition-colors">Apparel</a></li>
               <li><a href="/#products" className="hover:text-primary transition-colors">Beeswax Products</a></li>
-              <li><a href="/#buzzkill" className="hover:text-primary transition-colors">BuzzKill App</a></li>
+              <li><a href="https://buzzkillbee-gno4vhs3.manus.space/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">BuzzKill App</a></li>
             </ul>
           </div>
           
