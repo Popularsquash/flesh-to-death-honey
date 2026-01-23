@@ -27,7 +27,7 @@ export function JoinSwarmModal({ trigger }: JoinSwarmModalProps) {
     const subject = encodeURIComponent("I want to join the Flesh to Death Swarm");
     const body = encodeURIComponent(`Add me to the list. My email is: ${email}\n\n(I understand this means I'll get emails about new drops, products, and general mayhem.)`);
     
-    window.location.href = `mailto:admin@fleshtodeathhoney.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:queenbeerider@fleshtodeathhoney.com?subject=${subject}&body=${body}`;
     setIsOpen(false);
     setEmail("");
   };
