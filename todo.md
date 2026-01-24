@@ -44,3 +44,12 @@
 - [x] Add "THE FLAG BEARER" T-Shirt design ($33.99-$36.99) - Bee with flag banner front, skull back
 - [x] Update shop page to display new T-shirt designs
 - [x] Verify all products display correctly with proper images
+
+## Replace AI Mockups with Actual Design Files
+- [x] Copy user's design files to project images folder
+- [x] Use standing bee illustration for THE SIGNATURE product
+- [x] Use Vegas motorcycle design for THE DAILY RIDER product  
+- [x] Use circle badge logo for THE FLAG BEARER product
+- [x] Update hero section with standing bee illustration
+- [x] Update database with new image paths
+- [x] Verify all images display correctly on shop page
