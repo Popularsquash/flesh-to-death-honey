@@ -32,3 +32,15 @@
 - [x] Add Men's Premium Heavyweight Tee product
 - [x] Test shop display with new products
 - [x] Test checkout flow with new products
+
+## Product Image Update
+- [ ] Fetch products from Personal orders Printful store
+- [ ] Replace mockup products with actual Printful products and images
+- [ ] Test shop display with real product images
+
+## T-Shirt Mockup Designs (from artifact)
+- [x] Add "THE SIGNATURE" T-Shirt design ($34.99-$37.99) - F2D bee front, full back print
+- [x] Add "THE DAILY RIDER" T-Shirt design ($32.99-$35.99) - Circle badge front, text back
+- [x] Add "THE FLAG BEARER" T-Shirt design ($33.99-$36.99) - Bee with flag banner front, skull back
+- [x] Update shop page to display new T-shirt designs
+- [x] Verify all products display correctly with proper images

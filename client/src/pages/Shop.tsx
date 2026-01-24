@@ -165,7 +165,7 @@ export default function Shop() {
                       <div className="flex justify-between items-start">
                         <CardTitle className="font-heading text-xl text-primary">{product.name}</CardTitle>
                         <span className="font-body font-bold text-lg text-white">
-                          {selectedVariant ? formatPrice(selectedVariant.retailPrice) : "N/A"}
+                          {firstVariant ? `From ${formatPrice(firstVariant.retailPrice)}` : "N/A"}
                         </span>
                       </div>
                     </CardHeader>

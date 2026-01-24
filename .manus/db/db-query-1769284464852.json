@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO products (name, description, thumbnailUrl, isActive) VALUES ('THE FLAG BEARER', 'Front-heavy design: Bee with flag banner \"FLESH TO DEATH\" and \"HONEY CO.\" (11\" x 13\"). Skull with honeycomb pattern on back (6\" x 8\"). Eye-catching flag banner is unique. Great conversation starter. Perfect for when YOU''RE leading the pack.', '/images/products/flag-bearer-tee.png', 1);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute INSERT INTO products (name, description, thumbnailUrl, isActive) VALUES ('THE FLAG BEARER', 'Front-heavy design: Bee with flag banner \"FLESH TO DEATH\" and \"HONEY CO.\" (11\" x 13\"). Skull with honeycomb pattern on back (6\" x 8\"). Eye-catching flag banner is unique. Great conversation starter. Perfect for when YOU''RE leading the pack.', '/images/products/flag-bearer-tee.png', 1);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 64
+}

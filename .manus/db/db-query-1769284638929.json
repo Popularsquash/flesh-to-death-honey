@@ -1,0 +1,80 @@
+{
+  "query": "SELECT pv.id, pv.productId, pv.name, pv.retailPrice, pv.size FROM productVariants pv LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT pv.id, pv.productId, pv.name, pv.retailPrice, pv.size FROM productVariants pv LIMIT 10;",
+  "rows": [
+    {
+      "id": "30001",
+      "productId": "1",
+      "name": "THE SIGNATURE - Black / S",
+      "retailPrice": "3499",
+      "size": "S"
+    },
+    {
+      "id": "30002",
+      "productId": "1",
+      "name": "THE SIGNATURE - Black / M",
+      "retailPrice": "3499",
+      "size": "M"
+    },
+    {
+      "id": "30003",
+      "productId": "1",
+      "name": "THE SIGNATURE - Black / L",
+      "retailPrice": "3499",
+      "size": "L"
+    },
+    {
+      "id": "30004",
+      "productId": "1",
+      "name": "THE SIGNATURE - Black / XL",
+      "retailPrice": "3599",
+      "size": "XL"
+    },
+    {
+      "id": "30005",
+      "productId": "1",
+      "name": "THE SIGNATURE - Black / 2XL",
+      "retailPrice": "3699",
+      "size": "2XL"
+    },
+    {
+      "id": "30006",
+      "productId": "1",
+      "name": "THE SIGNATURE - Black / 3XL",
+      "retailPrice": "3799",
+      "size": "3XL"
+    },
+    {
+      "id": "30007",
+      "productId": "2",
+      "name": "THE DAILY RIDER - Black / S",
+      "retailPrice": "3299",
+      "size": "S"
+    },
+    {
+      "id": "30008",
+      "productId": "2",
+      "name": "THE DAILY RIDER - Black / M",
+      "retailPrice": "3299",
+      "size": "M"
+    },
+    {
+      "id": "30009",
+      "productId": "2",
+      "name": "THE DAILY RIDER - Black / L",
+      "retailPrice": "3299",
+      "size": "L"
+    },
+    {
+      "id": "30010",
+      "productId": "2",
+      "name": "THE DAILY RIDER - Black / XL",
+      "retailPrice": "3399",
+      "size": "XL"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tproductId\tname\tretailPrice\tsize\n30001\t1\tTHE SIGNATURE - Black / S\t3499\tS\n30002\t1\tTHE SIGNATURE - Black / M\t3499\tM\n30003\t1\tTHE SIGNATURE - Black / L\t3499\tL\n30004\t1\tTHE SIGNATURE - Black / XL\t3599\tXL\n30005\t1\tTHE SIGNATURE - Black / 2XL\t3699\t2XL\n30006\t1\tTHE SIGNATURE - Black / 3XL\t3799\t3XL\n30007\t2\tTHE DAILY RIDER - Black / S\t3299\tS\n30008\t2\tTHE DAILY RIDER - Black / M\t3299\tM\n30009\t2\tTHE DAILY RIDER - Black / L\t3299\tL\n30010\t2\tTHE DAILY RIDER - Black / XL\t3399\tXL\n",
+  "stderr": "",
+  "execution_time_ms": 60
+}

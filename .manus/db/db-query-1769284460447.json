@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO products (name, description, thumbnailUrl, isActive) VALUES ('THE DAILY RIDER', 'Bold circle badge logo on front center (10\"), \"HONEY CO. Nevada Apiary • Est. 2025\" text across shoulders on back (11\" wide). Classic MC/riding culture badge design. Less aggressive than huge back print = more wearable. Best seller potential - appeals to widest audience.', '/images/products/daily-rider-tee.png', 1);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute INSERT INTO products (name, description, thumbnailUrl, isActive) VALUES ('THE DAILY RIDER', 'Bold circle badge logo on front center (10\"), \"HONEY CO. Nevada Apiary • Est. 2025\" text across shoulders on back (11\" wide). Classic MC/riding culture badge design. Less aggressive than huge back print = more wearable. Best seller potential - appeals to widest audience.', '/images/products/daily-rider-tee.png', 1);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 60
+}

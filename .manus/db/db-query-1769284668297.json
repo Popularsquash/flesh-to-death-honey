@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO productVariants (productId, printfulVariantId, name, retailPrice, currency, imageUrl, size, color, inStock) VALUES\n(30001, 10001, 'THE SIGNATURE - Black / S', 3499, 'USD', '/images/products/signature-tee.png', 'S', 'Black', 1),\n(30001, 10002, 'THE SIGNATURE - Black / M', 3499, 'USD', '/images/products/signature-tee.png', 'M', 'Black', 1),\n(30001, 10003, 'THE SIGNATURE - Black / L', 3499, 'USD', '/images/products/signature-tee.png', 'L', 'Black', 1),\n(30001, 10004, 'THE SIGNATURE - Black / XL', 3599, 'USD', '/images/products/signature-tee.png', 'XL', 'Black', 1),\n(30001, 10005, 'THE SIGNATURE - Black / 2XL', 3699, 'USD', '/images/products/signature-tee.png', '2XL', 'Black', 1),\n(30001, 10006, 'THE SIGNATURE - Black / 3XL', 3799, 'USD', '/images/products/signature-tee.png', '3XL', 'Black', 1);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute INSERT INTO productVariants (productId, printfulVariantId, name, retailPrice, currency, imageUrl, size, color, inStock) VALUES\n(30001, 10001, 'THE SIGNATURE - Black / S', 3499, 'USD', '/images/products/signature-tee.png', 'S', 'Black', 1),\n(30001, 10002, 'THE SIGNATURE - Black / M', 3499, 'USD', '/images/products/signature-tee.png', 'M', 'Black', 1),\n(30001, 10003, 'THE SIGNATURE - Black / L', 3499, 'USD', '/images/products/signature-tee.png', 'L', 'Black', 1),\n(30001, 10004, 'THE SIGNATURE - Black / XL', 3599, 'USD', '/images/products/signature-tee.png', 'XL', 'Black', 1),\n(30001, 10005, 'THE SIGNATURE - Black / 2XL', 3699, 'USD', '/images/products/signature-tee.png', '2XL', 'Black', 1),\n(30001, 10006, 'THE SIGNATURE - Black / 3XL', 3799, 'USD', '/images/products/signature-tee.png', '3XL', 'Black', 1);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 59
+}

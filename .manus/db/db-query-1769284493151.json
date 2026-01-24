@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO productVariants (productId, printfulVariantId, name, retailPrice, currency, imageUrl, size, color, inStock) VALUES\n(2, 10011, 'THE DAILY RIDER - Black / S', 3299, 'USD', '/images/products/daily-rider-tee.png', 'S', 'Black', 1),\n(2, 10012, 'THE DAILY RIDER - Black / M', 3299, 'USD', '/images/products/daily-rider-tee.png', 'M', 'Black', 1),\n(2, 10013, 'THE DAILY RIDER - Black / L', 3299, 'USD', '/images/products/daily-rider-tee.png', 'L', 'Black', 1),\n(2, 10014, 'THE DAILY RIDER - Black / XL', 3399, 'USD', '/images/products/daily-rider-tee.png', 'XL', 'Black', 1),\n(2, 10015, 'THE DAILY RIDER - Black / 2XL', 3499, 'USD', '/images/products/daily-rider-tee.png', '2XL', 'Black', 1),\n(2, 10016, 'THE DAILY RIDER - Black / 3XL', 3599, 'USD', '/images/products/daily-rider-tee.png', '3XL', 'Black', 1);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute INSERT INTO productVariants (productId, printfulVariantId, name, retailPrice, currency, imageUrl, size, color, inStock) VALUES\n(2, 10011, 'THE DAILY RIDER - Black / S', 3299, 'USD', '/images/products/daily-rider-tee.png', 'S', 'Black', 1),\n(2, 10012, 'THE DAILY RIDER - Black / M', 3299, 'USD', '/images/products/daily-rider-tee.png', 'M', 'Black', 1),\n(2, 10013, 'THE DAILY RIDER - Black / L', 3299, 'USD', '/images/products/daily-rider-tee.png', 'L', 'Black', 1),\n(2, 10014, 'THE DAILY RIDER - Black / XL', 3399, 'USD', '/images/products/daily-rider-tee.png', 'XL', 'Black', 1),\n(2, 10015, 'THE DAILY RIDER - Black / 2XL', 3499, 'USD', '/images/products/daily-rider-tee.png', '2XL', 'Black', 1),\n(2, 10016, 'THE DAILY RIDER - Black / 3XL', 3599, 'USD', '/images/products/daily-rider-tee.png', '3XL', 'Black', 1);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 65
+}

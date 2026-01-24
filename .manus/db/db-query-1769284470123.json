@@ -1,0 +1,22 @@
+{
+  "query": "SELECT id, name FROM products;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT id, name FROM products;",
+  "rows": [
+    {
+      "id": "30001",
+      "name": "THE SIGNATURE"
+    },
+    {
+      "id": "30002",
+      "name": "THE DAILY RIDER"
+    },
+    {
+      "id": "30003",
+      "name": "THE FLAG BEARER"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\n30001\tTHE SIGNATURE\n30002\tTHE DAILY RIDER\n30003\tTHE FLAG BEARER\n",
+  "stderr": "",
+  "execution_time_ms": 59
+}

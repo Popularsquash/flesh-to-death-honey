@@ -1,0 +1,25 @@
+{
+  "query": "SELECT p.id, p.name, COUNT(pv.id) as variant_count FROM products p LEFT JOIN productVariants pv ON p.id = pv.productId GROUP BY p.id, p.name;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT p.id, p.name, COUNT(pv.id) as variant_count FROM products p LEFT JOIN productVariants pv ON p.id = pv.productId GROUP BY p.id, p.name;",
+  "rows": [
+    {
+      "id": "30002",
+      "name": "THE DAILY RIDER",
+      "variant_count": "0"
+    },
+    {
+      "id": "30003",
+      "name": "THE FLAG BEARER",
+      "variant_count": "0"
+    },
+    {
+      "id": "30001",
+      "name": "THE SIGNATURE",
+      "variant_count": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tvariant_count\n30002\tTHE DAILY RIDER\t0\n30003\tTHE FLAG BEARER\t0\n30001\tTHE SIGNATURE\t0\n",
+  "stderr": "",
+  "execution_time_ms": 58
+}

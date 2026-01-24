@@ -1,0 +1,34 @@
+{
+  "query": "SELECT id, name, thumbnailUrl, description FROM products;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT id, name, thumbnailUrl, description FROM products;",
+  "rows": [
+    {
+      "id": "1",
+      "name": "Death Rider Football Jersey",
+      "thumbnailUrl": "https://files.cdn.printful.com/o/upload/product-catalog-img/d0/d05ae634a9736063dfb1edd1df2c4ad6_l",
+      "description": "Rep the hive on the field or in the pit. This breathable mesh jersey stays light, even in heat or crowds. The loose fit and side slits give plenty of room to move. All-over sublimation print that won't crack or fade."
+    },
+    {
+      "id": "2",
+      "name": "Hive Guard Rashguard",
+      "thumbnailUrl": "https://files.cdn.printful.com/o/upload/product-catalog-img/f5/f515cd70efe83bee7e42d06c9e1c4e3c_l",
+      "description": "Don't let sunburn, wind, sand, or other elements ruin your day! This smooth and versatile long-sleeve rash guard will protect you while you have fun. All-over sublimation print with UPF 38 protection."
+    },
+    {
+      "id": "3",
+      "name": "Swarm Tank Top",
+      "thumbnailUrl": "https://files.cdn.printful.com/o/upload/product-catalog-img/f1/f1a2114ae93247d9c839ab55e5300ba5_l",
+      "description": "Premium quality tank top for the hive. Made from 100% combed ring-spun cotton for ultimate comfort. Perfect for hot days, gym sessions, or showing off your ink."
+    },
+    {
+      "id": "4",
+      "name": "Heavyweight Hive Tee",
+      "thumbnailUrl": "https://files.cdn.printful.com/o/upload/product-catalog-img/27/27a0e15dcb0e2d6b6ba4a836d05a2d1e_l",
+      "description": "Elevate your outfit with this premium heavyweight tee. Structured, classy fit with a thick fabric that drapes well. 100% ring-spun cotton, pre-shrunk for a lasting fit."
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tthumbnailUrl\tdescription\n1\tDeath Rider Football Jersey\thttps://files.cdn.printful.com/o/upload/product-catalog-img/d0/d05ae634a9736063dfb1edd1df2c4ad6_l\tRep the hive on the field or in the pit. This breathable mesh jersey stays light, even in heat or crowds. The loose fit and side slits give plenty of room to move. All-over sublimation print that won't crack or fade.\n2\tHive Guard Rashguard\thttps://files.cdn.printful.com/o/upload/product-catalog-img/f5/f515cd70efe83bee7e42d06c9e1c4e3c_l\tDon't let sunburn, wind, sand, or other elements ruin your day! This smooth and versatile long-sleeve rash guard will protect you while you have fun. All-over sublimation print with UPF 38 protection.\n3\tSwarm Tank Top\thttps://files.cdn.printful.com/o/upload/product-catalog-img/f1/f1a2114ae93247d9c839ab55e5300ba5_l\tPremium quality tank top for the hive. Made from 100% combed ring-spun cotton for ultimate comfort. Perfect for hot days, gym sessions, or showing off your ink.\n4\tHeavyweight Hive Tee\thttps://files.cdn.printful.com/o/upload/product-catalog-img/27/27a0e15dcb0e2d6b6ba4a836d05a2d1e_l\tElevate your outfit with this premium heavyweight tee. Structured, classy fit with a thick fabric that drapes well. 100% ring-spun cotton, pre-shrunk for a lasting fit.\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}

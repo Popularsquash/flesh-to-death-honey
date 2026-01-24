@@ -1,0 +1,50 @@
+{
+  "query": "SELECT * FROM products;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT * FROM products;",
+  "rows": [
+    {
+      "id": "1",
+      "printfulSyncProductId": "NULL",
+      "name": "Death Rider Football Jersey",
+      "description": "Rep the hive on the field or in the pit. This breathable mesh jersey stays light, even in heat or crowds. The loose fit and side slits give plenty of room to move. All-over sublimation print that won't crack or fade.",
+      "thumbnailUrl": "https://files.cdn.printful.com/o/upload/product-catalog-img/d0/d05ae634a9736063dfb1edd1df2c4ad6_l",
+      "isActive": "1",
+      "createdAt": "2026-01-24 01:11:14",
+      "updatedAt": "2026-01-24 01:11:14"
+    },
+    {
+      "id": "2",
+      "printfulSyncProductId": "NULL",
+      "name": "Hive Guard Rashguard",
+      "description": "Don't let sunburn, wind, sand, or other elements ruin your day! This smooth and versatile long-sleeve rash guard will protect you while you have fun. All-over sublimation print with UPF 38 protection.",
+      "thumbnailUrl": "https://files.cdn.printful.com/o/upload/product-catalog-img/f5/f515cd70efe83bee7e42d06c9e1c4e3c_l",
+      "isActive": "1",
+      "createdAt": "2026-01-24 01:11:14",
+      "updatedAt": "2026-01-24 01:11:14"
+    },
+    {
+      "id": "3",
+      "printfulSyncProductId": "NULL",
+      "name": "Swarm Tank Top",
+      "description": "Premium quality tank top for the hive. Made from 100% combed ring-spun cotton for ultimate comfort. Perfect for hot days, gym sessions, or showing off your ink.",
+      "thumbnailUrl": "https://files.cdn.printful.com/o/upload/product-catalog-img/f1/f1a2114ae93247d9c839ab55e5300ba5_l",
+      "isActive": "1",
+      "createdAt": "2026-01-24 01:11:14",
+      "updatedAt": "2026-01-24 01:11:14"
+    },
+    {
+      "id": "4",
+      "printfulSyncProductId": "NULL",
+      "name": "Heavyweight Hive Tee",
+      "description": "Elevate your outfit with this premium heavyweight tee. Structured, classy fit with a thick fabric that drapes well. 100% ring-spun cotton, pre-shrunk for a lasting fit.",
+      "thumbnailUrl": "https://files.cdn.printful.com/o/upload/product-catalog-img/27/27a0e15dcb0e2d6b6ba4a836d05a2d1e_l",
+      "isActive": "1",
+      "createdAt": "2026-01-24 01:11:14",
+      "updatedAt": "2026-01-24 01:11:14"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tprintfulSyncProductId\tname\tdescription\tthumbnailUrl\tisActive\tcreatedAt\tupdatedAt\n1\tNULL\tDeath Rider Football Jersey\tRep the hive on the field or in the pit. This breathable mesh jersey stays light, even in heat or crowds. The loose fit and side slits give plenty of room to move. All-over sublimation print that won't crack or fade.\thttps://files.cdn.printful.com/o/upload/product-catalog-img/d0/d05ae634a9736063dfb1edd1df2c4ad6_l\t1\t2026-01-24 01:11:14\t2026-01-24 01:11:14\n2\tNULL\tHive Guard Rashguard\tDon't let sunburn, wind, sand, or other elements ruin your day! This smooth and versatile long-sleeve rash guard will protect you while you have fun. All-over sublimation print with UPF 38 protection.\thttps://files.cdn.printful.com/o/upload/product-catalog-img/f5/f515cd70efe83bee7e42d06c9e1c4e3c_l\t1\t2026-01-24 01:11:14\t2026-01-24 01:11:14\n3\tNULL\tSwarm Tank Top\tPremium quality tank top for the hive. Made from 100% combed ring-spun cotton for ultimate comfort. Perfect for hot days, gym sessions, or showing off your ink.\thttps://files.cdn.printful.com/o/upload/product-catalog-img/f1/f1a2114ae93247d9c839ab55e5300ba5_l\t1\t2026-01-24 01:11:14\t2026-01-24 01:11:14\n4\tNULL\tHeavyweight Hive Tee\tElevate your outfit with this premium heavyweight tee. Structured, classy fit with a thick fabric that drapes well. 100% ring-spun cotton, pre-shrunk for a lasting fit.\thttps://files.cdn.printful.com/o/upload/product-catalog-img/27/27a0e15dcb0e2d6b6ba4a836d05a2d1e_l\t1\t2026-01-24 01:11:14\t2026-01-24 01:11:14\n",
+  "stderr": "",
+  "execution_time_ms": 103
+}
