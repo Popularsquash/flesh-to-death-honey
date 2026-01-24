@@ -149,21 +149,25 @@ export default function Shop() {
                 
                 return (
                   <Card key={product.id} className="bg-background border-4 border-black rounded-none overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(255,195,0,1)] transition-all duration-300 group">
-                    <div className="relative h-64 overflow-hidden bg-gray-800 flex items-center justify-center p-4">
-                      <div className="absolute top-4 right-4 z-10">
-                        <Badge className="bg-primary text-black rounded-none font-heading uppercase text-sm border-2 border-black">
-                          POD
-                        </Badge>
-                      </div>
-                      <img 
-                        src={selectedVariant?.imageUrl || product.thumbnailUrl || "/images/hero-bee.png"} 
-                        alt={product.name} 
-                        className="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
+<Link href={`/product/${product.id}`}>
+                                      <div className="relative h-64 overflow-hidden bg-gray-800 flex items-center justify-center p-4 cursor-pointer">
+                                        <div className="absolute top-4 right-4 z-10">
+                                          <Badge className="bg-primary text-black rounded-none font-heading uppercase text-sm border-2 border-black">
+                                            POD
+                                          </Badge>
+                                        </div>
+                                        <img 
+                                          src={selectedVariant?.imageUrl || product.thumbnailUrl || "/images/hero-bee.png"} 
+                                          alt={product.name} 
+                                          className="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500"
+                                        />
+                                      </div>
+                                    </Link>
                     <CardHeader className="border-b-2 border-dashed border-gray-700">
                       <div className="flex justify-between items-start">
-                        <CardTitle className="font-heading text-xl text-primary">{product.name}</CardTitle>
+                        <Link href={`/product/${product.id}`}>
+                                          <CardTitle className="font-heading text-xl text-primary hover:text-secondary transition-colors cursor-pointer">{product.name}</CardTitle>
+                                        </Link>
                         <span className="font-body font-bold text-lg text-white">
                           {firstVariant ? `From ${formatPrice(firstVariant.retailPrice)}` : "N/A"}
                         </span>

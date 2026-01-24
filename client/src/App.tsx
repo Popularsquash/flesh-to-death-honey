@@ -14,6 +14,9 @@ import ShippingReturns from "./pages/ShippingReturns";
 import ContactUs from "./pages/ContactUs";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
+import Comics from "./pages/Comics";
+import ComicIssue from "./pages/ComicIssue";
+import ProductDetail from "./pages/ProductDetail";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -28,6 +31,9 @@ function Router() {
       <Route path={"/contact-us"} component={ContactUs} />
       <Route path={"/checkout"} component={Checkout} />
       <Route path={"/order-success"} component={OrderSuccess} />
+      <Route path={"/comics"} component={Comics} />
+      <Route path={"/comics/:id"} component={ComicIssue} />
+      <Route path={"/product/:id"} component={ProductDetail} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

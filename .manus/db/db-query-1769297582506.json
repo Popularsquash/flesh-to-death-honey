@@ -1,0 +1,42 @@
+{
+  "query": "SELECT id, name FROM products WHERE name LIKE '%Sticker%' OR name LIKE '%Patch%' ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT id, name FROM products WHERE name LIKE '%Sticker%' OR name LIKE '%Patch%' ORDER BY id;",
+  "rows": [
+    {
+      "id": "60001",
+      "name": "Skull Wrench Sticker"
+    },
+    {
+      "id": "60002",
+      "name": "Flesh to Death Flag Sticker"
+    },
+    {
+      "id": "60003",
+      "name": "Honey Jar Sticker"
+    },
+    {
+      "id": "60004",
+      "name": "Poker Chip Sticker"
+    },
+    {
+      "id": "60005",
+      "name": "Bee Head Sticker"
+    },
+    {
+      "id": "60006",
+      "name": "F2D Sticker Pack"
+    },
+    {
+      "id": "60007",
+      "name": "Skull Wrench Patch"
+    },
+    {
+      "id": "60008",
+      "name": "F2D Circle Badge Patch"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\n60001\tSkull Wrench Sticker\n60002\tFlesh to Death Flag Sticker\n60003\tHoney Jar Sticker\n60004\tPoker Chip Sticker\n60005\tBee Head Sticker\n60006\tF2D Sticker Pack\n60007\tSkull Wrench Patch\n60008\tF2D Circle Badge Patch\n",
+  "stderr": "",
+  "execution_time_ms": 61
+}

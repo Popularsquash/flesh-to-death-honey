@@ -173,6 +173,7 @@ export default function Home() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8 font-body text-lg uppercase tracking-wide font-bold">
             <Link href="/shop" className="hover:text-primary transition-colors">Shop</Link>
+            <Link href="/comics" className="hover:text-primary transition-colors">Comics</Link>
             <a href="#buzzkill" className="hover:text-primary transition-colors">BuzzKill App</a>
             <a href="#about" className="hover:text-primary transition-colors">About</a>
             <Link href="/cart">
@@ -192,6 +193,7 @@ export default function Home() {
         {isMenuOpen && (
           <div className="md:hidden bg-background border-b-4 border-primary p-4 flex flex-col gap-4 font-heading text-xl uppercase">
             <Link href="/shop" onClick={() => setIsMenuOpen(false)}>Shop</Link>
+            <Link href="/comics" onClick={() => setIsMenuOpen(false)}>Comics</Link>
             <a href="#buzzkill" onClick={() => setIsMenuOpen(false)}>BuzzKill App</a>
             <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
             <Link href="/cart">

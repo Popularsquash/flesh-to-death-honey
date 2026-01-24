@@ -53,3 +53,38 @@
 - [x] Update hero section with standing bee illustration
 - [x] Update database with new image paths
 - [x] Verify all images display correctly on shop page
+
+## Sticker and Patch Products
+- [ ] Create sticker products from design elements (skull, flag, honey jar, poker chip)
+- [ ] Create embroidered patch products
+- [ ] Add sticker pack bundle product
+- [ ] Update database with new products and variants
+
+## Product Detail Pages
+- [ ] Create product detail page component with front/back image gallery
+- [ ] Add size chart component for T-shirts
+- [ ] Implement product routing (/product/:id)
+- [ ] Add related products section
+- [ ] Test product detail page navigation
+
+## Printful Integration
+- [ ] Set up Printful API client
+- [ ] Create product sync functionality
+- [ ] Map local products to Printful catalog
+- [ ] Test order creation flow
+
+## Comic Blog Section
+- [x] Create comic blog database schema (posts, pages, episodes)
+- [x] Add Comic Blog navigation tab to header
+- [x] Create Comic Blog listing page
+- [x] Create individual comic page/episode viewer
+- [ ] Add admin interface for uploading comics (future enhancement)
+- [x] Style comic viewer with dark theme matching site
+
+## Product Detail Pages
+- [x] Create product detail page component
+- [x] Add front/back image views
+- [x] Add size chart modal
+- [x] Add size selector with pricing
+- [x] Add to cart functionality
+- [x] Link from shop page to detail page

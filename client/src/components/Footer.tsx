@@ -23,6 +23,7 @@ export default function Footer() {
               <li><a href="/#apparel" className="hover:text-primary transition-colors">Apparel</a></li>
               <li><a href="/#products" className="hover:text-primary transition-colors">Beeswax Products</a></li>
               <li><a href="https://buzzkillbee-gno4vhs3.manus.space/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">BuzzKill App</a></li>
+              <li><Link href="/comics" className="hover:text-primary transition-colors">Comics</Link></li>
             </ul>
           </div>
           
