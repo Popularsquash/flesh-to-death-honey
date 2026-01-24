@@ -1,3 +1,5 @@
+import { useAuth } from "@/_core/hooks/useAuth";
+import { useCart } from "@/contexts/CartContext";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,6 +10,11 @@ import { JoinSwarmModal } from "@/components/JoinSwarmModal";
 import { Link } from "wouter";
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+  const { itemCount } = useCart();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const products = [
@@ -165,12 +172,14 @@ export default function Home() {
           
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8 font-body text-lg uppercase tracking-wide font-bold">
-            <a href="#products" className="hover:text-primary transition-colors">Shop</a>
+            <Link href="/shop" className="hover:text-primary transition-colors">Shop</Link>
             <a href="#buzzkill" className="hover:text-primary transition-colors">BuzzKill App</a>
             <a href="#about" className="hover:text-primary transition-colors">About</a>
-            <Button variant="outline" className="border-2 border-primary hover:bg-primary hover:text-background font-bold uppercase rounded-none">
-              <ShoppingCart className="mr-2 h-5 w-5" /> Cart (0)
-            </Button>
+            <Link href="/cart">
+              <Button variant="outline" className="border-2 border-primary hover:bg-primary hover:text-background font-bold uppercase rounded-none">
+                <ShoppingCart className="mr-2 h-5 w-5" /> Cart ({itemCount})
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -182,12 +191,14 @@ export default function Home() {
         {/* Mobile Nav */}
         {isMenuOpen && (
           <div className="md:hidden bg-background border-b-4 border-primary p-4 flex flex-col gap-4 font-heading text-xl uppercase">
-            <a href="#products" onClick={() => setIsMenuOpen(false)}>Shop</a>
+            <Link href="/shop" onClick={() => setIsMenuOpen(false)}>Shop</Link>
             <a href="#buzzkill" onClick={() => setIsMenuOpen(false)}>BuzzKill App</a>
             <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
-            <Button className="w-full bg-primary text-background font-bold rounded-none">
-              Cart (0)
-            </Button>
+            <Link href="/cart">
+              <Button className="w-full bg-primary text-background font-bold rounded-none">
+                Cart ({itemCount})
+              </Button>
+            </Link>
           </div>
         )}
       </nav>
@@ -210,9 +221,11 @@ export default function Home() {
               Weaponized beeswax, honey, and anarchic humor for outlaws, poets, and people who laugh at warning labels.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-background hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none border-2 border-transparent hover:border-black transition-all transform hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(199,0,57,1)]">
-                Shop the Stash
-              </Button>
+              <Link href="/shop">
+                <Button size="lg" className="bg-primary text-background hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none border-2 border-transparent hover:border-black transition-all transform hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(199,0,57,1)]">
+                  Shop the Stash
+                </Button>
+              </Link>
               <JoinSwarmModal 
                 trigger={
                   <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none transition-all">
