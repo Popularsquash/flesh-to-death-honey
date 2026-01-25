@@ -252,7 +252,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full h-16 bg-primary" style={{ clipPath: "polygon(0 40%, 100% 0%, 100% 100%, 0% 100%)" }}></div>
       </header>
 
-      {/* Products Section */}
+      {/* Products Section - Coming Soon */}
       <section id="products" className="py-24 bg-primary relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -264,95 +264,90 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8 mb-24">
-            {products.map((product) => (
-              <Card key={product.id} className="bg-background border-4 border-black rounded-none overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 group">
-                <div className="relative h-64 overflow-hidden bg-gray-800 flex items-center justify-center p-4">
-                  <div className="absolute top-4 right-4 z-10">
-                    <Badge className="bg-secondary text-white rounded-none font-heading uppercase text-sm border-2 border-black">
-                      {product.tag}
-                    </Badge>
+          {/* Coming Soon Banner */}
+          <div className="relative bg-black border-4 border-dashed border-white p-12 mb-24 text-center overflow-hidden">
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute inset-0 bg-[url('/images/skeleton-bees.png')] bg-repeat bg-center"></div>
+            </div>
+            <div className="relative z-10">
+              <Badge className="bg-secondary text-white rounded-none font-heading uppercase text-xl px-6 py-2 mb-6 inline-block border-2 border-white animate-pulse">
+                🧪 In Development
+              </Badge>
+              <h3 className="text-4xl md:text-5xl font-heading text-primary mb-6">
+                Currently Perfecting the Road Rage Genome
+              </h3>
+              <p className="text-xl font-body text-gray-300 max-w-3xl mx-auto mb-6 leading-relaxed">
+                Our beeswax formulas are being venom-tested on freshly decapitated wasp bodies in our underground Nevada lab. 
+                The science is questionable. The results are inevitable.
+              </p>
+              <div className="flex flex-wrap justify-center gap-8 mb-8">
+                {products.slice(0, 3).map((product) => (
+                  <div key={product.id} className="relative group">
+                    <div className="w-32 h-32 bg-gray-900 border-2 border-gray-700 flex items-center justify-center p-2 opacity-60 group-hover:opacity-80 transition-opacity">
+                      <img src={product.image} alt={product.name} className="w-full h-full object-contain grayscale" />
+                    </div>
+                    <p className="text-xs text-gray-500 mt-2 font-body">{product.name}</p>
                   </div>
-                  <img 
-                    src={product.image} 
-                    alt={product.name} 
-                    className="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <CardHeader className="border-b-2 border-dashed border-gray-700">
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="font-heading text-2xl text-primary">{product.name}</CardTitle>
-                    <span className="font-body font-bold text-xl text-white">{product.price}</span>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-6">
-                  <p className="text-gray-400 font-body text-lg leading-relaxed">
-                    {product.description}
-                  </p>
-                </CardContent>
-                <CardFooter>
-                  <Button className="w-full bg-white text-black hover:bg-secondary hover:text-white font-heading uppercase text-lg rounded-none border-2 border-black transition-colors">
-                    Add to Cart
+                ))}
+              </div>
+              <p className="text-sm font-body text-gray-500 italic border-t border-gray-800 pt-6 max-w-2xl mx-auto">
+                ⚠️ No wasps were harmed in the making of any product. They were already dead. We found them like that. Honest.
+              </p>
+              <JoinSwarmModal 
+                trigger={
+                  <Button className="mt-8 bg-primary text-black hover:bg-white font-heading uppercase text-lg px-8 py-4 rounded-none border-2 border-white transition-colors">
+                    Get Notified When We Launch
                   </Button>
-                </CardFooter>
-              </Card>
-            ))}
+                }
+              />
+            </div>
           </div>
 
-          {/* The Hive's Revenge Collection */}
+          {/* The Hive's Revenge Collection - Coming Soon */}
           <div className="text-center mb-16 pt-12 border-t-4 border-black border-dashed">
             <h2 className="text-5xl md:text-7xl font-heading text-black mb-4 mt-12">
               The Hive's <span className="text-white grunge-text">Revenge</span>
             </h2>
             <p className="text-xl font-body text-black/80 max-w-2xl mx-auto font-bold mb-2">
-              We Put the ‘Mental’ in Experimental. (And the ‘Hurt’ in Dessert.)
-            </p>
-            <p className="text-sm font-body text-black/60 italic max-w-xl mx-auto">
-              Warning: All jars double as ash trays / emotional support objects. Labels dissolve in rain to reveal hidden insults.
+              We Put the 'Mental' in Experimental. (And the 'Hurt' in Dessert.)
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-            {revengeCollection.map((item) => (
-              <Card key={item.id} className="bg-black border-4 border-white rounded-none overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] transition-all duration-300 group relative">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent opacity-50"></div>
-                <div className="relative h-64 overflow-hidden bg-gray-900 flex items-center justify-center p-4">
-                  <div className="absolute top-4 right-4 z-10">
-                    <Badge className="bg-red-600 text-white rounded-none font-heading uppercase text-sm border-2 border-white animate-pulse">
-                      {item.tag}
-                    </Badge>
-                  </div>
-                  <img 
-                    src={item.image} 
-                    alt={item.name} 
-                    className="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100"
-                  />
+          {/* Revenge Collection Coming Soon */}
+          <div className="relative bg-black border-4 border-red-600 p-12 mb-24 text-center overflow-hidden">
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-900 to-black"></div>
+            </div>
+            <div className="relative z-10">
+              <Badge className="bg-red-600 text-white rounded-none font-heading uppercase text-xl px-6 py-2 mb-6 inline-block border-2 border-white">
+                🔥 Phase 2: Classified
+              </Badge>
+              <h3 className="text-3xl md:text-4xl font-heading text-white mb-6">
+                Experimental Formulas Currently Fermenting
+              </h3>
+              <p className="text-lg font-body text-gray-300 max-w-3xl mx-auto mb-6 leading-relaxed">
+                Our "Revenge" line requires ingredients that are technically legal in Nevada but morally questionable everywhere else. 
+                We're talking propolis harvested during thunderstorms, beeswax aged in decommissioned gas tanks, 
+                and honey from bees that exclusively pollinate haunted sunflower fields.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 mb-8 max-w-2xl mx-auto">
+                <div className="bg-gray-900/50 p-4 border border-red-900">
+                  <p className="text-red-500 font-heading text-sm">Road Rash Roulette™</p>
+                  <p className="text-gray-500 text-xs">Status: Curing</p>
                 </div>
-                <CardHeader className="border-b-2 border-dashed border-gray-700 bg-black">
-                  <div className="flex flex-col gap-1">
-                    <div className="flex justify-between items-start">
-                      <CardTitle className="font-heading text-2xl text-white">{item.name}</CardTitle>
-                      <span className="font-body font-bold text-xl text-primary">{item.price}</span>
-                    </div>
-                    <p className="text-xs font-heading text-secondary uppercase tracking-wider">{item.tagline}</p>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-6 bg-black">
-                  <p className="text-gray-300 font-body text-lg leading-relaxed mb-4">
-                    {item.description}
-                  </p>
-                  <div className="bg-gray-900 p-3 border-l-4 border-red-600">
-                    <p className="text-red-500 text-xs font-bold uppercase mb-1">⚠️ Warning</p>
-                    <p className="text-gray-400 text-xs italic">{item.warning}</p>
-                  </div>
-                </CardContent>
-                <CardFooter className="bg-black">
-                  <Button className="w-full bg-white text-black hover:bg-red-600 hover:text-white font-heading uppercase text-lg rounded-none border-2 border-white transition-colors">
-                    Risk It
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
+                <div className="bg-gray-900/50 p-4 border border-red-900">
+                  <p className="text-red-500 font-heading text-sm">Midnight Comb Glow™</p>
+                  <p className="text-gray-500 text-xs">Status: Glowing</p>
+                </div>
+                <div className="bg-gray-900/50 p-4 border border-red-900">
+                  <p className="text-red-500 font-heading text-sm">Buzz Wax™</p>
+                  <p className="text-gray-500 text-xs">Status: Gaining Sentience</p>
+                </div>
+              </div>
+              <p className="text-xs font-body text-gray-600 italic max-w-xl mx-auto">
+                All jars will double as ash trays / emotional support objects. Labels dissolve in rain to reveal hidden insults.
+              </p>
+            </div>
           </div>
 
           {/* Apparel Section */}

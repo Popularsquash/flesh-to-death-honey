@@ -1,0 +1,120 @@
+{
+  "query": "SELECT * FROM products ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT * FROM products ORDER BY id;",
+  "rows": [
+    {
+      "id": "30001",
+      "printfulSyncProductId": "NULL",
+      "name": "THE SIGNATURE",
+      "description": "The HERO product. Small F2D bee logo on front left chest (3.5\"), full \"FLESH TO DEATH\" bee on honeycomb on back (14\" x 16\"). Professional front = wearable anywhere. MASSIVE back design = statement piece when riding. People behind you at stoplights will remember this.",
+      "thumbnailUrl": "/images/products/standing-bee.png",
+      "isActive": "1",
+      "createdAt": "2026-01-24 19:54:15",
+      "updatedAt": "2026-01-24 20:15:05"
+    },
+    {
+      "id": "30002",
+      "printfulSyncProductId": "NULL",
+      "name": "THE DAILY RIDER",
+      "description": "Bold circle badge logo on front center (10\"), \"HONEY CO. Nevada Apiary • Est. 2025\" text across shoulders on back (11\" wide). Classic MC/riding culture badge design. Less aggressive than huge back print = more wearable. Best seller potential - appeals to widest audience.",
+      "thumbnailUrl": "/images/products/vegas-motorcycle.png",
+      "isActive": "1",
+      "createdAt": "2026-01-24 19:54:20",
+      "updatedAt": "2026-01-24 20:15:05"
+    },
+    {
+      "id": "30003",
+      "printfulSyncProductId": "NULL",
+      "name": "THE FLAG BEARER",
+      "description": "Front-heavy design: Bee with flag banner \"FLESH TO DEATH\" and \"HONEY CO.\" (11\" x 13\"). Skull with honeycomb pattern on back (6\" x 8\"). Eye-catching flag banner is unique. Great conversation starter. Perfect for when YOU'RE leading the pack.",
+      "thumbnailUrl": "/images/products/circle-badge.png",
+      "isActive": "1",
+      "createdAt": "2026-01-24 19:54:24",
+      "updatedAt": "2026-01-24 20:15:05"
+    },
+    {
+      "id": "60001",
+      "printfulSyncProductId": "NULL",
+      "name": "Skull Wrench Sticker",
+      "description": "Die-cut vinyl sticker featuring the iconic skull with wrench. Weather-resistant, perfect for helmets, tanks, and toolboxes.",
+      "thumbnailUrl": "/images/products/skull-sticker.png",
+      "isActive": "1",
+      "createdAt": "2026-01-24 23:32:58",
+      "updatedAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "60002",
+      "printfulSyncProductId": "NULL",
+      "name": "Flesh to Death Flag Sticker",
+      "description": "Die-cut vinyl sticker of the classic F2D pennant flag. Slap it anywhere that needs more attitude.",
+      "thumbnailUrl": "/images/products/flag-sticker.png",
+      "isActive": "1",
+      "createdAt": "2026-01-24 23:32:58",
+      "updatedAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "60003",
+      "printfulSyncProductId": "NULL",
+      "name": "Honey Jar Sticker",
+      "description": "Die-cut vinyl sticker of the Flesh to Death honey jar. Sweet and rebellious.",
+      "thumbnailUrl": "/images/products/jar-sticker.png",
+      "isActive": "1",
+      "createdAt": "2026-01-24 23:32:58",
+      "updatedAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "60004",
+      "printfulSyncProductId": "NULL",
+      "name": "Poker Chip Sticker",
+      "description": "Die-cut vinyl sticker of the F2D poker chip. For those who gamble with fate.",
+      "thumbnailUrl": "/images/products/chip-sticker.png",
+      "isActive": "1",
+      "createdAt": "2026-01-24 23:32:58",
+      "updatedAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "60005",
+      "printfulSyncProductId": "NULL",
+      "name": "Bee Head Sticker",
+      "description": "Die-cut vinyl sticker of the biker bee mascot. The face of the hive.",
+      "thumbnailUrl": "/images/products/bee-head-sticker.png",
+      "isActive": "1",
+      "createdAt": "2026-01-24 23:32:58",
+      "updatedAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "60006",
+      "printfulSyncProductId": "NULL",
+      "name": "F2D Sticker Pack",
+      "description": "Complete set of all 5 Flesh to Death stickers. Save $10 when you buy the pack.",
+      "thumbnailUrl": "/images/products/sticker-pack.png",
+      "isActive": "1",
+      "createdAt": "2026-01-24 23:32:58",
+      "updatedAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "60007",
+      "printfulSyncProductId": "NULL",
+      "name": "Skull Wrench Patch",
+      "description": "Embroidered iron-on patch featuring the skull with wrench. 3.5\" diameter.",
+      "thumbnailUrl": "/images/products/skull-patch.png",
+      "isActive": "1",
+      "createdAt": "2026-01-24 23:32:58",
+      "updatedAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "60008",
+      "printfulSyncProductId": "NULL",
+      "name": "F2D Circle Badge Patch",
+      "description": "Embroidered iron-on patch of the classic circle badge logo. 4\" diameter.",
+      "thumbnailUrl": "/images/products/badge-patch.png",
+      "isActive": "1",
+      "createdAt": "2026-01-24 23:32:58",
+      "updatedAt": "2026-01-24 23:32:58"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tprintfulSyncProductId\tname\tdescription\tthumbnailUrl\tisActive\tcreatedAt\tupdatedAt\n30001\tNULL\tTHE SIGNATURE\tThe HERO product. Small F2D bee logo on front left chest (3.5\"), full \"FLESH TO DEATH\" bee on honeycomb on back (14\" x 16\"). Professional front = wearable anywhere. MASSIVE back design = statement piece when riding. People behind you at stoplights will remember this.\t/images/products/standing-bee.png\t1\t2026-01-24 19:54:15\t2026-01-24 20:15:05\n30002\tNULL\tTHE DAILY RIDER\tBold circle badge logo on front center (10\"), \"HONEY CO. Nevada Apiary • Est. 2025\" text across shoulders on back (11\" wide). Classic MC/riding culture badge design. Less aggressive than huge back print = more wearable. Best seller potential - appeals to widest audience.\t/images/products/vegas-motorcycle.png\t1\t2026-01-24 19:54:20\t2026-01-24 20:15:05\n30003\tNULL\tTHE FLAG BEARER\tFront-heavy design: Bee with flag banner \"FLESH TO DEATH\" and \"HONEY CO.\" (11\" x 13\"). Skull with honeycomb pattern on back (6\" x 8\"). Eye-catching flag banner is unique. Great conversation starter. Perfect for when YOU'RE leading the pack.\t/images/products/circle-badge.png\t1\t2026-01-24 19:54:24\t2026-01-24 20:15:05\n60001\tNULL\tSkull Wrench Sticker\tDie-cut vinyl sticker featuring the iconic skull with wrench. Weather-resistant, perfect for helmets, tanks, and toolboxes.\t/images/products/skull-sticker.png\t1\t2026-01-24 23:32:58\t2026-01-24 23:32:58\n60002\tNULL\tFlesh to Death Flag Sticker\tDie-cut vinyl sticker of the classic F2D pennant flag. Slap it anywhere that needs more attitude.\t/images/products/flag-sticker.png\t1\t2026-01-24 23:32:58\t2026-01-24 23:32:58\n60003\tNULL\tHoney Jar Sticker\tDie-cut vinyl sticker of the Flesh to Death honey jar. Sweet and rebellious.\t/images/products/jar-sticker.png\t1\t2026-01-24 23:32:58\t2026-01-24 23:32:58\n60004\tNULL\tPoker Chip Sticker\tDie-cut vinyl sticker of the F2D poker chip. For those who gamble with fate.\t/images/products/chip-sticker.png\t1\t2026-01-24 23:32:58\t2026-01-24 23:32:58\n60005\tNULL\tBee Head Sticker\tDie-cut vinyl sticker of the biker bee mascot. The face of the hive.\t/images/products/bee-head-sticker.png\t1\t2026-01-24 23:32:58\t2026-01-24 23:32:58\n60006\tNULL\tF2D Sticker Pack\tComplete set of all 5 Flesh to Death stickers. Save $10 when you buy the pack.\t/images/products/sticker-pack.png\t1\t2026-01-24 23:32:58\t2026-01-24 23:32:58\n60007\tNULL\tSkull Wrench Patch\tEmbroidered iron-on patch featuring the skull with wrench. 3.5\" diameter.\t/images/products/skull-patch.png\t1\t2026-01-24 23:32:58\t2026-01-24 23:32:58\n60008\tNULL\tF2D Circle Badge Patch\tEmbroidered iron-on patch of the classic circle badge logo. 4\" diameter.\t/images/products/badge-patch.png\t1\t2026-01-24 23:32:58\t2026-01-24 23:32:58\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}

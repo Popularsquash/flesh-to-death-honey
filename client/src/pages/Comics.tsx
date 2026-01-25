@@ -15,6 +15,17 @@ export default function Comics() {
       status: "NEW",
       description: "Every paradise has a serpent. Ours has a bear. Name's Biff. He doesn't pay for honey. He 'liberates' it. Watch as Buzzkill, Stinger, and Prop teach him a lesson he won't forget.",
     },
+    {
+      id: 2,
+      title: "The Yellowjacket Gang",
+      issue: "Issue #2",
+      subtitle: "Posers",
+      tagline: "They wear the stripes, but they ain't earned them.",
+      date: "Coming Soon",
+      thumbnail: "/assets/yellowjacket-gang-cover.jpg",
+      status: "COMING SOON",
+      description: "A rival gang rolls into town wearing yellow and black. They call themselves the Yellowjackets. They think they run these roads. Buzzkill and the crew have other plans. Time to show these posers what real stingers look like.",
+    },
   ];
 
   return (

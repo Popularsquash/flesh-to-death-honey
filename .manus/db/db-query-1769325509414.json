@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO productVariants (productId, printfulVariantId, name, sku, retailPrice, currency, size, color, inStock) VALUES\n(60001, 0, 'Skull Wrench Sticker - 3 inch', 'STK-SKULL-3', 500, 'USD', '3 inch', NULL, 1),\n(60001, 0, 'Skull Wrench Sticker - 4 inch', 'STK-SKULL-4', 700, 'USD', '4 inch', NULL, 1);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute INSERT INTO productVariants (productId, printfulVariantId, name, sku, retailPrice, currency, size, color, inStock) VALUES\n(60001, 0, 'Skull Wrench Sticker - 3 inch', 'STK-SKULL-3', 500, 'USD', '3 inch', NULL, 1),\n(60001, 0, 'Skull Wrench Sticker - 4 inch', 'STK-SKULL-4', 700, 'USD', '4 inch', NULL, 1);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 65
+}

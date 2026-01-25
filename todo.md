@@ -88,3 +88,20 @@
 - [x] Add size selector with pricing
 - [x] Add to cart functionality
 - [x] Link from shop page to detail page
+
+## Suggested Next Steps Implementation
+- [x] Add pricing to sticker product variants ($5-8 each)
+- [x] Add pricing to patch product variants ($10-12 each)
+- [x] Add pricing to sticker pack bundle ($20)
+- [x] Add Issue #2 "The Yellowjacket Gang" comic placeholder
+- [x] Generate sticker mockup images (on laptop/helmet)
+- [x] Generate patch mockup images (on jacket)
+- [x] Update product images in database
+
+## Trust Badges
+- [x] Add secure payment badges (Stripe, SSL, etc.) to footer
+- [x] Add trust indicators for customer confidence
+
+## Beeswax Products Coming Soon
+- [x] Update beeswax products section with "Coming Soon" status
+- [x] Add clever anarchic copy about road rage genome and wasp testing
