@@ -113,3 +113,8 @@
 - [x] Create customer reviews section for products
 - [x] Add reviews database schema
 - [x] Remove Gen Alpha/Z description from footer
+
+## Branding Updates
+- [x] Remove black background from bee illustration (make transparent)
+- [x] Make "Flesh to Death Honey" branding larger on main page
+- [x] Update hero section with transparent bee image

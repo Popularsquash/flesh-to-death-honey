@@ -215,13 +215,15 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10 grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <Badge className="bg-secondary text-white border-none rounded-none px-4 py-1 text-lg font-heading uppercase transform -rotate-2 inline-block">
-              Sweetness with a Sting
+              Biker Apothecary
             </Badge>
-            <h1 className="text-6xl md:text-8xl font-heading leading-none text-white grunge-text">
-              Where the <span className="text-primary">Hive</span> Meets the <span className="text-primary">Highway</span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading leading-none text-white grunge-text">
+              <span className="text-primary">Flesh to Death</span>
+              <br />
+              <span className="text-4xl md:text-5xl lg:text-6xl">Honey Co.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 font-body max-w-lg border-l-4 border-primary pl-6">
-              Weaponized beeswax, honey, and anarchic humor for outlaws, poets, and people who laugh at warning labels.
+            <p className="text-lg md:text-xl text-gray-300 font-body max-w-lg border-l-4 border-primary pl-6">
+              Where the <span className="text-primary font-bold">Hive</span> meets the <span className="text-primary font-bold">Highway</span>. Born from beekeeping, tattoos, and the motorcycle lifestyle.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Link href="/shop">
@@ -242,9 +244,9 @@ export default function Home() {
           <div className="relative flex justify-center">
             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full transform scale-75"></div>
             <img 
-              src="/images/hero-bee.png" 
+              src="/images/hero-bee-transparent.png" 
               alt="Biker Bee Mascot" 
-              className="relative z-10 w-full max-w-md drop-shadow-[0_0_15px_rgba(255,195,0,0.5)] transform hover:scale-105 transition-transform duration-500"
+              className="relative z-10 w-full max-w-lg drop-shadow-[0_0_25px_rgba(255,195,0,0.6)] transform hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
