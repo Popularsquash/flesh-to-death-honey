@@ -105,3 +105,11 @@
 ## Beeswax Products Coming Soon
 - [x] Update beeswax products section with "Coming Soon" status
 - [x] Add clever anarchic copy about road rage genome and wasp testing
+
+## Email Capture & Reviews
+- [x] Add email capture functionality for beeswax launch notifications
+- [x] Create database table for email subscribers
+- [x] Build email signup form component
+- [x] Create customer reviews section for products
+- [x] Add reviews database schema
+- [x] Remove Gen Alpha/Z description from footer

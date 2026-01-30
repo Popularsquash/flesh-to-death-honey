@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Skull, Zap, Droplet, Flame, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { JoinSwarmModal } from "@/components/JoinSwarmModal";
+import { EmailSignup } from "@/components/EmailSignup";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -293,13 +294,13 @@ export default function Home() {
               <p className="text-sm font-body text-gray-500 italic border-t border-gray-800 pt-6 max-w-2xl mx-auto">
                 ⚠️ No wasps were harmed in the making of any product. They were already dead. We found them like that. Honest.
               </p>
-              <JoinSwarmModal 
-                trigger={
-                  <Button className="mt-8 bg-primary text-black hover:bg-white font-heading uppercase text-lg px-8 py-4 rounded-none border-2 border-white transition-colors">
-                    Get Notified When We Launch
-                  </Button>
-                }
-              />
+              <div className="mt-8 max-w-md mx-auto">
+                <EmailSignup 
+                  interest="beeswax_launch"
+                  buttonText="Buzz Me When Ready"
+                  placeholder="your@email.com"
+                />
+              </div>
             </div>
           </div>
 

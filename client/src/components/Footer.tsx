@@ -14,7 +14,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-gray-500 font-body max-w-sm mx-auto md:mx-0">
-              Small scale motorcycle lifestyle brand focusing on apparel and beeswax products for the younger generation alpha and Z.
+              Weaponized beeswax, honey, and anarchic humor for those who ride hard and sting harder.
             </p>
           </div>
           

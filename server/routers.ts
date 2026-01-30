@@ -20,6 +20,15 @@ import {
   getOrderBySessionId,
   getUserOrders,
 } from "./checkout";
+import {
+  subscribeEmail,
+  unsubscribeEmail,
+  getAllSubscribers,
+  addReview,
+  getProductReviews,
+  getProductRating,
+  deleteReview,
+} from "./emailReviews";
 
 export const appRouter = router({
   system: systemRouter,
@@ -180,6 +189,83 @@ export const appRouter = router({
       const orders = await getUserOrders(ctx.user.id);
       return orders;
     }),
+  }),
+
+  // Email subscription routes
+  email: router({
+    // Subscribe to launch notifications
+    subscribe: publicProcedure
+      .input(z.object({
+        email: z.string().email(),
+        interest: z.string().optional(),
+      }))
+      .mutation(async ({ input }) => {
+        const result = await subscribeEmail(input.email, input.interest);
+        return result;
+      }),
+
+    // Unsubscribe
+    unsubscribe: publicProcedure
+      .input(z.object({ email: z.string().email() }))
+      .mutation(async ({ input }) => {
+        const result = await unsubscribeEmail(input.email);
+        return result;
+      }),
+
+    // Get all subscribers (admin only)
+    list: adminProcedure.query(async () => {
+      const subscribers = await getAllSubscribers();
+      return subscribers;
+    }),
+  }),
+
+  // Reviews routes
+  reviews: router({
+    // Get reviews for a product
+    list: publicProcedure
+      .input(z.object({ productId: z.number() }))
+      .query(async ({ input }) => {
+        const reviews = await getProductReviews(input.productId);
+        return reviews;
+      }),
+
+    // Get average rating for a product
+    rating: publicProcedure
+      .input(z.object({ productId: z.number() }))
+      .query(async ({ input }) => {
+        const rating = await getProductRating(input.productId);
+        return rating;
+      }),
+
+    // Add a review
+    add: publicProcedure
+      .input(z.object({
+        productId: z.number(),
+        reviewerName: z.string().min(1).max(100),
+        rating: z.number().min(1).max(5),
+        title: z.string().max(255).optional(),
+        content: z.string().max(2000).optional(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        const result = await addReview({
+          productId: input.productId,
+          userId: ctx.user?.id,
+          reviewerName: input.reviewerName,
+          rating: input.rating,
+          title: input.title,
+          content: input.content,
+        });
+        return result;
+      }),
+
+    // Delete a review
+    delete: protectedProcedure
+      .input(z.object({ reviewId: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        const isAdmin = ctx.user.role === 'admin';
+        const result = await deleteReview(input.reviewId, ctx.user.id, isAdmin);
+        return result;
+      }),
   }),
 });
 

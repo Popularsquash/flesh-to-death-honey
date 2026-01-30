@@ -20,6 +20,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { CustomerReviews } from "@/components/CustomerReviews";
 
 // Size chart data for T-shirts
 const sizeChart = {
@@ -293,6 +294,15 @@ export default function ProductDetail() {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Customer Reviews Section */}
+      <section className="py-16 bg-gray-900 border-t-4 border-primary">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <CustomerReviews productId={productId} productName={product.name} />
           </div>
         </div>
       </section>

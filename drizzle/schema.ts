@@ -134,3 +134,46 @@ export const orders = mysqlTable("orders", {
 
 export type Order = typeof orders.$inferSelect;
 export type InsertOrder = typeof orders.$inferInsert;
+
+
+/**
+ * Email subscribers for launch notifications
+ */
+export const emailSubscribers = mysqlTable("emailSubscribers", {
+  id: int("id").autoincrement().primaryKey(),
+  /** Subscriber email address */
+  email: varchar("email", { length: 320 }).notNull().unique(),
+  /** What they're subscribing for */
+  interest: varchar("interest", { length: 100 }).default("beeswax_launch").notNull(),
+  /** Whether subscription is active */
+  isActive: int("isActive").default(1).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type EmailSubscriber = typeof emailSubscribers.$inferSelect;
+export type InsertEmailSubscriber = typeof emailSubscribers.$inferInsert;
+
+/**
+ * Customer reviews for products
+ */
+export const reviews = mysqlTable("reviews", {
+  id: int("id").autoincrement().primaryKey(),
+  /** Product being reviewed */
+  productId: int("productId").notNull(),
+  /** User who wrote the review (null for anonymous) */
+  userId: int("userId"),
+  /** Reviewer name (for display) */
+  reviewerName: varchar("reviewerName", { length: 100 }).notNull(),
+  /** Rating 1-5 stars */
+  rating: int("rating").notNull(),
+  /** Review title */
+  title: varchar("title", { length: 255 }),
+  /** Review content */
+  content: text("content"),
+  /** Whether review is approved/visible */
+  isApproved: int("isApproved").default(1).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type Review = typeof reviews.$inferSelect;
+export type InsertReview = typeof reviews.$inferInsert;
