@@ -166,9 +166,14 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <img src="/images/hero-bee.png" alt="Logo" className="h-12 w-12 object-contain" />
-            <span className="font-heading text-2xl md:text-3xl text-primary tracking-widest grunge-text">
-              FLESH TO DEATH
-            </span>
+            <div className="flex flex-col leading-none">
+              <span className="font-heading text-xl md:text-2xl text-primary tracking-widest grunge-text">
+                FLESH TO DEATH
+              </span>
+              <span className="font-heading text-xs md:text-sm text-white tracking-[0.3em]">
+                HONEY CO.
+              </span>
+            </div>
           </div>
           
           {/* Desktop Nav */}
@@ -176,7 +181,7 @@ export default function Home() {
             <Link href="/shop" className="hover:text-primary transition-colors">Shop</Link>
             <Link href="/comics" className="hover:text-primary transition-colors">Comics</Link>
             <a href="#buzzkill" className="hover:text-primary transition-colors">BuzzKill App</a>
-            <a href="#about" className="hover:text-primary transition-colors">About</a>
+            <Link href="/about" className="hover:text-primary transition-colors">About</Link>
             <Link href="/cart">
               <Button variant="outline" className="border-2 border-primary hover:bg-primary hover:text-background font-bold uppercase rounded-none">
                 <ShoppingCart className="mr-2 h-5 w-5" /> Cart ({itemCount})
@@ -196,7 +201,7 @@ export default function Home() {
             <Link href="/shop" onClick={() => setIsMenuOpen(false)}>Shop</Link>
             <Link href="/comics" onClick={() => setIsMenuOpen(false)}>Comics</Link>
             <a href="#buzzkill" onClick={() => setIsMenuOpen(false)}>BuzzKill App</a>
-            <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
+            <Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
             <Link href="/cart">
               <Button className="w-full bg-primary text-background font-bold rounded-none">
                 Cart ({itemCount})

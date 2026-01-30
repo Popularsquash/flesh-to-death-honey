@@ -118,3 +118,13 @@
 - [x] Remove black background from bee illustration (make transparent)
 - [x] Make "Flesh to Death Honey" branding larger on main page
 - [x] Update hero section with transparent bee image
+
+## Mobile Comic Reader
+- [x] Make comic panels larger and readable on mobile
+- [x] Add tap-to-zoom or swipe navigation for panels
+- [x] Improve tablet layout for comic pages
+
+## Suggested Next Steps
+- [x] Update nav logo to include "HONEY CO." for brand consistency
+- [x] Create About page with beekeeping, tattoos, motorcycle lifestyle story
+- [x] Update social media links to real accounts (@fleshtodeathhoney on Instagram)
