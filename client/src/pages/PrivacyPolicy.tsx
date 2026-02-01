@@ -52,12 +52,12 @@ export default function PrivacyPolicy() {
               <div className="bg-primary p-3 rounded-none rotate-3">
                 <Skull className="h-8 w-8 text-black" />
               </div>
-              <h2 className="text-3xl font-heading text-black uppercase">1. What We Steal (Data Collection)</h2>
+              <h2 className="text-3xl font-heading text-white uppercase">1. What We Steal (Data Collection)</h2>
             </div>
-            <Card className="bg-white border-4 border-black rounded-none">
+            <Card className="bg-zinc-900 border-4 border-primary rounded-none">
               <CardContent className="pt-6">
-                <p className="mb-4">We only collect the basics needed to get your gear to your door:</p>
-                <ul className="list-disc list-inside space-y-2 font-bold ml-4">
+                <p className="mb-4 text-gray-200">We only collect the basics needed to get your gear to your door:</p>
+                <ul className="list-disc list-inside space-y-2 font-bold ml-4 text-gray-200">
                   <li>Your Name (or whatever alias you're using to hide from the feds)</li>
                   <li>Shipping Address (so the mailman knows where to drop the goods)</li>
                   <li>Email Address (for order updates and occasional sarcastic rants)</li>
@@ -73,15 +73,15 @@ export default function PrivacyPolicy() {
               <div className="bg-black p-3 rounded-none -rotate-2">
                 <Cookie className="h-8 w-8 text-primary" />
               </div>
-              <h2 className="text-3xl font-heading text-black uppercase">2. Cookies (Not the Edible Kind)</h2>
+              <h2 className="text-3xl font-heading text-white uppercase">2. Cookies (Not the Edible Kind)</h2>
             </div>
-            <Card className="bg-white border-4 border-black rounded-none">
+            <Card className="bg-zinc-900 border-4 border-primary rounded-none">
               <CardContent className="pt-6">
-                <p className="mb-4">
+                <p className="mb-4 text-gray-200">
                   Yes, we use cookies. Not the grandma-baked kind. The digital kind that helps the site remember 
                   what's in your cart so you don't have to start over every time you get distracted by a shiny object.
                 </p>
-                <p className="font-bold italic text-gray-600">
+                <p className="font-bold italic text-gray-400">
                   "By using this site, you agree to let us put a tiny digital crumb on your browser. If you don't like it, 
                   go clear your cache and live in the stone age."
                 </p>
@@ -95,14 +95,14 @@ export default function PrivacyPolicy() {
               <div className="bg-primary p-3 rounded-none rotate-1">
                 <Eye className="h-8 w-8 text-black" />
               </div>
-              <h2 className="text-3xl font-heading text-black uppercase">3. Snitches Get Stitches (Sharing)</h2>
+              <h2 className="text-3xl font-heading text-white uppercase">3. Snitches Get Stitches (Sharing)</h2>
             </div>
-            <Card className="bg-white border-4 border-black rounded-none">
+            <Card className="bg-zinc-900 border-4 border-primary rounded-none">
               <CardContent className="pt-6">
-                <p className="mb-4">
+                <p className="mb-4 text-gray-200">
                   We don't sell your data. We're beekeepers, not data brokers. The only people we share your info with are:
                 </p>
-                <ul className="list-disc list-inside space-y-2 ml-4">
+                <ul className="list-disc list-inside space-y-2 ml-4 text-gray-200">
                   <li><strong>The Post Office:</strong> Because teleportation isn't real yet.</li>
                   <li><strong>Payment Processors:</strong> To make sure your money is actually money.</li>
                   <li><strong>The Bees:</strong> They know everything anyway. Resistance is futile.</li>
@@ -117,41 +117,41 @@ export default function PrivacyPolicy() {
               <div className="bg-secondary p-3 rounded-none -rotate-3">
                 <ShieldAlert className="h-8 w-8 text-black" />
               </div>
-              <h2 className="text-3xl font-heading text-black uppercase">4. BuzzKill App Data Safety</h2>
+              <h2 className="text-3xl font-heading text-white uppercase">4. BuzzKill App Data Safety</h2>
             </div>
-            <Card className="bg-white border-4 border-black rounded-none">
+            <Card className="bg-zinc-900 border-4 border-primary rounded-none">
               <CardContent className="pt-6 space-y-6">
-                <p className="font-bold">
+                <p className="font-bold text-gray-200">
                   For the Google Play Console nerds and the paranoid beekeepers, here is exactly what the BuzzKill app touches:
                 </p>
                 
                 <div className="space-y-4">
                   <div className="border-l-4 border-primary pl-4">
-                    <h3 className="font-heading text-xl mb-2">Location Permissions (Apiary Mapping)</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-heading text-xl mb-2 text-primary">Location Permissions (Apiary Mapping)</h3>
+                    <p className="text-gray-300">
                       <strong>Why we need it:</strong> To map your hives. We can't tell you where your bees are if we don't know where you are.
                     </p>
-                    <p className="text-gray-600">
+                    <p className="text-gray-300">
                       <strong>Justification:</strong> Used strictly for placing hive markers on the map. We don't track your movements, and we definitely don't care where you go for coffee.
                     </p>
                   </div>
 
                   <div className="border-l-4 border-primary pl-4">
-                    <h3 className="font-heading text-xl mb-2">Camera Permissions (Hive Photos)</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-heading text-xl mb-2 text-primary">Camera Permissions (Hive Photos)</h3>
+                    <p className="text-gray-300">
                       <strong>Why we need it:</strong> So you can take pictures of your frames, queens, and weird comb patterns.
                     </p>
-                    <p className="text-gray-600">
+                    <p className="text-gray-300">
                       <strong>Justification:</strong> Photos are stored locally or synced to your account solely for your inspection records. We don't look at them unless you send them to support asking "Is this foulbrood?"
                     </p>
                   </div>
 
                   <div className="border-l-4 border-primary pl-4">
-                    <h3 className="font-heading text-xl mb-2">Data Export & Backup</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-heading text-xl mb-2 text-primary">Data Export & Backup</h3>
+                    <p className="text-gray-300">
                       <strong>Your Data is Yours:</strong> Beekeeping records are critical. You can export your entire hive history at any time.
                     </p>
-                    <p className="text-gray-600">
+                    <p className="text-gray-300">
                       <strong>Backup:</strong> We perform daily backups of cloud data. If you delete your account, we wipe your data after a 30-day "oops" grace period.
                     </p>
                   </div>
@@ -166,11 +166,11 @@ export default function PrivacyPolicy() {
               <div className="bg-black p-3 rounded-none rotate-6">
                 <Lock className="h-8 w-8 text-primary" />
               </div>
-              <h2 className="text-3xl font-heading text-black uppercase">5. Security (Fort Knox-ish)</h2>
+              <h2 className="text-3xl font-heading text-white uppercase">5. Security (Fort Knox-ish)</h2>
             </div>
-            <Card className="bg-white border-4 border-black rounded-none">
+            <Card className="bg-zinc-900 border-4 border-primary rounded-none">
               <CardContent className="pt-6">
-                <p>
+                <p className="text-gray-200">
                   We use industry-standard encryption to keep your info safe. Basically, it's harder to hack our site 
                   than it is to explain to your mom why you bought "Road Rash Roulette" salve.
                 </p>
@@ -182,7 +182,7 @@ export default function PrivacyPolicy() {
           <div className="text-center pt-12 border-t-4 border-black border-dashed">
             <ShieldAlert className="h-16 w-16 mx-auto text-red-600 mb-4" />
             <h3 className="text-2xl font-heading mb-2">Still Paranoid?</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-300">
               Wrap your computer in tinfoil and send us cash via carrier pigeon. We're flexible.
             </p>
             <p className="text-sm text-gray-400 mt-8">

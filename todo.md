@@ -128,3 +128,8 @@
 - [x] Update nav logo to include "HONEY CO." for brand consistency
 - [x] Create About page with beekeeping, tattoos, motorcycle lifestyle story
 - [x] Update social media links to real accounts (@fleshtodeathhoney on Instagram)
+
+## Text Visibility Fixes
+- [x] Fix text visibility on No Snitches Policy page
+- [x] Fix text visibility on Terms of Service page
+- [x] Ensure all legal pages have readable text contrast

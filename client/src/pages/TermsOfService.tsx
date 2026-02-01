@@ -49,11 +49,11 @@ export default function TermsOfService() {
               <div className="bg-primary p-3 rounded-none rotate-3">
                 <AlertTriangle className="h-8 w-8 text-black" />
               </div>
-              <h2 className="text-3xl font-heading text-black uppercase">1. Product Usage (Don't Be Stupid)</h2>
+              <h2 className="text-3xl font-heading text-white uppercase">1. Product Usage (Don't Be Stupid)</h2>
             </div>
-            <Card className="bg-white border-4 border-black rounded-none">
+            <Card className="bg-zinc-900 border-4 border-primary rounded-none">
               <CardContent className="pt-6">
-                <ul className="list-disc list-inside space-y-2 font-bold ml-4">
+                <ul className="list-disc list-inside space-y-2 font-bold ml-4 text-gray-200">
                   <li><strong>Brap Balm:</strong> It's for leather. Do not eat it. Do not put it in your eyes.</li>
                   <li><strong>Soap:</strong> It washes away dirt, not your criminal record.</li>
                   <li><strong>Hot Honey:</strong> It's hot. If you cry, that's on you.</li>
@@ -69,14 +69,14 @@ export default function TermsOfService() {
               <div className="bg-black p-3 rounded-none -rotate-2">
                 <ScrollText className="h-8 w-8 text-primary" />
               </div>
-              <h2 className="text-3xl font-heading text-black uppercase">2. BuzzKill App Terms</h2>
+              <h2 className="text-3xl font-heading text-white uppercase">2. BuzzKill App Terms</h2>
             </div>
-            <Card className="bg-white border-4 border-black rounded-none">
+            <Card className="bg-zinc-900 border-4 border-primary rounded-none">
               <CardContent className="pt-6">
-                <p className="mb-4">
+                <p className="mb-4 text-gray-200">
                   The BuzzKill app is a tool. It doesn't replace common sense.
                 </p>
-                <ul className="list-disc list-inside space-y-2 ml-4">
+                <ul className="list-disc list-inside space-y-2 ml-4 text-gray-200">
                   <li><strong>Accuracy:</strong> We try to be accurate, but if the app says your hive is "Happy" and they swarm 5 minutes later, that's nature.</li>
                   <li><strong>Data:</strong> You own your data. We just store it. See our Privacy Policy for the boring details.</li>
                   <li><strong>Subscription:</strong> If you stop paying, we stop hosting your data. We're not a charity.</li>
@@ -91,14 +91,14 @@ export default function TermsOfService() {
               <div className="bg-primary p-3 rounded-none rotate-1">
                 <Gavel className="h-8 w-8 text-black" />
               </div>
-              <h2 className="text-3xl font-heading text-black uppercase">3. Liability (Not Our Fault)</h2>
+              <h2 className="text-3xl font-heading text-white uppercase">3. Liability (Not Our Fault)</h2>
             </div>
-            <Card className="bg-white border-4 border-black rounded-none">
+            <Card className="bg-zinc-900 border-4 border-primary rounded-none">
               <CardContent className="pt-6">
-                <p>
+                <p className="text-gray-200">
                   Flesh to Death Honey Co. is not liable for:
                 </p>
-                <ul className="list-disc list-inside space-y-2 ml-4 mt-2">
+                <ul className="list-disc list-inside space-y-2 ml-4 mt-2 text-gray-200">
                   <li>Bee stings (obviously).</li>
                   <li>Speeding tickets received while rushing to buy our products.</li>
                   <li>Existential dread caused by reading our labels.</li>
