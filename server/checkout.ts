@@ -251,13 +251,30 @@ export async function handlePaymentSuccess(sessionId: string): Promise<void> {
       await confirmPrintfulOrder(printfulOrder.id);
       console.log("Printful order confirmed for fulfillment");
 
-    } catch (error) {
-      console.error("Failed to submit order to Printful:", error);
-      // Order is still saved, can be manually processed
+    } catch (error: any) {
+      const errorMessage = error?.message || "Unknown Printful API error";
+      console.error("Failed to submit order to Printful:", errorMessage);
+      
+      // Update order with error details for manual processing
       await db
         .update(orders)
-        .set({ status: "paid" }) // Keep as paid, needs manual intervention
+        .set({ 
+          status: "pending_manual",
+          printfulError: errorMessage,
+          requiresManualProcessing: 1,
+        })
         .where(eq(orders.id, orderId));
+      
+      // Notify owner about failed order
+      try {
+        const { notifyOwner } = await import("./_core/notification");
+        await notifyOwner({
+          title: `⚠️ Order #${orderId} Requires Manual Processing`,
+          content: `A new order was paid but could not be automatically submitted to Printful.\n\n**Order ID:** ${orderId}\n**Stripe Session:** ${sessionId}\n**Error:** ${errorMessage}\n\nPlease manually create this order in Printful or investigate the issue.`,
+        });
+      } catch (notifyError) {
+        console.error("Failed to send owner notification:", notifyError);
+      }
     }
   }
 
@@ -304,3 +321,44 @@ export async function getUserOrders(userId: number) {
 }
 
 export { stripe };
+
+
+/**
+ * Get all orders that require manual processing
+ */
+export async function getPendingManualOrders() {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  const pendingOrders = await db
+    .select()
+    .from(orders)
+    .where(eq(orders.requiresManualProcessing, 1))
+    .orderBy(orders.createdAt);
+
+  return pendingOrders;
+}
+
+/**
+ * Mark an order as manually processed
+ */
+export async function markOrderAsProcessed(orderId: number, printfulOrderId?: number) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  await db
+    .update(orders)
+    .set({
+      status: "processing",
+      requiresManualProcessing: 0,
+      printfulOrderId: printfulOrderId || undefined,
+      printfulError: null,
+    })
+    .where(eq(orders.id, orderId));
+
+  return { success: true };
+}

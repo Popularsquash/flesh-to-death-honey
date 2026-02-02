@@ -19,6 +19,8 @@ import {
   createCheckoutSession,
   getOrderBySessionId,
   getUserOrders,
+  getPendingManualOrders,
+  markOrderAsProcessed,
 } from "./checkout";
 import {
   subscribeEmail,
@@ -189,6 +191,20 @@ export const appRouter = router({
       const orders = await getUserOrders(ctx.user.id);
       return orders;
     }),
+
+    // Get all orders requiring manual processing (admin only)
+    pendingManual: adminProcedure.query(async () => {
+      const pendingOrders = await getPendingManualOrders();
+      return pendingOrders;
+    }),
+
+    // Mark order as manually processed (admin only)
+    markProcessed: adminProcedure
+      .input(z.object({ orderId: z.number(), printfulOrderId: z.number().optional() }))
+      .mutation(async ({ input }) => {
+        const result = await markOrderAsProcessed(input.orderId, input.printfulOrderId);
+        return result;
+      }),
   }),
 
   // Email subscription routes

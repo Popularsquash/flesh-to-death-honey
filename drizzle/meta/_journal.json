@@ -36,6 +36,13 @@
       "when": 1770054351229,
       "tag": "0004_colorful_ogun",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1770056745466,
+      "tag": "0005_sudden_boom_boom",
+      "breakpoints": true
     }
   ]
 }

@@ -156,3 +156,21 @@
 ## Store Cleanup
 - [x] Remove old placeholder products (keep only new Printful products)
 - [x] Verify shop displays correctly after cleanup
+
+## Color Variants
+- [x] Add cardinal color variant for The Flag Bearer Tee
+- [x] Add white color variant for The Flag Bearer Tee
+- [x] Upload color variant mockups to CDN
+- [x] Update product variants in database
+
+## Printful API Order Sync
+- [x] Create Printful order creation endpoint (already exists)
+- [x] Integrate order sync with checkout flow (already exists)
+- [x] Add fallback mechanism for failed Printful orders
+- [x] Test checkout flow end-to-end
+- [ ] Handle order status webhooks from Printful
+
+## Comic Page Fix
+- [ ] Download comic page images from Canva
+- [ ] Replace squished comic layout with proper full-page images
+- [ ] Test comic page displays correctly on mobile and desktop

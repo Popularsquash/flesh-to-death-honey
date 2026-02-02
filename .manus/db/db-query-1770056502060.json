@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO productVariants (productId, printfulVariantId, name, retailPrice, currency, size, color, inStock) \nSELECT \n  (SELECT id FROM products WHERE name = 'The Flag Bearer Tee - White' LIMIT 1),\n  20000 + ROW_NUMBER() OVER (),\n  CONCAT('White / ', size),\n  2500 + (CASE size WHEN 'S' THEN 0 WHEN 'M' THEN 0 WHEN 'L' THEN 0 WHEN 'XL' THEN 100 WHEN '2XL' THEN 200 WHEN '3XL' THEN 300 END),\n  'USD',\n  size,\n  'White',\n  1\nFROM (SELECT 'S' as size UNION SELECT 'M' UNION SELECT 'L' UNION SELECT 'XL' UNION SELECT '2XL' UNION SELECT '3XL') sizes;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute INSERT INTO productVariants (productId, printfulVariantId, name, retailPrice, currency, size, color, inStock) \nSELECT \n  (SELECT id FROM products WHERE name = 'The Flag Bearer Tee - White' LIMIT 1),\n  20000 + ROW_NUMBER() OVER (),\n  CONCAT('White / ', size),\n  2500 + (CASE size WHEN 'S' THEN 0 WHEN 'M' THEN 0 WHEN 'L' THEN 0 WHEN 'XL' THEN 100 WHEN '2XL' THEN 200 WHEN '3XL' THEN 300 END),\n  'USD',\n  size,\n  'White',\n  1\nFROM (SELECT 'S' as size UNION SELECT 'M' UNION SELECT 'L' UNION SELECT 'XL' UNION SELECT '2XL' UNION SELECT '3XL') sizes;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 62
+}

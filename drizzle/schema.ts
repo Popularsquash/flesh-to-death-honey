@@ -121,7 +121,11 @@ export const orders = mysqlTable("orders", {
   /** Printful order ID (set after order is submitted to Printful) */
   printfulOrderId: int("printfulOrderId"),
   /** Order status */
-  status: mysqlEnum("status", ["pending", "paid", "processing", "shipped", "delivered", "cancelled", "refunded"]).default("pending").notNull(),
+  status: mysqlEnum("status", ["pending", "paid", "processing", "shipped", "delivered", "cancelled", "refunded", "pending_manual"]).default("pending").notNull(),
+  /** Error message if Printful submission failed */
+  printfulError: text("printfulError"),
+  /** Whether order requires manual processing */
+  requiresManualProcessing: int("requiresManualProcessing").default(0).notNull(),
   /** Total amount in cents (cached for quick display) */
   totalAmount: int("totalAmount").notNull(),
   /** Currency */

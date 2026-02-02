@@ -1,0 +1,58 @@
+{
+  "query": "SELECT p.id, p.name, pv.id as variantId, pv.size, pv.color, pv.retailPrice FROM products p LEFT JOIN productVariants pv ON p.id = pv.productId WHERE p.name LIKE '%Flag Bearer%' ORDER BY pv.id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT p.id, p.name, pv.id as variantId, pv.size, pv.color, pv.retailPrice FROM products p LEFT JOIN productVariants pv ON p.id = pv.productId WHERE p.name LIKE '%Flag Bearer%' ORDER BY pv.id;",
+  "rows": [
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "variantId": "120008",
+      "size": "S",
+      "color": "Black",
+      "retailPrice": "2500"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "variantId": "120009",
+      "size": "M",
+      "color": "Black",
+      "retailPrice": "2500"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "variantId": "120010",
+      "size": "L",
+      "color": "Black",
+      "retailPrice": "2500"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "variantId": "120011",
+      "size": "XL",
+      "color": "Black",
+      "retailPrice": "2800"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "variantId": "120012",
+      "size": "2XL",
+      "color": "Black",
+      "retailPrice": "2800"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "variantId": "120013",
+      "size": "3XL",
+      "color": "Black",
+      "retailPrice": "2800"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tvariantId\tsize\tcolor\tretailPrice\n120003\tThe Flag Bearer Tee\t120008\tS\tBlack\t2500\n120003\tThe Flag Bearer Tee\t120009\tM\tBlack\t2500\n120003\tThe Flag Bearer Tee\t120010\tL\tBlack\t2500\n120003\tThe Flag Bearer Tee\t120011\tXL\tBlack\t2800\n120003\tThe Flag Bearer Tee\t120012\t2XL\tBlack\t2800\n120003\tThe Flag Bearer Tee\t120013\t3XL\tBlack\t2800\n",
+  "stderr": "",
+  "execution_time_ms": 93
+}

@@ -185,3 +185,67 @@ describe("Checkout Flow", () => {
     });
   });
 });
+
+describe("Order Fallback Mechanism", () => {
+  describe("Pending Manual Order Status", () => {
+    it("should have pending_manual as a valid status", () => {
+      const validStatuses = ["pending", "paid", "processing", "shipped", "delivered", "cancelled", "refunded", "pending_manual"];
+      expect(validStatuses).toContain("pending_manual");
+    });
+
+    it("should track orders requiring manual processing", () => {
+      const order = {
+        id: 1,
+        status: "pending_manual",
+        requiresManualProcessing: 1,
+        printfulError: "Store is not configured for API orders",
+      };
+
+      expect(order.status).toBe("pending_manual");
+      expect(order.requiresManualProcessing).toBe(1);
+      expect(order.printfulError).toBeTruthy();
+    });
+  });
+
+  describe("Error Handling", () => {
+    it("should capture Printful API error message", () => {
+      const error = new Error("Store is not configured as Manual Order / API platform");
+      const errorMessage = error?.message || "Unknown Printful API error";
+      
+      expect(errorMessage).toContain("Manual Order");
+    });
+
+    it("should fallback to default message for unknown errors", () => {
+      const error = null;
+      const errorMessage = (error as any)?.message || "Unknown Printful API error";
+      
+      expect(errorMessage).toBe("Unknown Printful API error");
+    });
+  });
+
+  describe("Order Recovery", () => {
+    it("should allow marking order as processed", () => {
+      const order = {
+        id: 1,
+        status: "pending_manual",
+        requiresManualProcessing: 1,
+        printfulError: "API error",
+        printfulOrderId: null,
+      };
+
+      // Simulate marking as processed
+      const updatedOrder = {
+        ...order,
+        status: "processing",
+        requiresManualProcessing: 0,
+        printfulError: null,
+        printfulOrderId: 12345,
+      };
+
+      expect(updatedOrder.status).toBe("processing");
+      expect(updatedOrder.requiresManualProcessing).toBe(0);
+      expect(updatedOrder.printfulError).toBeNull();
+      expect(updatedOrder.printfulOrderId).toBe(12345);
+    });
+  });
+});

@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO products (name, description, thumbnailUrl, backImageUrl, isActive) VALUES ('The Flag Bearer Tee - Cardinal', 'Unisex staple t-shirt featuring our standing bee mascot with the FLESH TO DEATH banner. Soft cotton blend in bold cardinal red.', 'https://files.manuscdn.com/user_upload_by_module/session_file/104679889/KwIDfMyMeASFlWmW.png', 'https://files.manuscdn.com/user_upload_by_module/session_file/104679889/sgjIdILxSJXwwLyo.png', 1);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute INSERT INTO products (name, description, thumbnailUrl, backImageUrl, isActive) VALUES ('The Flag Bearer Tee - Cardinal', 'Unisex staple t-shirt featuring our standing bee mascot with the FLESH TO DEATH banner. Soft cotton blend in bold cardinal red.', 'https://files.manuscdn.com/user_upload_by_module/session_file/104679889/KwIDfMyMeASFlWmW.png', 'https://files.manuscdn.com/user_upload_by_module/session_file/104679889/sgjIdILxSJXwwLyo.png', 1);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 57
+}
