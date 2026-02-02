@@ -1,0 +1,110 @@
+{
+  "query": "SELECT id, name, CASE WHEN thumbnailUrl LIKE '%manuscdn%' THEN 'NEW' ELSE 'OLD' END as type FROM products ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT id, name, CASE WHEN thumbnailUrl LIKE '%manuscdn%' THEN 'NEW' ELSE 'OLD' END as type FROM products ORDER BY id;",
+  "rows": [
+    {
+      "id": "30001",
+      "name": "THE SIGNATURE",
+      "type": "OLD"
+    },
+    {
+      "id": "30002",
+      "name": "THE DAILY RIDER",
+      "type": "OLD"
+    },
+    {
+      "id": "30003",
+      "name": "THE FLAG BEARER",
+      "type": "OLD"
+    },
+    {
+      "id": "60001",
+      "name": "Skull Wrench Sticker",
+      "type": "OLD"
+    },
+    {
+      "id": "60002",
+      "name": "Flesh to Death Flag Sticker",
+      "type": "OLD"
+    },
+    {
+      "id": "60003",
+      "name": "Honey Jar Sticker",
+      "type": "OLD"
+    },
+    {
+      "id": "60004",
+      "name": "Poker Chip Sticker",
+      "type": "OLD"
+    },
+    {
+      "id": "60005",
+      "name": "Bee Head Sticker",
+      "type": "OLD"
+    },
+    {
+      "id": "60006",
+      "name": "F2D Sticker Pack",
+      "type": "OLD"
+    },
+    {
+      "id": "60007",
+      "name": "Skull Wrench Patch",
+      "type": "OLD"
+    },
+    {
+      "id": "60008",
+      "name": "F2D Circle Badge Patch",
+      "type": "OLD"
+    },
+    {
+      "id": "90001",
+      "name": "Road Warrior Tee",
+      "type": "OLD"
+    },
+    {
+      "id": "90002",
+      "name": "Beekeeper Tank",
+      "type": "OLD"
+    },
+    {
+      "id": "90003",
+      "name": "Hive Mind Cap",
+      "type": "OLD"
+    },
+    {
+      "id": "90004",
+      "name": "Swarm Hoodie",
+      "type": "OLD"
+    },
+    {
+      "id": "120001",
+      "name": "Hive Mind Cap",
+      "type": "NEW"
+    },
+    {
+      "id": "120002",
+      "name": "Swarm Hoodie",
+      "type": "NEW"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "type": "NEW"
+    },
+    {
+      "id": "120004",
+      "name": "Beekeeper Tank",
+      "type": "NEW"
+    },
+    {
+      "id": "120005",
+      "name": "The Daily Rider Tee",
+      "type": "NEW"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\ttype\n30001\tTHE SIGNATURE\tOLD\n30002\tTHE DAILY RIDER\tOLD\n30003\tTHE FLAG BEARER\tOLD\n60001\tSkull Wrench Sticker\tOLD\n60002\tFlesh to Death Flag Sticker\tOLD\n60003\tHoney Jar Sticker\tOLD\n60004\tPoker Chip Sticker\tOLD\n60005\tBee Head Sticker\tOLD\n60006\tF2D Sticker Pack\tOLD\n60007\tSkull Wrench Patch\tOLD\n60008\tF2D Circle Badge Patch\tOLD\n90001\tRoad Warrior Tee\tOLD\n90002\tBeekeeper Tank\tOLD\n90003\tHive Mind Cap\tOLD\n90004\tSwarm Hoodie\tOLD\n120001\tHive Mind Cap\tNEW\n120002\tSwarm Hoodie\tNEW\n120003\tThe Flag Bearer Tee\tNEW\n120004\tBeekeeper Tank\tNEW\n120005\tThe Daily Rider Tee\tNEW\n",
+  "stderr": "",
+  "execution_time_ms": 63
+}

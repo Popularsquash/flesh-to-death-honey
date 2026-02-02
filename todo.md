@@ -152,3 +152,7 @@
 - [x] Update ProductDetail component with themed backgrounds
 - [x] Assign different themes to different product categories
 - [x] Add front/back image toggle for products
+
+## Store Cleanup
+- [x] Remove old placeholder products (keep only new Printful products)
+- [x] Verify shop displays correctly after cleanup

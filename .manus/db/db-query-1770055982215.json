@@ -1,0 +1,130 @@
+{
+  "query": "SELECT id, name, thumbnailUrl, createdAt FROM products ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT id, name, thumbnailUrl, createdAt FROM products ORDER BY id;",
+  "rows": [
+    {
+      "id": "30001",
+      "name": "THE SIGNATURE",
+      "thumbnailUrl": "/images/products/standing-bee.png",
+      "createdAt": "2026-01-24 19:54:15"
+    },
+    {
+      "id": "30002",
+      "name": "THE DAILY RIDER",
+      "thumbnailUrl": "/images/products/vegas-motorcycle.png",
+      "createdAt": "2026-01-24 19:54:20"
+    },
+    {
+      "id": "30003",
+      "name": "THE FLAG BEARER",
+      "thumbnailUrl": "/images/products/circle-badge.png",
+      "createdAt": "2026-01-24 19:54:24"
+    },
+    {
+      "id": "60001",
+      "name": "Skull Wrench Sticker",
+      "thumbnailUrl": "/images/products/stickers-mockup-laptop.jpg",
+      "createdAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "60002",
+      "name": "Flesh to Death Flag Sticker",
+      "thumbnailUrl": "/images/products/stickers-mockup-laptop.jpg",
+      "createdAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "60003",
+      "name": "Honey Jar Sticker",
+      "thumbnailUrl": "/images/products/stickers-mockup-laptop.jpg",
+      "createdAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "60004",
+      "name": "Poker Chip Sticker",
+      "thumbnailUrl": "/images/products/stickers-mockup-laptop.jpg",
+      "createdAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "60005",
+      "name": "Bee Head Sticker",
+      "thumbnailUrl": "/images/products/stickers-mockup-laptop.jpg",
+      "createdAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "60006",
+      "name": "F2D Sticker Pack",
+      "thumbnailUrl": "/images/products/stickers-mockup-laptop.jpg",
+      "createdAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "60007",
+      "name": "Skull Wrench Patch",
+      "thumbnailUrl": "/images/products/patches-mockup-jacket.jpg",
+      "createdAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "60008",
+      "name": "F2D Circle Badge Patch",
+      "thumbnailUrl": "/images/products/patches-mockup-jacket.jpg",
+      "createdAt": "2026-01-24 23:32:58"
+    },
+    {
+      "id": "90001",
+      "name": "Road Warrior Tee",
+      "thumbnailUrl": "/images/products/road-warrior-tee.jpg",
+      "createdAt": "2026-02-02 17:07:11"
+    },
+    {
+      "id": "90002",
+      "name": "Beekeeper Tank",
+      "thumbnailUrl": "/images/products/beekeeper-tank.jpg",
+      "createdAt": "2026-02-02 17:07:11"
+    },
+    {
+      "id": "90003",
+      "name": "Hive Mind Cap",
+      "thumbnailUrl": "/images/products/hive-mind-cap.jpg",
+      "createdAt": "2026-02-02 17:07:11"
+    },
+    {
+      "id": "90004",
+      "name": "Swarm Hoodie",
+      "thumbnailUrl": "/images/products/swarm-hoodie.jpg",
+      "createdAt": "2026-02-02 17:07:11"
+    },
+    {
+      "id": "120001",
+      "name": "Hive Mind Cap",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/EjDDAzRlOzdapJQu.png",
+      "createdAt": "2026-02-02 18:00:02"
+    },
+    {
+      "id": "120002",
+      "name": "Swarm Hoodie",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/GNIcltCcqzNnKqHY.png",
+      "createdAt": "2026-02-02 18:00:11"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/DPvuNEVRdZZNzPHW.png",
+      "createdAt": "2026-02-02 18:00:19"
+    },
+    {
+      "id": "120004",
+      "name": "Beekeeper Tank",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/elYwqpCfYkHPOLaJ.png",
+      "createdAt": "2026-02-02 18:00:26"
+    },
+    {
+      "id": "120005",
+      "name": "The Daily Rider Tee",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/GrqVXlTGqQQgSZGq.png",
+      "createdAt": "2026-02-02 18:02:18"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tthumbnailUrl\tcreatedAt\n30001\tTHE SIGNATURE\t/images/products/standing-bee.png\t2026-01-24 19:54:15\n30002\tTHE DAILY RIDER\t/images/products/vegas-motorcycle.png\t2026-01-24 19:54:20\n30003\tTHE FLAG BEARER\t/images/products/circle-badge.png\t2026-01-24 19:54:24\n60001\tSkull Wrench Sticker\t/images/products/stickers-mockup-laptop.jpg\t2026-01-24 23:32:58\n60002\tFlesh to Death Flag Sticker\t/images/products/stickers-mockup-laptop.jpg\t2026-01-24 23:32:58\n60003\tHoney Jar Sticker\t/images/products/stickers-mockup-laptop.jpg\t2026-01-24 23:32:58\n60004\tPoker Chip Sticker\t/images/products/stickers-mockup-laptop.jpg\t2026-01-24 23:32:58\n60005\tBee Head Sticker\t/images/products/stickers-mockup-laptop.jpg\t2026-01-24 23:32:58\n60006\tF2D Sticker Pack\t/images/products/stickers-mockup-laptop.jpg\t2026-01-24 23:32:58\n60007\tSkull Wrench Patch\t/images/products/patches-mockup-jacket.jpg\t2026-01-24 23:32:58\n60008\tF2D Circle Badge Patch\t/images/products/patches-mockup-jacket.jpg\t2026-01-24 23:32:58\n90001\tRoad Warrior Tee\t/images/products/road-warrior-tee.jpg\t2026-02-02 17:07:11\n90002\tBeekeeper Tank\t/images/products/beekeeper-tank.jpg\t2026-02-02 17:07:11\n90003\tHive Mind Cap\t/images/products/hive-mind-cap.jpg\t2026-02-02 17:07:11\n90004\tSwarm Hoodie\t/images/products/swarm-hoodie.jpg\t2026-02-02 17:07:11\n120001\tHive Mind Cap\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/EjDDAzRlOzdapJQu.png\t2026-02-02 18:00:02\n120002\tSwarm Hoodie\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/GNIcltCcqzNnKqHY.png\t2026-02-02 18:00:11\n120003\tThe Flag Bearer Tee\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/DPvuNEVRdZZNzPHW.png\t2026-02-02 18:00:19\n120004\tBeekeeper Tank\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/elYwqpCfYkHPOLaJ.png\t2026-02-02 18:00:26\n120005\tThe Daily Rider Tee\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/GrqVXlTGqQQgSZGq.png\t2026-02-02 18:02:18\n",
+  "stderr": "",
+  "execution_time_ms": 62
+}
