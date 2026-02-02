@@ -1,0 +1,50 @@
+{
+  "query": "SELECT id, name FROM products ORDER BY id DESC LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT id, name FROM products ORDER BY id DESC LIMIT 10;",
+  "rows": [
+    {
+      "id": "120004",
+      "name": "Beekeeper Tank"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee"
+    },
+    {
+      "id": "120002",
+      "name": "Swarm Hoodie"
+    },
+    {
+      "id": "120001",
+      "name": "Hive Mind Cap"
+    },
+    {
+      "id": "90004",
+      "name": "Swarm Hoodie"
+    },
+    {
+      "id": "90003",
+      "name": "Hive Mind Cap"
+    },
+    {
+      "id": "90002",
+      "name": "Beekeeper Tank"
+    },
+    {
+      "id": "90001",
+      "name": "Road Warrior Tee"
+    },
+    {
+      "id": "60008",
+      "name": "F2D Circle Badge Patch"
+    },
+    {
+      "id": "60007",
+      "name": "Skull Wrench Patch"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\n120004\tBeekeeper Tank\n120003\tThe Flag Bearer Tee\n120002\tSwarm Hoodie\n120001\tHive Mind Cap\n90004\tSwarm Hoodie\n90003\tHive Mind Cap\n90002\tBeekeeper Tank\n90001\tRoad Warrior Tee\n60008\tF2D Circle Badge Patch\n60007\tSkull Wrench Patch\n",
+  "stderr": "",
+  "execution_time_ms": 66
+}

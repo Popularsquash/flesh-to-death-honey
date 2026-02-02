@@ -1,0 +1,13 @@
+{
+  "query": "SELECT id FROM products WHERE name = 'Swarm Hoodie' ORDER BY id DESC LIMIT 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT id FROM products WHERE name = 'Swarm Hoodie' ORDER BY id DESC LIMIT 1;",
+  "rows": [
+    {
+      "id": "120002"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\n120002\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}

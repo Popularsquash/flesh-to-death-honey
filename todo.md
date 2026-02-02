@@ -133,3 +133,22 @@
 - [x] Fix text visibility on No Snitches Policy page
 - [x] Fix text visibility on Terms of Service page
 - [x] Ensure all legal pages have readable text contrast
+
+## New Printful Products (Feb 2026)
+- [x] Add "Road Warrior Tee" - Comfort Colors 1717 heavyweight t-shirt
+- [x] Add "Beekeeper Tank" - Cotton Heritage MC1790 premium tank top
+- [x] Add "Hive Mind Cap" - Yupoong 7005 5-panel cap
+- [x] Add "Swarm Hoodie" - Cotton Heritage M2580 premium pullover hoodie
+- [x] Add "The Flag Bearer Tee" - Unisex staple t-shirt
+- [x] Add "The Daily Rider Tee" - All-over print cotton crew neck
+- [x] Upload actual Printful mockup images to CDN
+- [x] Add product variants with pricing
+- [ ] Connect products to Printful sync
+
+## Themed Product Detail Pages
+- [x] Create garage-style background for product detail pages
+- [x] Create alley/urban background for product detail pages
+- [x] Create tattoo shop background for product detail pages
+- [x] Update ProductDetail component with themed backgrounds
+- [x] Assign different themes to different product categories
+- [x] Add front/back image toggle for products

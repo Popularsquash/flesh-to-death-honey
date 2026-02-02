@@ -1,0 +1,1 @@
+ALTER TABLE `products` ADD `backImageUrl` varchar(1024);

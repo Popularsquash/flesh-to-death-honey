@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO productVariants (productId, printfulVariantId, name, sku, retailPrice, currency, size, color, inStock) VALUES \n(90003, 7005001, 'Black / One Size', 'HMC-BLK-OS', 2499, 'USD', 'One Size', 'Black', 1);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute INSERT INTO productVariants (productId, printfulVariantId, name, sku, retailPrice, currency, size, color, inStock) VALUES \n(90003, 7005001, 'Black / One Size', 'HMC-BLK-OS', 2499, 'USD', 'One Size', 'Black', 1);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 60
+}

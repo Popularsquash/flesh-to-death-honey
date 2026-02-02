@@ -1,5 +1,5 @@
 import { Link, useParams } from "wouter";
-import { ArrowLeft, ShoppingCart, Ruler, Check } from "lucide-react";
+import { ArrowLeft, ShoppingCart, Ruler, Check, ZoomIn, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import Footer from "@/components/Footer";
@@ -35,11 +35,50 @@ const sizeChart = {
   ],
 };
 
+// Themed backgrounds for product detail pages
+const THEMED_BACKGROUNDS = {
+  garage: {
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/vvJAFsJbkqgchzSF.jpg",
+    overlay: "from-black/90 via-black/70 to-black/90",
+    accent: "primary",
+    name: "The Garage",
+  },
+  alley: {
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/uCXbexnulAyZVyDR.jpg",
+    overlay: "from-black/85 via-black/60 to-black/85",
+    accent: "cyan-400",
+    name: "The Alley",
+  },
+  tattoo: {
+    url: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/neyabfULZjroBxrH.jpg",
+    overlay: "from-black/80 via-black/50 to-black/80",
+    accent: "red-500",
+    name: "The Parlor",
+  },
+};
+
+// Map product categories to themes
+const getProductTheme = (productName: string): keyof typeof THEMED_BACKGROUNDS => {
+  const name = productName.toLowerCase();
+  if (name.includes("cap") || name.includes("hoodie") || name.includes("swarm")) {
+    return "garage";
+  }
+  if (name.includes("tank") || name.includes("beekeeper")) {
+    return "alley";
+  }
+  if (name.includes("tee") || name.includes("shirt") || name.includes("signature") || name.includes("rider") || name.includes("flag")) {
+    return "tattoo";
+  }
+  // Default to garage
+  return "garage";
+};
+
 export default function ProductDetail() {
   const params = useParams();
   const productId = params.id ? parseInt(params.id) : 0;
   const [selectedVariantId, setSelectedVariantId] = useState<number | null>(null);
   const [activeImage, setActiveImage] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
   const { addToCart } = useCart();
 
   // Fetch product data
@@ -49,10 +88,13 @@ export default function ProductDetail() {
   const variants = product?.variants || [];
   const selectedVariant = variants.find(v => v.id === selectedVariantId);
 
+  // Get themed background based on product
+  const theme = product ? THEMED_BACKGROUNDS[getProductTheme(product.name)] : THEMED_BACKGROUNDS.garage;
+
   // Product images - front and back views
   const productImages = product ? [
     { url: product.thumbnailUrl || "/images/products/placeholder.png", label: "Front" },
-    { url: product.thumbnailUrl || "/images/products/placeholder.png", label: "Back" },
+    { url: product.backImageUrl || product.thumbnailUrl || "/images/products/placeholder.png", label: "Back" },
   ] : [];
 
   const handleAddToCart = async () => {
@@ -123,180 +165,261 @@ export default function ProductDetail() {
         </div>
       </header>
 
-      {/* Back Navigation */}
-      <div className="bg-gray-900 border-b-2 border-gray-800">
-        <div className="container mx-auto px-4 py-4">
-          <Link
-            href="/shop"
-            className="inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors font-heading"
-          >
-            <ArrowLeft size={20} />
-            BACK TO SHOP
-          </Link>
-        </div>
-      </div>
+      {/* Themed Background Section */}
+      <section 
+        className="relative min-h-[calc(100vh-80px)] overflow-hidden"
+        style={{
+          backgroundImage: `url(${theme.url})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        {/* Dark overlay gradient */}
+        <div className={`absolute inset-0 bg-gradient-to-b ${theme.overlay}`}></div>
+        
+        {/* Animated grain texture overlay */}
+        <div className="absolute inset-0 opacity-20 pointer-events-none"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          }}
+        ></div>
 
-      {/* Product Content */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-            {/* Image Gallery */}
-            <div className="space-y-4">
-              {/* Main Image */}
-              <div className="relative bg-gray-900 border-4 border-primary p-4 aspect-square">
-                <img
-                  src={productImages[activeImage]?.url}
-                  alt={`${product.name} - ${productImages[activeImage]?.label}`}
-                  className="w-full h-full object-contain"
-                />
-                <div className="absolute top-4 left-4 bg-secondary text-white px-3 py-1 font-heading text-sm">
-                  POD
+        {/* Back Navigation */}
+        <div className="relative z-10 bg-black/50 backdrop-blur-sm border-b border-white/10">
+          <div className="container mx-auto px-4 py-4">
+            <Link
+              href="/shop"
+              className="inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors font-heading"
+            >
+              <ArrowLeft size={20} />
+              BACK TO SHOP
+            </Link>
+          </div>
+        </div>
+
+        {/* Product Content */}
+        <div className="relative z-10 py-12 md:py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12">
+              {/* Image Gallery */}
+              <div className="space-y-4">
+                {/* Main Image with zoom capability */}
+                <div 
+                  className="relative bg-black/60 backdrop-blur-md border-2 border-white/20 p-4 aspect-square cursor-zoom-in group rounded-lg overflow-hidden"
+                  onClick={() => setIsZoomed(true)}
+                >
+                  <img
+                    src={productImages[activeImage]?.url}
+                    alt={`${product.name} - ${productImages[activeImage]?.label}`}
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-4 left-4 bg-secondary text-white px-3 py-1 font-heading text-sm rounded">
+                    POD
+                  </div>
+                  <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-2 font-heading text-xs flex items-center gap-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ZoomIn size={14} />
+                    Click to zoom
+                  </div>
+                  
+                  {/* Decorative corner accents */}
+                  <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary"></div>
+                  <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-primary"></div>
+                  <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-primary"></div>
+                  <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary"></div>
+                </div>
+
+                {/* Thumbnail Navigation */}
+                <div className="flex gap-4 justify-center">
+                  {productImages.map((img, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setActiveImage(index)}
+                      className={`relative w-20 h-20 border-2 transition-all rounded overflow-hidden ${
+                        activeImage === index 
+                          ? "border-primary ring-2 ring-primary/50" 
+                          : "border-white/20 hover:border-white/50"
+                      }`}
+                    >
+                      <img
+                        src={img.url}
+                        alt={img.label}
+                        className="w-full h-full object-cover"
+                      />
+                      <span className="absolute bottom-0 left-0 right-0 bg-black/80 text-xs text-center py-1 text-gray-300 font-heading">
+                        {img.label}
+                      </span>
+                    </button>
+                  ))}
                 </div>
               </div>
 
-              {/* Thumbnail Navigation */}
-              <div className="flex gap-4">
-                {productImages.map((img, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveImage(index)}
-                    className={`relative w-20 h-20 border-2 transition-all ${
-                      activeImage === index 
-                        ? "border-primary" 
-                        : "border-gray-700 hover:border-gray-500"
-                    }`}
-                  >
-                    <img
-                      src={img.url}
-                      alt={img.label}
-                      className="w-full h-full object-cover"
-                    />
-                    <span className="absolute bottom-0 left-0 right-0 bg-black/80 text-xs text-center py-1 text-gray-300">
-                      {img.label}
+              {/* Product Info */}
+              <div className="space-y-6 bg-black/40 backdrop-blur-md p-6 md:p-8 rounded-lg border border-white/10">
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-xs font-heading text-primary/80 tracking-widest uppercase">
+                      {theme.name} Collection
                     </span>
-                  </button>
-                ))}
-              </div>
-            </div>
+                  </div>
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading text-primary mb-2 leading-tight">
+                    {product.name}
+                  </h1>
+                  <p className="text-2xl md:text-3xl font-heading text-white">
+                    From ${startingPrice.toFixed(2)}
+                  </p>
+                </div>
 
-            {/* Product Info */}
-            <div className="space-y-6">
-              <div>
-                <h1 className="text-4xl md:text-5xl font-heading text-primary mb-2">
-                  {product.name}
-                </h1>
-                <p className="text-2xl font-heading text-white">
-                  From ${startingPrice.toFixed(2)}
+                <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                  {product.description}
                 </p>
-              </div>
 
-              <p className="text-lg text-gray-300 leading-relaxed">
-                {product.description}
-              </p>
-
-              {/* Size Selector */}
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <label className="font-heading text-lg text-white">SELECT SIZE</label>
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <button className="flex items-center gap-2 text-primary hover:text-secondary transition-colors text-sm">
-                        <Ruler size={16} />
-                        Size Guide
-                      </button>
-                    </DialogTrigger>
-                    <DialogContent className="bg-gray-900 border-2 border-primary text-white max-w-lg">
-                      <DialogHeader>
-                        <DialogTitle className="font-heading text-2xl text-primary">SIZE CHART</DialogTitle>
-                      </DialogHeader>
-                      <div className="overflow-x-auto">
-                        <table className="w-full text-sm">
-                          <thead>
-                            <tr className="border-b border-gray-700">
-                              {sizeChart.headers.map((header, i) => (
-                                <th key={i} className="py-3 px-4 text-left font-heading text-primary">
-                                  {header}
-                                </th>
-                              ))}
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {sizeChart.rows.map((row, i) => (
-                              <tr key={i} className="border-b border-gray-800">
-                                {row.map((cell, j) => (
-                                  <td key={j} className="py-3 px-4 text-gray-300">
-                                    {cell}
-                                  </td>
+                {/* Size Selector */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <label className="font-heading text-lg text-white">SELECT SIZE</label>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="flex items-center gap-2 text-primary hover:text-secondary transition-colors text-sm">
+                          <Ruler size={16} />
+                          Size Guide
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="bg-gray-900 border-2 border-primary text-white max-w-lg">
+                        <DialogHeader>
+                          <DialogTitle className="font-heading text-2xl text-primary">SIZE CHART</DialogTitle>
+                        </DialogHeader>
+                        <div className="overflow-x-auto">
+                          <table className="w-full text-sm">
+                            <thead>
+                              <tr className="border-b border-gray-700">
+                                {sizeChart.headers.map((header, i) => (
+                                  <th key={i} className="py-3 px-4 text-left font-heading text-primary">
+                                    {header}
+                                  </th>
                                 ))}
                               </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                      <p className="text-xs text-gray-500 mt-4">
-                        Measurements are approximate. For best fit, measure a similar garment you own.
-                      </p>
-                    </DialogContent>
-                  </Dialog>
+                            </thead>
+                            <tbody>
+                              {sizeChart.rows.map((row, i) => (
+                                <tr key={i} className="border-b border-gray-800">
+                                  {row.map((cell, j) => (
+                                    <td key={j} className="py-3 px-4 text-gray-300">
+                                      {cell}
+                                    </td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                        <p className="text-xs text-gray-500 mt-4">
+                          Measurements are approximate. For best fit, measure a similar garment you own.
+                        </p>
+                      </DialogContent>
+                    </Dialog>
+                  </div>
+
+                  <Select
+                    value={selectedVariantId?.toString() || ""}
+                    onValueChange={(value) => setSelectedVariantId(parseInt(value))}
+                  >
+                    <SelectTrigger className="w-full bg-black/50 border-2 border-primary text-white h-14 font-heading">
+                      <SelectValue placeholder="Select Size" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-gray-900 border-2 border-primary">
+                      {variants.map((variant) => (
+                        <SelectItem
+                          key={variant.id}
+                          value={variant.id.toString()}
+                          className="text-white hover:bg-primary hover:text-black font-heading"
+                        >
+                          {variant.size} - ${(variant.retailPrice / 100).toFixed(2)}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
 
-                <Select
-                  value={selectedVariantId?.toString() || ""}
-                  onValueChange={(value) => setSelectedVariantId(parseInt(value))}
+                {/* Add to Cart Button */}
+                <Button
+                  onClick={handleAddToCart}
+                  disabled={!selectedVariantId}
+                  className="w-full bg-primary text-black hover:bg-secondary hover:text-white font-heading text-xl py-6 rounded-lg border-2 border-primary transition-all disabled:opacity-50 disabled:cursor-not-allowed group"
                 >
-                  <SelectTrigger className="w-full bg-gray-900 border-2 border-primary text-white h-14 font-heading">
-                    <SelectValue placeholder="Select Size" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-gray-900 border-2 border-primary">
-                    {variants.map((variant) => (
-                      <SelectItem
-                        key={variant.id}
-                        value={variant.id.toString()}
-                        className="text-white hover:bg-primary hover:text-black font-heading"
-                      >
-                        {variant.size} - ${(variant.retailPrice / 100).toFixed(2)}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
+                  <ShoppingCart className="mr-2 h-6 w-6 transition-transform group-hover:scale-110" />
+                  ADD TO CART
+                </Button>
 
-              {/* Add to Cart Button */}
-              <Button
-                onClick={handleAddToCart}
-                disabled={!selectedVariantId}
-                className="w-full bg-primary text-black hover:bg-secondary hover:text-white font-heading text-xl py-6 rounded-none border-4 border-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <ShoppingCart className="mr-2 h-6 w-6" />
-                ADD TO CART
-              </Button>
-
-              {/* Product Features */}
-              <div className="border-t-2 border-dashed border-gray-700 pt-6 space-y-3">
-                <h3 className="font-heading text-lg text-primary">PRODUCT DETAILS</h3>
-                <ul className="space-y-2 text-gray-300">
-                  <li className="flex items-center gap-2">
-                    <Check size={16} className="text-primary" />
-                    Print-on-demand (made to order)
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check size={16} className="text-primary" />
-                    Premium quality materials
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check size={16} className="text-primary" />
-                    Ships within 3-5 business days
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check size={16} className="text-primary" />
-                    Worldwide shipping available
-                  </li>
-                </ul>
+                {/* Product Features */}
+                <div className="border-t border-white/20 pt-6 space-y-3">
+                  <h3 className="font-heading text-lg text-primary">PRODUCT DETAILS</h3>
+                  <ul className="space-y-2 text-gray-300">
+                    <li className="flex items-center gap-2">
+                      <Check size={16} className="text-primary" />
+                      Print-on-demand (made to order)
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check size={16} className="text-primary" />
+                      Premium quality materials
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check size={16} className="text-primary" />
+                      Ships within 3-5 business days
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check size={16} className="text-primary" />
+                      Worldwide shipping available
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Fullscreen Zoom Modal */}
+      {isZoomed && (
+        <div 
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 cursor-zoom-out"
+          onClick={() => setIsZoomed(false)}
+        >
+          <button 
+            className="absolute top-4 right-4 text-white hover:text-primary transition-colors"
+            onClick={() => setIsZoomed(false)}
+          >
+            <X size={32} />
+          </button>
+          <img
+            src={productImages[activeImage]?.url}
+            alt={`${product.name} - ${productImages[activeImage]?.label}`}
+            className="max-w-full max-h-full object-contain"
+          />
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-4">
+            {productImages.map((img, index) => (
+              <button
+                key={index}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveImage(index);
+                }}
+                className={`w-16 h-16 border-2 transition-all rounded overflow-hidden ${
+                  activeImage === index 
+                    ? "border-primary" 
+                    : "border-white/30 hover:border-white/60"
+                }`}
+              >
+                <img
+                  src={img.url}
+                  alt={img.label}
+                  className="w-full h-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Customer Reviews Section */}
       <section className="py-16 bg-gray-900 border-t-4 border-primary">

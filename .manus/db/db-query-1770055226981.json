@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO products (name, description, thumbnailUrl, backImageUrl, isActive) \nVALUES (\n  'Beekeeper Tank',\n  'Premium tank top with the BEEKEEPER skeleton bee motorcycle design. \"If I Run, You Run.\" Cotton Heritage quality for summer rides and gym sessions.',\n  'https://files.manuscdn.com/user_upload_by_module/session_file/104679889/elYwqpCfYkHPOLaJ.png',\n  'https://files.manuscdn.com/user_upload_by_module/session_file/104679889/oAXflInQudzhdGeS.png',\n  1\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute INSERT INTO products (name, description, thumbnailUrl, backImageUrl, isActive) \nVALUES (\n  'Beekeeper Tank',\n  'Premium tank top with the BEEKEEPER skeleton bee motorcycle design. \"If I Run, You Run.\" Cotton Heritage quality for summer rides and gym sessions.',\n  'https://files.manuscdn.com/user_upload_by_module/session_file/104679889/elYwqpCfYkHPOLaJ.png',\n  'https://files.manuscdn.com/user_upload_by_module/session_file/104679889/oAXflInQudzhdGeS.png',\n  1\n);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 204
+}

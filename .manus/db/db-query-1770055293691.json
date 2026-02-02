@@ -1,0 +1,38 @@
+{
+  "query": "SELECT id, name FROM products WHERE name IN ('Hive Mind Cap', 'Swarm Hoodie', 'The Flag Bearer Tee', 'Beekeeper Tank');",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT id, name FROM products WHERE name IN ('Hive Mind Cap', 'Swarm Hoodie', 'The Flag Bearer Tee', 'Beekeeper Tank');",
+  "rows": [
+    {
+      "id": "90002",
+      "name": "Beekeeper Tank"
+    },
+    {
+      "id": "90003",
+      "name": "Hive Mind Cap"
+    },
+    {
+      "id": "90004",
+      "name": "Swarm Hoodie"
+    },
+    {
+      "id": "120001",
+      "name": "Hive Mind Cap"
+    },
+    {
+      "id": "120002",
+      "name": "Swarm Hoodie"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee"
+    },
+    {
+      "id": "120004",
+      "name": "Beekeeper Tank"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\n90002\tBeekeeper Tank\n90003\tHive Mind Cap\n90004\tSwarm Hoodie\n120001\tHive Mind Cap\n120002\tSwarm Hoodie\n120003\tThe Flag Bearer Tee\n120004\tBeekeeper Tank\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}

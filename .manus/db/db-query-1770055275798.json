@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO productVariants (productId, printfulVariantId, name, retailPrice, currency, size, color, inStock)\nSELECT id, 7005, CONCAT(name, ' - Black / One Size'), 2800, 'USD', 'One Size', 'Black', 1\nFROM products WHERE name = 'Hive Mind Cap' ORDER BY id DESC LIMIT 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute INSERT INTO productVariants (productId, printfulVariantId, name, retailPrice, currency, size, color, inStock)\nSELECT id, 7005, CONCAT(name, ' - Black / One Size'), 2800, 'USD', 'One Size', 'Black', 1\nFROM products WHERE name = 'Hive Mind Cap' ORDER BY id DESC LIMIT 1;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 72
+}

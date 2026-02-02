@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO productVariants (productId, printfulVariantId, name, sku, retailPrice, currency, size, color, inStock) VALUES \n(90004, 2580001, 'Black / S', 'SWH-BLK-S', 5499, 'USD', 'S', 'Black', 1),\n(90004, 2580002, 'Black / M', 'SWH-BLK-M', 5499, 'USD', 'M', 'Black', 1),\n(90004, 2580003, 'Black / L', 'SWH-BLK-L', 5499, 'USD', 'L', 'Black', 1),\n(90004, 2580004, 'Black / XL', 'SWH-BLK-XL', 5499, 'USD', 'XL', 'Black', 1),\n(90004, 2580005, 'Black / 2XL', 'SWH-BLK-2XL', 5699, 'USD', '2XL', 'Black', 1),\n(90004, 2580006, 'Black / 3XL', 'SWH-BLK-3XL', 5899, 'USD', '3XL', 'Black', 1);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute INSERT INTO productVariants (productId, printfulVariantId, name, sku, retailPrice, currency, size, color, inStock) VALUES \n(90004, 2580001, 'Black / S', 'SWH-BLK-S', 5499, 'USD', 'S', 'Black', 1),\n(90004, 2580002, 'Black / M', 'SWH-BLK-M', 5499, 'USD', 'M', 'Black', 1),\n(90004, 2580003, 'Black / L', 'SWH-BLK-L', 5499, 'USD', 'L', 'Black', 1),\n(90004, 2580004, 'Black / XL', 'SWH-BLK-XL', 5499, 'USD', 'XL', 'Black', 1),\n(90004, 2580005, 'Black / 2XL', 'SWH-BLK-2XL', 5699, 'USD', '2XL', 'Black', 1),\n(90004, 2580006, 'Black / 3XL', 'SWH-BLK-3XL', 5899, 'USD', '3XL', 'Black', 1);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 72
+}

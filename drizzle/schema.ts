@@ -41,6 +41,8 @@ export const products = mysqlTable("products", {
   description: text("description"),
   /** Thumbnail image URL */
   thumbnailUrl: varchar("thumbnailUrl", { length: 1024 }),
+  /** Back image URL for product detail pages */
+  backImageUrl: varchar("backImageUrl", { length: 1024 }),
   /** Whether product is active/visible */
   isActive: int("isActive").default(1).notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
