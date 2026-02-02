@@ -358,49 +358,40 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Apparel Section */}
+          {/* Sticker Pack Coming Soon */}
           <div className="text-center mb-16 pt-12 border-t-4 border-black border-dashed">
             <h2 className="text-5xl md:text-7xl font-heading text-black mb-4 mt-12">
-              Wear Your <span className="text-white grunge-text">Allegiance</span>
+              Swarm <span className="text-white grunge-text">Sticker Pack</span>
             </h2>
             <p className="text-xl font-body text-black/80 max-w-2xl mx-auto font-bold">
-              Threads for the hive. Wear it loud, wear it proud.
+              Slap 'em on your helmet, your tank, or your local stop sign.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {apparel.map((item) => (
-              <Card key={item.id} className="bg-background border-4 border-black rounded-none overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 group">
-                <div className="relative h-64 overflow-hidden bg-white flex items-center justify-center p-4">
-                  <div className="absolute top-4 right-4 z-10">
-                    <Badge className="bg-primary text-black rounded-none font-heading uppercase text-sm border-2 border-black">
-                      {item.tag}
-                    </Badge>
-                  </div>
-                  <img 
-                    src={item.image} 
-                    alt={item.name} 
-                    className="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <CardHeader className="border-b-2 border-dashed border-gray-700">
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="font-heading text-xl text-primary">{item.name}</CardTitle>
-                    <span className="font-body font-bold text-lg text-white">{item.price}</span>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-4">
-                  <p className="text-gray-400 font-body text-sm leading-relaxed">
-                    {item.description}
-                  </p>
-                </CardContent>
-                <CardFooter>
-                  <Button className="w-full bg-white text-black hover:bg-secondary hover:text-white font-heading uppercase text-sm rounded-none border-2 border-black transition-colors">
-                    Add to Cart
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
+          <div className="relative bg-black border-4 border-primary p-12 text-center overflow-hidden max-w-2xl mx-auto">
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0 bg-[url('/images/apparel/FLESHTODEATHELEMENTDESIGNS.png')] bg-center bg-contain bg-no-repeat"></div>
+            </div>
+            <div className="relative z-10">
+              <Badge className="bg-primary text-black rounded-none font-heading uppercase text-xl px-6 py-2 mb-6 inline-block border-2 border-black">
+                🐝 Coming March 2026
+              </Badge>
+              <h3 className="text-3xl md:text-4xl font-heading text-white mb-4">
+                The Swarm Sticker Pack
+              </h3>
+              <p className="text-lg font-body text-gray-300 max-w-xl mx-auto mb-6">
+                A collection of die-cut vinyl stickers featuring the Flesh to Death crew. 
+                Perfect for marking your territory or making your gear look 47% more intimidating.
+              </p>
+              <p className="text-2xl font-heading text-primary mb-4">$15.00</p>
+              <div className="mt-6 max-w-sm mx-auto">
+                <EmailSignup 
+                  interest="sticker_pack"
+                  buttonText="Notify Me"
+                  placeholder="your@email.com"
+                />
+              </div>
+            </div>
           </div>
         </div>
         

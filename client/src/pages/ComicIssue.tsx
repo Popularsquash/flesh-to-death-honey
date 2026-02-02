@@ -31,11 +31,11 @@ const comicsData: Record<string, {
     subtitle: "The Bear Necessities",
     tagline: "They're not keeping the peace. They're keeping the honey.",
     date: "January 2026",
-    imageUrl: "/assets/revenge_of_the_hive_issue1_web.jpg",
+    imageUrl: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/sBNQxpQOyJIPEjgz.png",
     synopsis: "Every paradise has a serpent. Ours has a bear. Name's Biff. He doesn't pay for honey. He 'liberates' it. Watch as Buzzkill, Stinger, and Prop teach him a lesson he won't forget. In this debut issue, the bees of Flesh to Death Honey Co. face their greatest threat yet - a bear with an appetite for destruction and a complete disregard for the natural order.",
     credits: {
       story: "Flesh to Death Honey Co.",
-      art: "AI-Generated Anarchic Imagery",
+      art: "Flesh to Death Honey Co.",
       letters: "The Hive Mind",
     },
     nextIssue: {

@@ -32,8 +32,12 @@ export function registerStripeWebhook(app: Express) {
 
       console.log(`[Webhook] Received event: ${event.type} (${event.id})`);
 
-      // Handle test events
-      if (event.id.startsWith("evt_test_")) {
+      // Handle test events - process them like real events for testing
+      // Only skip processing for webhook verification test events (not checkout events)
+      if (event.id.startsWith("evt_test_") && event.type === "checkout.session.completed") {
+        console.log("[Webhook] Test checkout event - processing for testing purposes");
+        // Continue to process the event
+      } else if (event.id.startsWith("evt_test_")) {
         console.log("[Webhook] Test event detected, returning verification response");
         return res.json({ verified: true });
       }

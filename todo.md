@@ -171,6 +171,14 @@
 - [ ] Handle order status webhooks from Printful
 
 ## Comic Page Fix
-- [ ] Download comic page images from Canva
-- [ ] Replace squished comic layout with proper full-page images
-- [ ] Test comic page displays correctly on mobile and desktop
+- [x] Download comic page images from Canva
+- [x] Replace squished comic layout with proper full-page images
+- [x] Test comic page displays correctly on mobile and desktop
+
+## Updates (Feb 2, 2026)
+- [x] Update webhook to process test events for testing
+- [x] Remove "AI generated art" disclaimer from website
+
+## Homepage Updates (Feb 2, 2026)
+- [x] Remove "Wear Your Allegiance" section with sample placeholders
+- [x] Update Swarm Sticker Pack to show "Coming March 2026"
