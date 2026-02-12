@@ -1,7 +1,7 @@
 import { Link, useParams } from "wouter";
 import { ArrowLeft, ShoppingCart, Ruler, Check, ZoomIn, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Footer from "@/components/Footer";
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "sonner";
@@ -97,14 +97,40 @@ const getProductTheme = (productName: string): keyof typeof THEMED_BACKGROUNDS =
   if (name.includes("tee") || name.includes("shirt") || name.includes("signature") || name.includes("rider") || name.includes("flag")) {
     return "tattoo";
   }
-  // Default to garage
   return "garage";
+};
+
+// Color-specific images for products with multiple colors
+// Maps productId -> color -> { front, back }
+const COLOR_IMAGES: Record<number, Record<string, { front: string; back: string }>> = {
+  120003: {
+    "Black": {
+      front: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/DPvuNEVRdZZNzPHW.png",
+      back: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/hZmUianlQdPxkNrQ.png",
+    },
+    "Cardinal": {
+      front: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/KwIDfMyMeASFlWmW.png",
+      back: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/sgjIdILxSJXwwLyo.png",
+    },
+    "White": {
+      front: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RiOhXtJLWfZTbKtF.png",
+      back: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/TegfKOWRqWGqChGx.png",
+    },
+  },
+};
+
+// Color swatch display values
+const COLOR_SWATCHES: Record<string, string> = {
+  "Black": "#1a1a1a",
+  "Cardinal": "#8C1515",
+  "White": "#f5f5f5",
 };
 
 export default function ProductDetail() {
   const params = useParams();
   const productId = params.id ? parseInt(params.id) : 0;
   const [selectedVariantId, setSelectedVariantId] = useState<number | null>(null);
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
   const [activeImage, setActiveImage] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
   const { addToCart } = useCart();
@@ -113,17 +139,66 @@ export default function ProductDetail() {
   const { data: products, isLoading } = trpc.products.list.useQuery();
   
   const product = products?.find(p => p.id === productId);
-  const variants = product?.variants || [];
+  const allVariants = product?.variants || [];
+
+  // Get unique colors for this product
+  const uniqueColors = useMemo(() => {
+    const colors = new Set<string>();
+    allVariants.forEach(v => {
+      if (v.color) colors.add(v.color);
+    });
+    return Array.from(colors);
+  }, [allVariants]);
+
+  // Determine if this product has multiple colors
+  const hasMultipleColors = uniqueColors.length > 1;
+
+  // Auto-select first color when product loads
+  useEffect(() => {
+    if (uniqueColors.length > 0 && !selectedColor) {
+      setSelectedColor(uniqueColors[0]);
+    }
+  }, [uniqueColors, selectedColor]);
+
+  // Filter variants by selected color
+  const variants = useMemo(() => {
+    if (!hasMultipleColors || !selectedColor) return allVariants;
+    return allVariants.filter(v => v.color === selectedColor);
+  }, [allVariants, selectedColor, hasMultipleColors]);
+
+  // Reset selected variant when color changes
+  useEffect(() => {
+    setSelectedVariantId(null);
+  }, [selectedColor]);
+
   const selectedVariant = variants.find(v => v.id === selectedVariantId);
 
   // Get themed background based on product
   const theme = product ? THEMED_BACKGROUNDS[getProductTheme(product.name)] : THEMED_BACKGROUNDS.garage;
 
-  // Product images - front and back views
-  const productImages = product ? [
-    { url: product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png", label: "Front" },
-    { url: product.backImageUrl || product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png", label: "Back" },
-  ] : [];
+  // Product images - use color-specific images if available
+  const productImages = useMemo(() => {
+    if (!product) return [];
+    
+    const colorImagesForProduct = COLOR_IMAGES[product.id];
+    if (colorImagesForProduct && selectedColor && colorImagesForProduct[selectedColor]) {
+      const colorImg = colorImagesForProduct[selectedColor];
+      return [
+        { url: colorImg.front, label: "Front" },
+        { url: colorImg.back, label: "Back" },
+      ];
+    }
+    
+    return [
+      { url: product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png", label: "Front" },
+      { url: product.backImageUrl || product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png", label: "Back" },
+    ];
+  }, [product, selectedColor]);
+
+  // Reset active image when color changes
+  useEffect(() => {
+    setActiveImage(0);
+  }, [selectedColor]);
 
   const handleAddToCart = async () => {
     if (!selectedVariant) {
@@ -133,7 +208,8 @@ export default function ProductDetail() {
     
     try {
       await addToCart(selectedVariant.id, 1);
-      toast.success(`${product!.name} (${selectedVariant.size}) added to cart!`);
+      const colorLabel = hasMultipleColors && selectedColor ? ` - ${selectedColor}` : "";
+      toast.success(`${product!.name}${colorLabel} (${selectedVariant.size}) added to cart!`);
     } catch (error) {
       toast.error("Failed to add to cart");
     }
@@ -302,6 +378,43 @@ export default function ProductDetail() {
                   {product.description}
                 </p>
 
+                {/* Color Selector - only show for multi-color products */}
+                {hasMultipleColors && (
+                  <div className="space-y-3">
+                    <label className="font-heading text-lg text-white">
+                      SELECT COLOR
+                      {selectedColor && (
+                        <span className="ml-2 text-sm text-primary font-body">— {selectedColor}</span>
+                      )}
+                    </label>
+                    <div className="flex gap-3">
+                      {uniqueColors.map((color) => {
+                        const isSelected = selectedColor === color;
+                        const swatchColor = COLOR_SWATCHES[color] || "#666";
+                        return (
+                          <button
+                            key={color}
+                            onClick={() => setSelectedColor(color)}
+                            className={`relative w-12 h-12 rounded-full border-2 transition-all duration-200 ${
+                              isSelected
+                                ? "border-primary ring-2 ring-primary/50 scale-110"
+                                : "border-white/30 hover:border-white/60 hover:scale-105"
+                            }`}
+                            style={{ backgroundColor: swatchColor }}
+                            title={color}
+                          >
+                            {isSelected && (
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <Check size={18} className={color === "White" ? "text-black" : "text-white"} />
+                              </div>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
                 {/* Size Selector */}
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
@@ -399,6 +512,12 @@ export default function ProductDetail() {
                       <Check size={16} className="text-primary" />
                       Worldwide shipping available
                     </li>
+                    {hasMultipleColors && (
+                      <li className="flex items-center gap-2">
+                        <Check size={16} className="text-primary" />
+                        Available in {uniqueColors.length} colors: {uniqueColors.join(", ")}
+                      </li>
+                    )}
                   </ul>
                 </div>
               </div>

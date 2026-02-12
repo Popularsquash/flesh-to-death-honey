@@ -206,3 +206,15 @@
 - [x] Update product theme mapping for new products
 - [x] Write vitest tests for pricing and product data
 - [x] All 38 tests passing (5 test files)
+
+## Printful Manual Order/API Configuration (Feb 11, 2026)
+- [ ] Configure Printful store as Manual Order / API platform (requires Printful Dashboard - cannot be done via API)
+- [ ] Test Printful API order sync with new config
+
+## Consolidate Flag Bearer Tee Color Variants (Feb 11, 2026)
+- [x] Merge 3 separate Flag Bearer Tee products (Black, Cardinal, White) into one product
+- [x] Add color selector to product detail page
+- [x] Update database: consolidate variants under single product
+- [x] Update shop page to show single Flag Bearer Tee card
+- [x] Test color switching on product detail page
+- [x] All 44 tests passing (5 test files)

@@ -1,0 +1,154 @@
+{
+  "query": "SELECT pv.id, pv.productId, pv.name, pv.size, pv.color, pv.retailPrice FROM productVariants pv WHERE pv.productId = 120003 ORDER BY pv.color, pv.size;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT pv.id, pv.productId, pv.name, pv.size, pv.color, pv.retailPrice FROM productVariants pv WHERE pv.productId = 120003 ORDER BY pv.color, pv.size;",
+  "rows": [
+    {
+      "id": "120012",
+      "productId": "120003",
+      "name": "The Flag Bearer Tee - Black / 2XL",
+      "size": "2XL",
+      "color": "Black",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120013",
+      "productId": "120003",
+      "name": "The Flag Bearer Tee - Black / 3XL",
+      "size": "3XL",
+      "color": "Black",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120010",
+      "productId": "120003",
+      "name": "The Flag Bearer Tee - Black / L",
+      "size": "L",
+      "color": "Black",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120009",
+      "productId": "120003",
+      "name": "The Flag Bearer Tee - Black / M",
+      "size": "M",
+      "color": "Black",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120008",
+      "productId": "120003",
+      "name": "The Flag Bearer Tee - Black / S",
+      "size": "S",
+      "color": "Black",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120011",
+      "productId": "120003",
+      "name": "The Flag Bearer Tee - Black / XL",
+      "size": "XL",
+      "color": "Black",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120024",
+      "productId": "120003",
+      "name": "Cardinal / 2XL",
+      "size": "2XL",
+      "color": "Cardinal",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120026",
+      "productId": "120003",
+      "name": "Cardinal / 3XL",
+      "size": "3XL",
+      "color": "Cardinal",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120029",
+      "productId": "120003",
+      "name": "Cardinal / L",
+      "size": "L",
+      "color": "Cardinal",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120028",
+      "productId": "120003",
+      "name": "Cardinal / M",
+      "size": "M",
+      "color": "Cardinal",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120025",
+      "productId": "120003",
+      "name": "Cardinal / S",
+      "size": "S",
+      "color": "Cardinal",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120027",
+      "productId": "120003",
+      "name": "Cardinal / XL",
+      "size": "XL",
+      "color": "Cardinal",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120030",
+      "productId": "120003",
+      "name": "White / 2XL",
+      "size": "2XL",
+      "color": "White",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120035",
+      "productId": "120003",
+      "name": "White / 3XL",
+      "size": "3XL",
+      "color": "White",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120034",
+      "productId": "120003",
+      "name": "White / L",
+      "size": "L",
+      "color": "White",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120033",
+      "productId": "120003",
+      "name": "White / M",
+      "size": "M",
+      "color": "White",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120031",
+      "productId": "120003",
+      "name": "White / S",
+      "size": "S",
+      "color": "White",
+      "retailPrice": "1599"
+    },
+    {
+      "id": "120032",
+      "productId": "120003",
+      "name": "White / XL",
+      "size": "XL",
+      "color": "White",
+      "retailPrice": "1599"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tproductId\tname\tsize\tcolor\tretailPrice\n120012\t120003\tThe Flag Bearer Tee - Black / 2XL\t2XL\tBlack\t1599\n120013\t120003\tThe Flag Bearer Tee - Black / 3XL\t3XL\tBlack\t1599\n120010\t120003\tThe Flag Bearer Tee - Black / L\tL\tBlack\t1599\n120009\t120003\tThe Flag Bearer Tee - Black / M\tM\tBlack\t1599\n120008\t120003\tThe Flag Bearer Tee - Black / S\tS\tBlack\t1599\n120011\t120003\tThe Flag Bearer Tee - Black / XL\tXL\tBlack\t1599\n120024\t120003\tCardinal / 2XL\t2XL\tCardinal\t1599\n120026\t120003\tCardinal / 3XL\t3XL\tCardinal\t1599\n120029\t120003\tCardinal / L\tL\tCardinal\t1599\n120028\t120003\tCardinal / M\tM\tCardinal\t1599\n120025\t120003\tCardinal / S\tS\tCardinal\t1599\n120027\t120003\tCardinal / XL\tXL\tCardinal\t1599\n120030\t120003\tWhite / 2XL\t2XL\tWhite\t1599\n120035\t120003\tWhite / 3XL\t3XL\tWhite\t1599\n120034\t120003\tWhite / L\tL\tWhite\t1599\n120033\t120003\tWhite / M\tM\tWhite\t1599\n120031\t120003\tWhite / S\tS\tWhite\t1599\n120032\t120003\tWhite / XL\tXL\tWhite\t1599\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}

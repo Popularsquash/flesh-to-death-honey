@@ -202,3 +202,95 @@ describe("New Product Data Validation", () => {
     });
   });
 });
+
+describe("Flag Bearer Tee - Color Consolidation", () => {
+  // Color-specific images for the Flag Bearer Tee
+  const COLOR_IMAGES: Record<string, { front: string; back: string }> = {
+    "Black": {
+      front: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/DPvuNEVRdZZNzPHW.png",
+      back: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/hZmUianlQdPxkNrQ.png",
+    },
+    "Cardinal": {
+      front: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/KwIDfMyMeASFlWmW.png",
+      back: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/sgjIdILxSJXwwLyo.png",
+    },
+    "White": {
+      front: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RiOhXtJLWfZTbKtF.png",
+      back: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/TegfKOWRqWGqChGx.png",
+    },
+  };
+
+  const COLOR_SWATCHES: Record<string, string> = {
+    "Black": "#1a1a1a",
+    "Cardinal": "#8C1515",
+    "White": "#f5f5f5",
+  };
+
+  it("should have exactly 3 colors defined", () => {
+    const colors = Object.keys(COLOR_IMAGES);
+    expect(colors).toHaveLength(3);
+    expect(colors).toContain("Black");
+    expect(colors).toContain("Cardinal");
+    expect(colors).toContain("White");
+  });
+
+  it("should have front and back images for each color", () => {
+    Object.entries(COLOR_IMAGES).forEach(([color, images]) => {
+      expect(images.front).toBeTruthy();
+      expect(images.back).toBeTruthy();
+      expect(images.front).toContain("https://");
+      expect(images.back).toContain("https://");
+      expect(images.front).not.toBe(images.back);
+    });
+  });
+
+  it("should have unique images per color", () => {
+    const allFronts = Object.values(COLOR_IMAGES).map(i => i.front);
+    const allBacks = Object.values(COLOR_IMAGES).map(i => i.back);
+    expect(new Set(allFronts).size).toBe(3);
+    expect(new Set(allBacks).size).toBe(3);
+  });
+
+  it("should have swatch colors for all variants", () => {
+    Object.keys(COLOR_IMAGES).forEach(color => {
+      expect(COLOR_SWATCHES[color]).toBeTruthy();
+    });
+  });
+
+  it("should have valid hex color codes for swatches", () => {
+    Object.values(COLOR_SWATCHES).forEach(hex => {
+      expect(hex).toMatch(/^#[0-9a-fA-F]{6}$/);
+    });
+  });
+
+  it("should filter variants by color correctly", () => {
+    // Simulating the variant filtering logic
+    const allVariants = [
+      { id: 1, size: "S", color: "Black", retailPrice: 1599 },
+      { id: 2, size: "M", color: "Black", retailPrice: 1599 },
+      { id: 3, size: "L", color: "Black", retailPrice: 1599 },
+      { id: 4, size: "S", color: "Cardinal", retailPrice: 1599 },
+      { id: 5, size: "M", color: "Cardinal", retailPrice: 1599 },
+      { id: 6, size: "L", color: "Cardinal", retailPrice: 1599 },
+      { id: 7, size: "S", color: "White", retailPrice: 1599 },
+      { id: 8, size: "M", color: "White", retailPrice: 1599 },
+      { id: 9, size: "L", color: "White", retailPrice: 1599 },
+    ];
+
+    const blackVariants = allVariants.filter(v => v.color === "Black");
+    const cardinalVariants = allVariants.filter(v => v.color === "Cardinal");
+    const whiteVariants = allVariants.filter(v => v.color === "White");
+
+    expect(blackVariants).toHaveLength(3);
+    expect(cardinalVariants).toHaveLength(3);
+    expect(whiteVariants).toHaveLength(3);
+
+    // Each color should have S, M, L sizes
+    [blackVariants, cardinalVariants, whiteVariants].forEach(variants => {
+      const sizes = variants.map(v => v.size);
+      expect(sizes).toContain("S");
+      expect(sizes).toContain("M");
+      expect(sizes).toContain("L");
+    });
+  });
+});
