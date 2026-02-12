@@ -1,0 +1,8 @@
+{
+  "query": "INSERT INTO products (name, description, price, image_url, back_image_url, category, is_active, stripe_price_id) VALUES ('The Swarm Rag', 'All-over print bandana dripping with skull bees, flames, poker chips, and honey jars. Wear it on your face, around your neck, or tie it to your bars. Your dog can rock it too.', 1800, 'https://files.manuscdn.com/user_upload_by_module/session_file/104679889/UHFsxdprySafZJJi.png', 'https://files.manuscdn.com/user_upload_by_module/session_file/104679889/COnECCQKuBrgjwoL.png', 'accessories', 1, NULL);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute INSERT INTO products (name, description, price, image_url, back_image_url, category, is_active, stripe_price_id) VALUES ('The Swarm Rag', 'All-over print bandana dripping with skull bees, flames, poker chips, and honey jars. Wear it on your face, around your neck, or tie it to your bars. Your dog can rock it too.', 1800, 'https://files.manuscdn.com/user_upload_by_module/session_file/104679889/UHFsxdprySafZJJi.png', 'https://files.manuscdn.com/user_upload_by_module/session_file/104679889/COnECCQKuBrgjwoL.png', 'accessories', 1, NULL);",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1054 (42S22) at line 1: Unknown column 'price' in 'field list'"
+  ]
+}

@@ -12,7 +12,7 @@ export default function TermsOfService() {
           <div className="flex justify-between items-center mb-8">
             <Link href="/">
               <div className="flex items-center gap-2 cursor-pointer group">
-                <img src="/images/hero-bee.png" alt="Logo" className="h-12 w-12 group-hover:rotate-12 transition-transform" />
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png" alt="Logo" className="h-12 w-12 group-hover:rotate-12 transition-transform" />
                 <span className="font-heading text-2xl text-primary tracking-wider group-hover:text-white transition-colors">FLESH TO DEATH</span>
               </div>
             </Link>

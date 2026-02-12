@@ -36,7 +36,7 @@ export default function OrderSuccess() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer">
-              <img src="/images/hero-bee.png" alt="Logo" className="h-12 w-12 object-contain" />
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png" alt="Logo" className="h-12 w-12 object-contain" />
               <span className="font-heading text-2xl md:text-3xl text-primary tracking-widest grunge-text">
                 FLESH TO DEATH
               </span>

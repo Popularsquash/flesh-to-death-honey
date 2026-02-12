@@ -10,7 +10,7 @@ export default function About() {
       <header className="border-b-4 border-primary sticky top-0 z-50 bg-black/95 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
-            <img src="/images/hero-bee.png" alt="Logo" className="h-12 w-12 object-contain" />
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png" alt="Logo" className="h-12 w-12 object-contain" />
             <div className="flex flex-col leading-none">
               <span className="font-heading text-xl md:text-2xl text-primary tracking-widest grunge-text">
                 FLESH TO DEATH
@@ -75,7 +75,7 @@ export default function About() {
               <div className="relative">
                 <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
                 <img 
-                  src="/images/hero-bee-transparent.png" 
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/JBOoIseEJnYaBiOP.png" 
                   alt="Flesh to Death Bee" 
                   className="relative z-10 w-full max-w-md drop-shadow-[0_0_25px_rgba(255,195,0,0.5)]"
                 />

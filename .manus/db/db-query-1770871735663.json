@@ -1,0 +1,9 @@
+{
+  "query": "\nINSERT INTO productVariants (productId, printfulVariantId, name, sku, retailPrice, currency, size, color, inStock)\nVALUES\n(150001, 0, 'S - Pet', 'SWARM-RAG-S', 1399, 'USD', 'S', 'Yellow', 1),\n(150001, 0, 'M - Face Cover', 'SWARM-RAG-M', 1399, 'USD', 'M', 'Yellow', 1),\n(150001, 0, 'L - Bandana', 'SWARM-RAG-L', 1399, 'USD', 'L', 'Yellow', 1);\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute \nINSERT INTO productVariants (productId, printfulVariantId, name, sku, retailPrice, currency, size, color, inStock)\nVALUES\n(150001, 0, 'S - Pet', 'SWARM-RAG-S', 1399, 'USD', 'S', 'Yellow', 1),\n(150001, 0, 'M - Face Cover', 'SWARM-RAG-M', 1399, 'USD', 'M', 'Yellow', 1),\n(150001, 0, 'L - Bandana', 'SWARM-RAG-L', 1399, 'USD', 'L', 'Yellow', 1);\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 65
+}

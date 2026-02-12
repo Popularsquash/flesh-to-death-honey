@@ -1,0 +1,379 @@
+{
+  "query": "SELECT p.id, p.name, pv.id as vid, pv.name as vname, pv.retailPrice, pv.size, pv.color FROM products p LEFT JOIN productVariants pv ON pv.productId = p.id WHERE p.isActive = 1 ORDER BY p.id, pv.id LIMIT 50;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT p.id, p.name, pv.id as vid, pv.name as vname, pv.retailPrice, pv.size, pv.color FROM products p LEFT JOIN productVariants pv ON pv.productId = p.id WHERE p.isActive = 1 ORDER BY p.id, pv.id LIMIT 50;",
+  "rows": [
+    {
+      "id": "120001",
+      "name": "Hive Mind Cap",
+      "vid": "120001",
+      "vname": "Hive Mind Cap - Black / One Size",
+      "retailPrice": "2399",
+      "size": "One Size",
+      "color": "Black"
+    },
+    {
+      "id": "120002",
+      "name": "Swarm Hoodie",
+      "vid": "120002",
+      "vname": "Swarm Hoodie - Black / S",
+      "retailPrice": "3899",
+      "size": "S",
+      "color": "Black"
+    },
+    {
+      "id": "120002",
+      "name": "Swarm Hoodie",
+      "vid": "120003",
+      "vname": "Swarm Hoodie - Black / M",
+      "retailPrice": "3899",
+      "size": "M",
+      "color": "Black"
+    },
+    {
+      "id": "120002",
+      "name": "Swarm Hoodie",
+      "vid": "120004",
+      "vname": "Swarm Hoodie - Black / L",
+      "retailPrice": "3899",
+      "size": "L",
+      "color": "Black"
+    },
+    {
+      "id": "120002",
+      "name": "Swarm Hoodie",
+      "vid": "120005",
+      "vname": "Swarm Hoodie - Black / XL",
+      "retailPrice": "3899",
+      "size": "XL",
+      "color": "Black"
+    },
+    {
+      "id": "120002",
+      "name": "Swarm Hoodie",
+      "vid": "120006",
+      "vname": "Swarm Hoodie - Black / 2XL",
+      "retailPrice": "3899",
+      "size": "2XL",
+      "color": "Black"
+    },
+    {
+      "id": "120002",
+      "name": "Swarm Hoodie",
+      "vid": "120007",
+      "vname": "Swarm Hoodie - Black / 3XL",
+      "retailPrice": "3899",
+      "size": "3XL",
+      "color": "Black"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "vid": "120008",
+      "vname": "The Flag Bearer Tee - Black / S",
+      "retailPrice": "1599",
+      "size": "S",
+      "color": "Black"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "vid": "120009",
+      "vname": "The Flag Bearer Tee - Black / M",
+      "retailPrice": "1599",
+      "size": "M",
+      "color": "Black"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "vid": "120010",
+      "vname": "The Flag Bearer Tee - Black / L",
+      "retailPrice": "1599",
+      "size": "L",
+      "color": "Black"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "vid": "120011",
+      "vname": "The Flag Bearer Tee - Black / XL",
+      "retailPrice": "1599",
+      "size": "XL",
+      "color": "Black"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "vid": "120012",
+      "vname": "The Flag Bearer Tee - Black / 2XL",
+      "retailPrice": "1599",
+      "size": "2XL",
+      "color": "Black"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "vid": "120013",
+      "vname": "The Flag Bearer Tee - Black / 3XL",
+      "retailPrice": "1599",
+      "size": "3XL",
+      "color": "Black"
+    },
+    {
+      "id": "120004",
+      "name": "Beekeeper Tank",
+      "vid": "120014",
+      "vname": "Beekeeper Tank - Black / S",
+      "retailPrice": "2199",
+      "size": "S",
+      "color": "Black"
+    },
+    {
+      "id": "120004",
+      "name": "Beekeeper Tank",
+      "vid": "120015",
+      "vname": "Beekeeper Tank - Black / M",
+      "retailPrice": "2199",
+      "size": "M",
+      "color": "Black"
+    },
+    {
+      "id": "120004",
+      "name": "Beekeeper Tank",
+      "vid": "120016",
+      "vname": "Beekeeper Tank - Black / L",
+      "retailPrice": "2199",
+      "size": "L",
+      "color": "Black"
+    },
+    {
+      "id": "120004",
+      "name": "Beekeeper Tank",
+      "vid": "120017",
+      "vname": "Beekeeper Tank - Black / XL",
+      "retailPrice": "2199",
+      "size": "XL",
+      "color": "Black"
+    },
+    {
+      "id": "120004",
+      "name": "Beekeeper Tank",
+      "vid": "120018",
+      "vname": "Beekeeper Tank - Black / 2XL",
+      "retailPrice": "2199",
+      "size": "2XL",
+      "color": "Black"
+    },
+    {
+      "id": "120005",
+      "name": "The Daily Rider Tee",
+      "vid": "120019",
+      "vname": "The Daily Rider Tee - White / S",
+      "retailPrice": "3399",
+      "size": "S",
+      "color": "White"
+    },
+    {
+      "id": "120005",
+      "name": "The Daily Rider Tee",
+      "vid": "120020",
+      "vname": "The Daily Rider Tee - White / M",
+      "retailPrice": "3399",
+      "size": "M",
+      "color": "White"
+    },
+    {
+      "id": "120005",
+      "name": "The Daily Rider Tee",
+      "vid": "120021",
+      "vname": "The Daily Rider Tee - White / L",
+      "retailPrice": "3399",
+      "size": "L",
+      "color": "White"
+    },
+    {
+      "id": "120005",
+      "name": "The Daily Rider Tee",
+      "vid": "120022",
+      "vname": "The Daily Rider Tee - White / XL",
+      "retailPrice": "3399",
+      "size": "XL",
+      "color": "White"
+    },
+    {
+      "id": "120005",
+      "name": "The Daily Rider Tee",
+      "vid": "120023",
+      "vname": "The Daily Rider Tee - White / 2XL",
+      "retailPrice": "3399",
+      "size": "2XL",
+      "color": "White"
+    },
+    {
+      "id": "120006",
+      "name": "The Flag Bearer Tee - Cardinal",
+      "vid": "120024",
+      "vname": "Cardinal / 2XL",
+      "retailPrice": "1599",
+      "size": "2XL",
+      "color": "Cardinal"
+    },
+    {
+      "id": "120006",
+      "name": "The Flag Bearer Tee - Cardinal",
+      "vid": "120025",
+      "vname": "Cardinal / S",
+      "retailPrice": "1599",
+      "size": "S",
+      "color": "Cardinal"
+    },
+    {
+      "id": "120006",
+      "name": "The Flag Bearer Tee - Cardinal",
+      "vid": "120026",
+      "vname": "Cardinal / 3XL",
+      "retailPrice": "1599",
+      "size": "3XL",
+      "color": "Cardinal"
+    },
+    {
+      "id": "120006",
+      "name": "The Flag Bearer Tee - Cardinal",
+      "vid": "120027",
+      "vname": "Cardinal / XL",
+      "retailPrice": "1599",
+      "size": "XL",
+      "color": "Cardinal"
+    },
+    {
+      "id": "120006",
+      "name": "The Flag Bearer Tee - Cardinal",
+      "vid": "120028",
+      "vname": "Cardinal / M",
+      "retailPrice": "1599",
+      "size": "M",
+      "color": "Cardinal"
+    },
+    {
+      "id": "120006",
+      "name": "The Flag Bearer Tee - Cardinal",
+      "vid": "120029",
+      "vname": "Cardinal / L",
+      "retailPrice": "1599",
+      "size": "L",
+      "color": "Cardinal"
+    },
+    {
+      "id": "120007",
+      "name": "The Flag Bearer Tee - White",
+      "vid": "120030",
+      "vname": "White / 2XL",
+      "retailPrice": "1599",
+      "size": "2XL",
+      "color": "White"
+    },
+    {
+      "id": "120007",
+      "name": "The Flag Bearer Tee - White",
+      "vid": "120031",
+      "vname": "White / S",
+      "retailPrice": "1599",
+      "size": "S",
+      "color": "White"
+    },
+    {
+      "id": "120007",
+      "name": "The Flag Bearer Tee - White",
+      "vid": "120032",
+      "vname": "White / XL",
+      "retailPrice": "1599",
+      "size": "XL",
+      "color": "White"
+    },
+    {
+      "id": "120007",
+      "name": "The Flag Bearer Tee - White",
+      "vid": "120033",
+      "vname": "White / M",
+      "retailPrice": "1599",
+      "size": "M",
+      "color": "White"
+    },
+    {
+      "id": "120007",
+      "name": "The Flag Bearer Tee - White",
+      "vid": "120034",
+      "vname": "White / L",
+      "retailPrice": "1599",
+      "size": "L",
+      "color": "White"
+    },
+    {
+      "id": "120007",
+      "name": "The Flag Bearer Tee - White",
+      "vid": "120035",
+      "vname": "White / 3XL",
+      "retailPrice": "1599",
+      "size": "3XL",
+      "color": "White"
+    },
+    {
+      "id": "150001",
+      "name": "The Swarm Rag",
+      "vid": "150001",
+      "vname": "S - Pet",
+      "retailPrice": "1399",
+      "size": "S",
+      "color": "Yellow"
+    },
+    {
+      "id": "150001",
+      "name": "The Swarm Rag",
+      "vid": "150002",
+      "vname": "M - Face Cover",
+      "retailPrice": "1399",
+      "size": "M",
+      "color": "Yellow"
+    },
+    {
+      "id": "150001",
+      "name": "The Swarm Rag",
+      "vid": "150003",
+      "vname": "L - Bandana",
+      "retailPrice": "1399",
+      "size": "L",
+      "color": "Yellow"
+    },
+    {
+      "id": "150002",
+      "name": "Buzz Stompers",
+      "vid": "150004",
+      "vname": "S (US 5-7)",
+      "retailPrice": "999",
+      "size": "S",
+      "color": "White"
+    },
+    {
+      "id": "150002",
+      "name": "Buzz Stompers",
+      "vid": "150005",
+      "vname": "M (US 7-9)",
+      "retailPrice": "999",
+      "size": "M",
+      "color": "White"
+    },
+    {
+      "id": "150002",
+      "name": "Buzz Stompers",
+      "vid": "150006",
+      "vname": "L (US 9-12)",
+      "retailPrice": "999",
+      "size": "L",
+      "color": "White"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tvid\tvname\tretailPrice\tsize\tcolor\n120001\tHive Mind Cap\t120001\tHive Mind Cap - Black / One Size\t2399\tOne Size\tBlack\n120002\tSwarm Hoodie\t120002\tSwarm Hoodie - Black / S\t3899\tS\tBlack\n120002\tSwarm Hoodie\t120003\tSwarm Hoodie - Black / M\t3899\tM\tBlack\n120002\tSwarm Hoodie\t120004\tSwarm Hoodie - Black / L\t3899\tL\tBlack\n120002\tSwarm Hoodie\t120005\tSwarm Hoodie - Black / XL\t3899\tXL\tBlack\n120002\tSwarm Hoodie\t120006\tSwarm Hoodie - Black / 2XL\t3899\t2XL\tBlack\n120002\tSwarm Hoodie\t120007\tSwarm Hoodie - Black / 3XL\t3899\t3XL\tBlack\n120003\tThe Flag Bearer Tee\t120008\tThe Flag Bearer Tee - Black / S\t1599\tS\tBlack\n120003\tThe Flag Bearer Tee\t120009\tThe Flag Bearer Tee - Black / M\t1599\tM\tBlack\n120003\tThe Flag Bearer Tee\t120010\tThe Flag Bearer Tee - Black / L\t1599\tL\tBlack\n120003\tThe Flag Bearer Tee\t120011\tThe Flag Bearer Tee - Black / XL\t1599\tXL\tBlack\n120003\tThe Flag Bearer Tee\t120012\tThe Flag Bearer Tee - Black / 2XL\t1599\t2XL\tBlack\n120003\tThe Flag Bearer Tee\t120013\tThe Flag Bearer Tee - Black / 3XL\t1599\t3XL\tBlack\n120004\tBeekeeper Tank\t120014\tBeekeeper Tank - Black / S\t2199\tS\tBlack\n120004\tBeekeeper Tank\t120015\tBeekeeper Tank - Black / M\t2199\tM\tBlack\n120004\tBeekeeper Tank\t120016\tBeekeeper Tank - Black / L\t2199\tL\tBlack\n120004\tBeekeeper Tank\t120017\tBeekeeper Tank - Black / XL\t2199\tXL\tBlack\n120004\tBeekeeper Tank\t120018\tBeekeeper Tank - Black / 2XL\t2199\t2XL\tBlack\n120005\tThe Daily Rider Tee\t120019\tThe Daily Rider Tee - White / S\t3399\tS\tWhite\n120005\tThe Daily Rider Tee\t120020\tThe Daily Rider Tee - White / M\t3399\tM\tWhite\n120005\tThe Daily Rider Tee\t120021\tThe Daily Rider Tee - White / L\t3399\tL\tWhite\n120005\tThe Daily Rider Tee\t120022\tThe Daily Rider Tee - White / XL\t3399\tXL\tWhite\n120005\tThe Daily Rider Tee\t120023\tThe Daily Rider Tee - White / 2XL\t3399\t2XL\tWhite\n120006\tThe Flag Bearer Tee - Cardinal\t120024\tCardinal / 2XL\t1599\t2XL\tCardinal\n120006\tThe Flag Bearer Tee - Cardinal\t120025\tCardinal / S\t1599\tS\tCardinal\n120006\tThe Flag Bearer Tee - Cardinal\t120026\tCardinal / 3XL\t1599\t3XL\tCardinal\n120006\tThe Flag Bearer Tee - Cardinal\t120027\tCardinal / XL\t1599\tXL\tCardinal\n120006\tThe Flag Bearer Tee - Cardinal\t120028\tCardinal / M\t1599\tM\tCardinal\n120006\tThe Flag Bearer Tee - Cardinal\t120029\tCardinal / L\t1599\tL\tCardinal\n120007\tThe Flag Bearer Tee - White\t120030\tWhite / 2XL\t1599\t2XL\tWhite\n120007\tThe Flag Bearer Tee - White\t120031\tWhite / S\t1599\tS\tWhite\n120007\tThe Flag Bearer Tee - White\t120032\tWhite / XL\t1599\tXL\tWhite\n120007\tThe Flag Bearer Tee - White\t120033\tWhite / M\t1599\tM\tWhite\n120007\tThe Flag Bearer Tee - White\t120034\tWhite / L\t1599\tL\tWhite\n120007\tThe Flag Bearer Tee - White\t120035\tWhite / 3XL\t1599\t3XL\tWhite\n150001\tThe Swarm Rag\t150001\tS - Pet\t1399\tS\tYellow\n150001\tThe Swarm Rag\t150002\tM - Face Cover\t1399\tM\tYellow\n150001\tThe Swarm Rag\t150003\tL - Bandana\t1399\tL\tYellow\n150002\tBuzz Stompers\t150004\tS (US 5-7)\t999\tS\tWhite\n150002\tBuzz Stompers\t150005\tM (US 7-9)\t999\tM\tWhite\n150002\tBuzz Stompers\t150006\tL (US 9-12)\t999\tL\tWhite\n",
+  "stderr": "",
+  "execution_time_ms": 52
+}

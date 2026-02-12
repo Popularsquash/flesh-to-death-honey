@@ -23,7 +23,7 @@ import {
 import { CustomerReviews } from "@/components/CustomerReviews";
 
 // Size chart data for T-shirts
-const sizeChart = {
+const sizeChartTshirt = {
   headers: ["Size", "Chest (in)", "Length (in)", "Sleeve (in)"],
   rows: [
     ["S", "34-36", "28", "15.5"],
@@ -33,6 +33,34 @@ const sizeChart = {
     ["2XL", "50-52", "32", "21.5"],
     ["3XL", "54-56", "33", "23"],
   ],
+};
+
+// Size chart data for bandana
+const sizeChartBandana = {
+  headers: ["Size", "Width (in)", "Height (in)", "Best For"],
+  rows: [
+    ["S", "18", "18", "Pets / Wrist Wrap"],
+    ["M", "22", "22", "Face Cover / Neck"],
+    ["L", "26", "26", "Head Wrap / Bandana"],
+  ],
+};
+
+// Size chart data for socks
+const sizeChartSocks = {
+  headers: ["Size", "US Shoe Size", "EU Size", "Sock Length (in)"],
+  rows: [
+    ["S", "5-7", "35-38", "15"],
+    ["M", "7-9", "38-42", "16"],
+    ["L", "9-12", "42-46", "17"],
+  ],
+};
+
+// Get the right size chart for a product
+const getSizeChart = (productName: string) => {
+  const name = productName.toLowerCase();
+  if (name.includes("rag") || name.includes("bandana")) return sizeChartBandana;
+  if (name.includes("stomper") || name.includes("sock")) return sizeChartSocks;
+  return sizeChartTshirt;
 };
 
 // Themed backgrounds for product detail pages
@@ -60,10 +88,10 @@ const THEMED_BACKGROUNDS = {
 // Map product categories to themes
 const getProductTheme = (productName: string): keyof typeof THEMED_BACKGROUNDS => {
   const name = productName.toLowerCase();
-  if (name.includes("cap") || name.includes("hoodie") || name.includes("swarm")) {
+  if (name.includes("cap") || name.includes("hoodie")) {
     return "garage";
   }
-  if (name.includes("tank") || name.includes("beekeeper")) {
+  if (name.includes("tank") || name.includes("beekeeper") || name.includes("rag") || name.includes("bandana") || name.includes("stomper") || name.includes("sock")) {
     return "alley";
   }
   if (name.includes("tee") || name.includes("shirt") || name.includes("signature") || name.includes("rider") || name.includes("flag")) {
@@ -93,8 +121,8 @@ export default function ProductDetail() {
 
   // Product images - front and back views
   const productImages = product ? [
-    { url: product.thumbnailUrl || "/images/products/placeholder.png", label: "Front" },
-    { url: product.backImageUrl || product.thumbnailUrl || "/images/products/placeholder.png", label: "Back" },
+    { url: product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png", label: "Front" },
+    { url: product.backImageUrl || product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png", label: "Back" },
   ] : [];
 
   const handleAddToCart = async () => {
@@ -146,7 +174,7 @@ export default function ProductDetail() {
       <header className="sticky top-0 z-50 bg-black border-b-4 border-primary">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-3">
-            <img src="/images/hero-bee.png" alt="F2D Logo" className="h-10 w-auto" />
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png" alt="F2D Logo" className="h-10 w-auto" />
             <span className="font-heading text-3xl text-primary hover:text-white transition-colors">
               FLESH TO DEATH
             </span>
@@ -293,7 +321,7 @@ export default function ProductDetail() {
                           <table className="w-full text-sm">
                             <thead>
                               <tr className="border-b border-gray-700">
-                                {sizeChart.headers.map((header, i) => (
+                                {getSizeChart(product.name).headers.map((header: string, i: number) => (
                                   <th key={i} className="py-3 px-4 text-left font-heading text-primary">
                                     {header}
                                   </th>
@@ -301,9 +329,9 @@ export default function ProductDetail() {
                               </tr>
                             </thead>
                             <tbody>
-                              {sizeChart.rows.map((row, i) => (
+                              {getSizeChart(product.name).rows.map((row: string[], i: number) => (
                                 <tr key={i} className="border-b border-gray-800">
-                                  {row.map((cell, j) => (
+                                  {row.map((cell: string, j: number) => (
                                     <td key={j} className="py-3 px-4 text-gray-300">
                                       {cell}
                                     </td>

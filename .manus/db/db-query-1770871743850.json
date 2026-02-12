@@ -1,0 +1,9 @@
+{
+  "query": "\nINSERT INTO productVariants (productId, printfulVariantId, name, sku, retailPrice, currency, size, color, inStock)\nVALUES\n(150002, 0, 'S (US 5-7)', 'BUZZ-STOMP-S', 999, 'USD', 'S', 'White', 1),\n(150002, 0, 'M (US 7-9)', 'BUZZ-STOMP-M', 999, 'USD', 'M', 'White', 1),\n(150002, 0, 'L (US 9-12)', 'BUZZ-STOMP-L', 999, 'USD', 'L', 'White', 1);\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute \nINSERT INTO productVariants (productId, printfulVariantId, name, sku, retailPrice, currency, size, color, inStock)\nVALUES\n(150002, 0, 'S (US 5-7)', 'BUZZ-STOMP-S', 999, 'USD', 'S', 'White', 1),\n(150002, 0, 'M (US 7-9)', 'BUZZ-STOMP-M', 999, 'USD', 'M', 'White', 1),\n(150002, 0, 'L (US 9-12)', 'BUZZ-STOMP-L', 999, 'USD', 'L', 'White', 1);\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 57
+}

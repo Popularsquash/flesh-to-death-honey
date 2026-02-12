@@ -1,0 +1,9 @@
+{
+  "query": "\nUPDATE productVariants SET retailPrice = 2399 WHERE productId IN (SELECT id FROM products WHERE name = 'Hive Mind Cap');\nUPDATE productVariants SET retailPrice = 3899 WHERE productId IN (SELECT id FROM products WHERE name = 'Swarm Hoodie');\nUPDATE productVariants SET retailPrice = 1599 WHERE productId IN (SELECT id FROM products WHERE name LIKE 'The Flag Bearer Tee%');\nUPDATE productVariants SET retailPrice = 2199 WHERE productId IN (SELECT id FROM products WHERE name = 'Beekeeper Tank');\nUPDATE productVariants SET retailPrice = 3399 WHERE productId IN (SELECT id FROM products WHERE name = 'The Daily Rider Tee');\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute \nUPDATE productVariants SET retailPrice = 2399 WHERE productId IN (SELECT id FROM products WHERE name = 'Hive Mind Cap');\nUPDATE productVariants SET retailPrice = 3899 WHERE productId IN (SELECT id FROM products WHERE name = 'Swarm Hoodie');\nUPDATE productVariants SET retailPrice = 1599 WHERE productId IN (SELECT id FROM products WHERE name LIKE 'The Flag Bearer Tee%');\nUPDATE productVariants SET retailPrice = 2199 WHERE productId IN (SELECT id FROM products WHERE name = 'Beekeeper Tank');\nUPDATE productVariants SET retailPrice = 3399 WHERE productId IN (SELECT id FROM products WHERE name = 'The Daily Rider Tee');\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 132
+}

@@ -69,7 +69,7 @@ export default function Home() {
       description: "Honey-punk salve for road burn. Infused with asphalt resin and junkyard rust. Guaranteed to offend dermatologists.",
       tagline: "Scabs Are Just Nature’s Temporary Tattoos.",
       warning: "May cause healed wounds to whisper biker poetry.",
-      image: "/images/hellfire-honey.jpg",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/EViPcMnJiIKyurWs.jpg",
       tag: "Experimental"
     },
     {
@@ -79,7 +79,7 @@ export default function Home() {
       description: "Beeswax serum laced with bioluminescent spores. Makes scars glow like radioactive mile markers.",
       tagline: "Your Face is a Highway. Light it Up.",
       warning: "Permanently confuses moths.",
-      image: "/images/hero-bee.png",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png",
       tag: "Radioactive"
     },
     {
@@ -99,7 +99,7 @@ export default function Home() {
       description: "Pomade infused with motorcycle battery acid. Styles beards, mohawks, and bad decisions.",
       tagline: "Hold So Stiff, It Judges Your Life Choices.",
       warning: "Hair gains sentience after 3 uses.",
-      image: "/images/hellfire-honey.jpg",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/EViPcMnJiIKyurWs.jpg",
       tag: "Sentient"
     },
     {
@@ -109,7 +109,7 @@ export default function Home() {
       description: "Drinkable honey-mead brewed in a salvaged gas tank. Notes of burnt rubber and existential clarity.",
       tagline: "For When Your Soul Needs an Oil Change.",
       warning: "Causes prophetic dreams about highway pylons.",
-      image: "/images/hero-bee.png",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png",
       tag: "Volatile"
     }
   ];
@@ -120,7 +120,7 @@ export default function Home() {
       name: "Death Rider Tee",
       price: "$35.00",
       description: "Heavyweight cotton for heavy situations. Features the classic Flesh to Death back print.",
-      image: "/images/apparel/FLESHTODEATHTSHIRTDESIGN.png",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/wYGrrFwHJMQdeNIs.png",
       tag: "Limited"
     },
     {
@@ -128,7 +128,7 @@ export default function Home() {
       name: "Hive Mind Tee",
       price: "$35.00",
       description: "Join the swarm. Front and back print with our signature skull bee.",
-      image: "/images/apparel/FLESHTODEATHTSHIRTDESIGN2.png",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/ceAnSevZKwPsDkAe.png",
       tag: "New Drop"
     },
     {
@@ -136,7 +136,7 @@ export default function Home() {
       name: "Reaper Patch",
       price: "$10.00",
       description: "Embroidered patch for your cut. Guaranteed to scare grandmas.",
-      image: "/images/apparel/FLESHTODEATHCIRCLEDESIGN.png",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/FCrRDCqkRJoYjhtp.png",
       tag: "Accessory"
     },
     {
@@ -144,7 +144,7 @@ export default function Home() {
       name: "Swarm Sticker Pack",
       price: "$15.00",
       description: "Slap 'em on your helmet, your tank, or your local stop sign.",
-      image: "/images/apparel/FLESHTODEATHELEMENTDESIGNS.png",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/PloaTZpmpdODxDKE.png",
       tag: "Sticky"
     }
   ];
@@ -165,7 +165,7 @@ export default function Home() {
       <nav className="border-b-4 border-primary sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <img src="/images/hero-bee.png" alt="Logo" className="h-12 w-12 object-contain" />
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png" alt="Logo" className="h-12 w-12 object-contain" />
             <div className="flex flex-col leading-none">
               <span className="font-heading text-xl md:text-2xl text-primary tracking-widest grunge-text">
                 FLESH TO DEATH
@@ -249,7 +249,7 @@ export default function Home() {
           <div className="relative flex justify-center">
             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full transform scale-75"></div>
             <img 
-              src="/images/hero-bee-transparent.png" 
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/JBOoIseEJnYaBiOP.png" 
               alt="Biker Bee Mascot" 
               className="relative z-10 w-full max-w-lg drop-shadow-[0_0_25px_rgba(255,195,0,0.6)] transform hover:scale-105 transition-transform duration-500"
             />
@@ -259,6 +259,118 @@ export default function Home() {
         {/* Torn Paper Divider */}
         <div className="absolute bottom-0 left-0 w-full h-16 bg-primary" style={{ clipPath: "polygon(0 40%, 100% 0%, 100% 100%, 0% 100%)" }}></div>
       </header>
+
+      {/* NEW DROPS Section */}
+      <section className="py-20 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-[url('/images/skeleton-bees.png')] bg-repeat bg-center"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-12">
+            <Badge className="bg-red-600 text-white rounded-none font-heading uppercase text-lg px-6 py-2 mb-4 inline-block border-2 border-white animate-pulse">
+              Fresh Off the Press
+            </Badge>
+            <h2 className="text-5xl md:text-7xl font-heading text-white mb-4">
+              New <span className="text-primary grunge-text">Drops</span>
+            </h2>
+            <p className="text-xl font-body text-gray-400 max-w-2xl mx-auto">
+              Just landed in the hive. Grab 'em before they're gone.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* The Swarm Rag - Bandana */}
+            <Link href="/product/150001">
+              <div className="group relative bg-gray-900 border-4 border-primary hover:border-white transition-all duration-300 overflow-hidden cursor-pointer">
+                <div className="absolute top-4 left-4 z-20">
+                  <Badge className="bg-red-600 text-white rounded-none font-heading uppercase text-sm px-3 py-1 border border-white">
+                    New Drop
+                  </Badge>
+                </div>
+                <div className="relative h-80 overflow-hidden">
+                  <img 
+                    src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/QIAVUQdfVvxcwJHj.png" 
+                    alt="The Swarm Rag" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-2xl font-heading text-primary">The Swarm Rag</h3>
+                    <span className="text-2xl font-heading text-white">$13.99</span>
+                  </div>
+                  <p className="text-gray-400 font-body text-sm mb-4">
+                    Rep the swarm from your face to your Frenchie. All-over print bandana covered in skull bees, poker chips, flames, and honey jars.
+                  </p>
+                  <div className="flex gap-2">
+                    <span className="text-xs font-heading text-gray-500 border border-gray-700 px-2 py-1">S - Pet</span>
+                    <span className="text-xs font-heading text-gray-500 border border-gray-700 px-2 py-1">M - Face Cover</span>
+                    <span className="text-xs font-heading text-gray-500 border border-gray-700 px-2 py-1">L - Bandana</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* Buzz Stompers - Crew Socks */}
+            <Link href="/product/150002">
+              <div className="group relative bg-gray-900 border-4 border-primary hover:border-white transition-all duration-300 overflow-hidden cursor-pointer">
+                <div className="absolute top-4 left-4 z-20">
+                  <Badge className="bg-red-600 text-white rounded-none font-heading uppercase text-sm px-3 py-1 border border-white">
+                    New Drop
+                  </Badge>
+                </div>
+                <div className="relative h-80 overflow-hidden bg-white">
+                  <img 
+                    src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/BNjdxcmRkRwWMvWV.png" 
+                    alt="Buzz Stompers" 
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500 p-4"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                </div>
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-2xl font-heading text-primary">Buzz Stompers</h3>
+                    <span className="text-2xl font-heading text-white">$9.99</span>
+                  </div>
+                  <p className="text-gray-400 font-body text-sm mb-4">
+                    Stomp the pavement with the biker bee on your feet. Sublimation crew socks with repeating bee head pattern. Cushioned sole. Black cuffs.
+                  </p>
+                  <div className="flex gap-2">
+                    <span className="text-xs font-heading text-gray-500 border border-gray-700 px-2 py-1">S (US 5-7)</span>
+                    <span className="text-xs font-heading text-gray-500 border border-gray-700 px-2 py-1">M (US 7-9)</span>
+                    <span className="text-xs font-heading text-gray-500 border border-gray-700 px-2 py-1">L (US 9-12)</span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          {/* Additional mockup gallery */}
+          <div className="mt-8 grid grid-cols-3 gap-4 max-w-5xl mx-auto">
+            <div className="overflow-hidden border-2 border-gray-800 hover:border-primary transition-colors">
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/BZvKYdjUtJOlbTZP.png" alt="Bandana worn" className="w-full h-48 object-cover hover:scale-105 transition-transform" />
+            </div>
+            <div className="overflow-hidden border-2 border-gray-800 hover:border-primary transition-colors">
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/vCpXQAZqyOQKtjWN.png" alt="Bandana on dog" className="w-full h-48 object-cover hover:scale-105 transition-transform" />
+            </div>
+            <div className="overflow-hidden border-2 border-gray-800 hover:border-primary transition-colors">
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/UHFsxdprySafZJJi.png" alt="Bandana flat lay" className="w-full h-48 object-cover hover:scale-105 transition-transform" />
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/shop">
+              <Button size="lg" className="bg-primary text-black hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none border-2 border-transparent hover:border-primary transition-all shadow-[4px_4px_0px_0px_rgba(199,0,57,1)]">
+                View All Merch
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-primary" style={{ clipPath: "polygon(0 40%, 100% 0%, 100% 100%, 0% 100%)" }}></div>
+      </section>
 
       {/* Products Section - Coming Soon */}
       <section id="products" className="py-24 bg-primary relative">
@@ -370,7 +482,7 @@ export default function Home() {
 
           <div className="relative bg-black border-4 border-primary p-12 text-center overflow-hidden max-w-2xl mx-auto">
             <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0 bg-[url('/images/apparel/FLESHTODEATHELEMENTDESIGNS.png')] bg-center bg-contain bg-no-repeat"></div>
+              <div className="absolute inset-0 bg-[url('https://files.manuscdn.com/user_upload_by_module/session_file/104679889/PloaTZpmpdODxDKE.png')] bg-center bg-contain bg-no-repeat"></div>
             </div>
             <div className="relative z-10">
               <Badge className="bg-primary text-black rounded-none font-heading uppercase text-xl px-6 py-2 mb-6 inline-block border-2 border-black">

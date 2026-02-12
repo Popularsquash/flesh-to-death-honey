@@ -1,0 +1,55 @@
+{
+  "query": "SELECT id, name, thumbnailUrl FROM products ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT id, name, thumbnailUrl FROM products ORDER BY id;",
+  "rows": [
+    {
+      "id": "120001",
+      "name": "Hive Mind Cap",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/EjDDAzRlOzdapJQu.png"
+    },
+    {
+      "id": "120002",
+      "name": "Swarm Hoodie",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/GNIcltCcqzNnKqHY.png"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/DPvuNEVRdZZNzPHW.png"
+    },
+    {
+      "id": "120004",
+      "name": "Beekeeper Tank",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/elYwqpCfYkHPOLaJ.png"
+    },
+    {
+      "id": "120005",
+      "name": "The Daily Rider Tee",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/GrqVXlTGqQQgSZGq.png"
+    },
+    {
+      "id": "120006",
+      "name": "The Flag Bearer Tee - Cardinal",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/KwIDfMyMeASFlWmW.png"
+    },
+    {
+      "id": "120007",
+      "name": "The Flag Bearer Tee - White",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RiOhXtJLWfZTbKtF.png"
+    },
+    {
+      "id": "150001",
+      "name": "The Swarm Rag",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/UHFsxdprySafZJJi.png"
+    },
+    {
+      "id": "150002",
+      "name": "Buzz Stompers",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/BNjdxcmRkRwWMvWV.png"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tthumbnailUrl\n120001\tHive Mind Cap\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/EjDDAzRlOzdapJQu.png\n120002\tSwarm Hoodie\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/GNIcltCcqzNnKqHY.png\n120003\tThe Flag Bearer Tee\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/DPvuNEVRdZZNzPHW.png\n120004\tBeekeeper Tank\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/elYwqpCfYkHPOLaJ.png\n120005\tThe Daily Rider Tee\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/GrqVXlTGqQQgSZGq.png\n120006\tThe Flag Bearer Tee - Cardinal\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/KwIDfMyMeASFlWmW.png\n120007\tThe Flag Bearer Tee - White\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/RiOhXtJLWfZTbKtF.png\n150001\tThe Swarm Rag\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/UHFsxdprySafZJJi.png\n150002\tBuzz Stompers\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/BNjdxcmRkRwWMvWV.png\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}

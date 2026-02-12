@@ -1,0 +1,9 @@
+{
+  "query": "\nUPDATE products SET description = 'Rep the swarm from your face to your Frenchie. All-over print bandana covered in skull bees, poker chips, flames, and honey jars. Wear it, wrap it, ride with it.' WHERE id = 150001;\nUPDATE products SET description = 'Stomp the pavement with the biker bee on your feet. Sublimation crew socks with repeating bee head pattern. Cushioned sole. Black cuffs. Zero regrets.' WHERE id = 150002;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute \nUPDATE products SET description = 'Rep the swarm from your face to your Frenchie. All-over print bandana covered in skull bees, poker chips, flames, and honey jars. Wear it, wrap it, ride with it.' WHERE id = 150001;\nUPDATE products SET description = 'Stomp the pavement with the biker bee on your feet. Sublimation crew socks with repeating bee head pattern. Cushioned sole. Black cuffs. Zero regrets.' WHERE id = 150002;\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 68
+}

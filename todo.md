@@ -182,3 +182,27 @@
 ## Homepage Updates (Feb 2, 2026)
 - [x] Remove "Wear Your Allegiance" section with sample placeholders
 - [x] Update Swarm Sticker Pack to show "Coming March 2026"
+
+## Printful Store Configuration & New Products (Feb 2, 2026)
+- [ ] Configure Printful store as "Manual Order / API" platform (user action required)
+- [x] Download bandana mockups from Printful
+- [x] Download crew socks mockups from Printful
+- [x] Name bandana product: "The Swarm Rag"
+- [x] Name crew socks product: "Buzz Stompers"
+- [x] Add bandana and crew socks to database with variants
+- [x] Feature new products as "New Drops" on homepage
+- [ ] Test Printful API order sync with new store config (blocked by store config)
+
+## 35% Markup Pricing (Feb 11, 2026)
+- [x] Calculate 35% markup for all products
+- [x] Update Hive Mind Cap to $23.99
+- [x] Update Swarm Hoodie to $38.99
+- [x] Update The Flag Bearer Tee to $15.99
+- [x] Update Beekeeper Tank to $21.99
+- [x] Update The Daily Rider Tee to $33.99
+- [x] Set The Swarm Rag (bandana) at $13.99
+- [x] Set Buzz Stompers (socks) at $9.99
+- [x] Add product-specific size charts (bandana, socks)
+- [x] Update product theme mapping for new products
+- [x] Write vitest tests for pricing and product data
+- [x] All 38 tests passing (5 test files)
