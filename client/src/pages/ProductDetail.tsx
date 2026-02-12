@@ -190,8 +190,8 @@ export default function ProductDetail() {
     }
     
     return [
-      { url: product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png", label: "Front" },
-      { url: product.backImageUrl || product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png", label: "Back" },
+      { url: product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png", label: "Front" },
+      { url: product.backImageUrl || product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png", label: "Back" },
     ];
   }, [product, selectedColor]);
 
@@ -250,7 +250,7 @@ export default function ProductDetail() {
       <header className="sticky top-0 z-50 bg-black border-b-4 border-primary">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-3">
-            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png" alt="F2D Logo" className="h-10 w-auto" />
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png" alt="F2D Logo" className="h-10 w-auto" />
             <span className="font-heading text-3xl text-primary hover:text-white transition-colors">
               FLESH TO DEATH
             </span>

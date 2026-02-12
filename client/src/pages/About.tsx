@@ -10,7 +10,7 @@ export default function About() {
       <header className="border-b-4 border-primary sticky top-0 z-50 bg-black/95 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
-            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png" alt="Logo" className="h-12 w-12 object-contain" />
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png" alt="Logo" className="h-12 w-12 object-contain" />
             <div className="flex flex-col leading-none">
               <span className="font-heading text-xl md:text-2xl text-primary tracking-widest grunge-text">
                 FLESH TO DEATH

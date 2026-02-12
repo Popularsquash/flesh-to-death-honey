@@ -224,3 +224,9 @@
 - [x] Update Printful store ID to 17703560 (native/API store)
 - [x] Verified API access to new store (products, store info)
 - [x] Update vitest tests for new store config (47 tests passing)
+
+## Logo Update (Feb 12, 2026)
+- [x] Upload circle badge bee head logo to CDN
+- [x] Replace bee-on-comb logo with circle badge logo in nav header (21 refs across 14 files)
+- [x] Ensure logo appears small, top-left on every page
+- [x] Test all pages display the new logo correctly

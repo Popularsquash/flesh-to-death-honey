@@ -79,7 +79,7 @@ export default function Home() {
       description: "Beeswax serum laced with bioluminescent spores. Makes scars glow like radioactive mile markers.",
       tagline: "Your Face is a Highway. Light it Up.",
       warning: "Permanently confuses moths.",
-      image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png",
       tag: "Radioactive"
     },
     {
@@ -109,7 +109,7 @@ export default function Home() {
       description: "Drinkable honey-mead brewed in a salvaged gas tank. Notes of burnt rubber and existential clarity.",
       tagline: "For When Your Soul Needs an Oil Change.",
       warning: "Causes prophetic dreams about highway pylons.",
-      image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png",
       tag: "Volatile"
     }
   ];
@@ -165,7 +165,7 @@ export default function Home() {
       <nav className="border-b-4 border-primary sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png" alt="Logo" className="h-12 w-12 object-contain" />
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png" alt="Logo" className="h-12 w-12 object-contain" />
             <div className="flex flex-col leading-none">
               <span className="font-heading text-xl md:text-2xl text-primary tracking-widest grunge-text">
                 FLESH TO DEATH

@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-2 space-y-6">
             <div className="flex items-center justify-center md:justify-start gap-2">
-              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/YnCaWLDGLyYNBYzs.png" alt="Logo" className="h-10 w-10 object-contain grayscale" />
+              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png" alt="Logo" className="h-10 w-10 object-contain grayscale" />
               <span className="font-heading text-2xl text-white tracking-widest">
                 FLESH TO DEATH
               </span>

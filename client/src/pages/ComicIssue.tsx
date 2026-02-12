@@ -144,7 +144,7 @@ export default function ComicIssue() {
       <header className="sticky top-0 z-50 bg-black border-b-4 border-primary">
         <div className="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2 md:gap-3">
-            <img src="/images/f2d-logo.png" alt="F2D Logo" className="h-8 md:h-10 w-auto" />
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png" alt="F2D Logo" className="h-8 md:h-10 w-auto" />
             <span className="font-heading text-xl md:text-3xl text-primary hover:text-white transition-colors">
               FLESH TO DEATH
             </span>
