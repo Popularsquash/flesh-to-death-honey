@@ -218,3 +218,9 @@
 - [x] Update shop page to show single Flag Bearer Tee card
 - [x] Test color switching on product detail page
 - [x] All 44 tests passing (5 test files)
+
+## Connect New Printful API Store (Feb 12, 2026)
+- [x] Verified existing API key works with new store (no key change needed)
+- [x] Update Printful store ID to 17703560 (native/API store)
+- [x] Verified API access to new store (products, store info)
+- [x] Update vitest tests for new store config (47 tests passing)

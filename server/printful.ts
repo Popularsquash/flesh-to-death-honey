@@ -4,7 +4,7 @@
  */
 
 const PRINTFUL_API_URL = "https://api.printful.com";
-const STORE_ID = 5532073; // Flesh to Death Clothing Co.
+const STORE_ID = 17703560; // Flesh to Death Honey (Manual Order / API)
 
 interface PrintfulResponse<T> {
   code: number;
