@@ -230,3 +230,12 @@
 - [x] Replace bee-on-comb logo with circle badge logo in nav header (21 refs across 14 files)
 - [x] Ensure logo appears small, top-left on every page
 - [x] Test all pages display the new logo correctly
+
+## Comic Section Redesign (Feb 12, 2026)
+- [x] Upload 8 comic panel images + cover to CDN
+- [x] Redesign Comics listing page with cover art and better UX
+- [x] Build page-by-page comic reader with prev/next navigation
+- [x] Add keyboard arrow support, page dots, progress bar, fullscreen
+- [x] Add panel descriptions, synopsis, credits, and story flow
+- [x] Test comic reader experience in browser (all features working)
+- [x] All 47 tests passing (5 test files)
