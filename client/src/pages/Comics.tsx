@@ -106,7 +106,7 @@ export default function Comics() {
               <div className="flex items-center gap-2 text-gray-400">
                 <Zap className="text-primary" size={18} />
                 <span className="font-heading text-sm md:text-lg">
-                  {comics.length} Issue{comics.length !== 1 ? 's' : ''}
+                  {comics.filter(c => c.pages > 0).length} Issue{comics.filter(c => c.pages > 0).length !== 1 ? 's' : ''} Available
                 </span>
               </div>
             </div>

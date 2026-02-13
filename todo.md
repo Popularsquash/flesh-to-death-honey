@@ -250,3 +250,10 @@
 - [x] Test Issue #2 reader in browser
 - [x] Update Issue #1 captions with full script dialogue and verbiage
 - [x] All 47 tests passing (5 test files)
+
+## Comic Page Cleanup (Feb 12, 2026)
+- [x] Fix overlapping elements in comic reader
+- [x] Make comic reader mobile-friendly
+- [x] Change issue count from "3 Issues" to "2 Issues" on Comics listing (keep Issue #3 teaser card)
+- [x] Test on mobile and desktop viewports
+- [x] Fix PREV/NEXT button colors - white bg/black text for maximum contrast

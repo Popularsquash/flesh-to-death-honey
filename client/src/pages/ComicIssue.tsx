@@ -1,8 +1,8 @@
 import { Link, useParams } from "wouter";
 import { ArrowLeft, ChevronLeft, ChevronRight, X, Maximize2, BookOpen, Skull } from "lucide-react";
 import Footer from "@/components/Footer";
-import { useState, useEffect, useCallback } from "react";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect, useCallback, useRef } from "react";
+
 
 interface ComicPage {
   image: string;
@@ -158,6 +158,7 @@ export default function ComicIssue() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [showControls, setShowControls] = useState(true);
+  const readerRef = useRef<HTMLDivElement>(null);
 
   const totalPages = comic?.pages.length || 0;
 
@@ -175,6 +176,13 @@ export default function ComicIssue() {
   const prevPage = useCallback(() => {
     goToPage(currentPage - 1);
   }, [currentPage, goToPage]);
+
+  // Scroll to reader top on page change
+  useEffect(() => {
+    if (readerRef.current && currentPage > 0) {
+      readerRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [currentPage]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -252,16 +260,14 @@ export default function ComicIssue() {
           <div className="flex items-center gap-3">
             <span className="font-heading text-primary text-sm md:text-lg">{comic.issue}</span>
             <span className="text-gray-500">|</span>
-            <span className="text-gray-300 text-sm">{comic.title}</span>
+            <span className="text-gray-300 text-xs md:text-sm truncate">{comic.title}</span>
           </div>
-          <Button
-            variant="ghost"
-            size="sm"
+          <button
             onClick={() => setIsFullscreen(false)}
-            className="text-white hover:text-primary"
+            className="text-white hover:text-primary p-2 transition-colors"
           >
             <X size={24} />
-          </Button>
+          </button>
         </div>
 
         {/* Main Image Area */}
@@ -272,8 +278,8 @@ export default function ComicIssue() {
             onClick={prevPage}
           >
             {currentPage > 0 && (
-              <div className={`absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 rounded-full p-2 transition-opacity duration-300 ${showControls ? "opacity-70 group-hover:opacity-100" : "opacity-0"}`}>
-                <ChevronLeft size={32} className="text-white" />
+              <div className={`absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-black/60 rounded-full p-2 transition-opacity duration-300 ${showControls ? "opacity-70 group-hover:opacity-100" : "opacity-0"}`}>
+                <ChevronLeft size={24} className="text-white md:w-8 md:h-8" />
               </div>
             )}
           </div>
@@ -299,8 +305,8 @@ export default function ComicIssue() {
             onClick={nextPage}
           >
             {currentPage < totalPages - 1 && (
-              <div className={`absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 rounded-full p-2 transition-opacity duration-300 ${showControls ? "opacity-70 group-hover:opacity-100" : "opacity-0"}`}>
-                <ChevronRight size={32} className="text-white" />
+              <div className={`absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-black/60 rounded-full p-2 transition-opacity duration-300 ${showControls ? "opacity-70 group-hover:opacity-100" : "opacity-0"}`}>
+                <ChevronRight size={24} className="text-white md:w-8 md:h-8" />
               </div>
             )}
           </div>
@@ -312,8 +318,8 @@ export default function ComicIssue() {
         >
           {/* Caption */}
           {page.caption && (
-            <div className="text-center px-6 pb-2">
-              <p className="text-gray-300 text-sm md:text-base italic max-w-2xl mx-auto">
+            <div className="text-center px-4 md:px-6 pb-2">
+              <p className="text-gray-300 text-xs md:text-sm italic max-w-2xl mx-auto line-clamp-3">
                 {page.caption}
               </p>
             </div>
@@ -328,27 +334,27 @@ export default function ComicIssue() {
           </div>
 
           {/* Page indicator */}
-          <div className="bg-black/90 px-4 py-2 flex items-center justify-between">
+          <div className="bg-black/90 px-3 md:px-4 py-2 flex items-center justify-between">
             <button
               onClick={prevPage}
               disabled={currentPage === 0}
-              className="text-sm font-heading text-gray-400 hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              className="text-xs md:text-sm font-heading text-primary hover:text-secondary disabled:opacity-30 disabled:text-gray-600 disabled:cursor-not-allowed transition-colors px-2 md:px-3 py-1"
             >
               ← PREV
             </button>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
               {comic.pages.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => goToPage(i)}
-                  className={`w-2 h-2 rounded-full transition-all ${i === currentPage ? "bg-primary w-6" : "bg-gray-600 hover:bg-gray-400"}`}
+                  className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-all ${i === currentPage ? "bg-primary w-4 md:w-6" : "bg-gray-600 hover:bg-gray-400"}`}
                 />
               ))}
             </div>
             <button
               onClick={nextPage}
               disabled={currentPage === totalPages - 1}
-              className="text-sm font-heading text-gray-400 hover:text-primary disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              className="text-xs md:text-sm font-heading text-primary hover:text-secondary disabled:opacity-30 disabled:text-gray-600 disabled:cursor-not-allowed transition-colors px-2 md:px-3 py-1"
             >
               NEXT →
             </button>
@@ -390,46 +396,44 @@ export default function ComicIssue() {
       </div>
 
       {/* Comic Title Bar */}
-      <section className="py-6 md:py-10 bg-gradient-to-b from-gray-900 to-black border-b-2 border-primary/30">
+      <section className="py-5 md:py-10 bg-gradient-to-b from-gray-900 to-black border-b-2 border-primary/30">
         <div className="container mx-auto px-4 text-center">
-          <div className="inline-block bg-secondary text-white px-4 py-1 font-heading text-sm md:text-base transform -rotate-2 mb-3">
+          <div className="inline-block bg-secondary text-white px-4 py-1 font-heading text-sm md:text-base transform -rotate-2 mb-2 md:mb-3">
             {comic.issue}
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-heading text-white leading-none mb-2">
+          <h1 className="text-2xl sm:text-3xl md:text-6xl font-heading text-white leading-none mb-1 md:mb-2">
             {comic.title}
           </h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl font-heading text-primary mb-3">
+          <h2 className="text-base sm:text-lg md:text-2xl font-heading text-primary mb-2 md:mb-3">
             "{comic.subtitle}"
           </h2>
-          <p className="text-sm md:text-base text-gray-400 italic">{comic.tagline}</p>
+          <p className="text-xs md:text-base text-gray-400 italic">{comic.tagline}</p>
         </div>
       </section>
 
       {/* Comic Reader */}
-      <section className="py-6 md:py-10 bg-black">
-        <div className="container mx-auto px-4">
+      <section ref={readerRef} className="py-4 md:py-10 bg-black">
+        <div className="container mx-auto px-2 sm:px-4">
           <div className="max-w-4xl mx-auto">
             {/* Reader Controls Top */}
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-3 md:mb-4 px-1">
               <div className="flex items-center gap-2 text-gray-400">
-                <BookOpen size={16} />
-                <span className="text-sm font-heading">
+                <BookOpen size={14} className="md:w-4 md:h-4" />
+                <span className="text-xs md:text-sm font-heading">
                   PAGE {currentPage + 1} OF {totalPages}
                 </span>
               </div>
-              <Button
-                variant="outline"
-                size="sm"
+              <button
                 onClick={() => setIsFullscreen(true)}
-                className="border-gray-700 text-gray-300 hover:text-primary hover:border-primary bg-transparent"
+                className="flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 border-2 border-primary text-primary hover:bg-primary hover:text-black font-heading text-xs md:text-sm transition-colors"
               >
-                <Maximize2 size={16} className="mr-2" />
-                Fullscreen
-              </Button>
+                <Maximize2 size={14} className="md:w-4 md:h-4" />
+                <span className="hidden sm:inline">Fullscreen</span>
+              </button>
             </div>
 
             {/* Progress Bar */}
-            <div className="h-1.5 bg-gray-800 rounded-full mb-4 overflow-hidden">
+            <div className="h-1 md:h-1.5 bg-gray-800 rounded-full mb-3 md:mb-4 overflow-hidden mx-1">
               <div
                 className="h-full bg-primary rounded-full transition-all duration-500 ease-out"
                 style={{ width: `${progressPercent}%` }}
@@ -437,27 +441,27 @@ export default function ComicIssue() {
             </div>
 
             {/* Comic Panel */}
-            <div className="relative bg-gray-900 border-2 md:border-4 border-primary shadow-[4px_4px_0px_0px_rgba(255,195,0,0.6)] md:shadow-[8px_8px_0px_0px_rgba(255,195,0,0.6)] overflow-hidden group">
-              {/* Navigation Overlay - Left */}
+            <div className="relative bg-gray-900 border-2 md:border-4 border-primary shadow-[2px_2px_0px_0px_rgba(255,195,0,0.6)] md:shadow-[8px_8px_0px_0px_rgba(255,195,0,0.6)] overflow-hidden">
+              {/* Desktop Navigation Overlay - Left (hidden on mobile, visible on hover) */}
               {currentPage > 0 && (
                 <button
                   onClick={prevPage}
-                  className="absolute left-0 top-0 bottom-0 w-1/4 z-10 flex items-center justify-start pl-2 md:pl-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer"
+                  className="hidden md:flex absolute left-0 top-0 bottom-0 w-1/4 z-10 items-center justify-start pl-4 opacity-0 hover:opacity-100 transition-opacity duration-200 cursor-pointer"
                 >
-                  <div className="bg-black/70 rounded-full p-1.5 md:p-3 backdrop-blur-sm">
-                    <ChevronLeft size={24} className="text-white md:w-8 md:h-8" />
+                  <div className="bg-black/70 rounded-full p-3 backdrop-blur-sm">
+                    <ChevronLeft size={32} className="text-white" />
                   </div>
                 </button>
               )}
 
-              {/* Navigation Overlay - Right */}
+              {/* Desktop Navigation Overlay - Right (hidden on mobile, visible on hover) */}
               {currentPage < totalPages - 1 && (
                 <button
                   onClick={nextPage}
-                  className="absolute right-0 top-0 bottom-0 w-1/4 z-10 flex items-center justify-end pr-2 md:pr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer"
+                  className="hidden md:flex absolute right-0 top-0 bottom-0 w-1/4 z-10 items-center justify-end pr-4 opacity-0 hover:opacity-100 transition-opacity duration-200 cursor-pointer"
                 >
-                  <div className="bg-black/70 rounded-full p-1.5 md:p-3 backdrop-blur-sm">
-                    <ChevronRight size={24} className="text-white md:w-8 md:h-8" />
+                  <div className="bg-black/70 rounded-full p-3 backdrop-blur-sm">
+                    <ChevronRight size={32} className="text-white" />
                   </div>
                 </button>
               )}
@@ -482,88 +486,125 @@ export default function ComicIssue() {
 
             {/* Caption */}
             {page.caption && (
-              <div className="mt-4 p-3 md:p-4 bg-gray-900/80 border-l-4 border-primary">
-                <p className="text-sm md:text-base text-gray-300 italic leading-relaxed">
+              <div className="mt-3 md:mt-4 p-3 md:p-4 bg-gray-900/80 border-l-4 border-primary mx-1 md:mx-0">
+                <p className="text-xs sm:text-sm md:text-base text-gray-300 italic leading-relaxed">
                   {page.caption}
                 </p>
               </div>
             )}
 
-            {/* Page Navigation */}
-            <div className="mt-6 flex items-center justify-between">
-              <Button
-                variant="outline"
-                onClick={prevPage}
-                disabled={currentPage === 0}
-                className="border-gray-700 text-gray-300 hover:text-primary hover:border-primary disabled:opacity-30 bg-transparent font-heading"
-              >
-                <ChevronLeft size={18} className="mr-1" />
-                PREV
-              </Button>
+            {/* Page Navigation - Always visible, high contrast */}
+            <div className="mt-4 md:mt-6 mx-1 md:mx-0">
+              {/* Mobile: stacked layout with large tap targets */}
+              <div className="flex items-center justify-between gap-3">
+                <button
+                  onClick={prevPage}
+                  disabled={currentPage === 0}
+                  className={`flex items-center gap-1.5 px-4 py-3 md:px-6 md:py-3 font-heading text-sm md:text-base transition-all duration-200 border-2 shrink-0 ${
+                    currentPage === 0
+                      ? "bg-gray-800/50 text-gray-600 border-gray-700 cursor-not-allowed"
+                      : "bg-white text-black border-white hover:bg-primary hover:border-primary active:scale-95"
+                  }`}
+                >
+                  <ChevronLeft size={18} />
+                  PREV
+                </button>
 
-              {/* Page dots */}
-              <div className="flex items-center gap-1.5 flex-wrap justify-center max-w-[60%]">
+                {/* Page counter (mobile) / Page dots (desktop) */}
+                <div className="flex flex-col items-center gap-1">
+                  {/* Always show page number */}
+                  <span className="text-xs font-heading text-primary md:hidden">
+                    {currentPage + 1} / {totalPages}
+                  </span>
+                  {/* Page dots - desktop only */}
+                  <div className="hidden md:flex items-center gap-1.5">
+                    {comic.pages.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => goToPage(i)}
+                        className={`rounded-full transition-all duration-200 ${
+                          i === currentPage
+                            ? "bg-primary w-8 h-2.5"
+                            : "bg-gray-700 hover:bg-gray-500 w-2.5 h-2.5"
+                        }`}
+                        title={`Page ${i + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                <button
+                  onClick={nextPage}
+                  disabled={currentPage === totalPages - 1}
+                  className={`flex items-center gap-1.5 px-4 py-3 md:px-6 md:py-3 font-heading text-sm md:text-base transition-all duration-200 border-2 shrink-0 ${
+                    currentPage === totalPages - 1
+                      ? "bg-gray-800/50 text-gray-600 border-gray-700 cursor-not-allowed"
+                      : "bg-white text-black border-white hover:bg-primary hover:border-primary active:scale-95"
+                  }`}
+                >
+                  NEXT
+                  <ChevronRight size={18} />
+                </button>
+              </div>
+
+              {/* Mobile page dots row */}
+              <div className="flex md:hidden items-center justify-center gap-1.5 mt-3">
                 {comic.pages.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => goToPage(i)}
                     className={`rounded-full transition-all duration-200 ${
                       i === currentPage
-                        ? "bg-primary w-8 h-2.5"
-                        : "bg-gray-700 hover:bg-gray-500 w-2.5 h-2.5"
+                        ? "bg-primary w-5 h-2"
+                        : "bg-gray-700 active:bg-gray-500 w-2 h-2"
                     }`}
                     title={`Page ${i + 1}`}
                   />
                 ))}
               </div>
-
-              <Button
-                variant="outline"
-                onClick={nextPage}
-                disabled={currentPage === totalPages - 1}
-                className="border-gray-700 text-gray-300 hover:text-primary hover:border-primary disabled:opacity-30 bg-transparent font-heading"
-              >
-                NEXT
-                <ChevronRight size={18} className="ml-1" />
-              </Button>
             </div>
 
-            {/* Keyboard hint */}
-            <p className="text-center text-xs text-gray-600 mt-3 hidden md:block">
-              Use ← → arrow keys to navigate • Press F for fullscreen • Click panel to zoom
+            {/* Keyboard hint - desktop only */}
+            <p className="text-center text-xs text-gray-500 mt-3 hidden md:block">
+              Use ← → arrow keys to navigate &bull; Press F for fullscreen &bull; Click panel to zoom
+            </p>
+
+            {/* Touch hint - mobile only */}
+            <p className="text-center text-xs text-gray-600 mt-2 md:hidden">
+              Tap image to zoom &bull; Swipe buttons to navigate
             </p>
           </div>
         </div>
       </section>
 
       {/* Synopsis & Credits (shown below reader) */}
-      <section className="py-8 md:py-12 bg-gray-950 border-t-2 border-gray-800">
+      <section className="py-6 md:py-12 bg-gray-950 border-t-2 border-gray-800">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {/* Synopsis */}
             <div>
-              <h3 className="text-xl font-heading text-primary mb-3 flex items-center gap-2">
+              <h3 className="text-lg md:text-xl font-heading text-primary mb-3 flex items-center gap-2">
                 <Skull size={18} />
                 SYNOPSIS
               </h3>
-              <p className="text-gray-300 leading-relaxed">{comic.synopsis}</p>
+              <p className="text-sm md:text-base text-gray-300 leading-relaxed">{comic.synopsis}</p>
             </div>
 
             {/* Credits */}
             <div>
-              <h3 className="text-xl font-heading text-primary mb-3">CREDITS</h3>
+              <h3 className="text-lg md:text-xl font-heading text-primary mb-3">CREDITS</h3>
               <div className="space-y-3">
                 <div className="flex justify-between border-b border-gray-800 pb-2">
-                  <span className="text-gray-500 text-sm uppercase">Story</span>
-                  <span className="text-white font-heading">{comic.credits.story}</span>
+                  <span className="text-gray-500 text-xs md:text-sm uppercase">Story</span>
+                  <span className="text-white font-heading text-sm md:text-base">{comic.credits.story}</span>
                 </div>
                 <div className="flex justify-between border-b border-gray-800 pb-2">
-                  <span className="text-gray-500 text-sm uppercase">Art</span>
-                  <span className="text-white font-heading">{comic.credits.art}</span>
+                  <span className="text-gray-500 text-xs md:text-sm uppercase">Art</span>
+                  <span className="text-white font-heading text-sm md:text-base">{comic.credits.art}</span>
                 </div>
                 <div className="flex justify-between border-b border-gray-800 pb-2">
-                  <span className="text-gray-500 text-sm uppercase">Letters</span>
-                  <span className="text-white font-heading">{comic.credits.letters}</span>
+                  <span className="text-gray-500 text-xs md:text-sm uppercase">Letters</span>
+                  <span className="text-white font-heading text-sm md:text-base">{comic.credits.letters}</span>
                 </div>
               </div>
             </div>
@@ -572,24 +613,24 @@ export default function ComicIssue() {
       </section>
 
       {/* Next Issue Teaser */}
-      <section className="py-10 md:py-16 bg-gradient-to-b from-gray-950 to-black border-t-4 border-primary">
+      <section className="py-8 md:py-16 bg-gradient-to-b from-gray-950 to-black border-t-4 border-primary">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-3xl md:text-5xl font-heading text-white mb-4">NEXT ISSUE</h3>
-          <div className="inline-block bg-secondary text-white px-6 py-2 font-heading text-lg md:text-2xl transform -rotate-1 mb-4">
+          <h3 className="text-2xl md:text-5xl font-heading text-white mb-3 md:mb-4">NEXT ISSUE</h3>
+          <div className="inline-block bg-secondary text-white px-5 md:px-6 py-1.5 md:py-2 font-heading text-base md:text-2xl transform -rotate-1 mb-3 md:mb-4">
             {comic.nextIssue.title}
           </div>
-          <p className="text-base md:text-lg text-gray-400 mb-8">{comic.nextIssue.teaser}</p>
+          <p className="text-sm md:text-lg text-gray-400 mb-6 md:mb-8">{comic.nextIssue.teaser}</p>
           {comic.nextIssue.link ? (
             <Link
               href={comic.nextIssue.link}
-              className="inline-block bg-primary text-black hover:bg-secondary hover:text-white font-heading text-lg px-8 py-3 border-4 border-black transition-colors"
+              className="inline-block bg-primary text-black hover:bg-secondary hover:text-white font-heading text-base md:text-lg px-6 md:px-8 py-2.5 md:py-3 border-4 border-black transition-colors"
             >
               READ NEXT ISSUE →
             </Link>
           ) : (
             <Link
               href="/comics"
-              className="inline-block bg-primary text-black hover:bg-secondary hover:text-white font-heading text-lg px-8 py-3 border-4 border-black transition-colors"
+              className="inline-block bg-primary text-black hover:bg-secondary hover:text-white font-heading text-base md:text-lg px-6 md:px-8 py-2.5 md:py-3 border-4 border-black transition-colors"
             >
               VIEW ALL ISSUES
             </Link>
@@ -598,15 +639,15 @@ export default function ComicIssue() {
       </section>
 
       {/* Shop CTA */}
-      <section className="py-10 md:py-16 bg-primary">
+      <section className="py-8 md:py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-3xl md:text-5xl font-heading text-black mb-4">FUEL YOUR REBELLION</h3>
-          <p className="text-base md:text-lg text-black/80 mb-8 max-w-2xl mx-auto">
+          <h3 className="text-2xl md:text-5xl font-heading text-black mb-3 md:mb-4">FUEL YOUR REBELLION</h3>
+          <p className="text-sm md:text-lg text-black/80 mb-6 md:mb-8 max-w-2xl mx-auto px-4">
             Shop our weaponized beeswax products and join the swarm.
           </p>
           <Link
             href="/shop"
-            className="inline-block bg-black text-primary hover:bg-secondary hover:text-white font-heading text-lg px-10 py-3 border-4 border-black transition-colors"
+            className="inline-block bg-black text-primary hover:bg-secondary hover:text-white font-heading text-base md:text-lg px-8 md:px-10 py-2.5 md:py-3 border-4 border-black transition-colors"
           >
             SHOP THE STASH
           </Link>
