@@ -239,3 +239,14 @@
 - [x] Add panel descriptions, synopsis, credits, and story flow
 - [x] Test comic reader experience in browser (all features working)
 - [x] All 47 tests passing (5 test files)
+
+## Comic Issue #2 "Posers" (Feb 12, 2026)
+- [x] Upload 9 Issue #2 panel images + Issue #3 teaser to CDN
+- [x] Add Issue #2 data to ComicIssue reader with full script dialogue
+- [x] Update Comics listing with Issue #2 and Issue #3 teaser
+- [x] Add Issue #3 "The Visit" teaser with Pollen Patrol cover
+- [x] Test comic reader for Issue #2 (all 9 pages working)
+- [x] Update Issue #1 next issue link to point to Issue #2
+- [x] Test Issue #2 reader in browser
+- [x] Update Issue #1 captions with full script dialogue and verbiage
+- [x] All 47 tests passing (5 test files)

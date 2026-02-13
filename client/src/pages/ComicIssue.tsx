@@ -27,6 +27,7 @@ interface ComicData {
   nextIssue: {
     title: string;
     teaser: string;
+    link?: string;
   };
 }
 
@@ -39,43 +40,43 @@ const comicsData: Record<string, ComicData> = {
     tagline: "They're not keeping the peace. They're keeping the honey.",
     date: "January 2026",
     coverImage: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/uTAjHVyJjsljKgdP.webp",
-    synopsis: "Every paradise has a serpent. Ours has a bear. Name's Biff. He doesn't pay for honey. He 'liberates' it. Watch as Buzzkill, Stinger, and Prop teach him a lesson he won't forget.",
+    synopsis: "Welcome to the first issue of the anarchic, honey-dripping comic series from Flesh to Death Honey Co. Every paradise has a serpent. Ours has a bear. Name's Biff. He doesn't pay for honey. He 'liberates' it. Watch as Buzzkill, Stinger, and Prop teach him a lesson he won't forget.",
     pages: [
       {
         image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/uTAjHVyJjsljKgdP.webp",
-        caption: "Flesh to Death Honey Co. presents: Death's Door Honey Blend. It's the bee's... death!",
+        caption: "FLESH TO DEATH HONEY CO. presents: Death's Door Honey Blend. Incredible New Discovery! It's the bee's... death! WARNING: Not for the faint of heart. May cause uncontrollable delight.",
       },
       {
         image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/AocpNquOrxZSJMJp.webp",
-        caption: "Buzzkill rolls through Sunflower Valley with a sidecar full of Death's Door honey.",
+        caption: "3:47 PM. Sunflower Valley. A lush, anarchic meadow. A massive, dopey-looking bear sits on its haunches, licking honey off its paws. Three bee bikers stare him down. BUZZKILL: \"Every paradise has a serpent. Ours has a bear. Name's Biff. He doesn't pay for honey. He 'liberates' it.\"",
       },
       {
         image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/VtCXPHCPBNpPgGVf.webp",
-        caption: "Queen Stinger doesn't take kindly to honey thieves. \"Queen is a Title, Not a Mood.\"",
+        caption: "Close-up on BUZZKILL, the leader. Perched on her bee-sized Softail, antennae bent menacingly. Her jacket patch reads: \"Queen is a Title, Not a Mood.\" BUZZKILL: \"Alright, Biff. The 'all-you-can-eat' buffet is closed.\" BIFF (off-panel): \"But it's organic!\"",
       },
       {
         image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/fCJfaVoIcMwuSxpI.webp",
-        caption: "Prop tears down the highway. The swarm rides at dawn.",
+        caption: "STINGER revs the tiny engine of his bike. SFX: bzzz-BRAP-BRAP! STINGER: \"He's not gonna listen, Buzz. Let's sting first, ask questions never.\" BUZZKILL: \"Hold your pollen, Stinger. We're artisans, not animals.\"",
       },
       {
         image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/pYrVjhmKDLvgBfHV.webp",
-        caption: "\"Sunflower Valley... Soon.\" The plan is set. No bear is safe.",
+        caption: "PROP, the propolis-covered mechanic, rolls up on a bike with a sidecar. Instead of a weapon, the sidecar holds a single, perfect jar of Flesh to Death's \"Death's Door Honey Blend.\" PROP: \"I got a better idea. A final solution.\"",
       },
       {
         image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/nPXxqyCoZcLYEmGq.webp",
-        caption: "\"Just one taste, Biff... It's to die for.\" The trap is baited.",
+        caption: "Prop holds the open jar under Biff's nose. The bear's eyes go wide with desire. A tiny drool drip hangs from his mouth. PROP (whispering): \"Psst. Hey, Biff. Try the new batch. Infused with... ghost pepper nectar.\" BIFF: \"Ooooh, fancy!\"",
       },
       {
         image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/SMLklyHDENbtJjvJ.webp",
-        caption: "Meanwhile, in the meadow... Biff takes the bait while the swarm closes in.",
+        caption: "Biff's entire face is bright red. Smoke pours from his ears and nostrils. His eyes are wide with shock and regret. SFX: FWOOOOOSH!! BIFF (internal): \"MY SOUL! IT BURNS!\"",
       },
       {
         image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/KCYXeoxavRnryJml.webp",
-        caption: "Biff was NOT ready for the spice. Death's Door hits different.",
+        caption: "Biff is a tiny speck, running screaming into the distant forest. The three bees gather around the now-empty honey jar. BUZZKILL: \"Huh. Worked better than the tactical sting operation.\" STINGER: \"I liked my idea more.\"",
       },
       {
         image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/hpMiJvfcNYFtNEro.webp",
-        caption: "\"Heh.\" \"Empty.\" \"Told ya.\" Another honey thief handled. The hive always wins.",
+        caption: "FLESH TO DEATH HONEY CO. \"Our Honey Solves Problems. Permanently.\" Now with 100% more bear deterrent. Sweetness with a Sting. Warning Label: May cause existential dread in mammals over 500lbs.",
       },
     ],
     credits: {
@@ -84,8 +85,66 @@ const comicsData: Record<string, ComicData> = {
       letters: "The Hive Mind",
     },
     nextIssue: {
-      title: "The Yellowjacket Gang",
-      teaser: "They wear the stripes, but they ain't earned them. Coming Soon.",
+      title: "Posers",
+      teaser: "They wear the stripes, but they ain't earned them.",
+      link: "/comics/2",
+    },
+  },
+  "2": {
+    id: 2,
+    title: "Revenge of the Hive",
+    issue: "Issue #2",
+    subtitle: "Posers",
+    tagline: "They wear the stripes, but they ain't earned them.",
+    date: "February 2026",
+    coverImage: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/VpRjuPCeskNfNFLA.png",
+    synopsis: "Prop passes out in the Hive's Garage after too much Hive Mind Fuel. What follows is a fever dream of fog-choked highways, a menacing Yellowjacket with a cheap unpatched vest, and the kind of neck-snapping hospitality that makes you question your life choices. When he wakes up, Stinger is there to remind him it wasn't cool.",
+    pages: [
+      {
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/VpRjuPCeskNfNFLA.png",
+        caption: "The Hive's Garage. Night. Prop is slumped over a workbench, tools scattered around him. A half-empty jar of Hive Mind Fuel is clutched in his grip. His antennae twitch. SFX: Zzzzz... bzzzz...",
+      },
+      {
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/PFfWGmaEyPOslqWo.png",
+        caption: "DREAM SEQUENCE. Prop rides his bee-sized Softail through an endless gray fog. His helmet is strapped tight. Too tight. PROP: \"Just another Tuesday. Road was empty. Tank was full. Felt almost peaceful.\"",
+      },
+      {
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/oMxgqyvyErOYORVt.png",
+        caption: "A shadow falls over him. Long. Thin. Menacing. Prop's antennae go rigid. SFX: BZZZZZZZT. PROP: \"...Almost.\"",
+      },
+      {
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/LhKVBlLSuWIRIUeU.png",
+        caption: "A Yellowjacket materializes from the fog. Massive. Sleek. Wearing a cheap, unpatched vest. His mandibles curl into something resembling a smile. YELLOWJACKET: \"Nice helmet.\" PROP: \"...Thanks. Composite weave. Impact-rated.\" YELLOWJACKET: \"Didn't ask.\"",
+      },
+      {
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/DyvxUcSDTbQnSJoZ.png",
+        caption: "CLOSE-UP. Yellowjacket's face inches from Prop's. Hot breath. Cold eyes. YELLOWJACKET: \"Stripes don't make you tough, Bee.\" PROP: \"...You're literally wearing the same stripes.\" YELLOWJACKET: \"Yeah, but ours are cooler.\"",
+      },
+      {
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/eDFSYImLTMSKJFCr.png",
+        caption: "The Yellowjacket moves. Prop doesn't. One hand grips Prop's helmet. The other pins his wings. Prop's legs kick uselessly. PROP: \"HEY— THAT'S RIDING GEAR, THAT'S EXPENSIVE—\"",
+      },
+      {
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/tLhvEmkbyJLpUqUR.png",
+        caption: "SFX: CRK-POP. Clean. Surgical. Prop's helmet stays on. Completely intact. His head, however, now faces backward. PROP: \"...Oh, come ON. That's not even aerodynamic.\"",
+      },
+      {
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/myNphJebpvAryaRG.png",
+        caption: "Prop bolts upright. He's in the garage. Still alive. Still facing forward. Stinger is staring at him from inside an empty coffee can. STINGER: \"You were screaming 'not the jacket' again.\" PROP: \"...Was it at least a cool scream?\" STINGER: \"Sounded like a deflating bumblebee.\" PROP: \"...I need more coffee.\"",
+      },
+      {
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/qUSAvZaRYVxzsqQm.webp",
+        caption: "NEXT TIME ON REVENGE OF THE HIVE... The Pollen Patrol rolls up to The Hive's Garage. Three riders. Matching vests. Neon-lit choppers. They don't look friendly. Issue #3: \"The Visit\" — Some stings don't fade. Some just knock first.",
+      },
+    ],
+    credits: {
+      story: "Flesh to Death Honey Co.",
+      art: "Flesh to Death Honey Co.",
+      letters: "The Hive Mind",
+    },
+    nextIssue: {
+      title: "The Visit",
+      teaser: "Some stings don't fade. Some just knock first.",
     },
   },
 };
@@ -520,12 +579,21 @@ export default function ComicIssue() {
             {comic.nextIssue.title}
           </div>
           <p className="text-base md:text-lg text-gray-400 mb-8">{comic.nextIssue.teaser}</p>
-          <Link
-            href="/comics"
-            className="inline-block bg-primary text-black hover:bg-secondary hover:text-white font-heading text-lg px-8 py-3 border-4 border-black transition-colors"
-          >
-            VIEW ALL ISSUES
-          </Link>
+          {comic.nextIssue.link ? (
+            <Link
+              href={comic.nextIssue.link}
+              className="inline-block bg-primary text-black hover:bg-secondary hover:text-white font-heading text-lg px-8 py-3 border-4 border-black transition-colors"
+            >
+              READ NEXT ISSUE →
+            </Link>
+          ) : (
+            <Link
+              href="/comics"
+              className="inline-block bg-primary text-black hover:bg-secondary hover:text-white font-heading text-lg px-8 py-3 border-4 border-black transition-colors"
+            >
+              VIEW ALL ISSUES
+            </Link>
+          )}
         </div>
       </section>
 
