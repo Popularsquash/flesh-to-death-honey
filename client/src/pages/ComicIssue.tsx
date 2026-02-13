@@ -1,4 +1,4 @@
-import { Link, useParams } from "wouter";
+import { Link, useParams, useLocation } from "wouter";
 import { ArrowLeft, ChevronLeft, ChevronRight, X, Maximize2, BookOpen, Skull } from "lucide-react";
 import Footer from "@/components/Footer";
 import { useState, useEffect, useCallback, useRef } from "react";
@@ -47,36 +47,36 @@ const comicsData: Record<string, ComicData> = {
         caption: "FLESH TO DEATH HONEY CO. presents: Death's Door Honey Blend. Incredible New Discovery! It's the bee's... death! WARNING: Not for the faint of heart. May cause uncontrollable delight.",
       },
       {
-        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/AocpNquOrxZSJMJp.webp",
-        caption: "3:47 PM. Sunflower Valley. A lush, anarchic meadow. A massive, dopey-looking bear sits on its haunches, licking honey off its paws. Three bee bikers stare him down. BUZZKILL: \"Every paradise has a serpent. Ours has a bear. Name's Biff. He doesn't pay for honey. He 'liberates' it.\"",
-      },
-      {
-        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/VtCXPHCPBNpPgGVf.webp",
-        caption: "Close-up on BUZZKILL, the leader. Perched on her bee-sized Softail, antennae bent menacingly. Her jacket patch reads: \"Queen is a Title, Not a Mood.\" BUZZKILL: \"Alright, Biff. The 'all-you-can-eat' buffet is closed.\" BIFF (off-panel): \"But it's organic!\"",
-      },
-      {
-        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/fCJfaVoIcMwuSxpI.webp",
-        caption: "STINGER revs the tiny engine of his bike. SFX: bzzz-BRAP-BRAP! STINGER: \"He's not gonna listen, Buzz. Let's sting first, ask questions never.\" BUZZKILL: \"Hold your pollen, Stinger. We're artisans, not animals.\"",
-      },
-      {
         image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/pYrVjhmKDLvgBfHV.webp",
-        caption: "PROP, the propolis-covered mechanic, rolls up on a bike with a sidecar. Instead of a weapon, the sidecar holds a single, perfect jar of Flesh to Death's \"Death's Door Honey Blend.\" PROP: \"I got a better idea. A final solution.\"",
-      },
-      {
-        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/nPXxqyCoZcLYEmGq.webp",
-        caption: "Prop holds the open jar under Biff's nose. The bear's eyes go wide with desire. A tiny drool drip hangs from his mouth. PROP (whispering): \"Psst. Hey, Biff. Try the new batch. Infused with... ghost pepper nectar.\" BIFF: \"Ooooh, fancy!\"",
+        caption: "The Hive's War Room. Night. BUZZKILL leans over a worn map, one finger jabbing at a circled region: SUNFLOWER VALLEY. Behind her, two silhouettes sit astride idling choppers. BUZZKILL: \"Sunflower Valley... Soon. Biff's been gorging on our reserves for the last time.\"",
       },
       {
         image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/SMLklyHDENbtJjvJ.webp",
-        caption: "Biff's entire face is bright red. Smoke pours from his ears and nostrils. His eyes are wide with shock and regret. SFX: FWOOOOOSH!! BIFF (internal): \"MY SOUL! IT BURNS!\"",
+        caption: "3:47 PM. Sunflower Valley. A lush, anarchic meadow. Meanwhile, in the meadow... A massive, dopey-looking bear sits on his haunches, licking honey off his paws. Three bee bikers roll up on tiny choppers, staring him down. BUZZKILL: \"Every paradise has a serpent. Ours has a bear. Name's Biff. He doesn't pay for honey. He 'liberates' it.\"",
+      },
+      {
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/AocpNquOrxZSJMJp.webp",
+        caption: "BUZZKILL cruises into the sunflower field on her bee-sized Softail, a jar of Death's Door Honey Blend riding shotgun in the sidecar. Her antennae are bent with purpose. BUZZKILL: \"Alright, Biff. The 'all-you-can-eat' buffet is closed.\" BIFF (off-panel): \"But it's organic!\"",
+      },
+      {
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/VtCXPHCPBNpPgGVf.webp",
+        caption: "Close-up on BUZZKILL, the leader. Perched on her bee-sized Harley, antennae bent menacingly. Her jacket patch reads: \"Queen is a Title, Not a Mood.\" BUZZKILL: \"We're artisans, not animals. But we're not above a little... seasoning.\"",
+      },
+      {
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/fCJfaVoIcMwuSxpI.webp",
+        caption: "STINGER revs the tiny engine of his bike. SFX: bzzz-BRAP-BRAP! Exhaust smoke billows behind him as he tears through the sunflower field. STINGER: \"He's not gonna listen, Buzz. Let's sting first, ask questions never.\" BUZZKILL: \"Hold your pollen, Stinger. We're artisans, not animals.\"",
+      },
+      {
+        image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/nPXxqyCoZcLYEmGq.webp",
+        caption: "PROP holds the open jar of Death's Door under Biff's nose. The bear's eyes go wide with desire. A tiny drool drip hangs from his mouth. PROP: \"Just one taste, Biff... It's to die for.\" The ghost pepper nectar glows faintly inside the jar.",
       },
       {
         image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/KCYXeoxavRnryJml.webp",
-        caption: "Biff is a tiny speck, running screaming into the distant forest. The three bees gather around the now-empty honey jar. BUZZKILL: \"Huh. Worked better than the tactical sting operation.\" STINGER: \"I liked my idea more.\"",
+        caption: "Biff's entire face is bright red. Smoke pours from his ears and nostrils. His eyes are wide with shock and regret. The three bee bikers watch from their choppers, unfazed. SFX: FWOOOOOSH!! BIFF (internal): \"MY SOUL! IT BURNS!\" Caption: \"Biff was spicines...\"",
       },
       {
         image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/hpMiJvfcNYFtNEro.webp",
-        caption: "FLESH TO DEATH HONEY CO. \"Our Honey Solves Problems. Permanently.\" Now with 100% more bear deterrent. Sweetness with a Sting. Warning Label: May cause existential dread in mammals over 500lbs.",
+        caption: "Biff is a tiny speck, running screaming into the distant forest. The three bees gather around the now-empty honey jar. BUZZKILL: \"Heh.\" PROP: \"Empty.\" STINGER: \"Told ya.\" FLESH TO DEATH HONEY CO. — Our Honey Solves Problems. Permanently.",
       },
     ],
     credits: {
@@ -149,8 +149,50 @@ const comicsData: Record<string, ComicData> = {
   },
 };
 
+// Custom hook for swipe gesture detection
+function useSwipe(onSwipeLeft: () => void, onSwipeRight: () => void) {
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const isSwiping = useRef(false);
+
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+    touchStartY.current = e.targetTouches[0].clientY;
+    touchEndX.current = null;
+    isSwiping.current = false;
+  }, []);
+
+  const onTouchMove = useCallback((e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+    const diffX = Math.abs((touchEndX.current || 0) - (touchStartX.current || 0));
+    const diffY = Math.abs(e.targetTouches[0].clientY - (touchStartY.current || 0));
+    // Only count as swipe if horizontal movement is dominant
+    if (diffX > 30 && diffX > diffY) {
+      isSwiping.current = true;
+    }
+  }, []);
+
+  const onTouchEnd = useCallback(() => {
+    if (!touchStartX.current || !touchEndX.current || !isSwiping.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+    if (distance > minSwipeDistance) {
+      onSwipeLeft(); // Swiped left → next page
+    } else if (distance < -minSwipeDistance) {
+      onSwipeRight(); // Swiped right → prev page
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+    isSwiping.current = false;
+  }, [onSwipeLeft, onSwipeRight]);
+
+  return { onTouchStart, onTouchMove, onTouchEnd };
+}
+
 export default function ComicIssue() {
   const params = useParams();
+  const [, navigate] = useLocation();
   const id = params.id || "1";
   const comic = comicsData[id];
 
@@ -158,14 +200,25 @@ export default function ComicIssue() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [showControls, setShowControls] = useState(true);
+  const [swipeOffset, setSwipeOffset] = useState(0);
   const readerRef = useRef<HTMLDivElement>(null);
+  const swipeTouchStartX = useRef<number | null>(null);
+  const swipeTouchStartY = useRef<number | null>(null);
 
   const totalPages = comic?.pages.length || 0;
+
+  // Reset page to 0 when issue ID changes (e.g., navigating to next issue)
+  useEffect(() => {
+    setCurrentPage(0);
+    setIsImageLoaded(false);
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [id]);
 
   const goToPage = useCallback((page: number) => {
     if (page >= 0 && page < totalPages) {
       setCurrentPage(page);
       setIsImageLoaded(false);
+      setSwipeOffset(0);
     }
   }, [totalPages]);
 
@@ -177,7 +230,43 @@ export default function ComicIssue() {
     goToPage(currentPage - 1);
   }, [currentPage, goToPage]);
 
-  // Scroll to reader top on page change
+  // Swipe handlers for the comic panel (visual feedback version)
+  const handlePanelTouchStart = useCallback((e: React.TouchEvent) => {
+    swipeTouchStartX.current = e.targetTouches[0].clientX;
+    swipeTouchStartY.current = e.targetTouches[0].clientY;
+  }, []);
+
+  const handlePanelTouchMove = useCallback((e: React.TouchEvent) => {
+    if (swipeTouchStartX.current === null || swipeTouchStartY.current === null) return;
+    const diffX = e.targetTouches[0].clientX - swipeTouchStartX.current;
+    const diffY = Math.abs(e.targetTouches[0].clientY - swipeTouchStartY.current);
+    // Only track horizontal swipes
+    if (Math.abs(diffX) > 15 && Math.abs(diffX) > diffY) {
+      // Limit offset and add resistance at edges
+      const isAtStart = currentPage === 0 && diffX > 0;
+      const isAtEnd = currentPage === totalPages - 1 && diffX < 0;
+      const resistance = (isAtStart || isAtEnd) ? 0.2 : 0.6;
+      setSwipeOffset(diffX * resistance);
+    }
+  }, [currentPage, totalPages]);
+
+  const handlePanelTouchEnd = useCallback(() => {
+    if (swipeTouchStartX.current === null) return;
+    const threshold = 60;
+    if (swipeOffset < -threshold && currentPage < totalPages - 1) {
+      nextPage();
+    } else if (swipeOffset > threshold && currentPage > 0) {
+      prevPage();
+    }
+    setSwipeOffset(0);
+    swipeTouchStartX.current = null;
+    swipeTouchStartY.current = null;
+  }, [swipeOffset, currentPage, totalPages, nextPage, prevPage]);
+
+  // Fullscreen swipe handlers
+  const fullscreenSwipe = useSwipe(nextPage, prevPage);
+
+  // Scroll to reader top on page change (but not on first load)
   useEffect(() => {
     if (readerRef.current && currentPage > 0) {
       readerRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -195,6 +284,7 @@ export default function ComicIssue() {
         prevPage();
       } else if (e.key === "Escape" && isFullscreen) {
         setIsFullscreen(false);
+        navigate("/comics");
       } else if (e.key === "f" || e.key === "F") {
         setIsFullscreen(prev => !prev);
       }
@@ -253,25 +343,34 @@ export default function ComicIssue() {
   if (isFullscreen) {
     return (
       <div className="fixed inset-0 z-[100] bg-black flex flex-col select-none">
-        {/* Top Bar */}
+        {/* Always-visible X button in top-right corner */}
+        <button
+          onClick={() => {
+            setIsFullscreen(false);
+            navigate("/comics");
+          }}
+          className="absolute top-3 right-3 z-20 bg-black/70 hover:bg-black text-white hover:text-primary p-2.5 rounded-full transition-colors backdrop-blur-sm border border-white/20"
+          title="Exit to Comics"
+        >
+          <X size={22} />
+        </button>
+
+        {/* Top Bar (auto-hides) */}
         <div
-          className={`absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/90 to-transparent px-4 py-3 flex items-center justify-between transition-opacity duration-300 ${showControls ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+          className={`absolute top-0 left-0 right-14 z-10 bg-gradient-to-b from-black/90 to-transparent px-4 py-3 flex items-center transition-opacity duration-300 ${showControls ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         >
           <div className="flex items-center gap-3">
             <span className="font-heading text-primary text-sm md:text-lg">{comic.issue}</span>
             <span className="text-gray-500">|</span>
             <span className="text-gray-300 text-xs md:text-sm truncate">{comic.title}</span>
           </div>
-          <button
-            onClick={() => setIsFullscreen(false)}
-            className="text-white hover:text-primary p-2 transition-colors"
-          >
-            <X size={24} />
-          </button>
         </div>
 
-        {/* Main Image Area */}
-        <div className="flex-1 flex items-center justify-center relative overflow-hidden">
+        {/* Main Image Area - with swipe support */}
+        <div
+          className="flex-1 flex items-center justify-center relative overflow-hidden"
+          {...fullscreenSwipe}
+        >
           {/* Left click zone */}
           <div
             className="absolute left-0 top-0 bottom-0 w-1/3 z-10 cursor-pointer group"
@@ -440,8 +539,13 @@ export default function ComicIssue() {
               />
             </div>
 
-            {/* Comic Panel */}
-            <div className="relative bg-gray-900 border-2 md:border-4 border-primary shadow-[2px_2px_0px_0px_rgba(255,195,0,0.6)] md:shadow-[8px_8px_0px_0px_rgba(255,195,0,0.6)] overflow-hidden">
+            {/* Comic Panel - with swipe support */}
+            <div
+              className="relative bg-gray-900 border-2 md:border-4 border-primary shadow-[2px_2px_0px_0px_rgba(255,195,0,0.6)] md:shadow-[8px_8px_0px_0px_rgba(255,195,0,0.6)] overflow-hidden touch-pan-y"
+              onTouchStart={handlePanelTouchStart}
+              onTouchMove={handlePanelTouchMove}
+              onTouchEnd={handlePanelTouchEnd}
+            >
               {/* Desktop Navigation Overlay - Left (hidden on mobile, visible on hover) */}
               {currentPage > 0 && (
                 <button
@@ -466,14 +570,35 @@ export default function ComicIssue() {
                 </button>
               )}
 
+              {/* Swipe direction indicators (mobile) */}
+              {swipeOffset !== 0 && (
+                <>
+                  {swipeOffset > 20 && currentPage > 0 && (
+                    <div className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-primary/80 rounded-full p-2 transition-opacity">
+                      <ChevronLeft size={24} className="text-black" />
+                    </div>
+                  )}
+                  {swipeOffset < -20 && currentPage < totalPages - 1 && (
+                    <div className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-primary/80 rounded-full p-2 transition-opacity">
+                      <ChevronRight size={24} className="text-black" />
+                    </div>
+                  )}
+                </>
+              )}
+
               {/* Image */}
               <img
                 src={page.image}
                 alt={`Page ${currentPage + 1}`}
-                className={`w-full h-auto transition-opacity duration-300 ${isImageLoaded ? "opacity-100" : "opacity-30"}`}
+                className={`w-full h-auto transition-all duration-200 ${isImageLoaded ? "opacity-100" : "opacity-30"}`}
                 onLoad={() => setIsImageLoaded(true)}
                 onClick={() => setIsFullscreen(true)}
-                style={{ cursor: "zoom-in" }}
+                style={{
+                  cursor: "zoom-in",
+                  transform: swipeOffset ? `translateX(${swipeOffset}px)` : undefined,
+                  transition: swipeOffset ? "none" : "transform 0.3s ease-out",
+                }}
+                draggable={false}
               />
 
               {/* Loading overlay */}
@@ -571,7 +696,7 @@ export default function ComicIssue() {
 
             {/* Touch hint - mobile only */}
             <p className="text-center text-xs text-gray-600 mt-2 md:hidden">
-              Tap image to zoom &bull; Swipe buttons to navigate
+              Swipe left/right to turn pages &bull; Tap image to zoom
             </p>
           </div>
         </div>

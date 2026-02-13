@@ -257,3 +257,9 @@
 - [x] Change issue count from "3 Issues" to "2 Issues" on Comics listing (keep Issue #3 teaser card)
 - [x] Test on mobile and desktop viewports
 - [x] Fix PREV/NEXT button colors - white bg/black text for maximum contrast
+
+## Comic Reader UX Improvements (Feb 12, 2026)
+- [x] X button in fullscreen exits to /comics listing (not browser back)
+- [x] "Read Next Issue" link scrolls to top of next issue reader (not middle of page)
+- [x] Fix Issue #1 page/text ordering (images reordered to match narrative flow)
+- [x] Add touch swipe gesture navigation for mobile comic reading
