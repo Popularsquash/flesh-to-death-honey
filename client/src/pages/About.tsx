@@ -2,10 +2,19 @@ import { Link } from "wouter";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Skull, Heart, Zap, MapPin, Calendar, Users } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 export default function About() {
+  const seoProps = {
+    title: "About",
+    description: "The story behind Flesh to Death Honey Co. — Veteran-owned, beekeeper-built. Where motorcycle culture, tattoo artistry, and beekeeping collide.",
+    url: "https://fleshtodeathhoney.com/about",
+  };
+  
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white font-body">
+    <>
+      <SEO {...seoProps} />
+      <div className="min-h-screen flex flex-col bg-black text-white font-body">
       {/* Header */}
       <header className="border-b-4 border-primary sticky top-0 z-50 bg-black/95 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -214,5 +223,6 @@ export default function About() {
 
       <Footer />
     </div>
+    </>
   );
 }

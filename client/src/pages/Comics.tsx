@@ -1,8 +1,15 @@
 import { Link } from "wouter";
 import { Skull, Zap, Calendar, BookOpen, ChevronRight } from "lucide-react";
 import Footer from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 
 export default function Comics() {
+  const seoProps = {
+    title: "Comics",
+    description: "Read The Hive Chronicles — Original comic series from Flesh to Death Honey Co. Follow the adventures of our skull bee crew.",
+    url: "https://fleshtodeathhoney.com/comics",
+  };
+  
   const comics = [
     {
       id: 1,
@@ -43,7 +50,9 @@ export default function Comics() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white font-body">
+    <>
+      <SEO {...seoProps} />
+      <div className="min-h-screen bg-black text-white font-body">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-black border-b-4 border-primary">
         <div className="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
@@ -221,5 +230,6 @@ export default function Comics() {
 
       <Footer />
     </div>
+    </>
   );
 }

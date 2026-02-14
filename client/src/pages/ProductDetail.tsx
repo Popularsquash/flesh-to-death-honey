@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
+import { SEO } from "@/components/SEO";
 import {
   Select,
   SelectContent,
@@ -244,8 +245,37 @@ export default function ProductDetail() {
     ? Math.min(...variants.map(v => v.retailPrice)) / 100 
     : 0;
 
+  const seoProps = {
+    title: product.name,
+    description: product.description || `Shop ${product.name} from Flesh to Death Honey Co.`,
+    url: `https://fleshtodeathhoney.com/product/${productId}`,
+    image: product.thumbnailUrl || "https://fleshtodeathhoney.com/images/og-image.jpg",
+    type: "product",
+    structuredData: {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": product.name,
+      "image": product.thumbnailUrl || "https://fleshtodeathhoney.com/images/og-image.jpg",
+      "description": product.description || `Shop ${product.name} from Flesh to Death Honey Co.`,
+      "brand": {
+        "@type": "Organization",
+        "name": "Flesh to Death Honey Co."
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": `https://fleshtodeathhoney.com/product/${productId}`,
+        "priceCurrency": "USD",
+        "price": startingPrice.toFixed(2),
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      }
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-black text-white font-body">
+    <>
+      <SEO {...seoProps} />
+      <div className="min-h-screen bg-black text-white font-body">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-black border-b-4 border-primary">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -596,5 +626,6 @@ export default function ProductDetail() {
 
       <Footer />
     </div>
+    </>
   );
 }
