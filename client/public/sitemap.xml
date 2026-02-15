@@ -51,24 +51,7 @@
     <changefreq>monthly</changefreq>
   </url>
   
-  <!-- Comic Issues -->
-  <url>
-    <loc>https://fleshtodeathhoney.com/comics/1</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <url>
-    <loc>https://fleshtodeathhoney.com/comics/2</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  
-  <url>
-    <loc>https://fleshtodeathhoney.com/comics/3</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
+  <!-- Comic Issues: Comic URLs should be dynamically generated in the future to avoid maintenance burden. -->
   
   <!-- Note: Product URLs should be dynamically generated based on actual product IDs in the database -->
   <!-- Example product URLs - update with actual product IDs -->
