@@ -10,10 +10,17 @@ import { trpc } from "@/lib/trpc";
 import { useCart } from "@/contexts/CartContext";
 import { toast } from "sonner";
 import Footer from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 
 export default function Shop() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedVariants, setSelectedVariants] = useState<Record<number, number>>({});
+  
+  const seoProps = {
+    title: "Shop",
+    description: "Shop Flesh to Death Honey Co. — Biker-inspired apparel, handcrafted beeswax balms, and gear for riders, beekeepers, and rebels.",
+    url: "https://fleshtodeathhoney.com/shop",
+  };
   
   const { data: products, isLoading } = trpc.products.list.useQuery();
   const { itemCount, addToCart } = useCart();
@@ -55,7 +62,9 @@ export default function Shop() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
+    <>
+      <SEO {...seoProps} />
+      <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
       {/* Navigation */}
       <nav className="border-b-4 border-primary sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -229,5 +238,6 @@ export default function Shop() {
 
       <Footer />
     </div>
+    </>
   );
 }
