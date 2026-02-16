@@ -1,0 +1,196 @@
+FLESH TO DEATH HONEY CO. — MASTER BUSINESS SPREADSHEET,,,,,,
+"Use this spreadsheet to track inventory, expenses, revenue, taxes, and profitability.",,,,,,
+Last Updated:,2/15/2026,,,,,
+,,,,,,
+========================================,,,,,,
+SECTION 1: PRODUCT INVENTORY TRACKING,,,,,,
+========================================,,,,,,
+,,,,,,
+--- HONEY PRODUCTS ---,,,,,,
+Product Name,SKU,Category,Unit Cost,Retail Price,Units in Stock,Reorder Threshold
+Hellfire Honey (8oz),HON-HF-8,Honey - Infused,$4.50,$12.00,0,10
+Highway Harvest (8oz),HON-HH-8,Honey - Raw,$3.50,$10.00,0,10
+Sting Reserve (8oz),HON-SR-8,Honey - Premium,$6.00,$18.00,0,5
+,,,,,,
+--- BEESWAX PRODUCTS ---,,,,,,
+Product Name,SKU,Category,Unit Cost,Retail Price,Units in Stock,Reorder Threshold
+Brap Balm (2oz tin),BEE-BB-2,Beeswax - Salve,$2.50,$8.00,0,15
+Combustion Cones (bag of 4),BEE-CC-4,Beeswax - Fire Starters,$3.00,$10.00,0,10
+,,,,,,
+--- APPAREL (Print-on-Demand via Printful) ---,,,,,,
+Product Name,SKU,Category,Base Cost (Printful),Retail Price,Units in Stock (POD),Notes
+The Signature Tee,APP-SIG-T,T-Shirt,$13.95,$34.99,POD,Printful fulfills on demand
+The Daily Rider Tee,APP-DR-T,T-Shirt,$13.95,$33.99,POD,Printful fulfills on demand
+The Flag Bearer Tee,APP-FB-T,T-Shirt,$9.50,$15.99,POD,Printful fulfills on demand
+Road Warrior Tee,APP-RW-T,T-Shirt,$13.95,$34.99,POD,Comfort Colors 1717
+Beekeeper Tank,APP-BK-TK,Tank Top,$12.00,$21.99,POD,Cotton Heritage MC1790
+Swarm Hoodie,APP-SW-H,Hoodie,$22.00,$38.99,POD,Cotton Heritage M2580
+Hive Mind Cap,APP-HM-C,Hat,$12.00,$23.99,POD,Yupoong 7005
+The Swarm Rag,APP-SR-B,Bandana,$7.00,$13.99,POD,Bandana
+Buzz Stompers,APP-BS-S,Socks,$5.00,$9.99,POD,Crew socks
+,,,,,,
+--- ACCESSORIES ---,,,,,,
+Product Name,SKU,Category,Unit Cost,Retail Price,Units in Stock,Reorder Threshold
+Sticker Pack,ACC-STK-PK,Stickers,$3.00,$20.00,0,20
+Embroidered Patch,ACC-PTCH,Patches,$2.50,$12.00,0,20
+Individual Stickers,ACC-STK-1,Stickers,$1.00,$5.00,0,50
+,,,,,,
+--- BEEKEEPING SUPPLIES ---,,,,,,
+Item,SKU,Category,Unit Cost,Qty on Hand,Reorder Threshold,Supplier
+Bee Hive (Langstroth),SUP-HIVE,Equipment,$150.00,0,2,
+Bee Suit,SUP-SUIT,Equipment,$60.00,0,1,
+Smoker,SUP-SMKR,Equipment,$35.00,0,1,
+Hive Tool,SUP-TOOL,Equipment,$12.00,0,2,
+Bee Brush,SUP-BRSH,Equipment,$8.00,0,2,
+Frames (pack of 10),SUP-FRM10,Equipment,$25.00,0,5,
+Foundation Sheets (pack of 10),SUP-FND10,Equipment,$15.00,0,5,
+Queen Excluder,SUP-QEX,Equipment,$10.00,0,2,
+Honey Extractor,SUP-EXTR,Equipment,$300.00,0,1,
+Jars - 8oz (case of 24),SUP-JAR8,Packaging,$18.00,0,5,
+Labels (roll of 100),SUP-LBL,Packaging,$25.00,0,3,
+Tins - 2oz (pack of 50),SUP-TIN2,Packaging,$30.00,0,3,
+,,,,,,
+--- FLOWER/GARDEN SUPPLIES ---,,,,,,
+Item,SKU,Category,Unit Cost,Qty on Hand,Reorder Threshold,Supplier
+Wildflower Seed Mix (1lb),GAR-WF-1,Seeds,$12.00,0,3,
+Lavender Plants,GAR-LAV,Plants,$5.00,0,10,
+Chili Pepper Seeds,GAR-CHL,Seeds,$4.00,0,5,Local chili farm
+Soil (40lb bag),GAR-SOIL,Soil,$8.00,0,5,
+Fertilizer,GAR-FERT,Supplies,$15.00,0,2,
+,,,,,,
+,,,,,,
+========================================,,,,,,
+SECTION 2: EXPENSE TRACKING (MONTHLY),,,,,,
+========================================,,,,,,
+,,,,,,
+Month,Date,Category,Description,Amount,Payment Method,Tax Deductible?
+February 2026,,Startup,LLC Filing Fee (Articles of Organization),$75.00,Personal,Yes
+February 2026,,Startup,Initial List Filing,$150.00,Personal,Yes
+February 2026,,Startup,State Business License,$200.00,Personal,Yes
+February 2026,,Startup,Registered Agent Service (annual),$125.00,Personal,Yes
+February 2026,,Software,Shopify Monthly Subscription,$39.00,Business Card,Yes
+February 2026,,Software,Domain Name (annual),$15.00,Business Card,Yes
+February 2026,,Marketing,Business Cards (500),$30.00,Business Card,Yes
+February 2026,,Marketing,Farmers Market Booth Fee,$0.00,,Yes
+February 2026,,Supplies,Packaging Materials,$0.00,,Yes
+February 2026,,Supplies,Beekeeping Equipment,$0.00,,Yes
+February 2026,,Insurance,Business Liability Insurance,$0.00,,Yes
+February 2026,,Utilities,Shed/Storage Costs,$0.00,,Yes
+,,,,,,
+--- EXPENSE CATEGORIES ---,,,,,,
+Category,Monthly Budget,YTD Actual,YTD Budget,Variance,Notes,
+Startup Costs,N/A,$550.00,$4600.00,,One-time costs,
+Supplies & Inventory,$200.00,$0.00,$2400.00,,,
+Software & Subscriptions,$50.00,$54.00,$600.00,,,
+Marketing & Advertising,$100.00,$30.00,$1200.00,,,
+Farmers Market Fees,$75.00,$0.00,$450.00,,Seasonal (June-Oct),
+Insurance,$50.00,$0.00,$600.00,,,
+Vehicle/Travel,$100.00,$0.00,$1200.00,,,
+Packaging & Labels,$75.00,$0.00,$900.00,,,
+Miscellaneous,$50.00,$0.00,$600.00,,,
+TOTAL MONTHLY,$700.00,$634.00,$12550.00,,,
+,,,,,,
+,,,,,,
+========================================,,,,,,
+SECTION 3: REVENUE TRACKING,,,,,,
+========================================,,,,,,
+,,,,,,
+--- REVENUE BY CHANNEL ---,,,,,,
+Month,Farmers Market,E-Commerce (Shopify),Wholesale,Events/Pop-ups,Other,TOTAL
+March 2026,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00
+April 2026,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00
+May 2026,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00
+June 2026,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00
+July 2026,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00
+August 2026,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00
+September 2026,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00
+October 2026,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00
+November 2026,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00
+December 2026,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00
+YEAR 1 TOTAL,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00
+,,,,,,
+--- REVENUE BY PRODUCT ---,,,,,,
+Product,Units Sold (YTD),Revenue (YTD),Avg. Selling Price,COGS (YTD),Gross Profit,Margin %
+Hellfire Honey (8oz),0,$0.00,$12.00,$0.00,$0.00,63%
+Highway Harvest (8oz),0,$0.00,$10.00,$0.00,$0.00,65%
+Brap Balm (2oz),0,$0.00,$8.00,$0.00,$0.00,69%
+Combustion Cones (bag of 4),0,$0.00,$10.00,$0.00,$0.00,70%
+The Signature Tee,0,$0.00,$34.99,$0.00,$0.00,60%
+The Daily Rider Tee,0,$0.00,$33.99,$0.00,$0.00,59%
+The Flag Bearer Tee,0,$0.00,$15.99,$0.00,$0.00,41%
+Road Warrior Tee,0,$0.00,$34.99,$0.00,$0.00,60%
+Beekeeper Tank,0,$0.00,$21.99,$0.00,$0.00,45%
+Swarm Hoodie,0,$0.00,$38.99,$0.00,$0.00,44%
+Hive Mind Cap,0,$0.00,$23.99,$0.00,$0.00,50%
+The Swarm Rag,0,$0.00,$13.99,$0.00,$0.00,50%
+Buzz Stompers,0,$0.00,$9.99,$0.00,$0.00,50%
+Sticker Pack,0,$0.00,$20.00,$0.00,$0.00,85%
+Patches,0,$0.00,$12.00,$0.00,$0.00,79%
+TOTAL,0,$0.00,,$0.00,$0.00,
+,,,,,,
+,,,,,,
+========================================,,,,,,
+SECTION 4: TAX PREPARATION,,,,,,
+========================================,,,,,,
+,,,,,,
+--- QUARTERLY ESTIMATED TAX PAYMENTS ---,,,,,,
+Quarter,Period,Estimated Income,Self-Employment Tax (15.3%),Federal Income Tax (est. 12%),State Tax (NV = $0),Total Estimated Payment
+Q1 2026,Jan-Mar,$0.00,$0.00,$0.00,$0.00,$0.00
+Q2 2026,Apr-Jun,$0.00,$0.00,$0.00,$0.00,$0.00
+Q3 2026,Jul-Sep,$0.00,$0.00,$0.00,$0.00,$0.00
+Q4 2026,Oct-Dec,$0.00,$0.00,$0.00,$0.00,$0.00
+ANNUAL TOTAL,,$0.00,$0.00,$0.00,$0.00,$0.00
+,,,,,,
+--- DEDUCTIBLE EXPENSES SUMMARY ---,,,,,,
+Category,Q1,Q2,Q3,Q4,Annual Total,Notes
+Business Registration & Licenses,$550.00,$0.00,$0.00,$0.00,$550.00,LLC + Business License
+Supplies & Materials,$0.00,$0.00,$0.00,$0.00,$0.00,Beekeeping + packaging
+Software & Subscriptions,$54.00,$0.00,$0.00,$0.00,$54.00,Shopify + domain
+Marketing & Advertising,$30.00,$0.00,$0.00,$0.00,$30.00,Business cards + ads
+Vehicle Expenses (mileage),$0.00,$0.00,$0.00,$0.00,$0.00,"Track mileage: $0.67/mile (2026 IRS rate)"
+Home Office / Shed,$0.00,$0.00,$0.00,$0.00,$0.00,Portion used for business
+Insurance,$0.00,$0.00,$0.00,$0.00,$0.00,Business liability
+Farmers Market Fees,$0.00,$0.00,$0.00,$0.00,$0.00,Booth rental
+Professional Services,$0.00,$0.00,$0.00,$0.00,$0.00,Accounting/legal
+TOTAL DEDUCTIONS,$634.00,$0.00,$0.00,$0.00,$634.00,
+,,,,,,
+"IMPORTANT: Nevada has NO state income tax. You still owe federal income tax and self-employment tax (Social Security + Medicare).",,,,,,
+"IMPORTANT: Track ALL mileage to/from farmers markets, suppliers, and business meetings. The 2026 IRS standard mileage rate is $0.67/mile.",,,,,,
+"IMPORTANT: Keep ALL receipts. Photograph them immediately and store digitally.",,,,,,
+,,,,,,
+,,,,,,
+========================================,,,,,,
+SECTION 5: PROFIT & LOSS SUMMARY,,,,,,
+========================================,,,,,,
+,,,,,,
+--- MONTHLY P&L ---,,,,,,
+Month,Total Revenue,Total COGS,Gross Profit,Total Operating Expenses,Net Profit (Loss),Cumulative P&L
+January 2026,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00
+February 2026,$0.00,$0.00,$0.00,$634.00,($634.00),($634.00)
+March 2026,$0.00,$0.00,$0.00,$0.00,$0.00,($634.00)
+April 2026,$0.00,$0.00,$0.00,$0.00,$0.00,($634.00)
+May 2026,$0.00,$0.00,$0.00,$0.00,$0.00,($634.00)
+June 2026,$0.00,$0.00,$0.00,$0.00,$0.00,($634.00)
+July 2026,$0.00,$0.00,$0.00,$0.00,$0.00,($634.00)
+August 2026,$0.00,$0.00,$0.00,$0.00,$0.00,($634.00)
+September 2026,$0.00,$0.00,$0.00,$0.00,$0.00,($634.00)
+October 2026,$0.00,$0.00,$0.00,$0.00,$0.00,($634.00)
+November 2026,$0.00,$0.00,$0.00,$0.00,$0.00,($634.00)
+December 2026,$0.00,$0.00,$0.00,$0.00,$0.00,($634.00)
+,,,,,,
+--- ANNUAL SUMMARY ---,,,,,,
+Metric,Year 1 Projection,Year 1 Actual,Variance,Notes,,
+Total Revenue,$14000.00,$0.00,,,Target from business plan,
+Total COGS,$4200.00,$0.00,,,~30% of revenue,
+Gross Profit,$9800.00,$0.00,,,70% gross margin target,
+Total Operating Expenses,$8000.00,$634.00,,,Including startup costs,
+Net Profit,$6000.00,($634.00),,,43% net margin target,
+,,,,,,
+--- KEY METRICS ---,,,,,,
+Metric,Target,Actual,Status,,,
+Startup Investment,$4600.00,$634.00,In Progress,,,
+Grant Funding Target,$10000.00,$0.00,Not Started,,,
+Break-Even Point (months),4-5,,Not Started,,,
+Average Order Value,$15.00,,Not Started,,,
+Customer Acquisition Cost,$0.00,,Not Started,,,
+Monthly Recurring Revenue (Subscriptions),$0.00,,Not Started,,,
