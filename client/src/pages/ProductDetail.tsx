@@ -92,10 +92,10 @@ const getProductTheme = (productName: string): keyof typeof THEMED_BACKGROUNDS =
   if (name.includes("cap") || name.includes("hoodie")) {
     return "garage";
   }
-  if (name.includes("tank") || name.includes("beekeeper") || name.includes("rag") || name.includes("bandana") || name.includes("stomper") || name.includes("sock")) {
+  if (name.includes("tank") || name.includes("beekeeper") || name.includes("rag") || name.includes("bandana") || name.includes("stomper") || name.includes("sock") || name.includes("tote") || name.includes("beekeepin")) {
     return "alley";
   }
-  if (name.includes("tee") || name.includes("shirt") || name.includes("signature") || name.includes("rider") || name.includes("flag")) {
+  if (name.includes("tee") || name.includes("shirt") || name.includes("signature") || name.includes("rider") || name.includes("flag") || name.includes("hex")) {
     return "tattoo";
   }
   return "garage";

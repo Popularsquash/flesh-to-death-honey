@@ -171,8 +171,6 @@ export default function Home() {
         }}
       />
       <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
-        {/* Maintenance Banner - REMOVED */}
-
       {/* Navigation */}
       <nav className="border-b-4 border-primary sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
