@@ -24,7 +24,7 @@ export default function Home() {
       id: 1,
       name: "Brap Balm",
       price: "$18.00",
-      description: "Leather salve for your road-rash gear. Smells like victory and beeswax.",
+      description: "Leather salve for your road-rash gear. Smells like victory, beeswax, and the open road at 2 AM. Rub it on anything that needs saving.",
       image: "/images/brap-balm-label.png",
       tag: "Best Seller"
     },
@@ -32,7 +32,7 @@ export default function Home() {
       id: 2,
       name: "Sin Eraser Soap",
       price: "$12.00",
-      description: "Washes away grease, grime, and yesterday's bad decisions.",
+      description: "Activated charcoal soap that washes away grease, grime, and yesterday's bad decisions. Lather up like your sins depend on it.",
       image: "/images/charcoal-soap-label.png",
       tag: "New"
     },
@@ -40,7 +40,7 @@ export default function Home() {
       id: 3,
       name: "Sting Salve",
       price: "$14.00",
-      description: "Pain is temporary, swelling is hilarious. For bites, burns, and bad ideas.",
+      description: "Pain is temporary, swelling is hilarious. Beeswax salve for bites, burns, and the consequences of your own hubris.",
       image: "/images/sting-salve-label.png",
       tag: "Essential"
     },
@@ -48,7 +48,7 @@ export default function Home() {
       id: 8,
       name: "Hive Mind Fuel",
       price: "$6.00",
-      description: "Liquid adrenaline for the chronically lost. Honey energy gel.",
+      description: "Liquid adrenaline for the chronically lost. Raw honey energy gel that tastes like purpose and keeps you vertical when the trail fights back.",
       image: "/images/hive-mind-fuel-label.png",
       tag: "Fuel"
     },
@@ -56,7 +56,7 @@ export default function Home() {
       id: 9,
       name: "New Prospect Kit",
       price: "$50.00",
-      description: "Everything you need to join the swarm. Includes balm, soap, and stickers.",
+      description: "Everything a new recruit needs to join the swarm. Balm, soap, stickers, and the faint sense that you've made a commitment you can't undo.",
       image: "/images/starter-kit-label.png",
       tag: "Bundle"
     }
@@ -117,10 +117,26 @@ export default function Home() {
 
   const apparel = [
     {
+      id: 10,
+      name: "Spring Hex Tee",
+      price: "$22.50",
+      description: "Warped geometry meets skeletal bees. The optical illusion print bends reality — front and back — like a fever dream in a field of dead flowers. Fitted on a Bella + Canvas 3001.",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/PwpogSOpdWseaIvT.webp",
+      tag: "Spring Drop"
+    },
+    {
+      id: 11,
+      name: "Beekeepin Things Tote",
+      price: "$30.50",
+      description: "Haul your cursed belongings in this all-over print tote. Dark botanical pattern crawling with skeleton bees and bell-shaped blooms — like a Victorian funeral bouquet turned into luggage.",
+      image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/ypEfQjeBROSHzeWG.webp",
+      tag: "Spring Drop"
+    },
+    {
       id: 4,
       name: "Death Rider Tee",
       price: "$35.00",
-      description: "Heavyweight cotton for heavy situations. Features the classic Flesh to Death back print.",
+      description: "Heavyweight cotton for heavy situations. The classic Flesh to Death back print that tells the world you ride with the hive — or you ride alone.",
       image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/wYGrrFwHJMQdeNIs.png",
       tag: "Limited"
     },
@@ -128,7 +144,7 @@ export default function Home() {
       id: 5,
       name: "Hive Mind Tee",
       price: "$35.00",
-      description: "Join the swarm. Front and back print with our signature skull bee.",
+      description: "Join the swarm. Front and back print with our signature skull bee. Wear it to declare allegiance or start arguments at family dinners.",
       image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/ceAnSevZKwPsDkAe.png",
       tag: "New Drop"
     },
@@ -136,7 +152,7 @@ export default function Home() {
       id: 6,
       name: "Reaper Patch",
       price: "$10.00",
-      description: "Embroidered patch for your cut. Guaranteed to scare grandmas.",
+      description: "Embroidered patch for your cut. Iron it on, sew it on, or just hold it up menacingly. Guaranteed to scare grandmas and impress nobody who matters.",
       image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/FCrRDCqkRJoYjhtp.png",
       tag: "Accessory"
     },
@@ -144,7 +160,7 @@ export default function Home() {
       id: 7,
       name: "Swarm Sticker Pack",
       price: "$15.00",
-      description: "Slap 'em on your helmet, your tank, or your local stop sign.",
+      description: "Slap 'em on your helmet, your tank, or your local stop sign. Die-cut vinyl that survives rain, sun, and regret.",
       image: "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/PloaTZpmpdODxDKE.png",
       tag: "Sticky"
     }
