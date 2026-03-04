@@ -1,4 +1,5 @@
 import { COOKIE_NAME } from "@shared/const";
+import { notifyOwner } from "./_core/notification";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, protectedProcedure, adminProcedure, router } from "./_core/trpc";
@@ -281,6 +282,23 @@ export const appRouter = router({
         const isAdmin = ctx.user.role === 'admin';
         const result = await deleteReview(input.reviewId, ctx.user.id, isAdmin);
         return result;
+      }),
+  }),
+
+  // Contact form route
+  contact: router({
+    send: publicProcedure
+      .input(z.object({
+        name: z.string().min(1).max(100),
+        email: z.string().email(),
+        message: z.string().min(1).max(2000),
+      }))
+      .mutation(async ({ input }) => {
+        await notifyOwner({
+          title: `Contact Form: Message from ${input.name}`,
+          content: `From: ${input.name} <${input.email}>\n\n${input.message}`,
+        });
+        return { success: true };
       }),
   }),
 });

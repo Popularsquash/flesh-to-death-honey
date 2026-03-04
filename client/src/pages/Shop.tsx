@@ -15,6 +15,7 @@ import { SEO } from "@/components/SEO";
 export default function Shop() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedVariants, setSelectedVariants] = useState<Record<number, number>>({});
+  const [highlightedProduct, setHighlightedProduct] = useState<number | null>(null);
   
   const seoProps = {
     title: "Shop",
@@ -29,6 +30,8 @@ export default function Shop() {
     const variantId = selectedVariants[productId];
     if (!variantId) {
       toast.error("Please select a size/variant");
+      setHighlightedProduct(productId);
+      setTimeout(() => setHighlightedProduct(null), 1500);
       return;
     }
     
@@ -188,7 +191,7 @@ export default function Shop() {
                           value={selectedVariantId?.toString() || ""}
                           onValueChange={(value) => setSelectedVariants(prev => ({ ...prev, [product.id]: parseInt(value) }))}
                         >
-                          <SelectTrigger className="w-full bg-gray-800 border-2 border-gray-600 rounded-none text-white">
+                          <SelectTrigger className={`w-full bg-gray-800 rounded-none text-white border-2 transition-all ${highlightedProduct === product.id ? 'border-red-500 animate-pulse' : 'border-gray-600'}`}>
                             <SelectValue placeholder="Select Size" />
                           </SelectTrigger>
                           <SelectContent className="bg-gray-800 border-2 border-gray-600">

@@ -1,11 +1,39 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Phone, Mail, MessageSquare } from "lucide-react";
+import { MapPin, Phone, Mail, MessageSquare, CheckCircle } from "lucide-react";
 import { Link } from "wouter";
+import { useState } from "react";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 export default function ContactUs() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const sendContact = trpc.contact.send.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+    },
+    onError: (err) => {
+      toast.error("Failed to send message. Please try again or email us directly.");
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      toast.error("Please fill in all fields.");
+      return;
+    }
+    sendContact.mutate({ name, email, message });
+  };
+
   return (
-    <div className="min-h-screen bg-background text-foreground font-body">
+    <div className="min-h-screen bg-black text-white font-body">
       {/* Header */}
       <header className="bg-black text-white py-12 border-b-4 border-primary relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
@@ -34,15 +62,15 @@ export default function ContactUs() {
 
       <main className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
-          
+
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className="bg-black border-l-4 border-primary p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+            <div className="bg-gray-900 border-l-4 border-primary p-6 shadow-[8px_8px_0px_0px_rgba(255,195,0,0.3)]">
               <h2 className="text-3xl font-heading text-white mb-6 uppercase">The Hive HQ</h2>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <MapPin className="h-6 w-6 text-primary mt-1" />
+                  <MapPin className="h-6 w-6 text-primary mt-1 shrink-0" />
                   <div>
                     <p className="font-bold text-white">Address:</p>
                     <p className="text-gray-400">
@@ -53,7 +81,7 @@ export default function ContactUs() {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <Phone className="h-6 w-6 text-primary" />
+                  <Phone className="h-6 w-6 text-primary shrink-0" />
                   <div>
                     <p className="font-bold text-white">Phone:</p>
                     <p className="text-gray-400">949-939-1739</p>
@@ -61,7 +89,7 @@ export default function ContactUs() {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <Mail className="h-6 w-6 text-primary" />
+                  <Mail className="h-6 w-6 text-primary shrink-0" />
                   <div>
                     <p className="font-bold text-white">Email:</p>
                     <p className="text-gray-400">support@fleshtodeath.com</p>
@@ -70,9 +98,9 @@ export default function ContactUs() {
               </div>
             </div>
 
-            <div className="bg-white border-4 border-black p-6">
-              <h3 className="font-heading text-xl mb-2">Support Hours</h3>
-              <p className="text-gray-600">
+            <div className="bg-gray-900 border-4 border-primary p-6">
+              <h3 className="font-heading text-xl mb-2 text-white">Support Hours</h3>
+              <p className="text-gray-400">
                 Whenever we're awake and not riding.<br />
                 Usually Mon-Fri, 9am - 5pm PST.
               </p>
@@ -80,27 +108,66 @@ export default function ContactUs() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white border-4 border-black p-8 shadow-[12px_12px_0px_0px_rgba(255,195,0,1)]">
-            <h2 className="text-3xl font-heading text-black mb-6 uppercase flex items-center gap-2">
-              <MessageSquare className="h-8 w-8" /> Send a Message
+          <div className="bg-gray-900 border-4 border-primary p-8 shadow-[12px_12px_0px_0px_rgba(255,195,0,0.4)]">
+            <h2 className="text-3xl font-heading text-white mb-6 uppercase flex items-center gap-2">
+              <MessageSquare className="h-8 w-8 text-primary" /> Send a Message
             </h2>
-            <form className="space-y-4">
-              <div>
-                <label className="block font-heading text-sm uppercase mb-1">Name</label>
-                <input type="text" className="w-full border-2 border-black p-3 font-body focus:outline-none focus:border-primary rounded-none" placeholder="Your Name" />
+
+            {submitted ? (
+              <div className="flex flex-col items-center justify-center py-12 text-center space-y-4">
+                <CheckCircle className="h-16 w-16 text-primary" />
+                <h3 className="text-2xl font-heading text-white">MESSAGE SENT!</h3>
+                <p className="text-gray-400">We got your message. We'll get back to you when we're done riding.</p>
+                <Button
+                  onClick={() => setSubmitted(false)}
+                  className="mt-4 bg-primary text-black hover:bg-white font-heading uppercase"
+                >
+                  Send Another
+                </Button>
               </div>
-              <div>
-                <label className="block font-heading text-sm uppercase mb-1">Email</label>
-                <input type="email" className="w-full border-2 border-black p-3 font-body focus:outline-none focus:border-primary rounded-none" placeholder="your@email.com" />
-              </div>
-              <div>
-                <label className="block font-heading text-sm uppercase mb-1">Message</label>
-                <textarea className="w-full border-2 border-black p-3 font-body focus:outline-none focus:border-primary h-32 rounded-none" placeholder="What's on your mind?"></textarea>
-              </div>
-              <Button className="w-full bg-black text-white hover:bg-primary hover:text-black font-heading uppercase text-lg py-6 rounded-none transition-colors">
-                Send It
-              </Button>
-            </form>
+            ) : (
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                <div>
+                  <label className="block font-heading text-sm uppercase mb-1 text-gray-300">Name</label>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full bg-black border-2 border-gray-600 text-white p-3 font-body focus:outline-none focus:border-primary rounded-none transition-colors"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block font-heading text-sm uppercase mb-1 text-gray-300">Email</label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full bg-black border-2 border-gray-600 text-white p-3 font-body focus:outline-none focus:border-primary rounded-none transition-colors"
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block font-heading text-sm uppercase mb-1 text-gray-300">Message</label>
+                  <textarea
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="w-full bg-black border-2 border-gray-600 text-white p-3 font-body focus:outline-none focus:border-primary h-32 rounded-none transition-colors"
+                    placeholder="What's on your mind?"
+                    required
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  disabled={sendContact.isPending}
+                  className="w-full bg-primary text-black hover:bg-white hover:text-black font-heading uppercase text-lg py-6 rounded-none transition-colors disabled:opacity-60"
+                >
+                  {sendContact.isPending ? "Sending..." : "Send It"}
+                </Button>
+              </form>
+            )}
           </div>
 
         </div>

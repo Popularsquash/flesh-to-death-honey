@@ -5,7 +5,7 @@ import { Link } from "wouter";
 
 export default function ShippingReturns() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-body">
+    <div className="min-h-screen bg-black text-white font-body">
       {/* Header */}
       <header className="bg-black text-white py-12 border-b-4 border-primary relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
@@ -41,10 +41,10 @@ export default function ShippingReturns() {
               <div className="bg-primary p-3 rounded-none rotate-3">
                 <Truck className="h-8 w-8 text-black" />
               </div>
-              <h2 className="text-3xl font-heading text-black uppercase">1. Shipping (We Try Our Best)</h2>
+              <h2 className="text-3xl font-heading text-white uppercase">1. Shipping (We Try Our Best)</h2>
             </div>
-            <Card className="bg-white border-4 border-black rounded-none">
-              <CardContent className="pt-6">
+            <Card className="bg-gray-900 border-4 border-primary rounded-none">
+              <CardContent className="pt-6 text-gray-300">
                 <p className="mb-4">
                   We ship from Sparks, NV. Usually within 2-3 business days, unless we're out riding or the bees are swarming.
                 </p>
@@ -63,10 +63,10 @@ export default function ShippingReturns() {
               <div className="bg-black p-3 rounded-none -rotate-2">
                 <RefreshCw className="h-8 w-8 text-primary" />
               </div>
-              <h2 className="text-3xl font-heading text-black uppercase">2. Returns (No Whining)</h2>
+              <h2 className="text-3xl font-heading text-white uppercase">2. Returns (No Whining)</h2>
             </div>
-            <Card className="bg-white border-4 border-black rounded-none">
-              <CardContent className="pt-6">
+            <Card className="bg-gray-900 border-4 border-primary rounded-none">
+              <CardContent className="pt-6 text-gray-300">
                 <p className="mb-4">
                   Look, we're a small business. We don't have an Amazon warehouse.
                 </p>
@@ -86,10 +86,10 @@ export default function ShippingReturns() {
               <div className="bg-primary p-3 rounded-none rotate-1">
                 <PackageX className="h-8 w-8 text-black" />
               </div>
-              <h2 className="text-3xl font-heading text-black uppercase">3. Lost Packages</h2>
+              <h2 className="text-3xl font-heading text-white uppercase">3. Lost Packages</h2>
             </div>
-            <Card className="bg-white border-4 border-black rounded-none">
-              <CardContent className="pt-6">
+            <Card className="bg-gray-900 border-4 border-primary rounded-none">
+              <CardContent className="pt-6 text-gray-300">
                 <p>
                   Once we hand it to the carrier, it's out of our hands. If they lose it, we'll help you yell at them, but we can't magically make it appear.
                 </p>
