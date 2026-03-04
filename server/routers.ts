@@ -15,6 +15,7 @@ import {
   removeFromCart,
   clearCart,
   mergeGuestCart,
+  updateProductImage,
 } from "./products";
 import {
   createCheckoutSession,
@@ -75,6 +76,14 @@ export const appRouter = router({
       .query(async ({ input }) => {
         const variant = await getVariantById(input.id);
         return variant;
+      }),
+
+    // Update product image (admin only)
+    updateImage: adminProcedure
+      .input(z.object({ productId: z.number(), thumbnailUrl: z.string().url() }))
+      .mutation(async ({ input }) => {
+        await updateProductImage(input.productId, input.thumbnailUrl);
+        return { success: true };
       }),
   }),
 

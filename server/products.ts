@@ -480,3 +480,14 @@ export async function mergeGuestCart(sessionId: string, userId: number): Promise
     }
   }
 }
+
+/**
+ * Update a product's thumbnail image URL
+ */
+export async function updateProductImage(productId: number, thumbnailUrl: string): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.update(products)
+    .set({ thumbnailUrl })
+    .where(eq(products.id, productId));
+}
