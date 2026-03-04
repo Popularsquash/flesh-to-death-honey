@@ -491,3 +491,14 @@ export async function updateProductImage(productId: number, thumbnailUrl: string
     .set({ thumbnailUrl })
     .where(eq(products.id, productId));
 }
+
+/**
+ * Update retail price for all variants of a product (price in cents)
+ */
+export async function updateProductPrice(productId: number, retailPriceCents: number): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.update(productVariants)
+    .set({ retailPrice: retailPriceCents })
+    .where(eq(productVariants.productId, productId));
+}

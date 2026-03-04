@@ -16,6 +16,7 @@ import {
   clearCart,
   mergeGuestCart,
   updateProductImage,
+  updateProductPrice,
 } from "./products";
 import {
   createCheckoutSession,
@@ -83,6 +84,14 @@ export const appRouter = router({
       .input(z.object({ productId: z.number(), thumbnailUrl: z.string().url() }))
       .mutation(async ({ input }) => {
         await updateProductImage(input.productId, input.thumbnailUrl);
+        return { success: true };
+      }),
+
+    // Update product price (admin only) - price in cents
+    updatePrice: adminProcedure
+      .input(z.object({ productId: z.number(), retailPriceCents: z.number().int().positive() }))
+      .mutation(async ({ input }) => {
+        await updateProductPrice(input.productId, input.retailPriceCents);
         return { success: true };
       }),
   }),
