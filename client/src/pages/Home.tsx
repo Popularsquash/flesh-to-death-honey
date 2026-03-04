@@ -410,44 +410,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Coming Soon Banner */}
-          <div className="relative bg-black border-4 border-dashed border-white p-12 mb-24 text-center overflow-hidden">
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute inset-0 bg-[url('/images/skeleton-bees.png')] bg-repeat bg-center"></div>
-            </div>
-            <div className="relative z-10">
-              <Badge className="bg-secondary text-white rounded-none font-heading uppercase text-xl px-6 py-2 mb-6 inline-block border-2 border-white animate-pulse">
-                🧪 In Development
-              </Badge>
-              <h3 className="text-4xl md:text-5xl font-heading text-primary mb-6">
-                Currently Perfecting the Road Rage Genome
-              </h3>
-              <p className="text-xl font-body text-gray-300 max-w-3xl mx-auto mb-6 leading-relaxed">
-                Our beeswax formulas are being venom-tested on freshly decapitated wasp bodies in our underground Nevada lab. 
-                The science is questionable. The results are inevitable.
-              </p>
-              <div className="flex flex-wrap justify-center gap-8 mb-8">
-                {products.slice(0, 3).map((product) => (
-                  <div key={product.id} className="relative group">
-                    <div className="w-32 h-32 bg-gray-900 border-2 border-gray-700 flex items-center justify-center p-2 opacity-60 group-hover:opacity-80 transition-opacity">
-                      <img src={product.image} alt={product.name} className="w-full h-full object-contain grayscale" />
-                    </div>
-                    <p className="text-xs text-gray-500 mt-2 font-body">{product.name}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm font-body text-gray-500 italic border-t border-gray-800 pt-6 max-w-2xl mx-auto">
-                ⚠️ No wasps were harmed in the making of any product. They were already dead. We found them like that. Honest.
-              </p>
-              <div className="mt-8 max-w-md mx-auto">
-                <EmailSignup 
-                  interest="beeswax_launch"
-                  buttonText="Buzz Me When Ready"
-                  placeholder="your@email.com"
-                />
-              </div>
-            </div>
-          </div>
 
           {/* The Hive's Revenge Collection - Coming Soon */}
           <div className="text-center mb-16 pt-12 border-t-4 border-black border-dashed">
