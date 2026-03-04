@@ -9,7 +9,11 @@ import { getDb } from "./db";
 import { orders, cartItems, productVariants, products, InsertOrder } from "../drizzle/schema";
 import { createOrder as createPrintfulOrder, confirmOrder as confirmPrintfulOrder, PrintfulOrderRecipient, PrintfulOrderItem } from "./printful";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "");
+const stripeKey = process.env.STRIPE_SECRET_KEY;
+const stripe = stripeKey ? new Stripe(stripeKey) : (null as unknown as Stripe);
+if (!stripeKey) {
+  console.warn("[Stripe] WARNING: STRIPE_SECRET_KEY not set. Checkout will not work until configured.");
+}
 
 interface CartItemWithDetails {
   id: number;
