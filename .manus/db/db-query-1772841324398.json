@@ -1,0 +1,45 @@
+{
+  "query": "SELECT p.name, pv.retailPrice, COUNT(pv.id) as variants FROM products p JOIN productVariants pv ON pv.productId = p.id WHERE p.isActive = 1 GROUP BY p.name, pv.retailPrice ORDER BY p.name;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT p.name, pv.retailPrice, COUNT(pv.id) as variants FROM products p JOIN productVariants pv ON pv.productId = p.id WHERE p.isActive = 1 GROUP BY p.name, pv.retailPrice ORDER BY p.name;",
+  "rows": [
+    {
+      "name": "Beekeeper Tank",
+      "retailPrice": "3500",
+      "variants": "5"
+    },
+    {
+      "name": "Buzz Stompers",
+      "retailPrice": "995",
+      "variants": "3"
+    },
+    {
+      "name": "Hive Mind Cap",
+      "retailPrice": "3300",
+      "variants": "1"
+    },
+    {
+      "name": "Swarm Hoodie",
+      "retailPrice": "6900",
+      "variants": "6"
+    },
+    {
+      "name": "The Daily Rider Tee",
+      "retailPrice": "3500",
+      "variants": "5"
+    },
+    {
+      "name": "The Flag Bearer Tee",
+      "retailPrice": "3500",
+      "variants": "18"
+    },
+    {
+      "name": "The Swarm Rag",
+      "retailPrice": "1500",
+      "variants": "3"
+    }
+  ],
+  "messages": [],
+  "stdout": "name\tretailPrice\tvariants\nBeekeeper Tank\t3500\t5\nBuzz Stompers\t995\t3\nHive Mind Cap\t3300\t1\nSwarm Hoodie\t6900\t6\nThe Daily Rider Tee\t3500\t5\nThe Flag Bearer Tee\t3500\t18\nThe Swarm Rag\t1500\t3\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}

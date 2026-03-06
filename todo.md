@@ -13,3 +13,6 @@
 - [x] Add unique SEO keywords and meta description to Shop page
 - [x] Add unique SEO keywords and meta description to Comics page
 - [x] Add unique SEO keywords and meta description to About page
+
+## Pricing Update (Mar 6, 2026)
+- [x] Mirror product pricing to match gofastdontdie.com benchmarks (Cap $33, Hoodie $69, Tees $35, Tank $35, Rag $15, Stompers $9.95)

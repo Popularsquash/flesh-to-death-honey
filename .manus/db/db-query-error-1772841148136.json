@@ -1,0 +1,8 @@
+{
+  "query": "SELECT p.id, p.name, p.printfulSyncProductId, pv.id as variant_id, pv.name as variant_name, pv.retailPrice, pv.size, pv.color FROM products p JOIN product_variants pv ON pv.productId = p.id WHERE p.isActive = 1 ORDER BY p.id, pv.id LIMIT 100;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT p.id, p.name, p.printfulSyncProductId, pv.id as variant_id, pv.name as variant_name, pv.retailPrice, pv.size, pv.color FROM products p JOIN product_variants pv ON pv.productId = p.id WHERE p.isActive = 1 ORDER BY p.id, pv.id LIMIT 100;",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1146 (42S02) at line 1: Table 'hbc6s9ttjjb9shetagojdd.product_variants' doesn't exist"
+  ]
+}
