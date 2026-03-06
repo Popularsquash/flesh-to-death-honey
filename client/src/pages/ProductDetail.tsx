@@ -101,6 +101,13 @@ const getProductTheme = (productName: string): keyof typeof THEMED_BACKGROUNDS =
   return "garage";
 };
 
+// Lifestyle / additional images per product ID (appended after front/back)
+const LIFESTYLE_IMAGES: Record<number, { url: string; label: string }[]> = {
+  120001: [
+    { url: "/images/hive-mind-cap-lifestyle.jpg", label: "Lifestyle" },
+  ],
+};
+
 // Color-specific images for products with multiple colors
 // Maps productId -> color -> { front, back }
 const COLOR_IMAGES: Record<number, Record<string, { front: string; back: string }>> = {
@@ -190,10 +197,12 @@ export default function ProductDetail() {
       ];
     }
     
-    return [
+    const baseImages = [
       { url: product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png", label: "Front" },
       { url: product.backImageUrl || product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png", label: "Back" },
     ];
+    const lifestyleImages = LIFESTYLE_IMAGES[product.id] || [];
+    return [...baseImages, ...lifestyleImages];
   }, [product, selectedColor]);
 
   // Reset active image when color changes

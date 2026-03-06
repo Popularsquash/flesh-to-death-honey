@@ -398,6 +398,44 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full h-16 bg-primary" style={{ clipPath: "polygon(0 40%, 100% 0%, 100% 100%, 0% 100%)" }}></div>
       </section>
 
+      {/* THE CULTURE — Lifestyle Gallery */}
+      <section className="bg-black py-0 overflow-hidden">
+        {/* Section Header */}
+        <div className="container mx-auto px-4 pt-16 pb-10 text-center">
+          <div className="inline-block bg-primary text-black px-6 py-1 font-heading text-sm tracking-widest uppercase transform -rotate-1 mb-4">
+            The Culture
+          </div>
+          <h2 className="text-5xl md:text-7xl font-heading text-white leading-none">
+            Born from the <span className="text-primary">Hive</span>
+          </h2>
+        </div>
+        {/* Full-bleed two-column grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full">
+          {/* Left — biker + dog */}
+          <div className="relative overflow-hidden group" style={{ aspectRatio: '3/4' }}>
+            <img
+              src="/images/lifestyle-biker-dog.jpg"
+              alt="Flesh to Death lifestyle — biker with pit bull"
+              className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            />
+            {/* Dark vignette overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
+          </div>
+          {/* Right — frenchie + honeycomb */}
+          <div className="relative overflow-hidden group" style={{ aspectRatio: '3/4' }}>
+            <img
+              src="/images/lifestyle-frenchie-honey.jpg"
+              alt="Flesh to Death lifestyle — French bulldog with honeycomb"
+              className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            />
+            {/* Dark vignette overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
+          </div>
+        </div>
+        {/* Bottom bar */}
+        <div className="w-full h-2 bg-primary" />
+      </section>
+
       {/* Products Section - Coming Soon */}
       <section id="products" className="py-24 bg-primary relative">
         <div className="container mx-auto px-4">
