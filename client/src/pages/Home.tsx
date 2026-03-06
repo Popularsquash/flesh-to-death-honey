@@ -170,7 +170,7 @@ export default function Home() {
     <>
       <SEO
         title="Flesh to Death Honey Co. | Biker Apothecary"
-        description="Flesh to Death Honey Co. — The Biker Apothecary. Handcrafted beeswax products, rebellious apparel, and the BuzzKill beekeeping app. Born from the hive, built for the road."
+        description="Flesh to Death Honey Co. — The Biker Apothecary. Handcrafted beeswax balms, apparel, and comics. Born from the hive, built for the road."
         url="https://fleshtodeathhoney.com/"
         structuredData={{
           "@context": "https://schema.org",

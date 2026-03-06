@@ -12,8 +12,8 @@ interface SEOProps {
 
 export function SEO({
   title = "Flesh to Death Honey Co. | Biker Apothecary",
-  description = "Flesh to Death Honey Co. — The Biker Apothecary. Handcrafted beeswax products, rebellious apparel, and the BuzzKill beekeeping app. Born from the hive, built for the road.",
-  keywords = "beeswax products, biker apparel, motorcycle lifestyle, beekeeping, tattoo culture, handcrafted balms, BuzzKill app",
+  description = "Flesh to Death Honey Co. — The Biker Apothecary. Handcrafted beeswax balms, apparel, and comics. Born from the hive, built for the road.",
+  keywords = "beeswax products, biker apothecary, motorcycle lifestyle, beekeeping, handcrafted balms, biker apparel",
   image = "https://fleshtodeathhoney.com/images/og-image.jpg",
   url = "https://fleshtodeathhoney.com/",
   type = "website",
