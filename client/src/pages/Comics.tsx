@@ -6,7 +6,8 @@ import { SEO } from "@/components/SEO";
 export default function Comics() {
   const seoProps = {
     title: "Comics",
-    description: "Read The Hive Chronicles — Original comic series from Flesh to Death Honey Co. Follow the adventures of our skull bee crew.",
+    description: "Read The Hive Chronicles — original comics from Flesh to Death Honey Co. Follow the skull bee crew on two wheels.",
+    keywords: "biker comics, bee comics, motorcycle comic series, Hive Chronicles, indie comics, skull bee",
     url: "https://fleshtodeathhoney.com/comics",
   };
   

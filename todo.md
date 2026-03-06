@@ -8,3 +8,8 @@
 ## SEO Refinements (Mar 6, 2026)
 - [x] Reduce keywords from 10 to 6 focused keywords
 - [x] Shorten meta description to 137 characters
+
+## Page-Level SEO (Mar 6, 2026)
+- [x] Add unique SEO keywords and meta description to Shop page
+- [x] Add unique SEO keywords and meta description to Comics page
+- [x] Add unique SEO keywords and meta description to About page

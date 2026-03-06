@@ -19,7 +19,8 @@ export default function Shop() {
   
   const seoProps = {
     title: "Shop",
-    description: "Shop Flesh to Death Honey Co. — Biker-inspired apparel, handcrafted beeswax balms, and gear for riders, beekeepers, and rebels.",
+    description: "Shop biker-inspired apparel, handcrafted beeswax balms, and gear from Flesh to Death Honey Co. Built for riders and rebels.",
+    keywords: "beeswax balm, biker apparel, motorcycle gear, honey products, rebel clothing, handcrafted soap",
     url: "https://fleshtodeathhoney.com/shop",
   };
   

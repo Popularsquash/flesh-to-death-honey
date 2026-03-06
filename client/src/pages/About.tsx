@@ -7,7 +7,8 @@ import { SEO } from "@/components/SEO";
 export default function About() {
   const seoProps = {
     title: "About",
-    description: "The story behind Flesh to Death Honey Co. — Veteran-owned, beekeeper-built. Where motorcycle culture, tattoo artistry, and beekeeping collide.",
+    description: "The story behind Flesh to Death Honey Co. Veteran-owned, beekeeper-built. Where motorcycle culture and beekeeping collide.",
+    keywords: "veteran owned business, beekeeper, motorcycle culture, tattoo artistry, about flesh to death",
     url: "https://fleshtodeathhoney.com/about",
   };
   
