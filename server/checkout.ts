@@ -70,7 +70,7 @@ export async function createCheckoutSession(
 
   // Create checkout session
   const session = await stripe.checkout.sessions.create({
-    automatic_payment_methods: { enabled: true },
+    payment_method_types: ["card"],
     line_items: lineItems,
     mode: "payment",
     success_url: `${origin}/order-success?session_id={CHECKOUT_SESSION_ID}`,
