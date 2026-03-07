@@ -102,8 +102,8 @@ export async function syncProductsFromPrintful(): Promise<{ synced: number; erro
             retailPrice: Math.round(parseFloat(variant.retail_price) * 100), // Convert to cents
             currency: variant.currency || "USD",
             imageUrl: variant.product?.image || variant.files?.[0]?.preview_url || pProduct.thumbnail_url,
-            size,
-            color,
+            size: size ?? null,
+            color: color ?? null,
             inStock: variant.synced ? 1 : 0,
           };
 
@@ -114,12 +114,12 @@ export async function syncProductsFromPrintful(): Promise<{ synced: number; erro
                 productId: variantData.productId,
                 printfulVariantId: variantData.printfulVariantId,
                 name: variantData.name,
-                sku: variantData.sku,
+                sku: variantData.sku ?? null,
                 retailPrice: variantData.retailPrice,
                 currency: variantData.currency,
-                imageUrl: variantData.imageUrl,
-                size: variantData.size,
-                color: variantData.color,
+                imageUrl: variantData.imageUrl ?? null,
+                size: variantData.size ?? null,
+                color: variantData.color ?? null,
                 inStock: variantData.inStock,
               },
             });
@@ -567,4 +567,72 @@ export async function toggleProductSale(
       saleLabel: onSale ? (saleLabel || "SALE") : null,
     })
     .where(eq(products.id, productId));
+}
+
+/**
+ * Update a product's name and/or description
+ */
+export async function updateProductDetails(
+  productId: number,
+  updates: { name?: string; description?: string }
+): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const set: Record<string, unknown> = {};
+  if (updates.name !== undefined) set.name = updates.name;
+  if (updates.description !== undefined) set.description = updates.description;
+  if (Object.keys(set).length === 0) return;
+  await db.update(products)
+    .set(set as { name?: string; description?: string })
+    .where(eq(products.id, productId));
+}
+
+/**
+ * Bulk update prices by product name
+ */
+export async function bulkUpdatePricesByName(
+  updates: { name: string; priceCents: number }[]
+): Promise<{ updated: number; notFound: string[] }> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  let updated = 0;
+  const notFound: string[] = [];
+  for (const { name, priceCents } of updates) {
+    const [product] = await db.select().from(products).where(eq(products.name, name)).limit(1);
+    if (!product) {
+      notFound.push(name);
+      continue;
+    }
+    await db.update(productVariants)
+      .set({ retailPrice: priceCents })
+      .where(eq(productVariants.productId, product.id));
+    updated++;
+  }
+  return { updated, notFound };
+}
+
+/**
+ * Bulk update product names and descriptions by printfulSyncProductId
+ */
+export async function bulkUpdateProductDetails(
+  updates: { printfulSyncProductId: number; name: string; description: string }[]
+): Promise<{ updated: number; notFound: number[] }> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  let updated = 0;
+  const notFound: number[] = [];
+  for (const { printfulSyncProductId, name, description } of updates) {
+    const [product] = await db.select().from(products)
+      .where(eq(products.printfulSyncProductId, printfulSyncProductId))
+      .limit(1);
+    if (!product) {
+      notFound.push(printfulSyncProductId);
+      continue;
+    }
+    await db.update(products)
+      .set({ name, description })
+      .where(eq(products.id, product.id));
+    updated++;
+  }
+  return { updated, notFound };
 }

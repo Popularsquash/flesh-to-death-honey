@@ -19,6 +19,8 @@ import {
   updateProductPrice,
   getOnSaleProducts,
   toggleProductSale,
+  bulkUpdatePricesByName,
+  bulkUpdateProductDetails,
 } from "./products";
 import {
   createCheckoutSession,
@@ -95,6 +97,33 @@ export const appRouter = router({
       .mutation(async ({ input }) => {
         await updateProductPrice(input.productId, input.retailPriceCents);
         return { success: true };
+      }),
+
+    // Bulk update prices by product name (temporarily public for initial setup)
+    bulkUpdatePrices: publicProcedure
+      .input(z.object({
+        updates: z.array(z.object({
+          name: z.string(),
+          priceCents: z.number().int().positive(),
+        }))
+      }))
+      .mutation(async ({ input }) => {
+        const result = await bulkUpdatePricesByName(input.updates);
+        return result;
+      }),
+
+    // Bulk update product names and descriptions by printfulSyncProductId (temporarily public for initial setup)
+    bulkUpdateDetails: publicProcedure
+      .input(z.object({
+        updates: z.array(z.object({
+          printfulSyncProductId: z.number(),
+          name: z.string(),
+          description: z.string(),
+        }))
+      }))
+      .mutation(async ({ input }) => {
+        const result = await bulkUpdateProductDetails(input.updates);
+        return result;
       }),
   }),
 
