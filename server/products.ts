@@ -644,3 +644,21 @@ export async function bulkUpdateProductDetails(
   }
   return { updated, notFound };
 }
+
+/**
+ * Deactivate (hide) products by their database IDs by setting isActive = 0
+ */
+export async function deactivateProductsByDbId(
+  productIds: number[]
+): Promise<{ deactivated: number }> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  let deactivated = 0;
+  for (const id of productIds) {
+    await db.update(products)
+      .set({ isActive: 0 })
+      .where(eq(products.id, id));
+    deactivated++;
+  }
+  return { deactivated };
+}

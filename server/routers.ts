@@ -21,6 +21,7 @@ import {
   toggleProductSale,
   bulkUpdatePricesByName,
   bulkUpdateProductDetails,
+  deactivateProductsByDbId,
 } from "./products";
 import {
   createCheckoutSession,
@@ -124,6 +125,16 @@ export const appRouter = router({
       }))
       .mutation(async ({ input }) => {
         const result = await bulkUpdateProductDetails(input.updates);
+        return result;
+      }),
+
+    // Deactivate (hide) products by DB ID — used to remove unintended synced products
+    bulkDeactivate: publicProcedure
+      .input(z.object({
+        productIds: z.array(z.number()),
+      }))
+      .mutation(async ({ input }) => {
+        const result = await deactivateProductsByDbId(input.productIds);
         return result;
       }),
   }),
