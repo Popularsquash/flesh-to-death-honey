@@ -85,6 +85,7 @@ export default function Shop() {
           <div className="hidden md:flex items-center gap-8 font-body text-lg uppercase tracking-wide font-bold">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
             <Link href="/shop" className="text-primary">Shop</Link>
+            <Link href="/garage" className="hover:text-secondary transition-colors text-secondary">Garage</Link>
             <Link href="/cart">
               <Button variant="outline" className="border-2 border-primary hover:bg-primary hover:text-background font-bold uppercase rounded-none">
                 <ShoppingCart className="mr-2 h-5 w-5" /> Cart ({itemCount})
@@ -103,6 +104,7 @@ export default function Shop() {
           <div className="md:hidden bg-background border-b-4 border-primary p-4 flex flex-col gap-4 font-heading text-xl uppercase">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
             <Link href="/shop" onClick={() => setIsMenuOpen(false)}>Shop</Link>
+            <Link href="/garage" onClick={() => setIsMenuOpen(false)} className="text-secondary">Garage</Link>
             <Link href="/cart">
               <Button className="w-full bg-primary text-background font-bold rounded-none">
                 Cart ({itemCount})

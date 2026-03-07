@@ -502,3 +502,69 @@ export async function updateProductPrice(productId: number, retailPriceCents: nu
     .set({ retailPrice: retailPriceCents })
     .where(eq(productVariants.productId, productId));
 }
+
+
+/**
+ * Get all products that are on sale (for HIVES GARAGE page)
+ */
+export async function getOnSaleProducts(): Promise<(Product & { variants: ProductVariant[] })[]> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const saleProducts = await db
+    .select()
+    .from(products)
+    .where(and(eq(products.isActive, 1), eq(products.onSale, 1)));
+
+  const productsWithVariants = await Promise.all(
+    saleProducts.map(async (product) => {
+      const variants = await db
+        .select()
+        .from(productVariants)
+        .where(eq(productVariants.productId, product.id));
+      return { ...product, variants };
+    })
+  );
+
+  return productsWithVariants;
+}
+
+/**
+ * Toggle a product's sale status (admin only)
+ */
+export async function toggleProductSale(
+  productId: number,
+  onSale: boolean,
+  salePrice?: number,
+  saleLabel?: string
+): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  // Get current product to cache original price
+  const [product] = await db
+    .select()
+    .from(products)
+    .where(eq(products.id, productId))
+    .limit(1);
+
+  if (!product) throw new Error("Product not found");
+
+  // Get first variant price as the original price reference
+  const [firstVariant] = await db
+    .select()
+    .from(productVariants)
+    .where(eq(productVariants.productId, productId))
+    .limit(1);
+
+  const originalPrice = firstVariant?.retailPrice || 0;
+
+  await db.update(products)
+    .set({
+      onSale: onSale ? 1 : 0,
+      salePrice: onSale ? (salePrice || null) : null,
+      originalPrice: onSale ? originalPrice : null,
+      saleLabel: onSale ? (saleLabel || "SALE") : null,
+    })
+    .where(eq(products.id, productId));
+}

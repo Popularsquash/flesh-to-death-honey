@@ -16,3 +16,12 @@
 
 ## Pricing Update (Mar 6, 2026)
 - [x] Mirror product pricing to match gofastdontdie.com benchmarks (Cap $33, Hoodie $69, Tees $35, Tank $35, Rag $15, Stompers $9.95)
+
+## HIVES GARAGE - Clearance Section (Mar 6, 2026)
+- [x] Add salePrice, onSale, originalPrice, saleLabel fields to products schema
+- [x] Run database migration for new sale fields
+- [x] Add backend procedures for garage sale (list on-sale items, toggle sale)
+- [x] Build HIVES GARAGE frontend page with sale styling (strikethrough, discount %, sale badges)
+- [x] Add HIVES GARAGE navigation link to Home, Shop, Garage navs and Footer
+- [x] Sale badges shown on Garage page for on-sale items
+- [x] Write vitest tests for garage sale (14 tests passing)

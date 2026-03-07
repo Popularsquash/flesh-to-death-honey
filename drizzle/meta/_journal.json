@@ -43,6 +43,13 @@
       "when": 1770056745466,
       "tag": "0005_sudden_boom_boom",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1772841723262,
+      "tag": "0006_mysterious_iron_monger",
+      "breakpoints": true
     }
   ]
 }

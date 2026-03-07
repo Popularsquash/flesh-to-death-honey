@@ -45,6 +45,14 @@ export const products = mysqlTable("products", {
   backImageUrl: varchar("backImageUrl", { length: 1024 }),
   /** Whether product is active/visible */
   isActive: int("isActive").default(1).notNull(),
+  /** Whether product is on sale (shown in HIVES GARAGE) */
+  onSale: int("onSale").default(0).notNull(),
+  /** Sale price in cents (used when onSale = 1) */
+  salePrice: int("salePrice"),
+  /** Original price in cents (cached when sale starts, for strikethrough display) */
+  originalPrice: int("originalPrice"),
+  /** Sale label (e.g., "20% OFF", "CLEARANCE") */
+  saleLabel: varchar("saleLabel", { length: 100 }),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });

@@ -18,6 +18,7 @@ import Comics from "./pages/Comics";
 import ComicIssue from "./pages/ComicIssue";
 import ProductDetail from "./pages/ProductDetail";
 import About from "./pages/About";
+import HivesGarage from "./pages/HivesGarage";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -38,6 +39,7 @@ function Router() {
       <Route path={"/comics"} component={Comics} />
       <Route path={"/comics/:id"} component={ComicIssue} />
       <Route path={"/product/:id"} component={ProductDetail} />
+      <Route path={"/garage"} component={HivesGarage} />
       <Route path={"/about"} component={About} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

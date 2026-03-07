@@ -17,6 +17,8 @@ import {
   mergeGuestCart,
   updateProductImage,
   updateProductPrice,
+  getOnSaleProducts,
+  toggleProductSale,
 } from "./products";
 import {
   createCheckoutSession,
@@ -92,6 +94,28 @@ export const appRouter = router({
       .input(z.object({ productId: z.number(), retailPriceCents: z.number().int().positive() }))
       .mutation(async ({ input }) => {
         await updateProductPrice(input.productId, input.retailPriceCents);
+        return { success: true };
+      }),
+  }),
+
+  // HIVES GARAGE - Sale/Clearance routes
+  garage: router({
+    // Get all on-sale products (public)
+    list: publicProcedure.query(async () => {
+      const saleProducts = await getOnSaleProducts();
+      return saleProducts;
+    }),
+
+    // Toggle product sale status (admin only)
+    toggleSale: adminProcedure
+      .input(z.object({
+        productId: z.number(),
+        onSale: z.boolean(),
+        salePrice: z.number().int().positive().optional(),
+        saleLabel: z.string().max(100).optional(),
+      }))
+      .mutation(async ({ input }) => {
+        await toggleProductSale(input.productId, input.onSale, input.salePrice, input.saleLabel);
         return { success: true };
       }),
   }),
