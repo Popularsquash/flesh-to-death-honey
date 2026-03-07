@@ -112,13 +112,14 @@ export const appRouter = router({
         return result;
       }),
 
-    // Bulk update product names and descriptions by printfulSyncProductId (temporarily public for initial setup)
+    // Bulk update product names, descriptions, and thumbnails by printfulSyncProductId (temporarily public for initial setup)
     bulkUpdateDetails: publicProcedure
       .input(z.object({
         updates: z.array(z.object({
           printfulSyncProductId: z.number(),
-          name: z.string(),
-          description: z.string(),
+          name: z.string().optional(),
+          description: z.string().optional(),
+          thumbnailUrl: z.string().url().optional(),
         }))
       }))
       .mutation(async ({ input }) => {
