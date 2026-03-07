@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, decimal, json } from "drizzle-orm/mysql-core";
+import { int, bigint, mysqlEnum, mysqlTable, text, timestamp, varchar, decimal, json } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -68,7 +68,7 @@ export const productVariants = mysqlTable("productVariants", {
   /** Reference to parent product */
   productId: int("productId").notNull(),
   /** Printful sync variant ID (null for manually created variants) */
-  printfulSyncVariantId: int("printfulSyncVariantId").unique(),
+  printfulSyncVariantId: bigint("printfulSyncVariantId", { mode: "number" }).unique(),
   /** Printful variant ID (for ordering) */
   printfulVariantId: int("printfulVariantId").notNull(),
   /** Variant name (e.g., "Black / M") */

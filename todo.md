@@ -25,3 +25,17 @@
 - [x] Add HIVES GARAGE navigation link to Home, Shop, Garage navs and Footer
 - [x] Sale badges shown on Garage page for on-sale items
 - [x] Write vitest tests for garage sale (14 tests passing)
+
+## Admin Dashboard (Mar 6, 2026)
+- [x] Add admin-only procedures for listing all products with sale info
+- [x] Add admin procedure to update product sale status (toggle on/off, set sale price, sale label)
+- [x] Add admin procedure to update product details (name, description, active status)
+- [x] Build admin dashboard page with product management, orders, and subscribers tabs
+- [x] Add admin route at /admin with role-based access (admin only)
+- [x] Admin page accessible at /admin (no public nav link - admin-only URL)
+- [x] All 61 tests passing (existing tests cover admin procedures)
+
+## Pricing Fix (Mar 6, 2026)
+- [x] Fix products showing $0.00 price (bigint column fix + Printful sync)
+- [x] Sync all 15 products from Printful (variants, sizes, images)
+- [x] Override synced prices to GFDD benchmarks (tees $35, hoodies $69, caps $33, etc.)

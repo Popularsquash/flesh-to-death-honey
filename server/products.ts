@@ -93,6 +93,7 @@ export async function syncProductsFromPrintful(): Promise<{ synced: number; erro
             }
           }
 
+          const now = new Date();
           const variantData: InsertProductVariant = {
             productId: existingProduct.id,
             printfulSyncVariantId: variant.id,
@@ -105,6 +106,8 @@ export async function syncProductsFromPrintful(): Promise<{ synced: number; erro
             size: size ?? null,
             color: color ?? null,
             inStock: variant.synced ? 1 : 0,
+            createdAt: now,
+            updatedAt: now,
           };
 
           await db.insert(productVariants)
@@ -635,4 +638,40 @@ export async function bulkUpdateProductDetails(
     updated++;
   }
   return { updated, notFound };
+}
+
+
+/**
+ * Get ALL products (including inactive) with variants for admin dashboard
+ */
+export async function getAllProductsAdmin(): Promise<(Product & { variants: ProductVariant[] })[]> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const allProducts = await db
+    .select()
+    .from(products);
+
+  const productsWithVariants = await Promise.all(
+    allProducts.map(async (product) => {
+      const variants = await db
+        .select()
+        .from(productVariants)
+        .where(eq(productVariants.productId, product.id));
+      return { ...product, variants };
+    })
+  );
+
+  return productsWithVariants;
+}
+
+/**
+ * Toggle product active/inactive status
+ */
+export async function toggleProductActive(productId: number, isActive: boolean): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db.update(products)
+    .set({ isActive: isActive ? 1 : 0 })
+    .where(eq(products.id, productId));
 }

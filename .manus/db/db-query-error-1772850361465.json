@@ -1,0 +1,8 @@
+{
+  "query": "INSERT INTO productVariants (productId, printfulSyncVariantId, printfulVariantId, name, sku, retailPrice, currency, imageUrl, size, color, inStock) VALUES (180001, 5213478945, 9041, 'Beekeepin things', '69A11555CC80E', 3050, 'USD', 'https://files.cdn.printful.com/products/274/9041_1530789461.jpg', NULL, NULL, 1) ON DUPLICATE KEY UPDATE productId = VALUES(productId), name = VALUES(name), retailPrice = VALUES(retailPrice);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute INSERT INTO productVariants (productId, printfulSyncVariantId, printfulVariantId, name, sku, retailPrice, currency, imageUrl, size, color, inStock) VALUES (180001, 5213478945, 9041, 'Beekeepin things', '69A11555CC80E', 3050, 'USD', 'https://files.cdn.printful.com/products/274/9041_1530789461.jpg', NULL, NULL, 1) ON DUPLICATE KEY UPDATE productId = VALUES(productId), name = VALUES(name), retailPrice = VALUES(retailPrice);",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1264 (22003) at line 1: Out of range value for column 'printfulSyncVariantId' at row 1"
+  ]
+}

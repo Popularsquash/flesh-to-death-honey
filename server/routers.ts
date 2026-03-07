@@ -21,6 +21,9 @@ import {
   toggleProductSale,
   bulkUpdatePricesByName,
   bulkUpdateProductDetails,
+  getAllProductsAdmin,
+  toggleProductActive,
+  updateProductDetails,
 } from "./products";
 import {
   createCheckoutSession,
@@ -147,6 +150,79 @@ export const appRouter = router({
         await toggleProductSale(input.productId, input.onSale, input.salePrice, input.saleLabel);
         return { success: true };
       }),
+  }),
+
+  // Admin dashboard routes
+  admin: router({
+    // Get all products (including inactive) for admin management
+    allProducts: adminProcedure.query(async () => {
+      const products = await getAllProductsAdmin();
+      return products;
+    }),
+
+    // Toggle product active/inactive
+    toggleActive: adminProcedure
+      .input(z.object({ productId: z.number(), isActive: z.boolean() }))
+      .mutation(async ({ input }) => {
+        await toggleProductActive(input.productId, input.isActive);
+        return { success: true };
+      }),
+
+    // Update product details (name, description)
+    updateDetails: adminProcedure
+      .input(z.object({
+        productId: z.number(),
+        name: z.string().min(1).max(255).optional(),
+        description: z.string().max(2000).optional(),
+      }))
+      .mutation(async ({ input }) => {
+        await updateProductDetails(input.productId, {
+          name: input.name,
+          description: input.description,
+        });
+        return { success: true };
+      }),
+
+    // Update product variant price
+    updatePrice: adminProcedure
+      .input(z.object({ productId: z.number(), priceCents: z.number().min(0) }))
+      .mutation(async ({ input }) => {
+        await updateProductPrice(input.productId, input.priceCents);
+        return { success: true };
+      }),
+
+    // Toggle product sale status
+    toggleSale: adminProcedure
+      .input(z.object({
+        productId: z.number(),
+        onSale: z.boolean(),
+        salePrice: z.number().optional(),
+        saleLabel: z.string().optional(),
+      }))
+      .mutation(async ({ input }) => {
+        await toggleProductSale(input.productId, input.onSale, input.salePrice, input.saleLabel);
+        return { success: true };
+      }),
+
+    // Get pending manual orders
+    pendingOrders: adminProcedure.query(async () => {
+      const orders = await getPendingManualOrders();
+      return orders;
+    }),
+
+    // Mark order as processed
+    markOrderProcessed: adminProcedure
+      .input(z.object({ orderId: z.number() }))
+      .mutation(async ({ input }) => {
+        await markOrderAsProcessed(input.orderId);
+        return { success: true };
+      }),
+
+    // Get all email subscribers
+    subscribers: adminProcedure.query(async () => {
+      const subs = await getAllSubscribers();
+      return subs;
+    }),
   }),
 
   // Cart routes

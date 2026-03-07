@@ -1,0 +1,1 @@
+ALTER TABLE `productVariants` MODIFY COLUMN `printfulSyncVariantId` bigint;

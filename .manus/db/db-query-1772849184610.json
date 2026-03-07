@@ -1,0 +1,178 @@
+{
+  "query": "SELECT p.id, p.name, MIN(pv.retailPrice) as minPrice, MAX(pv.retailPrice) as maxPrice, COUNT(pv.id) as variantCount FROM products p LEFT JOIN productVariants pv ON pv.productId = p.id GROUP BY p.id, p.name ORDER BY p.id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT p.id, p.name, MIN(pv.retailPrice) as minPrice, MAX(pv.retailPrice) as maxPrice, COUNT(pv.id) as variantCount FROM products p LEFT JOIN productVariants pv ON pv.productId = p.id GROUP BY p.id, p.name ORDER BY p.id;",
+  "rows": [
+    {
+      "id": "120001",
+      "name": "Hive Mind Cap",
+      "minPrice": "3300",
+      "maxPrice": "3300",
+      "variantCount": "1"
+    },
+    {
+      "id": "120002",
+      "name": "Swarm Hoodie",
+      "minPrice": "6900",
+      "maxPrice": "6900",
+      "variantCount": "6"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "minPrice": "3500",
+      "maxPrice": "3500",
+      "variantCount": "18"
+    },
+    {
+      "id": "120004",
+      "name": "Beekeeper Tank",
+      "minPrice": "3500",
+      "maxPrice": "3500",
+      "variantCount": "5"
+    },
+    {
+      "id": "120005",
+      "name": "The Daily Rider Tee",
+      "minPrice": "3500",
+      "maxPrice": "3500",
+      "variantCount": "5"
+    },
+    {
+      "id": "120006",
+      "name": "The Flag Bearer Tee - Cardinal",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "120007",
+      "name": "The Flag Bearer Tee - White",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "150001",
+      "name": "The Swarm Rag",
+      "minPrice": "1500",
+      "maxPrice": "1500",
+      "variantCount": "3"
+    },
+    {
+      "id": "150002",
+      "name": "Buzz Stompers",
+      "minPrice": "995",
+      "maxPrice": "995",
+      "variantCount": "3"
+    },
+    {
+      "id": "180001",
+      "name": "Beekeepin things",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "180002",
+      "name": "Unisex t-shirt",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "180003",
+      "name": "Softcover journal with inside prints",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "180004",
+      "name": "Men’s cotton crew neck t-shirt",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "180005",
+      "name": "Unisex Sweatshirt",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "180006",
+      "name": "Warped bees",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "180007",
+      "name": "Men’s tank top",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "180008",
+      "name": "Crew socks",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "180009",
+      "name": "Bee Hoodie",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "180010",
+      "name": "Unisex Bomber Jacket",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "180011",
+      "name": "Unisex t-shirt",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "180012",
+      "name": "Five Panel Cap",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "180013",
+      "name": "All-over print bandana",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "180014",
+      "name": "Unisex fine jersey tee",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    },
+    {
+      "id": "180015",
+      "name": "Bee Swim Trunks",
+      "minPrice": "NULL",
+      "maxPrice": "NULL",
+      "variantCount": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tminPrice\tmaxPrice\tvariantCount\n120001\tHive Mind Cap\t3300\t3300\t1\n120002\tSwarm Hoodie\t6900\t6900\t6\n120003\tThe Flag Bearer Tee\t3500\t3500\t18\n120004\tBeekeeper Tank\t3500\t3500\t5\n120005\tThe Daily Rider Tee\t3500\t3500\t5\n120006\tThe Flag Bearer Tee - Cardinal\tNULL\tNULL\t0\n120007\tThe Flag Bearer Tee - White\tNULL\tNULL\t0\n150001\tThe Swarm Rag\t1500\t1500\t3\n150002\tBuzz Stompers\t995\t995\t3\n180001\tBeekeepin things\tNULL\tNULL\t0\n180002\tUnisex t-shirt\tNULL\tNULL\t0\n180003\tSoftcover journal with inside prints\tNULL\tNULL\t0\n180004\tMen’s cotton crew neck t-shirt\tNULL\tNULL\t0\n180005\tUnisex Sweatshirt\tNULL\tNULL\t0\n180006\tWarped bees\tNULL\tNULL\t0\n180007\tMen’s tank top\tNULL\tNULL\t0\n180008\tCrew socks\tNULL\tNULL\t0\n180009\tBee Hoodie\tNULL\tNULL\t0\n180010\tUnisex Bomber Jacket\tNULL\tNULL\t0\n180011\tUnisex t-shirt\tNULL\tNULL\t0\n180012\tFive Panel Cap\tNULL\tNULL\t0\n180013\tAll-over print bandana\tNULL\tNULL\t0\n180014\tUnisex fine jersey tee\tNULL\tNULL\t0\n180015\tBee Swim Trunks\tNULL\tNULL\t0\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}
