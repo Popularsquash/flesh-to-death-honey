@@ -1,0 +1,9 @@
+{
+  "query": "SELECT `id`, `userId`, `sessionId`, `variantId`, `quantity`, `createdAt`, `updatedAt` FROM `cartItems` WHERE (`cartItems`.`sessionId` = 'test_session' AND `cartItems`.`userId` IS NULL);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT `id`, `userId`, `sessionId`, `variantId`, `quantity`, `createdAt`, `updatedAt` FROM `cartItems` WHERE (`cartItems`.`sessionId` = 'test_session' AND `cartItems`.`userId` IS NULL);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 53
+}

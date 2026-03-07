@@ -1,0 +1,37 @@
+{
+  "query": "SHOW TABLES LIKE 'cartItems'; DESCRIBE cartItems;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SHOW TABLES LIKE 'cartItems'; DESCRIBE cartItems;",
+  "rows": [
+    {
+      "Tables_in_hbC6s9TTjjB9SHETAGojDD (cartItems)": "cartItems"
+    },
+    {
+      "Tables_in_hbC6s9TTjjB9SHETAGojDD (cartItems)": "Field\tType\tNull\tKey\tDefault\tExtra"
+    },
+    {
+      "Tables_in_hbC6s9TTjjB9SHETAGojDD (cartItems)": "id\tint\tNO\tPRI\tNULL\tauto_increment"
+    },
+    {
+      "Tables_in_hbC6s9TTjjB9SHETAGojDD (cartItems)": "userId\tint\tYES\t\tNULL\t"
+    },
+    {
+      "Tables_in_hbC6s9TTjjB9SHETAGojDD (cartItems)": "sessionId\tvarchar(255)\tYES\t\tNULL\t"
+    },
+    {
+      "Tables_in_hbC6s9TTjjB9SHETAGojDD (cartItems)": "variantId\tint\tNO\t\tNULL\t"
+    },
+    {
+      "Tables_in_hbC6s9TTjjB9SHETAGojDD (cartItems)": "quantity\tint\tNO\t\t1\t"
+    },
+    {
+      "Tables_in_hbC6s9TTjjB9SHETAGojDD (cartItems)": "createdAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\t"
+    },
+    {
+      "Tables_in_hbC6s9TTjjB9SHETAGojDD (cartItems)": "updatedAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\tDEFAULT_GENERATED on update CURRENT_TIMESTAMP"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_hbC6s9TTjjB9SHETAGojDD (cartItems)\ncartItems\nField\tType\tNull\tKey\tDefault\tExtra\nid\tint\tNO\tPRI\tNULL\tauto_increment\nuserId\tint\tYES\t\tNULL\t\nsessionId\tvarchar(255)\tYES\t\tNULL\t\nvariantId\tint\tNO\t\tNULL\t\nquantity\tint\tNO\t\t1\t\ncreatedAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\t\nupdatedAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\tDEFAULT_GENERATED on update CURRENT_TIMESTAMP\n",
+  "stderr": "",
+  "execution_time_ms": 612
+}

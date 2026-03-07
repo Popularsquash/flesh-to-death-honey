@@ -39,3 +39,6 @@
 - [x] Fix products showing $0.00 price (bigint column fix + Printful sync)
 - [x] Sync all 15 products from Printful (variants, sizes, images)
 - [x] Override synced prices to GFDD benchmarks (tees $35, hoodies $69, caps $33, etc.)
+
+## Bug Fix (Mar 7, 2026)
+- [x] Fix cartItems query error on homepage (transient DB connection - added retry logic)

@@ -4,18 +4,32 @@ import { InsertUser, users } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
+let _dbRetryCount = 0;
+const MAX_DB_RETRIES = 3;
 
 // Lazily create the drizzle instance so local tooling can run without a DB.
 export async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
     try {
       _db = drizzle(process.env.DATABASE_URL);
+      _dbRetryCount = 0;
     } catch (error) {
       console.warn("[Database] Failed to connect:", error);
       _db = null;
+      if (_dbRetryCount < MAX_DB_RETRIES) {
+        _dbRetryCount++;
+        console.warn(`[Database] Retrying connection (attempt ${_dbRetryCount}/${MAX_DB_RETRIES})...`);
+        return getDb();
+      }
     }
   }
   return _db;
+}
+
+// Reset the database connection (useful for recovering from transient errors)
+export function resetDbConnection() {
+  _db = null;
+  _dbRetryCount = 0;
 }
 
 export async function upsertUser(user: InsertUser): Promise<void> {
