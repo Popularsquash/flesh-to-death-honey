@@ -93,6 +93,7 @@ export async function syncProductsFromPrintful(): Promise<{ synced: number; erro
             }
           }
 
+          const now = new Date();
           const variantData: InsertProductVariant = {
             productId: existingProduct.id,
             printfulSyncVariantId: variant.id,
@@ -105,6 +106,8 @@ export async function syncProductsFromPrintful(): Promise<{ synced: number; erro
             size: size ?? null,
             color: color ?? null,
             inStock: variant.synced ? 1 : 0,
+            createdAt: now,
+            updatedAt: now,
           };
 
           await db.insert(productVariants)
