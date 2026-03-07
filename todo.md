@@ -42,3 +42,6 @@
 
 ## Bug Fix (Mar 7, 2026)
 - [x] Fix cartItems query error on homepage (transient DB connection - added retry logic)
+
+## UI Fix (Mar 7, 2026)
+- [x] Remove test mode active banner from Checkout page

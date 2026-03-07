@@ -217,13 +217,6 @@ export default function Checkout() {
                   <span>Secure checkout powered by Stripe. Card and PayPal accepted. Your payment info is never stored on our servers.</span>
                 </div>
 
-                {/* Test Card Info */}
-                <div className="bg-gray-800 p-4 border-l-4 border-secondary text-sm">
-                  <p className="text-secondary font-bold mb-1">Test Mode Active</p>
-                  <p className="text-gray-400">
-                    Use card number <span className="font-mono text-white">4242 4242 4242 4242</span> with any future expiry date and CVC.
-                  </p>
-                </div>
               </CardContent>
             </Card>
           )}
