@@ -187,7 +187,7 @@ export default function HivesGarage() {
                       <Link href={`/product/${product.id}`}>
                         <div className="relative h-64 overflow-hidden bg-gray-800 flex items-center justify-center p-4 cursor-pointer">
                           <img
-                            src={selectedVariant?.imageUrl || product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png"}
+                            src={product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png"}
                             alt={product.name}
                             className="h-full w-full object-contain group-hover:scale-110 transition-transform duration-500"
                           />

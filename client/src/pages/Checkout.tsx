@@ -142,7 +142,7 @@ export default function Checkout() {
                     <div key={item.id} className="flex gap-4 pb-4 border-b border-gray-800">
                       <div className="h-16 w-16 bg-gray-800 flex-shrink-0">
                         <img 
-                          src={item.variant.imageUrl || item.product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png"} 
+                          src={item.product.thumbnailUrl || item.variant.imageUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png"} 
                           alt={item.product.name}
                           className="h-full w-full object-contain"
                         />

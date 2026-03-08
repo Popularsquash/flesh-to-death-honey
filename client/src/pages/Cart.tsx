@@ -132,7 +132,7 @@ export default function Cart() {
                     <div className="flex gap-4 p-4">
                       <div className="h-24 w-24 bg-gray-800 flex-shrink-0">
                         <img 
-                          src={item.variant.imageUrl || item.product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png"} 
+                          src={item.product.thumbnailUrl || item.variant.imageUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png"} 
                           alt={item.product.name}
                           className="h-full w-full object-contain"
                         />

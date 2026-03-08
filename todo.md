@@ -46,3 +46,9 @@
 ## UI Fix (Mar 7, 2026)
 - [x] Remove test mode active banner from Checkout page
 - [x] Deactivate products without custom designs (generic Printful products showing on shop)
+
+## Product Image Fix (Mar 7, 2026)
+- [x] Fix shop cards showing generic blank garment photos instead of custom design thumbnails
+- [x] Fix Shop.tsx to use product.thumbnailUrl instead of variant.imageUrl for card images
+- [x] Fix HivesGarage.tsx to use product.thumbnailUrl instead of variant.imageUrl
+- [x] Fix Cart.tsx and Checkout.tsx to prioritize product thumbnail over variant image
