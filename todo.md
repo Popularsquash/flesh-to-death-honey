@@ -45,3 +45,4 @@
 
 ## UI Fix (Mar 7, 2026)
 - [x] Remove test mode active banner from Checkout page
+- [x] Deactivate products without custom designs (generic Printful products showing on shop)

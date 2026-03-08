@@ -1,0 +1,202 @@
+{
+  "query": "SELECT id, name, thumbnailUrl, printfulSyncProductId, isActive, createdAt FROM products ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT id, name, thumbnailUrl, printfulSyncProductId, isActive, createdAt FROM products ORDER BY id;",
+  "rows": [
+    {
+      "id": "120001",
+      "name": "Hive Mind Cap",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/EjDDAzRlOzdapJQu.png",
+      "printfulSyncProductId": "NULL",
+      "isActive": "1",
+      "createdAt": "2026-02-02 18:00:02"
+    },
+    {
+      "id": "120002",
+      "name": "Swarm Hoodie",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/GNIcltCcqzNnKqHY.png",
+      "printfulSyncProductId": "NULL",
+      "isActive": "1",
+      "createdAt": "2026-02-02 18:00:11"
+    },
+    {
+      "id": "120003",
+      "name": "The Flag Bearer Tee",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/DPvuNEVRdZZNzPHW.png",
+      "printfulSyncProductId": "NULL",
+      "isActive": "1",
+      "createdAt": "2026-02-02 18:00:19"
+    },
+    {
+      "id": "120004",
+      "name": "Beekeeper Tank",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/elYwqpCfYkHPOLaJ.png",
+      "printfulSyncProductId": "NULL",
+      "isActive": "1",
+      "createdAt": "2026-02-02 18:00:26"
+    },
+    {
+      "id": "120005",
+      "name": "The Daily Rider Tee",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/GrqVXlTGqQQgSZGq.png",
+      "printfulSyncProductId": "NULL",
+      "isActive": "1",
+      "createdAt": "2026-02-02 18:02:18"
+    },
+    {
+      "id": "120006",
+      "name": "The Flag Bearer Tee - Cardinal",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/KwIDfMyMeASFlWmW.png",
+      "printfulSyncProductId": "NULL",
+      "isActive": "0",
+      "createdAt": "2026-02-02 18:21:01"
+    },
+    {
+      "id": "120007",
+      "name": "The Flag Bearer Tee - White",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RiOhXtJLWfZTbKtF.png",
+      "printfulSyncProductId": "NULL",
+      "isActive": "0",
+      "createdAt": "2026-02-02 18:21:08"
+    },
+    {
+      "id": "150001",
+      "name": "The Swarm Rag",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/UHFsxdprySafZJJi.png",
+      "printfulSyncProductId": "NULL",
+      "isActive": "1",
+      "createdAt": "2026-02-12 04:08:05"
+    },
+    {
+      "id": "150002",
+      "name": "Buzz Stompers",
+      "thumbnailUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/BNjdxcmRkRwWMvWV.png",
+      "printfulSyncProductId": "NULL",
+      "isActive": "1",
+      "createdAt": "2026-02-12 04:08:14"
+    },
+    {
+      "id": "180001",
+      "name": "The Hive Hauler",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/634/634b1014b0dbf84bb20b6188e9cdd9ff_preview.png",
+      "printfulSyncProductId": "421538754",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:36"
+    },
+    {
+      "id": "180002",
+      "name": "The Worker Bee Tee",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/c4b/c4bd92998eea9657ef6a7180069774f1_preview.png",
+      "printfulSyncProductId": "420295401",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:36"
+    },
+    {
+      "id": "180003",
+      "name": "The Black Book",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/760/760e58986872b755c7533abfb70e80e6_preview.png",
+      "printfulSyncProductId": "420011820",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:37"
+    },
+    {
+      "id": "180004",
+      "name": "The Colony Tee",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/c7d/c7d0e93b3cbe93630f79de0f5a5da0cf_preview.png",
+      "printfulSyncProductId": "420011684",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:37"
+    },
+    {
+      "id": "180005",
+      "name": "The Smoke Screen",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/bcc/bccf49fad513c0854228fb8abf5d7d09_preview.png",
+      "printfulSyncProductId": "420011508",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:37"
+    },
+    {
+      "id": "180006",
+      "name": "The Warp Tee",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/530/5305c6d9072ce53970ec68e8fbb28591_preview.png",
+      "printfulSyncProductId": "420011414",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:38"
+    },
+    {
+      "id": "180007",
+      "name": "The Stinger Tank",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/344/344628db1224d50c9a14f5b4478b6503_preview.png",
+      "printfulSyncProductId": "420011350",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:38"
+    },
+    {
+      "id": "180008",
+      "name": "The Hive Socks",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/db5/db598bb51656947674ef4d0542ddb814_preview.png",
+      "printfulSyncProductId": "420011255",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:38"
+    },
+    {
+      "id": "180009",
+      "name": "The Queen's Guard Hoodie",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/76f/76fe1c9dc6f2932f7d8ba7feb887b739_preview.png",
+      "printfulSyncProductId": "420011207",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:39"
+    },
+    {
+      "id": "180010",
+      "name": "Unisex Bomber Jacket",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/a0e/a0efcfe51ca695ff8faa37e4afc3dd2d_preview.png",
+      "printfulSyncProductId": "420011169",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:39"
+    },
+    {
+      "id": "180011",
+      "name": "Unisex t-shirt",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/90a/90a6bd9ff85feb64ae7bb99bc616c8e1_preview.png",
+      "printfulSyncProductId": "420011041",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:39"
+    },
+    {
+      "id": "180012",
+      "name": "Five Panel Cap",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/683/6836e1e2b781b2d22c837a03d1220615_preview.png",
+      "printfulSyncProductId": "420010722",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:40"
+    },
+    {
+      "id": "180013",
+      "name": "All-over print bandana",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/504/504436c260fad799cf6b26766dbf1f62_preview.png",
+      "printfulSyncProductId": "420010675",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:40"
+    },
+    {
+      "id": "180014",
+      "name": "Unisex fine jersey tee",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/9a9/9a991f6c95485a8ec1261a2ebae7425f_preview.png",
+      "printfulSyncProductId": "419411937",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:40"
+    },
+    {
+      "id": "180015",
+      "name": "Bee Swim Trunks",
+      "thumbnailUrl": "https://files.cdn.printful.com/files/62f/62f231b36eeb7ac6554ce918a51a8378_preview.png",
+      "printfulSyncProductId": "418942426",
+      "isActive": "1",
+      "createdAt": "2026-03-07 00:09:41"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tthumbnailUrl\tprintfulSyncProductId\tisActive\tcreatedAt\n120001\tHive Mind Cap\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/EjDDAzRlOzdapJQu.png\tNULL\t1\t2026-02-02 18:00:02\n120002\tSwarm Hoodie\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/GNIcltCcqzNnKqHY.png\tNULL\t1\t2026-02-02 18:00:11\n120003\tThe Flag Bearer Tee\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/DPvuNEVRdZZNzPHW.png\tNULL\t1\t2026-02-02 18:00:19\n120004\tBeekeeper Tank\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/elYwqpCfYkHPOLaJ.png\tNULL\t1\t2026-02-02 18:00:26\n120005\tThe Daily Rider Tee\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/GrqVXlTGqQQgSZGq.png\tNULL\t1\t2026-02-02 18:02:18\n120006\tThe Flag Bearer Tee - Cardinal\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/KwIDfMyMeASFlWmW.png\tNULL\t0\t2026-02-02 18:21:01\n120007\tThe Flag Bearer Tee - White\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/RiOhXtJLWfZTbKtF.png\tNULL\t0\t2026-02-02 18:21:08\n150001\tThe Swarm Rag\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/UHFsxdprySafZJJi.png\tNULL\t1\t2026-02-12 04:08:05\n150002\tBuzz Stompers\thttps://files.manuscdn.com/user_upload_by_module/session_file/104679889/BNjdxcmRkRwWMvWV.png\tNULL\t1\t2026-02-12 04:08:14\n180001\tThe Hive Hauler\thttps://files.cdn.printful.com/files/634/634b1014b0dbf84bb20b6188e9cdd9ff_preview.png\t421538754\t1\t2026-03-07 00:09:36\n180002\tThe Worker Bee Tee\thttps://files.cdn.printful.com/files/c4b/c4bd92998eea9657ef6a7180069774f1_preview.png\t420295401\t1\t2026-03-07 00:09:36\n180003\tThe Black Book\thttps://files.cdn.printful.com/files/760/760e58986872b755c7533abfb70e80e6_preview.png\t420011820\t1\t2026-03-07 00:09:37\n180004\tThe Colony Tee\thttps://files.cdn.printful.com/files/c7d/c7d0e93b3cbe93630f79de0f5a5da0cf_preview.png\t420011684\t1\t2026-03-07 00:09:37\n180005\tThe Smoke Screen\thttps://files.cdn.printful.com/files/bcc/bccf49fad513c0854228fb8abf5d7d09_preview.png\t420011508\t1\t2026-03-07 00:09:37\n180006\tThe Warp Tee\thttps://files.cdn.printful.com/files/530/5305c6d9072ce53970ec68e8fbb28591_preview.png\t420011414\t1\t2026-03-07 00:09:38\n180007\tThe Stinger Tank\thttps://files.cdn.printful.com/files/344/344628db1224d50c9a14f5b4478b6503_preview.png\t420011350\t1\t2026-03-07 00:09:38\n180008\tThe Hive Socks\thttps://files.cdn.printful.com/files/db5/db598bb51656947674ef4d0542ddb814_preview.png\t420011255\t1\t2026-03-07 00:09:38\n180009\tThe Queen's Guard Hoodie\thttps://files.cdn.printful.com/files/76f/76fe1c9dc6f2932f7d8ba7feb887b739_preview.png\t420011207\t1\t2026-03-07 00:09:39\n180010\tUnisex Bomber Jacket\thttps://files.cdn.printful.com/files/a0e/a0efcfe51ca695ff8faa37e4afc3dd2d_preview.png\t420011169\t1\t2026-03-07 00:09:39\n180011\tUnisex t-shirt\thttps://files.cdn.printful.com/files/90a/90a6bd9ff85feb64ae7bb99bc616c8e1_preview.png\t420011041\t1\t2026-03-07 00:09:39\n180012\tFive Panel Cap\thttps://files.cdn.printful.com/files/683/6836e1e2b781b2d22c837a03d1220615_preview.png\t420010722\t1\t2026-03-07 00:09:40\n180013\tAll-over print bandana\thttps://files.cdn.printful.com/files/504/504436c260fad799cf6b26766dbf1f62_preview.png\t420010675\t1\t2026-03-07 00:09:40\n180014\tUnisex fine jersey tee\thttps://files.cdn.printful.com/files/9a9/9a991f6c95485a8ec1261a2ebae7425f_preview.png\t419411937\t1\t2026-03-07 00:09:40\n180015\tBee Swim Trunks\thttps://files.cdn.printful.com/files/62f/62f231b36eeb7ac6554ce918a51a8378_preview.png\t418942426\t1\t2026-03-07 00:09:41\n",
+  "stderr": "",
+  "execution_time_ms": 1582
+}

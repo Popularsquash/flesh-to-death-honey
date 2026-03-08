@@ -1,0 +1,35 @@
+{
+  "query": "SELECT id, name, isActive FROM products WHERE id >= 180010 AND id <= 180014;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3H6UsYDb37ExmEH.2649fd4c0f02 --database hbC6s9TTjjB9SHETAGojDD --execute SELECT id, name, isActive FROM products WHERE id >= 180010 AND id <= 180014;",
+  "rows": [
+    {
+      "id": "180010",
+      "name": "Unisex Bomber Jacket",
+      "isActive": "0"
+    },
+    {
+      "id": "180011",
+      "name": "Unisex t-shirt",
+      "isActive": "0"
+    },
+    {
+      "id": "180012",
+      "name": "Five Panel Cap",
+      "isActive": "0"
+    },
+    {
+      "id": "180013",
+      "name": "All-over print bandana",
+      "isActive": "0"
+    },
+    {
+      "id": "180014",
+      "name": "Unisex fine jersey tee",
+      "isActive": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tisActive\n180010\tUnisex Bomber Jacket\t0\n180011\tUnisex t-shirt\t0\n180012\tFive Panel Cap\t0\n180013\tAll-over print bandana\t0\n180014\tUnisex fine jersey tee\t0\n",
+  "stderr": "",
+  "execution_time_ms": 63
+}

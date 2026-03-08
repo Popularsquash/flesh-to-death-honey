@@ -698,3 +698,4 @@ export async function deactivateProductsByDbId(
   }
   return { deactivated };
 }
+
