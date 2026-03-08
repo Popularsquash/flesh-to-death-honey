@@ -615,16 +615,16 @@ export async function bulkUpdatePricesByName(
 }
 
 /**
- * Bulk update product names and descriptions by printfulSyncProductId
+ * Bulk update product names, descriptions, and thumbnails by printfulSyncProductId
  */
 export async function bulkUpdateProductDetails(
-  updates: { printfulSyncProductId: number; name: string; description: string }[]
+  updates: { printfulSyncProductId: number; name?: string; description?: string; thumbnailUrl?: string }[]
 ): Promise<{ updated: number; notFound: number[] }> {
   const db = await getDb();
   if (!db) throw new Error("Database not available");
   let updated = 0;
   const notFound: number[] = [];
-  for (const { printfulSyncProductId, name, description } of updates) {
+  for (const { printfulSyncProductId, name, description, thumbnailUrl } of updates) {
     const [product] = await db.select().from(products)
       .where(eq(products.printfulSyncProductId, printfulSyncProductId))
       .limit(1);
@@ -632,8 +632,13 @@ export async function bulkUpdateProductDetails(
       notFound.push(printfulSyncProductId);
       continue;
     }
+    const setFields: Record<string, unknown> = {};
+    if (name !== undefined) setFields.name = name;
+    if (description !== undefined) setFields.description = description;
+    if (thumbnailUrl !== undefined) setFields.thumbnailUrl = thumbnailUrl;
+    if (Object.keys(setFields).length === 0) continue;
     await db.update(products)
-      .set({ name, description })
+      .set(setFields)
       .where(eq(products.id, product.id));
     updated++;
   }
@@ -674,4 +679,22 @@ export async function toggleProductActive(productId: number, isActive: boolean):
   await db.update(products)
     .set({ isActive: isActive ? 1 : 0 })
     .where(eq(products.id, productId));
+}
+
+/**
+ * Deactivate (hide) products by their database IDs by setting isActive = 0
+ */
+export async function deactivateProductsByDbId(
+  productIds: number[]
+): Promise<{ deactivated: number }> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  let deactivated = 0;
+  for (const id of productIds) {
+    await db.update(products)
+      .set({ isActive: 0 })
+      .where(eq(products.id, id));
+    deactivated++;
+  }
+  return { deactivated };
 }
