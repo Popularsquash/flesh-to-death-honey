@@ -174,16 +174,15 @@ export default function Home() {
         url="https://fleshtodeathhoney.com/"
         structuredData={{
           "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "BuzzKill",
-          "operatingSystem": "iOS, Android",
-          "applicationCategory": "ProductivityApplication",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          },
-          "description": "The comprehensive beekeeping management platform that helps you track hives, monitor health, and manage apiaries without losing your soul to a spreadsheet."
+          "@type": "Store",
+          "name": "Flesh to Death Honey Co.",
+          "description": "Veteran-owned biker apothecary. Handcrafted beeswax products, apparel, and lifestyle goods. Born from the hive, built for the road.",
+          "url": "https://fleshtodeathhoney.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "NV",
+            "addressCountry": "US"
+          }
         }}
       />
       <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
@@ -207,7 +206,6 @@ export default function Home() {
             <Link href="/shop" className="hover:text-primary transition-colors">Shop</Link>
             <Link href="/garage" className="hover:text-secondary transition-colors text-secondary">Garage</Link>
             <Link href="/comics" className="hover:text-primary transition-colors">Comics</Link>
-            <a href="#buzzkill" className="hover:text-primary transition-colors">BuzzKill App</a>
             <Link href="/about" className="hover:text-primary transition-colors">About</Link>
             <Link href="/cart">
               <Button variant="outline" className="border-2 border-primary hover:bg-primary hover:text-background font-bold uppercase rounded-none">
@@ -228,7 +226,6 @@ export default function Home() {
             <Link href="/shop" onClick={() => setIsMenuOpen(false)}>Shop</Link>
             <Link href="/garage" onClick={() => setIsMenuOpen(false)} className="text-secondary">Garage</Link>
             <Link href="/comics" onClick={() => setIsMenuOpen(false)}>Comics</Link>
-            <a href="#buzzkill" onClick={() => setIsMenuOpen(false)}>BuzzKill App</a>
             <Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
             <Link href="/cart">
               <Button className="w-full bg-primary text-background font-bold rounded-none">
@@ -438,6 +435,26 @@ export default function Home() {
         <div className="w-full h-2 bg-primary" />
       </section>
 
+      {/* About the Beekeeper — Trust Section */}
+      <section className="py-16 md:py-20 bg-gray-950 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-[url('/images/skeleton-bees.png')] bg-repeat bg-center"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-block bg-primary text-black px-6 py-1 font-heading text-sm tracking-widest uppercase transform rotate-1 mb-6">
+              About the Beekeeper
+            </div>
+            <h2 className="text-4xl md:text-5xl font-heading text-white mb-6 leading-tight">
+              Real Hives. Real <span className="text-primary">Honey</span>. No Posers.
+            </h2>
+            <p className="text-lg md:text-xl text-gray-300 font-body leading-relaxed border-l-4 border-primary pl-6 text-left">
+              Flesh to Death Honey Co. is veteran-owned and operated out of the Nevada desert. Real hives, real bees, real beeswax — not some dropship fever dream. Handcrafted honey and beeswax products are on the way, and the merch you see here is just the opening salvo. Built by a beekeeper who served, rides, and doesn't do things halfway.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Products Section - Coming Soon */}
       <section id="products" className="py-24 bg-primary relative">
         <div className="container mx-auto px-4">
@@ -514,7 +531,7 @@ export default function Home() {
             </div>
             <div className="relative z-10">
               <Badge className="bg-primary text-black rounded-none font-heading uppercase text-xl px-6 py-2 mb-6 inline-block border-2 border-black">
-                🐝 Coming March 2026
+                🐝 Coming Soon
               </Badge>
               <h3 className="text-3xl md:text-4xl font-heading text-white mb-4">
                 The Swarm Sticker Pack

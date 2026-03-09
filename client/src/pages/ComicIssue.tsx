@@ -477,7 +477,6 @@ export default function ComicIssue() {
           </Link>
           <nav className="hidden md:flex gap-8">
             <Link href="/shop" className="font-heading text-lg hover:text-primary transition-colors">SHOP</Link>
-            <Link href="/buzzkill" className="font-heading text-lg hover:text-primary transition-colors">BUZZKILL APP</Link>
             <Link href="/comics" className="font-heading text-lg text-primary">COMICS</Link>
             <Link href="/about" className="font-heading text-lg hover:text-primary transition-colors">ABOUT</Link>
           </nav>

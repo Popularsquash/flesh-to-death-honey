@@ -1,14 +1,15 @@
 import { Link } from "wouter";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Skull, Heart, Zap, MapPin, Calendar, Users } from "lucide-react";
+import { Skull, Heart, Zap, MapPin, Calendar, Users, Star, Shield } from "lucide-react";
 import { SEO } from "@/components/SEO";
+import { JoinSwarmModal } from "@/components/JoinSwarmModal";
 
 export default function About() {
   const seoProps = {
     title: "About",
-    description: "The story behind Flesh to Death Honey Co. Veteran-owned, beekeeper-built. Where motorcycle culture and beekeeping collide.",
-    keywords: "veteran owned business, beekeeper, motorcycle culture, tattoo artistry, about flesh to death",
+    description: "The story behind Flesh to Death Honey Co. Veteran-owned, beekeeper-built, Nevada-based. Where motorcycle culture and beekeeping collide.",
+    keywords: "veteran owned business, beekeeper, motorcycle culture, tattoo artistry, about flesh to death, nevada honey",
     url: "https://fleshtodeathhoney.com/about",
   };
   
@@ -34,7 +35,6 @@ export default function About() {
           <div className="hidden md:flex items-center gap-8 font-body text-lg uppercase tracking-wide font-bold">
             <Link href="/shop" className="hover:text-primary transition-colors">Shop</Link>
             <Link href="/comics" className="hover:text-primary transition-colors">Comics</Link>
-            <a href="https://buzzkillbee-gno4vhs3.manus.space/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">BuzzKill App</a>
             <span className="text-primary">About</span>
           </div>
         </div>
@@ -48,17 +48,20 @@ export default function About() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-block bg-primary text-black px-6 py-1 font-heading text-sm tracking-widest uppercase transform -rotate-1 mb-6">
+              Veteran Owned &amp; Operated
+            </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading text-primary mb-6 grunge-text">
-              Our Story
+              The Story
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
-              Born from beekeeping, tattoos, and the open road. This is how the hive came to be.
+              No corporate origin myth. No venture capital. Just a veteran, some bees, and a refusal to do things the easy way.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Origin Story */}
+      {/* Origin Story — The Real Version */}
       <section className="py-16 md:py-24 bg-gray-900 border-y-4 border-primary">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -68,16 +71,13 @@ export default function About() {
               </h2>
               <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
                 <p>
-                  It started with a motorcycle, a beehive, and a complete disregard for conventional career paths. 
-                  Somewhere between the Nevada desert and a tattoo parlor, the idea for Flesh to Death Honey Co. was born.
+                  Flesh to Death Honey Co. started the way most good things do — with dirt under the fingernails and zero business plan. A veteran beekeeper in the Nevada desert, running hives in triple-digit heat, pulling frames while the rest of the world scrolled Instagram. The bees didn't care about your follower count. Neither did we.
                 </p>
                 <p>
-                  We're beekeepers who ride. Riders who keep bees. And somewhere in between, we discovered that 
-                  beeswax makes incredible products for people who live hard and laugh at warning labels.
+                  After years of military service and a lifetime of riding, the founder came home and did what made sense: built something with their hands. Real apiaries. Real beeswax. Real honey. The kind of work where you get stung and keep going — because that's what you do.
                 </p>
                 <p>
-                  The name? It came from a late-night conversation about mortality, honey, and the fact that 
-                  bees literally work themselves to death for the hive. We related to that. Minus the dying part. Mostly.
+                  The name came from the bees themselves. Worker bees literally fly until their wings shred and they drop. Flesh to death. No retirement plan, no exit strategy — just full commitment until the work is done. We related to that. Hard.
                 </p>
               </div>
             </div>
@@ -90,6 +90,25 @@ export default function About() {
                   className="relative z-10 w-full max-w-md drop-shadow-[0_0_25px_rgba(255,195,0,0.5)]"
                 />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Veteran-Owned Callout */}
+      <section className="py-12 md:py-16 bg-black border-b-4 border-primary">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div className="flex-shrink-0">
+              <div className="w-24 h-24 bg-primary/10 border-4 border-primary rounded-full flex items-center justify-center">
+                <Star className="w-12 h-12 text-primary fill-primary" />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-2xl md:text-3xl font-heading text-primary mb-3">Veteran-Owned. Not a Marketing Gimmick.</h3>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                This isn't a flag on a label to move units. Military service taught discipline, grit, and the understanding that nothing worth having comes easy. Those values are baked into every product, every decision, and every interaction with this brand. We earned the right to say it. We don't need to shout it.
+              </p>
             </div>
           </div>
         </div>
@@ -110,8 +129,7 @@ export default function About() {
               </div>
               <h3 className="text-2xl font-heading text-primary mb-4">Beekeeping</h3>
               <p className="text-gray-400 leading-relaxed">
-                Our apiaries are scattered across Nevada's high desert. We raise bees the old way—with respect, 
-                patience, and a healthy fear of getting stung. The honey and beeswax we harvest goes into every product we make.
+                Real apiaries in the Nevada high desert. We raise bees the hard way — no shortcuts, no factory farms, no cutting corners. The honey and beeswax we harvest goes into products we actually stand behind. If the bees wouldn't approve, it doesn't ship.
               </p>
             </div>
 
@@ -122,8 +140,7 @@ export default function About() {
               </div>
               <h3 className="text-2xl font-heading text-primary mb-4">Tattoo Culture</h3>
               <p className="text-gray-400 leading-relaxed">
-                Ink runs deep in our crew. The aesthetic of Flesh to Death—the skulls, the bees, the anarchic 
-                humor—comes straight from tattoo culture. Our products are made for people who wear their stories on their skin.
+                The skulls, the bees, the dark humor — it all comes from ink culture. Our aesthetic isn't designed by committee. It's drawn by people who understand that art should make you feel something, even if that something is slightly uncomfortable.
               </p>
             </div>
 
@@ -134,29 +151,25 @@ export default function About() {
               </div>
               <h3 className="text-2xl font-heading text-primary mb-4">Motorcycle Lifestyle</h3>
               <p className="text-gray-400 leading-relaxed">
-                Two wheels, open road, no apologies. The motorcycle isn't just transportation—it's a philosophy. 
-                We make products for riders who understand that the journey matters more than the destination.
+                Two wheels, open road, zero apologies. The motorcycle isn't transportation — it's a worldview. We build products for people who understand that the best therapy has a throttle and no roof.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Biker Apothecary */}
+      {/* What's Coming */}
       <section className="py-16 md:py-24 bg-primary">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-heading text-black mb-8">
-              The Biker Apothecary
+              What's Coming
             </h2>
             <p className="text-xl text-black/80 mb-8 leading-relaxed">
-              We call ourselves a "biker apothecary" because that's exactly what we are. An apothecary is an old-school 
-              word for someone who makes remedies and potions. We make beeswax balms, honey salves, and products that 
-              actually work—crafted by hand, tested on the road, and sold to people who appreciate quality over marketing.
+              The merch is live. The apparel is shipping. But the real play? <strong>Handcrafted beeswax and honey products</strong> — balms, salves, soaps, and things you didn't know you needed until you tried them. Made from our own hives, formulated by hand, and tested on people who actually use their hands for a living.
             </p>
             <p className="text-xl text-black/80 leading-relaxed">
-              <strong>Goods from beeswax is just the beginning.</strong> We're building something bigger—a community, 
-              a lifestyle brand, and a middle finger to corporate wellness culture. Welcome to the swarm.
+              <strong>Goods from beeswax is just the beginning.</strong> We're building a lifestyle brand for people who ride, create, and refuse to settle for mass-produced garbage wrapped in a wellness label. This is the biker apothecary. Welcome to the swarm.
             </p>
           </div>
         </div>
@@ -168,17 +181,17 @@ export default function About() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
             <div>
               <div className="flex items-center justify-center gap-2 text-primary mb-2">
+                <Shield className="w-5 h-5" />
+              </div>
+              <p className="text-3xl md:text-4xl font-heading text-white mb-2">Veteran</p>
+              <p className="text-sm text-gray-500 uppercase tracking-wider">Owned</p>
+            </div>
+            <div>
+              <div className="flex items-center justify-center gap-2 text-primary mb-2">
                 <MapPin className="w-5 h-5" />
               </div>
               <p className="text-3xl md:text-4xl font-heading text-white mb-2">Nevada</p>
               <p className="text-sm text-gray-500 uppercase tracking-wider">Home Base</p>
-            </div>
-            <div>
-              <div className="flex items-center justify-center gap-2 text-primary mb-2">
-                <Calendar className="w-5 h-5" />
-              </div>
-              <p className="text-3xl md:text-4xl font-heading text-white mb-2">2025</p>
-              <p className="text-sm text-gray-500 uppercase tracking-wider">Est.</p>
             </div>
             <div>
               <div className="flex items-center justify-center gap-2 text-primary mb-2">
@@ -191,8 +204,8 @@ export default function About() {
               <div className="flex items-center justify-center gap-2 text-primary mb-2">
                 <Users className="w-5 h-5" />
               </div>
-              <p className="text-3xl md:text-4xl font-heading text-white mb-2">∞</p>
-              <p className="text-sm text-gray-500 uppercase tracking-wider">Swarm Size</p>
+              <p className="text-3xl md:text-4xl font-heading text-white mb-2">Real</p>
+              <p className="text-sm text-gray-500 uppercase tracking-wider">Hives &amp; Bees</p>
             </div>
           </div>
         </div>
@@ -205,7 +218,7 @@ export default function About() {
             Join the <span className="text-primary">Swarm</span>
           </h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Ready to ride with us? Check out our gear, read our comics, or just follow along as we build this thing.
+            Ready to ride with us? Grab some gear, read the comics, or drop your email and we'll let you know when the honey drops.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/shop">
@@ -213,11 +226,13 @@ export default function About() {
                 Shop the Stash
               </Button>
             </Link>
-            <Link href="/comics">
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none">
-                Read Comics
-              </Button>
-            </Link>
+            <JoinSwarmModal 
+              trigger={
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none">
+                  Join the Swarm
+                </Button>
+              }
+            />
           </div>
         </div>
       </section>

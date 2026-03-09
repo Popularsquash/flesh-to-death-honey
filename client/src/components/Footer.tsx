@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Shield, Lock, CreditCard, Truck, BadgeCheck } from "lucide-react";
+import { Shield, Lock, CreditCard, Truck, BadgeCheck, Star } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -85,6 +85,14 @@ export default function Footer() {
                   <Truck className="w-7 h-7 text-orange-500" />
                 </div>
                 <span className="text-xs text-gray-500 font-body">Fast Shipping</span>
+              </div>
+
+              {/* Veteran Owned Badge */}
+              <div className="flex flex-col items-center gap-2 group">
+                <div className="w-14 h-14 bg-gray-900 border-2 border-gray-700 group-hover:border-primary rounded-lg flex items-center justify-center transition-colors">
+                  <Star className="w-7 h-7 text-red-500 fill-red-500" />
+                </div>
+                <span className="text-xs text-gray-500 font-body">Veteran Owned</span>
               </div>
             </div>
 
