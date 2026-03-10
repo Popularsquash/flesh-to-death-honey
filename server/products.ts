@@ -2,7 +2,7 @@
  * Product database operations
  */
 
-import { eq, and, isNull } from "drizzle-orm";
+import { eq, and, isNull, notInArray } from "drizzle-orm";
 import { getDb } from "./db";
 import { 
   products, 
@@ -151,10 +151,13 @@ export async function getAllProducts(): Promise<(Product & { variants: ProductVa
     throw new Error("Database not available");
   }
 
+  // Products permanently removed from the shop
+  const REMOVED_PRODUCT_IDS = [180009, 180005, 180015]; // Queen's Guard Hoodie, Smoke Screen, Swim Trunks
+
   const allProducts = await db
     .select()
     .from(products)
-    .where(eq(products.isActive, 1));
+    .where(and(eq(products.isActive, 1), notInArray(products.id, REMOVED_PRODUCT_IDS)));
 
   const productsWithVariants = await Promise.all(
     allProducts.map(async (product) => {

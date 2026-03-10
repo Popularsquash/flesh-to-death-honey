@@ -197,10 +197,15 @@ export default function ProductDetail() {
       ];
     }
     
-    const baseImages = [
-      { url: product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png", label: "Front" },
-      { url: product.backImageUrl || product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png", label: "Back" },
+    const frontUrl = product.thumbnailUrl || "https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png";
+    const backUrl = product.backImageUrl;
+    const baseImages: { url: string; label: string }[] = [
+      { url: frontUrl, label: "Front" },
     ];
+    // Only add Back image if it exists and is different from the front
+    if (backUrl && backUrl !== frontUrl) {
+      baseImages.push({ url: backUrl, label: "Back" });
+    }
     const lifestyleImages = LIFESTYLE_IMAGES[product.id] || [];
     return [...baseImages, ...lifestyleImages];
   }, [product, selectedColor]);

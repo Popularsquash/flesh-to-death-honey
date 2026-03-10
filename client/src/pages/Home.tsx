@@ -371,18 +371,6 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Additional mockup gallery */}
-          <div className="mt-8 grid grid-cols-3 gap-4 max-w-5xl mx-auto">
-            <div className="overflow-hidden border-2 border-gray-800 hover:border-primary transition-colors">
-              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/BZvKYdjUtJOlbTZP.png" alt="Bandana worn" className="w-full h-48 object-cover hover:scale-105 transition-transform" />
-            </div>
-            <div className="overflow-hidden border-2 border-gray-800 hover:border-primary transition-colors">
-              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/EbNhpLVnQoLgVvMG.png" alt="Bandana on dog" className="w-full h-48 object-cover hover:scale-105 transition-transform" />
-            </div>
-            <div className="overflow-hidden border-2 border-gray-800 hover:border-primary transition-colors">
-              <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/UHFsxdprySafZJJi.png" alt="Bandana flat lay" className="w-full h-48 object-cover hover:scale-105 transition-transform" />
-            </div>
-          </div>
 
           <div className="text-center mt-12">
             <Link href="/shop">
