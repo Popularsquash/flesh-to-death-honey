@@ -589,33 +589,33 @@ export default function Home() {
             
             <div className="order-1 md:order-2 space-y-8">
               <div className="inline-block bg-primary text-black px-4 py-1 font-heading text-lg transform rotate-2">
-                Coming Soon to iOS & Android
+                For Beekeepers
               </div>
               <h2 className="text-5xl md:text-7xl font-heading text-white leading-none">
-                Buzz<span className="text-secondary">Kill</span> App
+                Buzz<span className="text-secondary">Kill</span>
               </h2>
               <h3 className="text-2xl md:text-3xl font-heading text-gray-400">
-                'Cause Bees Love an Audit
+                Nothing kills a bee&apos;s vibe like an audit.
               </h3>
               <p className="text-xl text-gray-300 font-body border-l-4 border-secondary pl-6">
-                The comprehensive beekeeping management platform that helps you track hives, monitor health, and manage apiaries without losing your soul to a spreadsheet.
+                Built from real beekeeping experience, <span className="text-white font-semibold">BuzzKill</span> is a separate hive health tracking app designed to help beekeepers monitor patterns, catch issues earlier, and stay closer to what their colonies are telling them.
               </p>
               
               <ul className="space-y-4 font-body text-lg text-gray-300">
                 <li className="flex items-center gap-3">
-                  <Zap className="text-primary" /> Track hive health & queen status
+                  <Zap className="text-primary" /> Track hive health, colony patterns, and queen status
                 </li>
                 <li className="flex items-center gap-3">
-                  <Droplet className="text-primary" /> Monitor honey production levels
+                  <Droplet className="text-primary" /> Catch trouble early with clearer signals and records
                 </li>
                 <li className="flex items-center gap-3">
-                  <Flame className="text-primary" /> Sarcastic notifications & alerts
+                  <Flame className="text-primary" /> Built for beekeepers who want fewer nasty surprises in the yard
                 </li>
               </ul>
               
               <a href="https://buzzkillbee-gno4vhs3.manus.space/" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-secondary text-white hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none border-none shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
-                  Launch App
+                  Meet BuzzKill
                 </Button>
               </a>
             </div>

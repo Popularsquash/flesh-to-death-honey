@@ -74,7 +74,7 @@ export default function TermsOfService() {
             <Card className="bg-zinc-900 border-4 border-primary rounded-none">
               <CardContent className="pt-6">
                 <p className="mb-4 text-gray-200">
-                  The BuzzKill app is a tool. It doesn't replace common sense.
+                  BuzzKill is a separate hive health tracking app. It&apos;s a tool, not a replacement for common sense.
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4 text-gray-200">
                   <li><strong>Accuracy:</strong> We try to be accurate, but if the app says your hive is "Happy" and they swarm 5 minutes later, that's nature.</li>

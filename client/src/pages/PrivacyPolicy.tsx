@@ -122,7 +122,7 @@ export default function PrivacyPolicy() {
             <Card className="bg-zinc-900 border-4 border-primary rounded-none">
               <CardContent className="pt-6 space-y-6">
                 <p className="font-bold text-gray-200">
-                  For the Google Play Console nerds and the paranoid beekeepers, here is exactly what the BuzzKill app touches:
+                  For the Google Play Console nerds and the paranoid beekeepers, here is exactly what the separate BuzzKill hive health app touches:
                 </p>
                 
                 <div className="space-y-4">
