@@ -1,4 +1,3 @@
-import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
 import net from "net";
@@ -8,6 +7,14 @@ import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { registerStripeWebhook } from "../stripeWebhook";
+import { ENV } from "./env";
+import {
+  apiRateLimiter,
+  corsMiddleware,
+  helmetMiddleware,
+  hppProtection,
+  trpcInputValidation,
+} from "./security";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -31,32 +38,42 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
 async function startServer() {
   const app = express();
   const server = createServer(app);
-  
+
+  app.disable("x-powered-by");
+  app.use(helmetMiddleware);
+  app.use(corsMiddleware);
+  app.use("/api", apiRateLimiter);
+
   // IMPORTANT: Register Stripe webhook BEFORE body parser middleware
   // Raw body is needed for signature verification
   registerStripeWebhook(app);
-  
+
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
+  app.use(hppProtection);
+
   // OAuth callback under /api/oauth/callback
   registerOAuthRoutes(app);
+
   // tRPC API
   app.use(
     "/api/trpc",
+    trpcInputValidation,
     createExpressMiddleware({
       router: appRouter,
       createContext,
     })
   );
+
   // development mode uses Vite, production mode uses static files
-  if (process.env.NODE_ENV === "development") {
+  if (ENV.nodeEnv === "development") {
     await setupVite(app, server);
   } else {
     serveStatic(app);
   }
 
-  const preferredPort = parseInt(process.env.PORT || "3000");
+  const preferredPort = ENV.port ?? 3000;
   const port = await findAvailablePort(preferredPort);
 
   if (port !== preferredPort) {
