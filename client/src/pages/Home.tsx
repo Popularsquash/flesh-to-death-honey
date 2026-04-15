@@ -373,7 +373,7 @@ export default function Home() {
 
 
           <div className="text-center mt-12">
-            <Link href="/shop">
+            <Link href="/shop" onClick={() => window.scrollTo(0, 0)}>
               <Button size="lg" className="bg-primary text-black hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none border-2 border-transparent hover:border-primary transition-all shadow-[4px_4px_0px_0px_rgba(199,0,57,1)]">
                 View All Merch
               </Button>
