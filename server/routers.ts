@@ -42,6 +42,14 @@ import {
   getProductRating,
   deleteReview,
 } from "./emailReviews";
+import {
+  getAllPosts,
+  getPostBySlug,
+  getPostById,
+  createPost,
+  updatePost,
+  deletePost,
+} from "./blog";
 
 export const appRouter = router({
   system: systemRouter,
@@ -441,6 +449,76 @@ export const appRouter = router({
         const isAdmin = ctx.user.role === 'admin';
         const result = await deleteReview(input.reviewId, ctx.user.id, isAdmin);
         return result;
+      }),
+  }),
+
+  // Blog routes
+  blog: router({
+    // Get all published posts
+    list: publicProcedure.query(async () => {
+      const posts = await getAllPosts();
+      return posts;
+    }),
+
+    // Get a single post by slug
+    bySlug: publicProcedure
+      .input(z.object({ slug: z.string() }))
+      .query(async ({ input }) => {
+        const post = await getPostBySlug(input.slug);
+        return post;
+      }),
+
+    // Create a new post (admin only)
+    create: adminProcedure
+      .input(z.object({
+        slug: z.string().min(1).max(255),
+        title: z.string().min(1).max(255),
+        excerpt: z.string().max(500).optional(),
+        content: z.string().min(1),
+        imageUrl: z.string().url().optional(),
+        author: z.string().max(100).optional(),
+        category: z.string().max(100).optional(),
+        isPublished: z.number().min(0).max(1).optional(),
+      }))
+      .mutation(async ({ input }) => {
+        const result = await createPost({
+          slug: input.slug,
+          title: input.title,
+          excerpt: input.excerpt,
+          content: input.content,
+          imageUrl: input.imageUrl,
+          author: input.author ?? "The Beekeeper",
+          category: input.category,
+          isPublished: input.isPublished ?? 1,
+        });
+        return result;
+      }),
+
+    // Update a post (admin only)
+    update: adminProcedure
+      .input(z.object({
+        id: z.number(),
+        slug: z.string().min(1).max(255).optional(),
+        title: z.string().min(1).max(255).optional(),
+        excerpt: z.string().max(500).optional(),
+        content: z.string().min(1).optional(),
+        imageUrl: z.string().url().optional().nullable(),
+        author: z.string().max(100).optional(),
+        category: z.string().max(100).optional().nullable(),
+        isPublished: z.number().min(0).max(1).optional(),
+      }))
+      .mutation(async ({ input }) => {
+        const { id, ...data } = input;
+        await updatePost(id, data);
+        return { success: true };
+      }),
+
+    // Delete a post (admin only)
+    delete: adminProcedure
+      .input(z.object({ id: z.number() }))
+      .mutation(async ({ input }) => {
+        await deletePost(input.id);
+        return { success: true };
       }),
   }),
 

@@ -7,6 +7,7 @@ import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { registerStripeWebhook } from "../stripeWebhook";
+import { seedBlogIfEmpty } from "../blog";
 import { ENV } from "./env";
 import {
   apiRateLimiter,
@@ -80,8 +81,14 @@ async function startServer() {
     console.log(`Port ${preferredPort} is busy, using port ${port} instead`);
   }
 
-  server.listen(port, () => {
+  server.listen(port, async () => {
     console.log(`Server running on http://localhost:${port}/`);
+    // Seed initial blog posts if table is empty
+    try {
+      await seedBlogIfEmpty();
+    } catch (err) {
+      console.warn("Blog seed skipped:", err);
+    }
   });
 }
 

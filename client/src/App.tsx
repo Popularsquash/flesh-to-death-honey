@@ -20,6 +20,8 @@ import ProductDetail from "./pages/ProductDetail";
 import About from "./pages/About";
 import HivesGarage from "./pages/HivesGarage";
 import AdminDashboard from "./pages/AdminDashboard";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -43,6 +45,8 @@ function Router() {
       <Route path={"/garage"} component={HivesGarage} />
       <Route path={"/admin"} component={AdminDashboard} />
       <Route path={"/about"} component={About} />
+      <Route path={"/blog"} component={Blog} />
+      <Route path={"/blog/:slug"} component={BlogPost} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

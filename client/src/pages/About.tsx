@@ -36,6 +36,7 @@ export default function About() {
             <Link href="/shop" className="hover:text-primary transition-colors">Shop</Link>
             <Link href="/comics" className="hover:text-primary transition-colors">Comics</Link>
             <span className="text-primary">About</span>
+            <Link href="/blog" className="hover:text-primary transition-colors">Field Notes</Link>
           </div>
         </div>
       </header>

@@ -207,6 +207,7 @@ export default function Home() {
             <Link href="/garage" className="hover:text-secondary transition-colors text-secondary">Garage</Link>
             <Link href="/comics" className="hover:text-primary transition-colors">Comics</Link>
             <Link href="/about" className="hover:text-primary transition-colors">About</Link>
+            <Link href="/blog" className="hover:text-primary transition-colors">Field Notes</Link>
             <Link href="/cart">
               <Button variant="outline" className="border-2 border-primary hover:bg-primary hover:text-background font-bold uppercase rounded-none">
                 <ShoppingCart className="mr-2 h-5 w-5" /> Cart ({itemCount})
@@ -220,13 +221,14 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Mobile Nav */}
+          {/* Mobile Nav */}
         {isMenuOpen && (
           <div className="md:hidden bg-background border-b-4 border-primary p-4 flex flex-col gap-4 font-heading text-xl uppercase">
             <Link href="/shop" onClick={() => setIsMenuOpen(false)}>Shop</Link>
             <Link href="/garage" onClick={() => setIsMenuOpen(false)} className="text-secondary">Garage</Link>
             <Link href="/comics" onClick={() => setIsMenuOpen(false)}>Comics</Link>
             <Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
+            <Link href="/blog" onClick={() => setIsMenuOpen(false)}>Field Notes</Link>
             <Link href="/cart">
               <Button className="w-full bg-primary text-background font-bold rounded-none">
                 Cart ({itemCount})

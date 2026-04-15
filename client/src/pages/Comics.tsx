@@ -67,6 +67,7 @@ export default function Comics() {
             <Link href="/shop" className="font-heading text-lg hover:text-primary transition-colors">SHOP</Link>
             <Link href="/comics" className="font-heading text-lg text-primary">COMICS</Link>
             <Link href="/about" className="font-heading text-lg hover:text-primary transition-colors">ABOUT</Link>
+            <Link href="/blog" className="font-heading text-lg hover:text-primary transition-colors">FIELD NOTES</Link>
           </nav>
         </div>
       </header>

@@ -7,6 +7,15 @@ import { Request, Response, Express, raw } from "express";
 import { stripe, handlePaymentSuccess } from "./checkout";
 
 export function registerStripeWebhook(app: Express) {
+  // Warn at startup if webhook secret is missing — webhooks will be rejected without it
+  if (!process.env.STRIPE_WEBHOOK_SECRET) {
+    console.warn(
+      "[Webhook] WARNING: STRIPE_WEBHOOK_SECRET is not set. " +
+      "All incoming Stripe webhooks will be rejected. " +
+      "Set STRIPE_WEBHOOK_SECRET in your environment variables to enable order processing."
+    );
+  }
+
   // IMPORTANT: This must be registered BEFORE express.json() middleware
   // The raw body is needed for Stripe signature verification
   app.post(
@@ -16,9 +25,14 @@ export function registerStripeWebhook(app: Express) {
       const sig = req.headers["stripe-signature"];
       const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
-      if (!sig || !webhookSecret) {
-        console.error("[Webhook] Missing signature or webhook secret");
-        return res.status(400).json({ error: "Missing signature or webhook secret" });
+      if (!webhookSecret) {
+        console.error("[Webhook] STRIPE_WEBHOOK_SECRET is not configured.");
+        return res.status(400).json({ error: "Webhook secret not configured on server" });
+      }
+
+      if (!sig) {
+        console.error("[Webhook] Missing stripe-signature header — request rejected");
+        return res.status(400).json({ error: "Missing stripe-signature header" });
       }
 
       let event;
@@ -47,13 +61,13 @@ export function registerStripeWebhook(app: Express) {
         case "checkout.session.completed": {
           const session = event.data.object;
           console.log(`[Webhook] Checkout session completed: ${session.id}`);
-          
+
           try {
             await handlePaymentSuccess(session.id);
             console.log(`[Webhook] Order processed successfully for session: ${session.id}`);
           } catch (error) {
             console.error(`[Webhook] Failed to process order:`, error);
-            // Don't return error - we've received the webhook, just log the issue
+            // Don't return error to Stripe — we've acknowledged receipt, log for manual review
           }
           break;
         }

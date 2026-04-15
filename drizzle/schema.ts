@@ -191,3 +191,32 @@ export const reviews = mysqlTable("reviews", {
 
 export type Review = typeof reviews.$inferSelect;
 export type InsertReview = typeof reviews.$inferInsert;
+
+/**
+ * Blog posts for the FTD Field Notes journal
+ */
+export const blogPosts = mysqlTable("blogPosts", {
+  id: int("id").autoincrement().primaryKey(),
+  /** URL-friendly slug (e.g. "first-harvest-2025") */
+  slug: varchar("slug", { length: 255 }).notNull().unique(),
+  /** Post title */
+  title: varchar("title", { length: 255 }).notNull(),
+  /** Short excerpt for listing pages */
+  excerpt: text("excerpt"),
+  /** Full post content (plain text / markdown) */
+  content: text("content").notNull(),
+  /** Hero/cover image URL */
+  imageUrl: varchar("imageUrl", { length: 1024 }),
+  /** Author display name */
+  author: varchar("author", { length: 100 }).default("The Beekeeper").notNull(),
+  /** Whether post is published/visible */
+  isPublished: int("isPublished").default(1).notNull(),
+  /** Optional category tag (e.g. "Hive Life", "Honey", "Gear") */
+  category: varchar("category", { length: 100 }),
+  publishedAt: timestamp("publishedAt").defaultNow().notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type BlogPost = typeof blogPosts.$inferSelect;
+export type InsertBlogPost = typeof blogPosts.$inferInsert;
