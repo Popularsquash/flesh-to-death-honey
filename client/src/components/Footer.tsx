@@ -24,7 +24,7 @@ export default function Footer() {
               <li><a href="/#apparel" className="hover:text-primary transition-colors">Apparel</a></li>
               <li><a href="/#products" className="hover:text-primary transition-colors">Beeswax Products</a></li>
               <li><Link href="/garage" className="hover:text-secondary transition-colors text-secondary">Hives Garage</Link></li>
-              <li><a href="https://buzzkillbee-gno4vhs3.manus.space/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">BuzzKill — Hive Health App</a></li>
+              <li><a href="https://buzzkillbee.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">BuzzKill — Hive Health App</a></li>
               <li><Link href="/comics" className="hover:text-primary transition-colors">Comics</Link></li>
               <li><Link href="/blog" className="hover:text-primary transition-colors">Field Notes</Link></li>
             </ul>
