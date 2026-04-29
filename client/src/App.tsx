@@ -22,6 +22,7 @@ import HivesGarage from "./pages/HivesGarage";
 import AdminDashboard from "./pages/AdminDashboard";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import DigitalDownloads from "./pages/DigitalDownloads";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -47,6 +48,7 @@ function Router() {
       <Route path={"/about"} component={About} />
       <Route path={"/blog"} component={Blog} />
       <Route path={"/blog/:slug"} component={BlogPost} />
+      <Route path={"/digital-downloads"} component={DigitalDownloads} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -63,7 +65,7 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider
-        defaultTheme="light"
+        defaultTheme="dark"
         // switchable
       >
         <TooltipProvider>

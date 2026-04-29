@@ -21,9 +21,9 @@ export default function Blog() {
   const { data: posts, isLoading } = trpc.blog.list.useQuery();
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen flex flex-col ftd-page text-foreground overflow-x-hidden">
       {/* Navigation */}
-      <nav className="border-b-4 border-primary sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
+      <nav className="border-b border-primary/70 sticky top-0 z-50 bg-black/90 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.55)]">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer">
@@ -81,15 +81,15 @@ export default function Blog() {
       </nav>
 
       {/* Hero */}
-      <header className="bg-primary py-16 relative">
+      <header className="py-16 relative ftd-grit bg-[radial-gradient(circle_at_18%_0%,rgba(217,144,33,0.2),transparent_24rem),linear-gradient(135deg,#130d07_0%,#050505_68%)] border-b border-primary/50">
         <div className="container mx-auto px-4">
           <p className="text-black/70 font-body uppercase tracking-widest text-sm mb-2">
             From the Hive
           </p>
-          <h1 className="text-5xl md:text-7xl font-heading text-black">
+          <h1 className="text-5xl md:text-7xl font-heading text-white">
             <span className="text-white grunge-text">Field Notes</span>
           </h1>
-          <p className="text-xl font-body text-black/80 mt-4 max-w-xl">
+          <p className="text-xl font-body text-muted-foreground mt-4 max-w-xl">
             Dispatches from the Nevada desert. Hive life, honey, gear, and the
             grind of building something real from scratch.
           </p>
@@ -170,7 +170,7 @@ export default function Blog() {
                       )}
 
                       <div className="mt-4 flex items-center gap-2 text-primary font-body text-sm font-bold uppercase tracking-wide">
-                        Read More <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        Read the Field Note <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
                   </article>

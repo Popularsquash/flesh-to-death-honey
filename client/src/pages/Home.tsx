@@ -170,13 +170,13 @@ export default function Home() {
     <>
       <SEO
         title="Flesh to Death Honey Co. | Biker Apothecary"
-        description="Flesh to Death Honey Co. — The Biker Apothecary. Handcrafted beeswax balms, apparel, and comics. Born from the hive, built for the road."
+        description="Flesh to Death Honey Co. — dark biker apothecary, Nevada desert hives, beeswax goods, road gear, field notes, and enough attitude to scare a template."
         url="https://fleshtodeathhoney.com/"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Store",
           "name": "Flesh to Death Honey Co.",
-          "description": "Veteran-owned biker apothecary. Handcrafted beeswax products, apparel, and lifestyle goods. Born from the hive, built for the road.",
+          "description": "Veteran-owned dark biker apothecary. Nevada desert hives, beeswax goods, road gear, field notes, and a lifestyle brand for people who leave a mark.",
           "url": "https://fleshtodeathhoney.com",
           "address": {
             "@type": "PostalAddress",
@@ -185,9 +185,9 @@ export default function Home() {
           }
         }}
       />
-      <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
+      <div className="min-h-screen flex flex-col ftd-page text-foreground overflow-x-hidden">
       {/* Navigation */}
-      <nav className="border-b-4 border-primary sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
+      <nav className="border-b border-primary/70 sticky top-0 z-50 bg-black/90 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.55)]">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png" alt="Logo" className="h-12 w-12 object-contain" />
@@ -203,7 +203,8 @@ export default function Home() {
           
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8 font-body text-lg uppercase tracking-wide font-bold">
-            <Link href="/shop" className="hover:text-primary transition-colors">Shop</Link>
+            <Link href="/shop" className="hover:text-primary transition-colors">Stash</Link>
+            <Link href="/digital-downloads" className="hover:text-primary transition-colors">Digital</Link>
             <Link href="/garage" className="hover:text-secondary transition-colors text-secondary">Garage</Link>
             <Link href="/comics" className="hover:text-primary transition-colors">Comics</Link>
             <Link href="/about" className="hover:text-primary transition-colors">About</Link>
@@ -224,7 +225,8 @@ export default function Home() {
           {/* Mobile Nav */}
         {isMenuOpen && (
           <div className="md:hidden bg-background border-b-4 border-primary p-4 flex flex-col gap-4 font-heading text-xl uppercase">
-            <Link href="/shop" onClick={() => setIsMenuOpen(false)}>Shop</Link>
+            <Link href="/shop" onClick={() => setIsMenuOpen(false)}>Stash</Link>
+            <Link href="/digital-downloads" onClick={() => setIsMenuOpen(false)}>Digital</Link>
             <Link href="/garage" onClick={() => setIsMenuOpen(false)} className="text-secondary">Garage</Link>
             <Link href="/comics" onClick={() => setIsMenuOpen(false)}>Comics</Link>
             <Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
@@ -239,15 +241,15 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <header className="relative pt-20 pb-32 overflow-hidden">
+      <header className="relative pt-20 pb-32 overflow-hidden ftd-grit bg-[radial-gradient(circle_at_72%_18%,rgba(217,144,33,0.18),transparent_26rem),linear-gradient(135deg,#050505_0%,#11100f_45%,#050505_100%)]">
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/skeleton-bees.png')] bg-repeat opacity-10 rotate-12 scale-150"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10 grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <Badge className="bg-secondary text-white border-none rounded-none px-4 py-1 text-lg font-heading uppercase transform -rotate-2 inline-block">
-              Biker Apothecary
+            <Badge className="ftd-kicker rounded-none px-4 py-1 text-lg transform -rotate-2 inline-block">
+              Dark Biker Apothecary
             </Badge>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading leading-none text-white grunge-text">
               <span className="text-primary">Flesh to Death</span>
@@ -255,12 +257,12 @@ export default function Home() {
               <span className="text-4xl md:text-5xl lg:text-6xl">Honey Co.</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 font-body max-w-lg border-l-4 border-primary pl-6">
-              Where the <span className="text-primary font-bold">Hive</span> meets the <span className="text-primary font-bold">Highway</span>. Born from beekeeping, tattoos, and the motorcycle lifestyle.
+              Riding bikes, keeping bees, and bottling the kind of trouble polite brands avoid. <span className="text-primary font-bold">Leave a mark</span> or stay on the porch.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Link href="/shop">
                 <Button size="lg" className="bg-primary text-background hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none border-2 border-transparent hover:border-black transition-all transform hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(199,0,57,1)]">
-                  Shop the Stash
+                  Enter the Stash
                 </Button>
               </Link>
               <JoinSwarmModal 
@@ -295,13 +297,13 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <Badge className="bg-red-600 text-white rounded-none font-heading uppercase text-lg px-6 py-2 mb-4 inline-block border-2 border-white animate-pulse">
-              Fresh Off the Press
+              Fresh from the Darkroom
             </Badge>
             <h2 className="text-5xl md:text-7xl font-heading text-white mb-4">
               New <span className="text-primary grunge-text">Drops</span>
             </h2>
             <p className="text-xl font-body text-gray-400 max-w-2xl mx-auto">
-              Just landed in the hive. Grab 'em before they're gone.
+              Pulled from the hive, dragged through the garage, and posted before good judgment could interfere.
             </p>
           </div>
 
@@ -377,7 +379,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link href="/shop" onClick={() => window.scrollTo(0, 0)}>
               <Button size="lg" className="bg-primary text-black hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none border-2 border-transparent hover:border-primary transition-all shadow-[4px_4px_0px_0px_rgba(199,0,57,1)]">
-                View All Merch
+                Raid the Stash
               </Button>
             </Link>
           </div>
@@ -392,10 +394,10 @@ export default function Home() {
         {/* Section Header */}
         <div className="container mx-auto px-4 pt-16 pb-10 text-center">
           <div className="inline-block bg-primary text-black px-6 py-1 font-heading text-sm tracking-widest uppercase transform -rotate-1 mb-4">
-            The Culture
+            The Damage
           </div>
           <h2 className="text-5xl md:text-7xl font-heading text-white leading-none">
-            Born from the <span className="text-primary">Hive</span>
+            Riding Bikes. <span className="text-primary">Keeping Bees.</span>
           </h2>
         </div>
         {/* Full-bleed two-column grid */}
@@ -425,7 +427,7 @@ export default function Home() {
         <div className="w-full h-2 bg-primary" />
       </section>
 
-      {/* About the Beekeeper — Trust Section */}
+      {/* Desert-Origin Story — Trust Section */}
       <section className="py-16 md:py-20 bg-gray-950 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-[url('/images/skeleton-bees.png')] bg-repeat bg-center"></div>
@@ -436,35 +438,35 @@ export default function Home() {
               About the Beekeeper
             </div>
             <h2 className="text-4xl md:text-5xl font-heading text-white mb-6 leading-tight">
-              Real Hives. Real <span className="text-primary">Honey</span>. No Posers.
+              Real Hives. Real <span className="text-primary">Honey</span>. No Polished-To-Death Nonsense.
             </h2>
             <p className="text-lg md:text-xl text-gray-300 font-body leading-relaxed border-l-4 border-primary pl-6 text-left">
-              Flesh to Death Honey Co. is veteran-owned and operated out of the Nevada desert. Real hives, real bees, real beeswax — not some dropship fever dream. Handcrafted honey and beeswax products are on the way, and the merch you see here is just the opening salvo. Built by a beekeeper who served, rides, and doesn't do things halfway.
+              Flesh to Death Honey Co. is veteran-owned and operated out of the Nevada desert. Real hives, real bees, real beeswax — not some dropship fever dream wearing a fake leather jacket. The goods are built around the hive, the bike, the grit, and the kind of humor that probably voids warranties.
             </p>
           </div>
         </div>
       </section>
 
       {/* Products Section - Coming Soon */}
-      <section id="products" className="py-24 bg-primary relative">
+      <section id="products" className="py-24 relative ftd-grit bg-[linear-gradient(180deg,#120d07_0%,#050505_100%)] border-y border-primary/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-7xl font-heading text-black mb-4">
-              Grease, Grime & <span className="text-white grunge-text">Glory</span>
+            <h2 className="text-5xl md:text-7xl font-heading text-white mb-4">
+              Grease, Grime & <span className="text-primary grunge-text">Glory</span>
             </h2>
-            <p className="text-xl font-body text-black/80 max-w-2xl mx-auto font-bold">
-              Handcrafted beeswax products for the road-worn and rebellious.
+            <p className="text-xl font-body text-muted-foreground max-w-2xl mx-auto font-bold">
+              Beeswax field medicine for road-worn skin, leather, and questionable decisions.
             </p>
           </div>
 
 
           {/* The Hive's Revenge Collection - Coming Soon */}
           <div className="text-center mb-16 pt-12 border-t-4 border-black border-dashed">
-            <h2 className="text-5xl md:text-7xl font-heading text-black mb-4 mt-12">
-              The Hive's <span className="text-white grunge-text">Revenge</span>
+            <h2 className="text-5xl md:text-7xl font-heading text-white mb-4 mt-12">
+              The Hive's <span className="text-primary grunge-text">Revenge</span>
             </h2>
-            <p className="text-xl font-body text-black/80 max-w-2xl mx-auto font-bold mb-2">
-              We Put the 'Mental' in Experimental. (And the 'Hurt' in Dessert.)
+            <p className="text-xl font-body text-muted-foreground max-w-2xl mx-auto font-bold mb-2">
+              Experimental formulas for people who read warning labels and call them dares.
             </p>
           </div>
 
@@ -475,15 +477,14 @@ export default function Home() {
             </div>
             <div className="relative z-10">
               <Badge className="bg-red-600 text-white rounded-none font-heading uppercase text-xl px-6 py-2 mb-6 inline-block border-2 border-white">
-                🔥 Phase 2: Classified
+                Phase 2: Classified
               </Badge>
               <h3 className="text-3xl md:text-4xl font-heading text-white mb-6">
                 Experimental Formulas Currently Fermenting
               </h3>
               <p className="text-lg font-body text-gray-300 max-w-3xl mx-auto mb-6 leading-relaxed">
-                Our "Revenge" line requires ingredients that are technically legal in Nevada but morally questionable everywhere else. 
-                We're talking propolis harvested during thunderstorms, beeswax aged in decommissioned gas tanks, 
-                and honey from bees that exclusively pollinate haunted sunflower fields.
+                The Revenge line is still curing in the dark because apparently the public has “safety expectations.” 
+                Expect propolis with a grudge, beeswax with road rash, and labels that look like they were approved by a biker apothecary committee with no HR department.
               </p>
               <div className="grid md:grid-cols-3 gap-6 mb-8 max-w-2xl mx-auto">
                 <div className="bg-gray-900/50 p-4 border border-red-900">
@@ -499,19 +500,19 @@ export default function Home() {
                   <p className="text-gray-500 text-xs">Status: Gaining Sentience</p>
                 </div>
               </div>
-              <p className="text-xs font-body text-gray-600 italic max-w-xl mx-auto">
-                All jars will double as ash trays / emotional support objects. Labels dissolve in rain to reveal hidden insults.
+              <p className="text-xs font-body text-muted-foreground italic max-w-xl mx-auto">
+                Open at your own risk. Side effects may include softer cuticles and an inflated sense of menace.
               </p>
             </div>
           </div>
 
           {/* Sticker Pack Coming Soon */}
           <div className="text-center mb-16 pt-12 border-t-4 border-black border-dashed">
-            <h2 className="text-5xl md:text-7xl font-heading text-black mb-4 mt-12">
-              Swarm <span className="text-white grunge-text">Sticker Pack</span>
+            <h2 className="text-5xl md:text-7xl font-heading text-white mb-4 mt-12">
+              Swarm <span className="text-primary grunge-text">Sticker Pack</span>
             </h2>
-            <p className="text-xl font-body text-black/80 max-w-2xl mx-auto font-bold">
-              Slap 'em on your helmet, your tank, or your local stop sign.
+            <p className="text-xl font-body text-muted-foreground max-w-2xl mx-auto font-bold">
+              Slap them on your helmet, your tank, or anything that needs a personality transplant.
             </p>
           </div>
 
@@ -521,20 +522,19 @@ export default function Home() {
             </div>
             <div className="relative z-10">
               <Badge className="bg-primary text-black rounded-none font-heading uppercase text-xl px-6 py-2 mb-6 inline-block border-2 border-black">
-                🐝 Coming Soon
+                Coming Soon
               </Badge>
               <h3 className="text-3xl md:text-4xl font-heading text-white mb-4">
                 The Swarm Sticker Pack
               </h3>
               <p className="text-lg font-body text-gray-300 max-w-xl mx-auto mb-6">
-                A collection of die-cut vinyl stickers featuring the Flesh to Death crew. 
-                Perfect for marking your territory or making your gear look 47% more intimidating.
+                Die-cut vinyl from the Flesh to Death crew. For marking your territory, offending beige laptops, and making your gear look like it has seen things.
               </p>
               <p className="text-2xl font-heading text-primary mb-4">$15.00</p>
               <div className="mt-6 max-w-sm mx-auto">
                 <EmailSignup 
                   interest="sticker_pack"
-                  buttonText="Notify Me"
+                  buttonText="Warn Me First"
                   placeholder="your@email.com"
                 />
               </div>
@@ -547,7 +547,7 @@ export default function Home() {
       </section>
 
       {/* BuzzKill App Section */}
-      <section id="buzzkill" className="py-24 bg-background relative overflow-hidden">
+      <section id="buzzkill" className="py-24 bg-black relative overflow-hidden ftd-grit border-t border-primary/40">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="order-2 md:order-1 relative">
@@ -591,16 +591,16 @@ export default function Home() {
             
             <div className="order-1 md:order-2 space-y-8">
               <div className="inline-block bg-primary text-black px-4 py-1 font-heading text-lg transform rotate-2">
-                For Beekeepers
+                Data or Death
               </div>
               <h2 className="text-5xl md:text-7xl font-heading text-white leading-none">
                 Buzz<span className="text-secondary">Kill</span>
               </h2>
               <h3 className="text-2xl md:text-3xl font-heading text-gray-400">
-                Nothing kills a bee&apos;s vibe like an audit.
+                The hive inspection app for beekeepers who enjoy fewer surprises and more receipts.
               </h3>
               <p className="text-xl text-gray-300 font-body border-l-4 border-secondary pl-6">
-                Built from real beekeeping experience, <span className="text-white font-semibold">BuzzKill</span> is a separate hive health tracking app designed to help beekeepers monitor patterns, catch issues earlier, and stay closer to what their colonies are telling them.
+                Built from real beekeeping experience, <span className="text-white font-semibold">BuzzKill</span> tracks colony patterns, queen status, and hive notes before the yard turns into a tiny winged crime scene.
               </p>
               
               <ul className="space-y-4 font-body text-lg text-gray-300">
@@ -617,7 +617,7 @@ export default function Home() {
               
               <a href="https://buzzkillbee.com/" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-secondary text-white hover:bg-white hover:text-black font-heading text-xl px-8 py-6 rounded-none border-none shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
-                  Meet BuzzKill
+                  Open BuzzKill
                 </Button>
               </a>
             </div>

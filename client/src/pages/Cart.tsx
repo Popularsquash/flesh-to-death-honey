@@ -43,9 +43,9 @@ export default function Cart() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen flex flex-col ftd-page text-foreground overflow-x-hidden">
       {/* Navigation */}
-      <nav className="border-b-4 border-primary sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
+      <nav className="border-b border-primary/70 sticky top-0 z-50 bg-black/90 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.55)]">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer">
@@ -88,17 +88,17 @@ export default function Cart() {
       </nav>
 
       {/* Header */}
-      <header className="bg-primary py-12 relative">
+      <header className="py-16 relative ftd-grit bg-[radial-gradient(circle_at_18%_0%,rgba(217,144,33,0.2),transparent_24rem),linear-gradient(135deg,#130d07_0%,#050505_68%)] border-b border-primary/50">
         <div className="container mx-auto px-4">
           <Link href="/shop">
             <Button variant="ghost" className="mb-4 text-black hover:bg-black/10">
-              <ArrowLeft className="mr-2 h-4 w-4" /> Continue Shopping
+              <ArrowLeft className="mr-2 h-4 w-4" /> Keep Raiding the Stash
             </Button>
           </Link>
-          <h1 className="text-5xl md:text-7xl font-heading text-black">
+          <h1 className="text-5xl md:text-7xl font-heading text-white">
             Your <span className="text-white grunge-text">Cart</span>
           </h1>
-          <p className="text-xl font-body text-black/80 mt-4">
+          <p className="text-xl font-body text-muted-foreground mt-4">
             {itemCount} {itemCount === 1 ? "item" : "items"} ready for checkout
           </p>
         </div>
@@ -182,11 +182,11 @@ export default function Cart() {
                 </Button>
               </div>
 
-              {/* Order Summary */}
+              {/* Damage Report */}
               <div>
                 <Card className="bg-gray-900 border-4 border-primary rounded-none sticky top-24">
                   <CardHeader className="border-b-2 border-dashed border-gray-700">
-                    <CardTitle className="font-heading text-2xl text-primary">Order Summary</CardTitle>
+                    <CardTitle className="font-heading text-2xl text-primary">Damage Report</CardTitle>
                   </CardHeader>
                   <CardContent className="pt-6 space-y-4">
                     <div className="flex justify-between text-gray-400">
@@ -207,7 +207,7 @@ export default function Cart() {
                   <CardFooter className="flex flex-col gap-4">
                     <Link href="/checkout" className="w-full">
                       <Button className="w-full bg-primary text-black hover:bg-white font-heading uppercase text-xl py-6 rounded-none border-2 border-black">
-                        Proceed to Checkout
+                        Proceed to Pay the Toll
                       </Button>
                     </Link>
                     <p className="text-xs text-gray-500 text-center">
@@ -220,12 +220,12 @@ export default function Cart() {
           ) : (
             <div className="text-center py-16">
               <ShoppingCart className="h-24 w-24 mx-auto text-gray-600 mb-6" />
-              <h2 className="text-3xl font-heading text-white mb-4">Your Cart is Empty</h2>
+              <h2 className="text-3xl font-heading text-white mb-4">Your Haul is Empty</h2>
               <p className="text-gray-400 font-body text-lg mb-8">
                 Looks like you haven't added anything to your cart yet.
               </p>
               <Link href="/shop">
-                <Button className="bg-primary text-black font-heading uppercase rounded-none px-8 py-6 text-xl">
+                <Button className="bg-primary text-black font-heading uppercase rounded-none ftd-cta-shadow px-8 py-6 text-xl">
                   Start Shopping
                 </Button>
               </Link>

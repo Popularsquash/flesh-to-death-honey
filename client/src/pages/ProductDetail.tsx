@@ -291,7 +291,7 @@ export default function ProductDetail() {
       <SEO {...seoProps} />
       <div className="min-h-screen bg-black text-white font-body">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-black border-b-4 border-primary">
+      <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-primary/70 shadow-[0_10px_30px_rgba(0,0,0,0.55)]">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-3">
             <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png" alt="F2D Logo" className="h-10 w-auto" />
@@ -526,7 +526,7 @@ export default function ProductDetail() {
                   </Select>
                 </div>
 
-                {/* Add to Cart Button */}
+                {/* Claim It Button */}
                 <Button
                   onClick={handleAddToCart}
                   disabled={!selectedVariantId}
@@ -542,7 +542,7 @@ export default function ProductDetail() {
                   <ul className="space-y-2 text-gray-300">
                     <li className="flex items-center gap-2">
                       <Check size={16} className="text-primary" />
-                      Print-on-demand (made to order)
+                      Made to order. No warehouse goblins.
                     </li>
                     <li className="flex items-center gap-2">
                       <Check size={16} className="text-primary" />
@@ -624,7 +624,7 @@ export default function ProductDetail() {
       {/* Related Products CTA */}
       <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <h3 className="text-4xl md:text-6xl font-heading text-black mb-6">
+          <h3 className="text-4xl md:text-6xl font-heading text-white mb-6">
             MORE FROM THE STASH
           </h3>
           <p className="text-xl text-black/80 mb-8 max-w-2xl mx-auto">

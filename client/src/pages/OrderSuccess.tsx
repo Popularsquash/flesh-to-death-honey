@@ -30,9 +30,9 @@ export default function OrderSuccess() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen flex flex-col ftd-page text-foreground overflow-x-hidden">
       {/* Navigation */}
-      <nav className="border-b-4 border-primary sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
+      <nav className="border-b border-primary/70 sticky top-0 z-50 bg-black/90 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.55)]">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer">
@@ -94,7 +94,7 @@ export default function OrderSuccess() {
               <div className="bg-primary py-8 text-center">
                 <CheckCircle className="h-20 w-20 mx-auto text-black mb-4" />
                 <h1 className="text-4xl md:text-5xl font-heading text-black">
-                  Order Confirmed!
+                  The Deed Is Done!
                 </h1>
               </div>
               
@@ -145,7 +145,7 @@ export default function OrderSuccess() {
                   <Link href="/shop" className="flex-1">
                     <Button className="w-full bg-white text-black hover:bg-primary font-heading uppercase rounded-none py-6">
                       <Package className="mr-2 h-5 w-5" />
-                      Continue Shopping
+                      Keep Raiding the Stash
                     </Button>
                   </Link>
                   <Link href="/" className="flex-1">

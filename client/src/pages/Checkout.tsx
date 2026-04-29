@@ -34,7 +34,7 @@ export default function Checkout() {
 
   const handleCheckout = async () => {
     if (items.length === 0) {
-      toast.error("Your cart is empty");
+      toast.error("Your cart is a ghost town");
       return;
     }
 
@@ -51,9 +51,9 @@ export default function Checkout() {
   }, [isLoading, items.length, setLocation]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen flex flex-col ftd-page text-foreground overflow-x-hidden">
       {/* Navigation */}
-      <nav className="border-b-4 border-primary sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
+      <nav className="border-b border-primary/70 sticky top-0 z-50 bg-black/90 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.55)]">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer">
@@ -96,24 +96,24 @@ export default function Checkout() {
       </nav>
 
       {/* Header */}
-      <header className="bg-primary py-12 relative">
+      <header className="py-16 relative ftd-grit bg-[radial-gradient(circle_at_18%_0%,rgba(217,144,33,0.2),transparent_24rem),linear-gradient(135deg,#130d07_0%,#050505_68%)] border-b border-primary/50">
         <div className="container mx-auto px-4">
           <Link href="/cart">
             <Button variant="ghost" className="mb-4 text-black hover:bg-black/10">
-              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Cart
+              <ArrowLeft className="mr-2 h-4 w-4" /> Back to the Haul
             </Button>
           </Link>
-          <h1 className="text-5xl md:text-7xl font-heading text-black">
-            <span className="text-white grunge-text">Checkout</span>
+          <h1 className="text-5xl md:text-7xl font-heading text-white">
+            <span className="text-white grunge-text">Pay the Toll</span>
           </h1>
-          <p className="text-xl font-body text-black/80 mt-4">
-            Secure payment — Card, Apple Pay & Google Pay accepted
+          <p className="text-xl font-body text-muted-foreground mt-4">
+            Secure payment. Card, Apple Pay, and Google Pay accepted because carrier pigeons are unreliable.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-8 bg-background" style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 0, 75% 50%, 50% 0, 25% 50%, 0 0)" }}></div>
       </header>
 
-      {/* Checkout Content */}
+      {/* Pay the Toll Content */}
       <section className="py-16 bg-background flex-1">
         <div className="container mx-auto px-4 max-w-2xl">
           {isLoading ? (
@@ -132,7 +132,7 @@ export default function Checkout() {
               <CardHeader className="border-b-2 border-dashed border-gray-700">
                 <CardTitle className="font-heading text-2xl text-primary flex items-center gap-2">
                   <CreditCard className="h-6 w-6" />
-                  Order Summary
+                  Damage Report
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-6 space-y-6">
@@ -180,7 +180,7 @@ export default function Checkout() {
                   </div>
                 </div>
 
-                {/* Checkout Button */}
+                {/* Pay the Toll Button */}
                 <Button 
                   onClick={handleCheckout}
                   disabled={isRedirecting || items.length === 0}
@@ -189,12 +189,12 @@ export default function Checkout() {
                   {isRedirecting ? (
                     <>
                       <Loader2 className="mr-2 h-6 w-6 animate-spin" />
-                      Redirecting to Checkout...
+                      Redirecting to checkout...
                     </>
                   ) : (
                     <>
                       <Lock className="mr-2 h-6 w-6" />
-                      Proceed to Payment
+                      Pay the Toll
                     </>
                   )}
                 </Button>

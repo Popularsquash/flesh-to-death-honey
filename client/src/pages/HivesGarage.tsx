@@ -56,9 +56,9 @@ export default function HivesGarage() {
   return (
     <>
       <SEO {...seoProps} />
-      <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
+      <div className="min-h-screen flex flex-col ftd-page text-foreground overflow-x-hidden">
         {/* Navigation */}
-        <nav className="border-b-4 border-primary sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
+        <nav className="border-b border-primary/70 sticky top-0 z-50 bg-black/90 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.55)]">
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <Link href="/">
               <div className="flex items-center gap-2 cursor-pointer">
@@ -72,7 +72,8 @@ export default function HivesGarage() {
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-8 font-body text-lg uppercase tracking-wide font-bold">
               <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-              <Link href="/shop" className="hover:text-primary transition-colors">Shop</Link>
+              <Link href="/shop" className="hover:text-primary transition-colors">Stash</Link>
+              <Link href="/digital-downloads" className="hover:text-primary transition-colors">Digital</Link>
               <Link href="/garage" className="text-secondary">Garage</Link>
               <Link href="/cart">
                 <Button variant="outline" className="border-2 border-primary hover:bg-primary hover:text-background font-bold uppercase rounded-none">
@@ -91,7 +92,8 @@ export default function HivesGarage() {
           {isMenuOpen && (
             <div className="md:hidden bg-background border-b-4 border-primary p-4 flex flex-col gap-4 font-heading text-xl uppercase">
               <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
-              <Link href="/shop" onClick={() => setIsMenuOpen(false)}>Shop</Link>
+              <Link href="/shop" onClick={() => setIsMenuOpen(false)}>Stash</Link>
+              <Link href="/digital-downloads" onClick={() => setIsMenuOpen(false)}>Digital</Link>
               <Link href="/garage" onClick={() => setIsMenuOpen(false)} className="text-secondary">Garage</Link>
               <Link href="/cart">
                 <Button className="w-full bg-primary text-background font-bold rounded-none">
@@ -111,7 +113,7 @@ export default function HivesGarage() {
           <div className="container mx-auto px-4 relative z-10">
             <Link href="/shop">
               <Button variant="ghost" className="mb-4 text-white hover:bg-white/10">
-                <ArrowLeft className="mr-2 h-4 w-4" /> Back to Shop
+                <ArrowLeft className="mr-2 h-4 w-4" /> Back to the Stash
               </Button>
             </Link>
             <div className="flex items-center gap-4 mb-2">
@@ -258,7 +260,7 @@ export default function HivesGarage() {
                   When we mark items down, they'll show up here.
                 </p>
                 <Link href="/shop">
-                  <Button className="bg-primary text-black font-heading uppercase rounded-none">
+                  <Button className="bg-primary text-black font-heading uppercase rounded-none ftd-cta-shadow">
                     Browse the Full Stash
                   </Button>
                 </Link>

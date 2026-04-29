@@ -163,7 +163,7 @@ export default function About() {
       <section className="py-16 md:py-24 bg-primary">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-heading text-black mb-8">
+            <h2 className="text-4xl md:text-6xl font-heading text-white mb-8">
               What's Coming
             </h2>
             <p className="text-xl text-black/80 mb-8 leading-relaxed">

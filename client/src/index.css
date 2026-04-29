@@ -4,109 +4,146 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-heading: "Permanent Marker", cursive;
+  --font-heading: "Pirata One", "Rye", serif;
+  --font-gothic: "UnifrakturCook", "Pirata One", serif;
   --font-body: "Oswald", sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  
+
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  
+
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
-  
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  
+
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-  
+
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
 }
 
-/* Neo-Brutalist Biker Grunge Palette */
+/* Flesh to Death Honey Co. palette: desert-black, burnt amber, rust, old parchment. */
 :root {
-  /* Default to Dark Mode aesthetics as base */
-  --background: #1a1a1a;
-  --foreground: #f5f5f5;
-  
-  --primary: #FFC300; /* Honey Gold */
-  --primary-foreground: #1a1a1a;
-  
-  --secondary: #C70039; /* Rusty Red */
-  --secondary-foreground: #f5f5f5;
-  
-  --muted: #2a2a2a;
-  --muted-foreground: #a0a0a0;
-  
-  --accent: #FFC300;
-  --accent-foreground: #1a1a1a;
-  
-  --destructive: #C70039;
-  --destructive-foreground: #f5f5f5;
-  
-  --border: #FFC300; /* High contrast borders */
-  --input: #2a2a2a;
-  --ring: #FFC300;
-  
-  --card: #222222;
-  --card-foreground: #f5f5f5;
-  
-  --popover: #222222;
-  --popover-foreground: #f5f5f5;
-  
-  --radius: 0px; /* Brutalist - no rounded corners */
+  --background: #050505;
+  --foreground: #f3ead7;
+
+  --primary: #d99021; /* burnt honey amber */
+  --primary-foreground: #090705;
+
+  --secondary: #9d2418; /* oxidized blood/rust */
+  --secondary-foreground: #f8ead5;
+
+  --muted: #171514;
+  --muted-foreground: #b7aa94;
+
+  --accent: #f0b23a;
+  --accent-foreground: #090705;
+
+  --destructive: #b02a1b;
+  --destructive-foreground: #f8ead5;
+
+  --border: #7a4d18;
+  --input: #11100f;
+  --ring: #d99021;
+
+  --card: #0d0c0b;
+  --card-foreground: #f3ead7;
+
+  --popover: #0d0c0b;
+  --popover-foreground: #f3ead7;
+
+  --radius: 0px;
 }
 
 .dark {
-  --background: #1a1a1a;
-  --foreground: #f5f5f5;
-  --primary: #FFC300;
-  --primary-foreground: #1a1a1a;
-  --secondary: #C70039;
-  --secondary-foreground: #f5f5f5;
-  --muted: #2a2a2a;
-  --muted-foreground: #a0a0a0;
-  --accent: #FFC300;
-  --accent-foreground: #1a1a1a;
-  --destructive: #C70039;
-  --destructive-foreground: #f5f5f5;
-  --border: #FFC300;
-  --input: #2a2a2a;
-  --ring: #FFC300;
-  --card: #222222;
-  --card-foreground: #f5f5f5;
-  --popover: #222222;
-  --popover-foreground: #f5f5f5;
+  --background: #050505;
+  --foreground: #f3ead7;
+  --primary: #d99021;
+  --primary-foreground: #090705;
+  --secondary: #9d2418;
+  --secondary-foreground: #f8ead5;
+  --muted: #171514;
+  --muted-foreground: #b7aa94;
+  --accent: #f0b23a;
+  --accent-foreground: #090705;
+  --destructive: #b02a1b;
+  --destructive-foreground: #f8ead5;
+  --border: #7a4d18;
+  --input: #11100f;
+  --ring: #d99021;
+  --card: #0d0c0b;
+  --card-foreground: #f3ead7;
+  --popover: #0d0c0b;
+  --popover-foreground: #f3ead7;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    background: #050505;
+  }
+
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground font-body antialiased;
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(217, 144, 33, 0.16), transparent 32rem),
+      radial-gradient(circle at 80% 0%, rgba(157, 36, 24, 0.13), transparent 28rem),
+      linear-gradient(180deg, #050505 0%, #0a0908 45%, #050505 100%);
   }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.22;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+    background-size: 42px 42px, 42px 42px;
+    mix-blend-mode: screen;
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading uppercase tracking-wider;
+    @apply font-heading tracking-wider;
+    text-transform: uppercase;
   }
+
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -148,14 +185,59 @@
       max-width: 1280px;
     }
   }
-  
-  /* Custom Grunge Utilities */
+
   .grunge-border {
-    border: 3px solid var(--primary);
-    box-shadow: 5px 5px 0px var(--secondary);
+    border: 2px solid var(--primary);
+    box-shadow: 7px 7px 0 rgba(157, 36, 24, 0.88);
   }
-  
+
   .grunge-text {
-    text-shadow: 2px 2px 0px #000;
+    text-shadow:
+      2px 2px 0 #050505,
+      4px 4px 0 rgba(157, 36, 24, 0.55),
+      0 0 22px rgba(217, 144, 33, 0.22);
+  }
+
+  .ftd-page {
+    background:
+      radial-gradient(circle at 50% -10%, rgba(217, 144, 33, 0.14), transparent 34rem),
+      linear-gradient(180deg, rgba(5, 5, 5, 0.96), rgba(12, 11, 10, 0.98));
+  }
+
+  .ftd-grit {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ftd-grit::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.16;
+    background-image:
+      radial-gradient(circle at 12% 20%, rgba(243, 234, 215, 0.35) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 70% 40%, rgba(217, 144, 33, 0.28) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 35% 80%, rgba(157, 36, 24, 0.32) 0 1px, transparent 1.5px);
+    background-size: 38px 42px, 52px 56px, 64px 64px;
+    mix-blend-mode: screen;
+  }
+
+  .ftd-card {
+    @apply bg-card border border-primary/50 rounded-none;
+    box-shadow: inset 0 0 0 1px rgba(243, 234, 215, 0.04), 0 18px 44px rgba(0, 0, 0, 0.48);
+  }
+
+  .ftd-kicker {
+    @apply inline-block bg-secondary text-secondary-foreground px-4 py-1 font-heading uppercase tracking-[0.22em] border border-primary/70;
+    box-shadow: 4px 4px 0 rgba(5, 5, 5, 0.85);
+  }
+
+  .ftd-cta-shadow {
+    box-shadow: 5px 5px 0 rgba(157, 36, 24, 0.95);
+  }
+
+  .ftd-divider-slash {
+    clip-path: polygon(0 38%, 100% 0%, 100% 100%, 0% 100%);
   }
 }

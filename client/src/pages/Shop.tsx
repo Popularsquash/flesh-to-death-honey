@@ -19,7 +19,7 @@ export default function Shop() {
   
   const seoProps = {
     title: "Shop",
-    description: "Shop biker-inspired apparel, handcrafted beeswax balms, and gear from Flesh to Death Honey Co. Built for riders and rebels.",
+    description: "Shop Flesh to Death Honey Co. gear: dark biker-apothecary apparel, beeswax goods, and road-lifestyle merch for the hive that refuses to behave.",
     keywords: "beeswax balm, biker apparel, motorcycle gear, honey products, rebel clothing, handcrafted soap",
     url: "https://fleshtodeathhoney.com/shop",
   };
@@ -30,7 +30,7 @@ export default function Shop() {
   const handleAddToCart = async (productId: number) => {
     const variantId = selectedVariants[productId];
     if (!variantId) {
-      toast.error("Please select a size/variant");
+      toast.error("Pick a size first. Chaos needs measurements.");
       setHighlightedProduct(productId);
       setTimeout(() => setHighlightedProduct(null), 1500);
       return;
@@ -38,9 +38,9 @@ export default function Shop() {
     
     try {
       await addToCart(variantId);
-      toast.success("Added to cart!");
+      toast.success("Claimed. The stash approves.");
     } catch (error) {
-      toast.error("Failed to add to cart");
+      toast.error("Cart rejected it. Rude. Try again.");
     }
   };
 
@@ -68,9 +68,9 @@ export default function Shop() {
   return (
     <>
       <SEO {...seoProps} />
-      <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
+      <div className="min-h-screen flex flex-col ftd-page text-foreground overflow-x-hidden">
       {/* Navigation */}
-      <nav className="border-b-4 border-primary sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
+      <nav className="border-b border-primary/70 sticky top-0 z-50 bg-black/90 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.55)]">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer">
@@ -84,7 +84,8 @@ export default function Shop() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8 font-body text-lg uppercase tracking-wide font-bold">
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-            <Link href="/shop" className="text-primary">Shop</Link>
+            <Link href="/shop" className="text-primary">Stash</Link>
+            <Link href="/digital-downloads" className="hover:text-primary transition-colors">Digital</Link>
             <Link href="/garage" className="hover:text-secondary transition-colors text-secondary">Garage</Link>
             <Link href="/cart">
               <Button variant="outline" className="border-2 border-primary hover:bg-primary hover:text-background font-bold uppercase rounded-none">
@@ -103,7 +104,8 @@ export default function Shop() {
         {isMenuOpen && (
           <div className="md:hidden bg-background border-b-4 border-primary p-4 flex flex-col gap-4 font-heading text-xl uppercase">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
-            <Link href="/shop" onClick={() => setIsMenuOpen(false)}>Shop</Link>
+            <Link href="/shop" onClick={() => setIsMenuOpen(false)}>Stash</Link>
+            <Link href="/digital-downloads" onClick={() => setIsMenuOpen(false)}>Digital</Link>
             <Link href="/garage" onClick={() => setIsMenuOpen(false)} className="text-secondary">Garage</Link>
             <Link href="/cart">
               <Button className="w-full bg-primary text-background font-bold rounded-none">
@@ -115,18 +117,18 @@ export default function Shop() {
       </nav>
 
       {/* Header */}
-      <header className="bg-primary py-12 relative">
+      <header className="py-16 relative ftd-grit bg-[radial-gradient(circle_at_18%_0%,rgba(217,144,33,0.2),transparent_24rem),linear-gradient(135deg,#130d07_0%,#050505_68%)] border-b border-primary/50">
         <div className="container mx-auto px-4">
           <Link href="/">
-            <Button variant="ghost" className="mb-4 text-black hover:bg-black/10">
-              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home
+            <Button variant="ghost" className="mb-4 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-none">
+              <ArrowLeft className="mr-2 h-4 w-4" /> Back to the Hive
             </Button>
           </Link>
-          <h1 className="text-5xl md:text-7xl font-heading text-black">
-            The <span className="text-white grunge-text">Stash</span>
+          <h1 className="text-5xl md:text-7xl font-heading text-white">
+            The <span className="text-primary grunge-text">Stash</span>
           </h1>
-          <p className="text-xl font-body text-black/80 mt-4 max-w-2xl">
-            Official Flesh to Death merchandise. Print-on-demand apparel for the hive.
+          <p className="text-xl font-body text-muted-foreground mt-4 max-w-2xl border-l-4 border-primary pl-6">
+            Official gear from the hive: road-worn apparel, biker-apothecary goods, and merch with more backbone than a beige template ever deserved. Open at your own risk.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-8 bg-background" style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 0, 75% 50%, 50% 0, 25% 50%, 0 0)" }}></div>
@@ -163,9 +165,9 @@ export default function Shop() {
                 const uniqueSizes = getUniqueSizes(variants);
                 
                 return (
-                  <Card key={product.id} className="bg-background border-4 border-black rounded-none overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(255,195,0,1)] transition-all duration-300 group">
+                  <Card key={product.id} className="ftd-card overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(157,36,24,0.95)] transition-all duration-300 group">
 <Link href={`/product/${product.id}`}>
-                                      <div className="relative h-64 overflow-hidden bg-gray-800 flex items-center justify-center p-4 cursor-pointer">
+                                      <div className="relative h-64 overflow-hidden bg-[#0a0908] flex items-center justify-center p-4 cursor-pointer border-b border-primary/30">
                                         <div className="absolute top-4 right-4 z-10">
                                           <Badge className="bg-primary text-black rounded-none font-heading uppercase text-sm border-2 border-black">
                                             POD
@@ -195,7 +197,7 @@ export default function Shop() {
                           onValueChange={(value) => setSelectedVariants(prev => ({ ...prev, [product.id]: parseInt(value) }))}
                         >
                           <SelectTrigger className={`w-full bg-gray-800 rounded-none text-white border-2 transition-all ${highlightedProduct === product.id ? 'border-red-500 animate-pulse' : 'border-gray-600'}`}>
-                            <SelectValue placeholder="Select Size" />
+                            <SelectValue placeholder="Pick Your Poison" />
                           </SelectTrigger>
                           <SelectContent className="bg-gray-800 border-2 border-gray-600">
                             {variants.map((variant) => (
@@ -218,7 +220,7 @@ export default function Shop() {
                         disabled={!selectedVariantId && uniqueSizes.length > 0}
                       >
                         <ShoppingCart className="mr-2 h-5 w-5" />
-                        Add to Cart
+                        Claim It
                       </Button>
                     </CardFooter>
                   </Card>
@@ -228,9 +230,9 @@ export default function Shop() {
           ) : (
             <div className="text-center py-16">
               <Skull className="h-24 w-24 mx-auto text-gray-600 mb-6" />
-              <h2 className="text-3xl font-heading text-white mb-4">No Products Yet</h2>
+              <h2 className="text-3xl font-heading text-white mb-4">The Stash Is Temporarily Empty</h2>
               <p className="text-gray-400 font-body text-lg mb-8">
-                Products are being synced from Printful. Check back soon!
+                The merch gremlins are syncing inventory. Check back before they unionize.
               </p>
               <Link href="/">
                 <Button className="bg-primary text-black font-heading uppercase rounded-none">

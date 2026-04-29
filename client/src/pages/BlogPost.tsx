@@ -44,9 +44,9 @@ export default function BlogPost() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen flex flex-col ftd-page text-foreground overflow-x-hidden">
       {/* Navigation */}
-      <nav className="border-b-4 border-primary sticky top-0 z-50 bg-background/95 backdrop-blur-sm">
+      <nav className="border-b border-primary/70 sticky top-0 z-50 bg-black/90 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.55)]">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer">
@@ -128,7 +128,7 @@ export default function BlogPost() {
                 That post doesn't exist or has been unpublished.
               </p>
               <Link href="/blog">
-                <Button className="bg-primary text-black font-heading uppercase rounded-none px-8 py-3">
+                <Button className="bg-primary text-black font-heading uppercase rounded-none ftd-cta-shadow px-8 py-3">
                   Back to Field Notes
                 </Button>
               </Link>

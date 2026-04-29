@@ -3,7 +3,7 @@ import { Shield, Lock, CreditCard, Truck, BadgeCheck, Star } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-12 border-t-8 border-primary">
+    <footer className="bg-black text-white py-12 border-t border-primary/70 ftd-grit">
       <div className="container mx-auto px-4 text-center md:text-left">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-2 space-y-6">
@@ -14,15 +14,16 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-gray-500 font-body max-w-sm mx-auto md:mx-0">
-              Born from beekeeping, tattoos, and the motorcycle lifestyle. A biker apothecary where the road meets the hive. Goods from beeswax is just the beginning...
+              Riding bikes, keeping bees, and making dark little goods for people who prefer their honey with teeth. Leave a mark or stay on the porch.
             </p>
           </div>
           
           <div>
-            <h4 className="font-heading text-white text-xl mb-6 uppercase">Shop</h4>
+            <h4 className="font-heading text-primary text-xl mb-6 uppercase">The Stash</h4>
             <ul className="space-y-3 font-body text-gray-400">
               <li><a href="/#apparel" className="hover:text-primary transition-colors">Apparel</a></li>
               <li><a href="/#products" className="hover:text-primary transition-colors">Beeswax Products</a></li>
+              <li><Link href="/digital-downloads" className="hover:text-primary transition-colors">Digital Contraband</Link></li>
               <li><Link href="/garage" className="hover:text-secondary transition-colors text-secondary">Hives Garage</Link></li>
               <li><a href="https://buzzkillbee.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">BuzzKill — Hive Health App</a></li>
               <li><Link href="/comics" className="hover:text-primary transition-colors">Comics</Link></li>
@@ -31,7 +32,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="font-heading text-white text-xl mb-6 uppercase">Legal</h4>
+            <h4 className="font-heading text-primary text-xl mb-6 uppercase">Fine Print</h4>
             <ul className="space-y-3 font-body text-gray-400">
               <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">No Snitches Policy</Link></li>
               <li><Link href="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link></li>
@@ -44,11 +45,11 @@ export default function Footer() {
         {/* Trust Badges Section */}
         <div className="border-t border-gray-800 py-8 mb-8">
           <div className="flex flex-col items-center gap-6">
-            <p className="text-gray-500 font-body text-sm uppercase tracking-wider">Secure & Trusted Shopping</p>
+            <p className="text-gray-500 font-body text-sm uppercase tracking-wider">Secure checkout. No snitches. Minimal nonsense.</p>
             
             {/* Trust Badge Icons */}
             <div className="flex flex-wrap justify-center gap-6 md:gap-10">
-              {/* SSL Secure Badge */}
+              {/* Lock Tight Badge */}
               <div className="flex flex-col items-center gap-2 group">
                 <div className="w-14 h-14 bg-gray-900 border-2 border-gray-700 group-hover:border-primary rounded-lg flex items-center justify-center transition-colors">
                   <Lock className="w-7 h-7 text-green-500" />
@@ -56,7 +57,7 @@ export default function Footer() {
                 <span className="text-xs text-gray-500 font-body">SSL Secure</span>
               </div>
 
-              {/* Stripe Payments Badge */}
+              {/* Stripe Handles It Badge */}
               <div className="flex flex-col items-center gap-2 group">
                 <div className="w-14 h-14 bg-gray-900 border-2 border-gray-700 group-hover:border-primary rounded-lg flex items-center justify-center transition-colors">
                   <CreditCard className="w-7 h-7 text-[#635BFF]" />
@@ -64,7 +65,7 @@ export default function Footer() {
                 <span className="text-xs text-gray-500 font-body">Stripe Payments</span>
               </div>
 
-              {/* Verified Business Badge */}
+              {/* Real Small Business Badge */}
               <div className="flex flex-col items-center gap-2 group">
                 <div className="w-14 h-14 bg-gray-900 border-2 border-gray-700 group-hover:border-primary rounded-lg flex items-center justify-center transition-colors">
                   <BadgeCheck className="w-7 h-7 text-blue-500" />
@@ -72,7 +73,7 @@ export default function Footer() {
                 <span className="text-xs text-gray-500 font-body">Verified Business</span>
               </div>
 
-              {/* Secure Checkout Badge */}
+              {/* Encrypted Checkout Badge */}
               <div className="flex flex-col items-center gap-2 group">
                 <div className="w-14 h-14 bg-gray-900 border-2 border-gray-700 group-hover:border-primary rounded-lg flex items-center justify-center transition-colors">
                   <Shield className="w-7 h-7 text-primary" />
@@ -80,7 +81,7 @@ export default function Footer() {
                 <span className="text-xs text-gray-500 font-body">Secure Checkout</span>
               </div>
 
-              {/* Fast Shipping Badge */}
+              {/* Ships When Ready Badge */}
               <div className="flex flex-col items-center gap-2 group">
                 <div className="w-14 h-14 bg-gray-900 border-2 border-gray-700 group-hover:border-primary rounded-lg flex items-center justify-center transition-colors">
                   <Truck className="w-7 h-7 text-orange-500" />
@@ -99,7 +100,7 @@ export default function Footer() {
 
             {/* Payment Methods */}
             <div className="flex flex-wrap justify-center items-center gap-4 mt-4">
-              <span className="text-xs text-gray-600 font-body">We Accept:</span>
+              <span className="text-xs text-gray-600 font-body">Plastic accepted:</span>
               <div className="flex gap-3">
                 {/* Visa */}
                 <div className="bg-white rounded px-2 py-1">
@@ -137,7 +138,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-600 font-body text-sm">
-            © {new Date().getFullYear()} Flesh to Death Honey Co. All rights reserved.
+            © {new Date().getFullYear()} Flesh to Death Honey Co. Built in the desert. Guarded by bees.
           </p>
           <div className="flex gap-4 items-center">
             <a href="https://instagram.com/fleshtodeathhoney" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-primary transition-colors rounded group">

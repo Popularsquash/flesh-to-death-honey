@@ -55,7 +55,7 @@ export default function Comics() {
       <SEO {...seoProps} />
       <div className="min-h-screen bg-black text-white font-body">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-black border-b-4 border-primary">
+      <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-primary/70 shadow-[0_10px_30px_rgba(0,0,0,0.55)]">
         <div className="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2 md:gap-3">
             <img src="https://files.manuscdn.com/user_upload_by_module/session_file/104679889/RrSnKdkfcFJysBTv.png" alt="F2D Logo" className="h-8 md:h-10 w-auto" />
